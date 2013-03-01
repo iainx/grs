@@ -7,9 +7,6 @@
 
 @interface SDHowToWindowController : NSWindowController
 
-@property IBOutlet NSView *imageViewContainer;
-@property IBOutlet NSSegmentedControl *backForwardButton;
-
 - (void) showInstructionsWindow;
 - (void) showInstructionsWindowFirstTimeOnly;
 

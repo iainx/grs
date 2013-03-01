@@ -8,6 +8,9 @@
 
 @interface SDHowToWindowController ()
 
+@property IBOutlet NSView *imageViewContainer;
+@property IBOutlet NSSegmentedControl *backForwardButton;
+
 @property NSMutableArray *imageViews;
 @property NSInteger selectedImageIndex;
 
