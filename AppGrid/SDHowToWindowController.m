@@ -39,7 +39,7 @@
 }
 
 - (NSString*) windowNibName {
-    return @"SDInstructionsWindow";
+    return @"SDHowToWindow";
 }
 
 - (NSString*) appName {
