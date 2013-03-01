@@ -11,6 +11,8 @@
 #import "MyPrefsWindowController.h"
 #import "MyActor.h"
 
+#import "SDInstructionsWindowController.h"
+
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate>
 
 @property NSStatusItem* statusItem;
@@ -18,5 +20,7 @@
 
 @property MyPrefsWindowController *myPrefsWindowController;
 @property MyActor *myActor;
+
+@property SDInstructionsWindowController* instructionsWindowController;
 
 @end

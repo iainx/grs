@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C116E0DDD700868523 /* MyGrid.m */; };
 		94D6C0C516E0DF4300868523 /* MyActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C416E0DF4300868523 /* MyActor.m */; };
+		94D6C0C816E0E2A900868523 /* SDInstructionsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0C716E0E2A900868523 /* SDInstructionsWindow.xib */; };
+		94D6C0CD16E0E2B300868523 /* SDInstructionsWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0CA16E0E2B300868523 /* SDInstructionsWindow.m */; };
+		94D6C0CE16E0E2B300868523 /* SDInstructionsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0CC16E0E2B300868523 /* SDInstructionsWindowController.m */; };
+		94D6C0D116E0E4CD00868523 /* SDRoundedInstructionsImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0D016E0E4CD00868523 /* SDRoundedInstructionsImageView.m */; };
+		94D6C0DC16E0EA8E00868523 /* sd_howto_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0D816E0EA8E00868523 /* sd_howto_2.png */; };
+		94D6C0DD16E0EA8E00868523 /* sd_howto_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0D916E0EA8E00868523 /* sd_howto_3.png */; };
+		94D6C0DE16E0EA8E00868523 /* sd_howto_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0DA16E0EA8E00868523 /* sd_howto_4.png */; };
+		94D6C0DF16E0EA8E00868523 /* sd_howto_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0DB16E0EA8E00868523 /* sd_howto_1.png */; };
+		94D6C0E216E0EB2100868523 /* SDInstructionsWindowInsetTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0E116E0EB2100868523 /* SDInstructionsWindowInsetTextField.m */; };
 		94ED279C16E01A440044ED33 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ED279B16E01A440044ED33 /* Cocoa.framework */; };
 		94ED27A616E01A440044ED33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27A416E01A440044ED33 /* InfoPlist.strings */; };
 		94ED27A816E01A440044ED33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27A716E01A440044ED33 /* main.m */; };
@@ -36,6 +45,19 @@
 		94D6C0C116E0DDD700868523 /* MyGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGrid.m; sourceTree = "<group>"; };
 		94D6C0C316E0DF4300868523 /* MyActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActor.h; sourceTree = "<group>"; };
 		94D6C0C416E0DF4300868523 /* MyActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActor.m; sourceTree = "<group>"; };
+		94D6C0C716E0E2A900868523 /* SDInstructionsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDInstructionsWindow.xib; sourceTree = "<group>"; };
+		94D6C0C916E0E2B300868523 /* SDInstructionsWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDInstructionsWindow.h; sourceTree = "<group>"; };
+		94D6C0CA16E0E2B300868523 /* SDInstructionsWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDInstructionsWindow.m; sourceTree = "<group>"; };
+		94D6C0CB16E0E2B300868523 /* SDInstructionsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDInstructionsWindowController.h; sourceTree = "<group>"; };
+		94D6C0CC16E0E2B300868523 /* SDInstructionsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDInstructionsWindowController.m; sourceTree = "<group>"; };
+		94D6C0CF16E0E4CD00868523 /* SDRoundedInstructionsImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRoundedInstructionsImageView.h; sourceTree = "<group>"; };
+		94D6C0D016E0E4CD00868523 /* SDRoundedInstructionsImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRoundedInstructionsImageView.m; sourceTree = "<group>"; };
+		94D6C0D816E0EA8E00868523 /* sd_howto_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_2.png; sourceTree = "<group>"; };
+		94D6C0D916E0EA8E00868523 /* sd_howto_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_3.png; sourceTree = "<group>"; };
+		94D6C0DA16E0EA8E00868523 /* sd_howto_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_4.png; sourceTree = "<group>"; };
+		94D6C0DB16E0EA8E00868523 /* sd_howto_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_1.png; sourceTree = "<group>"; };
+		94D6C0E016E0EB2100868523 /* SDInstructionsWindowInsetTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDInstructionsWindowInsetTextField.h; sourceTree = "<group>"; };
+		94D6C0E116E0EB2100868523 /* SDInstructionsWindowInsetTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDInstructionsWindowInsetTextField.m; sourceTree = "<group>"; };
 		94ED279816E01A440044ED33 /* AppGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ED279B16E01A440044ED33 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		94ED279E16E01A440044ED33 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -88,6 +110,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94D6C0C616E0E29C00868523 /* HelpWindow */ = {
+			isa = PBXGroup;
+			children = (
+				94D6C0E016E0EB2100868523 /* SDInstructionsWindowInsetTextField.h */,
+				94D6C0E116E0EB2100868523 /* SDInstructionsWindowInsetTextField.m */,
+				94D6C0C716E0E2A900868523 /* SDInstructionsWindow.xib */,
+				94D6C0C916E0E2B300868523 /* SDInstructionsWindow.h */,
+				94D6C0CA16E0E2B300868523 /* SDInstructionsWindow.m */,
+				94D6C0CB16E0E2B300868523 /* SDInstructionsWindowController.h */,
+				94D6C0CC16E0E2B300868523 /* SDInstructionsWindowController.m */,
+				94D6C0CF16E0E4CD00868523 /* SDRoundedInstructionsImageView.h */,
+				94D6C0D016E0E4CD00868523 /* SDRoundedInstructionsImageView.m */,
+			);
+			name = HelpWindow;
+			sourceTree = "<group>";
+		};
 		94ED278F16E01A440044ED33 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +168,7 @@
 			children = (
 				94ED280016E034F10044ED33 /* MyShortcuts.h */,
 				94ED280116E079C50044ED33 /* defaults.plist */,
+				94D6C0C616E0E29C00868523 /* HelpWindow */,
 				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
 				94ED27F516E02A770044ED33 /* Model */,
 				94ED280416E089E90044ED33 /* View */,
@@ -217,6 +256,10 @@
 		94ED280A16E08F8A0044ED33 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				94D6C0D816E0EA8E00868523 /* sd_howto_2.png */,
+				94D6C0D916E0EA8E00868523 /* sd_howto_3.png */,
+				94D6C0DA16E0EA8E00868523 /* sd_howto_4.png */,
+				94D6C0DB16E0EA8E00868523 /* sd_howto_1.png */,
 				94ED280816E08F880044ED33 /* statusitem.png */,
 				94ED280B16E0909D0044ED33 /* statusitem_pressed.png */,
 			);
@@ -281,6 +324,11 @@
 				94ED280216E079C50044ED33 /* defaults.plist in Resources */,
 				94ED280916E08F880044ED33 /* statusitem.png in Resources */,
 				94ED280C16E0909D0044ED33 /* statusitem_pressed.png in Resources */,
+				94D6C0C816E0E2A900868523 /* SDInstructionsWindow.xib in Resources */,
+				94D6C0DC16E0EA8E00868523 /* sd_howto_2.png in Resources */,
+				94D6C0DD16E0EA8E00868523 /* sd_howto_3.png in Resources */,
+				94D6C0DE16E0EA8E00868523 /* sd_howto_4.png in Resources */,
+				94D6C0DF16E0EA8E00868523 /* sd_howto_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +352,10 @@
 				94ED280F16E09D570044ED33 /* MyUniversalAccessHelper.m in Sources */,
 				94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */,
 				94D6C0C516E0DF4300868523 /* MyActor.m in Sources */,
+				94D6C0CD16E0E2B300868523 /* SDInstructionsWindow.m in Sources */,
+				94D6C0CE16E0E2B300868523 /* SDInstructionsWindowController.m in Sources */,
+				94D6C0D116E0E4CD00868523 /* SDRoundedInstructionsImageView.m in Sources */,
+				94D6C0E216E0EB2100868523 /* SDInstructionsWindowInsetTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

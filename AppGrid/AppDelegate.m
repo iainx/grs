@@ -74,7 +74,8 @@
     self.myActor = [[MyActor alloc] init];
     [self.myActor bindMyKeys];
     
-//    [self showHotKeysWindow:self];
+    self.instructionsWindowController = [[SDInstructionsWindowController alloc] init];
+    [self.instructionsWindowController showInstructionsWindow];
 }
 
 @end
