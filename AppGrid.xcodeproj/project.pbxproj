@@ -58,6 +58,7 @@
 		94D6C0DB16E0EA8E00868523 /* sd_howto_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_1.png; sourceTree = "<group>"; };
 		94D6C0E016E0EB2100868523 /* SDHowToWindowInsetTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHowToWindowInsetTextField.h; sourceTree = "<group>"; };
 		94D6C0E116E0EB2100868523 /* SDHowToWindowInsetTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHowToWindowInsetTextField.m; sourceTree = "<group>"; };
+		94D6C0E316E0F52B00868523 /* AppGrid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppGrid.entitlements; sourceTree = "<group>"; };
 		94ED279816E01A440044ED33 /* AppGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ED279B16E01A440044ED33 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		94ED279E16E01A440044ED33 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -166,6 +167,7 @@
 		94ED27A116E01A440044ED33 /* AppGrid */ = {
 			isa = PBXGroup;
 			children = (
+				94D6C0E316E0F52B00868523 /* AppGrid.entitlements */,
 				94ED280016E034F10044ED33 /* MyShortcuts.h */,
 				94ED280116E079C50044ED33 /* defaults.plist */,
 				94D6C0C616E0E29C00868523 /* HowToWindow */,
@@ -451,6 +453,8 @@
 		94ED27B616E01A440044ED33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AppGrid/AppGrid.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppGrid/AppGrid-Prefix.pch";
@@ -463,6 +467,8 @@
 		94ED27B716E01A440044ED33 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AppGrid/AppGrid.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppGrid/AppGrid-Prefix.pch";
