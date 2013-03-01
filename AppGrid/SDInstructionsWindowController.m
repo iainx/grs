@@ -65,13 +65,9 @@
     
 	NSWindow *window = [self window];
 	
-	NSArray *imageNames = [self imageNames];
-    NSLog(@"%@", imageNames);
-	
-	for (NSString *imageName in [imageNames reverseObjectEnumerator]) {
-        NSLog(@"%@", imageName);
+	for (NSString *imageName in [self imageNames]) {
 		NSImage *image = [NSImage imageNamed:imageName];
-		
+        
 		NSRect imageViewFrame = NSZeroRect;
 		imageViewFrame.size = [self.imageViewContainer frame].size;
 //		imageViewFrame.origin = NSMakePoint(1.0, 1.0);
