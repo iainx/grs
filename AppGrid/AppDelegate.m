@@ -115,7 +115,7 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
     
     [MASShortcut setAllowsAnyHotkeyWithOptionModifier:YES];
     
-    [self showHotKeysWindow:self];
+//    [self showHotKeysWindow:self];
     
     [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyAlignAllToGridShortcutKey handler:MyDoOnMainThread(^{ [self alignAllWindows]; })];
     

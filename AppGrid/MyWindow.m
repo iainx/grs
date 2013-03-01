@@ -20,7 +20,9 @@
     NSMutableArray* windows = [NSMutableArray array];
     
     for (NSRunningApplication* runningApp in [[NSWorkspace sharedWorkspace] runningApplications]) {
-        if ([runningApp activationPolicy] == NSApplicationActivationPolicyRegular) {
+//        NSLog(@"%@", [runningApp localizedName]);
+        
+//        if ([runningApp activationPolicy] == NSApplicationActivationPolicyRegular) {
             AXUIElementRef app = AXUIElementCreateApplication([runningApp processIdentifier]);
             
             CFArrayRef _windows;
@@ -36,7 +38,7 @@
             }
             
             CFRelease(app);
-        }
+//        }
     }
     
     return windows;
