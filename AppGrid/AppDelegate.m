@@ -27,18 +27,12 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
 }
 
 - (void) alignAllWindows {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    return;
-    
     for (MyWindow* win in [MyWindow allWindows]) {
         [win moveToGridProps:[win gridProps]];
     }
 }
 
 - (void) moveLeft {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    return;
-    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.x = MAX(r.origin.x - 1, 0);
@@ -46,20 +40,13 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
 }
 
 - (void) moveRight {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    return;
-    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.x = MIN(r.origin.x + 1, 2);
-//    CGRect r = CGRectMake(0, 0, 1, 1);
     [win moveToGridProps:r];
 }
 
 - (void) growRight {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    return;
-    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.size.width = MIN(r.size.width + 1, 3 - r.origin.x);
@@ -67,9 +54,6 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
 }
 
 - (void) shrinkRight {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    return;
-    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.size.width = MAX(r.size.width - 1, 1);
@@ -77,9 +61,6 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
 }
 
 - (void) shrinkToLower {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    return;
-    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.y = 1;
@@ -88,9 +69,6 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
 }
 
 - (void) shrinkToUpper {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    return;
-    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.y = 0;
@@ -99,9 +77,6 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
 }
 
 - (void) fillEntierColumn {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    return;
-    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.y = 0;
@@ -109,11 +84,35 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
     [win moveToGridProps:r];
 }
 
+- (void) loadStatusItem {
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+    [self.statusItem setTitle:@"AG"];
+//    [self.statusItem setImage:[NSImage imageNamed:@"statusimage"]];
+//    [self.statusItem setAlternateImage:[NSImage imageNamed:@"statusimage_pressed"]];
+    [self.statusItem setHighlightMode:YES];
+    [self.statusItem setMenu:self.statusBarMenu];
+}
+
+- (void) awakeFromNib {
+    [self loadStatusItem];
+}
+
+- (IBAction) reallyShowAboutPanel:(id)sender {
+    [NSApp activateIgnoringOtherApps:YES];
+    [NSApp orderFrontStandardAboutPanel:sender];
+}
+
+- (IBAction) showHotKeysWindow:(id)sender {
+    if (self.myPrefsWindowController == nil)
+        self.myPrefsWindowController = [[MyPrefsWindowController alloc] init];
+    
+    [self.myPrefsWindowController showWindow:self];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSLog(@"accessibility enabled? %d", AXAPIEnabled());
     
-    self.myPrefsWindowController = [[MyPrefsWindowController alloc] init];
-    [self.myPrefsWindowController showWindow:self];
+    [self showHotKeysWindow:self];
     
     [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyAlignAllToGridShortcutKey handler:MyDoOnMainThread(^{ [self alignAllWindows]; })];
     

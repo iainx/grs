@@ -12,6 +12,9 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property NSStatusItem* statusItem;
+@property IBOutlet NSMenu* statusBarMenu;
+
 @property MyPrefsWindowController *myPrefsWindowController;
 
 @end
