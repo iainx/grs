@@ -20,6 +20,8 @@
 		94ED27F016E024F20044ED33 /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27EB16E024F20044ED33 /* MASShortcutView+UserDefaults.m */; };
 		94ED27F416E026370044ED33 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ED27F316E026360044ED33 /* Carbon.framework */; };
 		94ED27F816E02A900044ED33 /* MyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27F716E02A900044ED33 /* MyWindow.m */; };
+		94ED27FE16E034820044ED33 /* MyPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27FC16E034820044ED33 /* MyPrefsWindowController.m */; };
+		94ED27FF16E034820044ED33 /* MyPrefsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,10 @@
 		94ED27F316E026360044ED33 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		94ED27F616E02A900044ED33 /* MyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindow.h; sourceTree = "<group>"; };
 		94ED27F716E02A900044ED33 /* MyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindow.m; sourceTree = "<group>"; };
+		94ED27FB16E034820044ED33 /* MyPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPrefsWindowController.h; sourceTree = "<group>"; };
+		94ED27FC16E034820044ED33 /* MyPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPrefsWindowController.m; sourceTree = "<group>"; };
+		94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPrefsWindow.xib; sourceTree = "<group>"; };
+		94ED280016E034F10044ED33 /* MyShortcuts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyShortcuts.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +110,11 @@
 		94ED27A116E01A440044ED33 /* AppGrid */ = {
 			isa = PBXGroup;
 			children = (
+				94ED280016E034F10044ED33 /* MyShortcuts.h */,
 				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
 				94ED27F516E02A770044ED33 /* Model */,
-				94ED27AD16E01A440044ED33 /* AppDelegate.h */,
-				94ED27AE16E01A440044ED33 /* AppDelegate.m */,
-				94ED27B016E01A440044ED33 /* MainMenu.xib */,
+				94ED27F916E034510044ED33 /* Controller */,
+				94ED27FA16E034580044ED33 /* XIBs */,
 				94ED27A216E01A440044ED33 /* Supporting Files */,
 			);
 			path = AppGrid;
@@ -150,6 +156,26 @@
 				94ED27F716E02A900044ED33 /* MyWindow.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		94ED27F916E034510044ED33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				94ED27AD16E01A440044ED33 /* AppDelegate.h */,
+				94ED27AE16E01A440044ED33 /* AppDelegate.m */,
+				94ED27FB16E034820044ED33 /* MyPrefsWindowController.h */,
+				94ED27FC16E034820044ED33 /* MyPrefsWindowController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		94ED27FA16E034580044ED33 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				94ED27B016E01A440044ED33 /* MainMenu.xib */,
+				94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */,
+			);
+			name = XIBs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +232,7 @@
 				94ED27A616E01A440044ED33 /* InfoPlist.strings in Resources */,
 				94ED27AC16E01A440044ED33 /* Credits.rtf in Resources */,
 				94ED27B216E01A440044ED33 /* MainMenu.xib in Resources */,
+				94ED27FF16E034820044ED33 /* MyPrefsWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +251,7 @@
 				94ED27EF16E024F20044ED33 /* MASShortcutView.m in Sources */,
 				94ED27F016E024F20044ED33 /* MASShortcutView+UserDefaults.m in Sources */,
 				94ED27F816E02A900044ED33 /* MyWindow.m in Sources */,
+				94ED27FE16E034820044ED33 /* MyPrefsWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,41 +8,88 @@
 
 #import "AppDelegate.h"
 
-#import "MASShortcutView+UserDefaults.h"
 #import "MASShortcut+UserDefaults.h"
+#import "MyShortcuts.h"
 
 #import "MyWindow.h"
 
 @implementation AppDelegate
 
-- (void) showWindowPosition {
+- (void) alignAllWindows {
     for (MyWindow* win in [MyWindow allWindows]) {
-        NSSize p = [win size];
-        
-        p.width += 10;
-        p.height += 10;
-        
-        [win setSize:p];
+        [win moveToGridProps:[win gridProps]];
     }
-    
-//    NSPoint p = [win topLeft];
-//    
-//    p.x += 10;
-//    p.y -= 10;
-//    
-//    [win setTopLeft:p];
-    
+}
+
+- (void) moveLeft {
+    MyWindow* win = [MyWindow focusedWindow];
+    NSRect r = [win gridProps];
+    r.origin.x = MAX(r.origin.x - 1, 0);
+    [win moveToGridProps:r];
+}
+
+- (void) moveRight {
+    MyWindow* win = [MyWindow focusedWindow];
+    NSRect r = [win gridProps];
+    r.origin.x = MIN(r.origin.x + 1, 2);
+    [win moveToGridProps:r];
+}
+
+- (void) growRight {
+    MyWindow* win = [MyWindow focusedWindow];
+    NSRect r = [win gridProps];
+    r.size.width = MIN(r.size.width + 1, 3 - r.origin.x);
+    [win moveToGridProps:r];
+}
+
+- (void) shrinkRight {
+    MyWindow* win = [MyWindow focusedWindow];
+    NSRect r = [win gridProps];
+    r.size.width = MAX(r.size.width - 1, 1);
+    [win moveToGridProps:r];
+}
+
+- (void) shrinkToLower {
+    MyWindow* win = [MyWindow focusedWindow];
+    NSRect r = [win gridProps];
+    r.origin.y = 1;
+    r.size.height = 1;
+    [win moveToGridProps:r];
+}
+
+- (void) shrinkToUpper {
+    MyWindow* win = [MyWindow focusedWindow];
+    NSRect r = [win gridProps];
+    r.origin.y = 0;
+    r.size.height = 1;
+    [win moveToGridProps:r];
+}
+
+- (void) fillEntierColumn {
+    MyWindow* win = [MyWindow focusedWindow];
+    NSRect r = [win gridProps];
+    r.origin.y = 0;
+    r.size.height = 2;
+    [win moveToGridProps:r];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSLog(@"accessibility enabled? %d", AXAPIEnabled());
     
-    NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
-    self.shortcutView.associatedUserDefaultsKey = kPreferenceGlobalShortcut;
+    self.myPrefsWindowController = [[MyPrefsWindowController alloc] init];
+    [self.myPrefsWindowController showWindow:self];
     
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kPreferenceGlobalShortcut handler:^{
-        [self showWindowPosition];
-	}];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyAlignAllToGridShortcutKey handler:^{ [self alignAllWindows]; }];
+    
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyMoveLeftShortcutKey handler:^{ [self moveLeft]; }];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyMoveRightShortcutKey handler:^{ [self moveRight]; }];
+    
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyGrowRightShortcutKey handler:^{ [self growRight]; }];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkRightShortcutKey handler:^{ [self shrinkRight]; }];
+    
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkToLowerRowShortcutKey handler:^{ [self shrinkToLower]; }];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkToUpperRowShortcutKey handler:^{ [self shrinkToUpper]; }];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyFillEntireColumnShortcutKey handler:^{ [self fillEntierColumn]; }];
 }
 
 @end
