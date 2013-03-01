@@ -110,12 +110,15 @@
 
 - (void) bindDefaultsKey:(NSString*)key toSelector:(SEL)sel {
     [MASShortcut registerGlobalShortcutWithUserDefaultsKey:key handler:^{
-        if ([MyUniversalAccessHelper complainIfNeeded])
-            return;
-        
-        [self performSelectorOnMainThread:sel
-                               withObject:nil
-                            waitUntilDone:NO];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([MyUniversalAccessHelper complainIfNeeded])
+                return;
+            
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [self performSelector:sel];
+#pragma clang diagnostic pop
+        });
     }];
 }
 
