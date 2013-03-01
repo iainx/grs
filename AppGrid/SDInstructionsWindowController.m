@@ -69,6 +69,7 @@
     NSLog(@"%@", imageNames);
 	
 	for (NSString *imageName in [imageNames reverseObjectEnumerator]) {
+        NSLog(@"%@", imageName);
 		NSImage *image = [NSImage imageNamed:imageName];
 		
 		NSRect imageViewFrame = NSZeroRect;
@@ -119,6 +120,8 @@
 	
 	if (self.selectedImageIndex == oldSelectedImage)
 		return;
+    
+    NSLog(@"%ld", self.selectedImageIndex);
 	
 	NSView *oldSubview = [[self.imageViewContainer subviews] lastObject];
 	NSView *newSubview = [self.imageViews objectAtIndex:self.selectedImageIndex];
