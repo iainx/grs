@@ -6,6 +6,6 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface SDInstructionsWindowInsetTextField : NSTextField
+@interface SDHowToWindowInsetTextField : NSTextField
 
 @end

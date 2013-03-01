@@ -5,6 +5,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SDInstructionsWindow : NSWindow
+@interface SDHowToWindow : NSWindow
 
 @end

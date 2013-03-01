@@ -5,7 +5,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SDInstructionsWindowController : NSWindowController
+@interface SDHowToWindowController : NSWindowController
 
 @property IBOutlet NSView *imageViewContainer;
 @property IBOutlet NSSegmentedControl *backForwardButton;

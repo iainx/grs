@@ -3,10 +3,10 @@
 //  Copyright (c) 2013 Steven Degutis. All rights reserved.
 //
 
-#import "SDInstructionsWindowInsetTextField.h"
+#import "SDHowToWindowInsetTextField.h"
 
 
-@implementation SDInstructionsWindowInsetTextField
+@implementation SDHowToWindowInsetTextField
 
 - (id) initWithCoder:(NSCoder*)coder {
 	if (self = [super initWithCoder:coder]) {

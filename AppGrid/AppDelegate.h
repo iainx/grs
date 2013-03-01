@@ -11,7 +11,7 @@
 #import "MyPrefsWindowController.h"
 #import "MyActor.h"
 
-#import "SDInstructionsWindowController.h"
+#import "SDHowToWindowController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate>
 
@@ -21,6 +21,6 @@
 @property MyPrefsWindowController *myPrefsWindowController;
 @property MyActor *myActor;
 
-@property SDInstructionsWindowController* instructionsWindowController;
+@property SDHowToWindowController* howToWindowController;
 
 @end

@@ -5,6 +5,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SDRoundedInstructionsImageView : NSImageView
+@interface SDRoundedHowToImageView : NSImageView
 
 @end

@@ -3,10 +3,10 @@
 //  Copyright (c) 2013 Steven Degutis. All rights reserved.
 //
 
-#import "SDRoundedInstructionsImageView.h"
+#import "SDRoundedHowToImageView.h"
 
 
-@implementation SDRoundedInstructionsImageView
+@implementation SDRoundedHowToImageView
 
 - (void) drawRect:(NSRect)dirtyRect {
 	float r = 7.0;

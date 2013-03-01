@@ -3,10 +3,10 @@
 //  Copyright (c) 2013 Steven Degutis. All rights reserved.
 //
 
-#import "SDInstructionsWindowController.h"
-#import "SDRoundedInstructionsImageView.h"
+#import "SDHowToWindowController.h"
+#import "SDRoundedHowToImageView.h"
 
-@interface SDInstructionsWindowController ()
+@interface SDHowToWindowController ()
 
 @property NSMutableArray *imageViews;
 @property NSInteger selectedImageIndex;
@@ -15,7 +15,7 @@
 
 #define SDInstructionsWindowFirstTimePastKey @"SDInstructionsWindowFirstTimePastForVersion" // never change this line, ever.
 
-@implementation SDInstructionsWindowController
+@implementation SDHowToWindowController
 
 - (void) showInstructionsWindowFirstTimeOnly {
     NSString* version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
@@ -73,7 +73,7 @@
 //		imageViewFrame.origin = NSMakePoint(1.0, 1.0);
 		imageViewFrame = NSIntegralRect(imageViewFrame);
 		
-		NSImageView *imageView = [[SDRoundedInstructionsImageView alloc] initWithFrame:imageViewFrame];
+		NSImageView *imageView = [[SDRoundedHowToImageView alloc] initWithFrame:imageViewFrame];
 		[imageView setImageScaling:NSScaleNone];
 		[imageView setImageAlignment:NSImageAlignCenter];
 		[imageView setImage:image];
