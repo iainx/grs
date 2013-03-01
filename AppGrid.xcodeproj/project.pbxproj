@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C116E0DDD700868523 /* MyGrid.m */; };
 		94ED279C16E01A440044ED33 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ED279B16E01A440044ED33 /* Cocoa.framework */; };
 		94ED27A616E01A440044ED33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27A416E01A440044ED33 /* InfoPlist.strings */; };
 		94ED27A816E01A440044ED33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27A716E01A440044ED33 /* main.m */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94D6C0C016E0DDD700868523 /* MyGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGrid.h; sourceTree = "<group>"; };
+		94D6C0C116E0DDD700868523 /* MyGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGrid.m; sourceTree = "<group>"; };
 		94ED279816E01A440044ED33 /* AppGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ED279B16E01A440044ED33 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		94ED279E16E01A440044ED33 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -169,6 +172,8 @@
 			children = (
 				94ED27F616E02A900044ED33 /* MyWindow.h */,
 				94ED27F716E02A900044ED33 /* MyWindow.m */,
+				94D6C0C016E0DDD700868523 /* MyGrid.h */,
+				94D6C0C116E0DDD700868523 /* MyGrid.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				94ED27FE16E034820044ED33 /* MyPrefsWindowController.m in Sources */,
 				94ED280716E089F60044ED33 /* SDPrettyLine.m in Sources */,
 				94ED280F16E09D570044ED33 /* MyUniversalAccessHelper.m in Sources */,
+				94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

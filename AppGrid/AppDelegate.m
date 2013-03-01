@@ -14,6 +14,7 @@
 #import "MyWindow.h"
 
 #import "MyUniversalAccessHelper.h"
+#import "MyGrid.h"
 
 @implementation AppDelegate
 
@@ -92,6 +93,25 @@
 
 - (void) awakeFromNib {
     [self loadStatusItem];
+}
+
+- (IBAction) changeNumberOfGridColumns:(id)sender {
+    NSInteger oldNum = [MyGrid width];
+    NSInteger newNum = [[sender title] integerValue];
+    
+    if (oldNum != newNum)
+        [MyGrid setWidth:newNum];
+}
+
+- (void) menuNeedsUpdate:(NSMenu *)menu {
+    for (NSMenuItem* item in [menu itemArray]) {
+        [item setState:NSOffState];
+    }
+    
+    NSInteger num = [MyGrid width];
+    NSString* numString = [NSString stringWithFormat:@"%ld", num];
+    
+    [[menu itemWithTitle:numString] setState:NSOnState];
 }
 
 - (IBAction) reallyShowAboutPanel:(id)sender {

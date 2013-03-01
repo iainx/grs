@@ -10,7 +10,7 @@
 
 #import "MyPrefsWindowController.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate>
 
 @property NSStatusItem* statusItem;
 @property IBOutlet NSMenu* statusBarMenu;
