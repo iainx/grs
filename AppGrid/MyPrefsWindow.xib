@@ -237,7 +237,7 @@
 						<object class="NSTextField" id="290677276">
 							<reference key="NSNextResponder" ref="9427364"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{19, 79}, {170, 17}}</string>
+							<string key="NSFrame">{{64, 79}, {125, 17}}</string>
 							<reference key="NSSuperview" ref="9427364"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="805685866"/>
@@ -246,7 +246,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="156350463">
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Shrink down to lower row:</string>
+								<string key="NSContents">Move to lower row:</string>
 								<reference key="NSSupport" ref="181864358"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
 								<reference key="NSControlView" ref="290677276"/>
@@ -268,7 +268,7 @@
 						<object class="NSTextField" id="403847300">
 							<reference key="NSNextResponder" ref="9427364"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{17, 51}, {172, 17}}</string>
+							<string key="NSFrame">{{62, 51}, {127, 17}}</string>
 							<reference key="NSSuperview" ref="9427364"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="607946988"/>
@@ -277,7 +277,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="587395782">
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Shrink down to upper row:</string>
+								<string key="NSContents">Move to upper row:</string>
 								<reference key="NSSupport" ref="181864358"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
 								<reference key="NSControlView" ref="403847300"/>
@@ -549,9 +549,9 @@
 							<reference ref="805685866"/>
 							<reference ref="290677276"/>
 							<reference ref="607946988"/>
-							<reference ref="403847300"/>
 							<reference ref="482571989"/>
 							<reference ref="715412830"/>
+							<reference ref="403847300"/>
 						</array>
 						<reference key="parent" ref="904973221"/>
 					</object>

@@ -102,6 +102,8 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
 }
 
 - (IBAction) showHotKeysWindow:(id)sender {
+    [NSApp activateIgnoringOtherApps:YES];
+    
     if (self.myPrefsWindowController == nil)
         self.myPrefsWindowController = [[MyPrefsWindowController alloc] init];
     
