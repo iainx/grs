@@ -13,9 +13,7 @@
 
 #import "MyWindow.h"
 
-dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
-    return ^{ dispatch_async(dispatch_get_main_queue(), blk); };
-}
+#import "MyUniversalAccessHelper.h"
 
 @implementation AppDelegate
 
@@ -110,24 +108,35 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
     [self.myPrefsWindowController showWindow:self];
 }
 
+- (void) bindDefaultsKey:(NSString*)key toSelector:(SEL)sel {
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:key handler:^{
+        if ([MyUniversalAccessHelper complainIfNeeded])
+            return;
+        
+        [self performSelectorOnMainThread:sel
+                               withObject:nil
+                            waitUntilDone:NO];
+    }];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    NSLog(@"accessibility enabled? %d", AXAPIEnabled());
+    [MyUniversalAccessHelper complainIfNeeded];
     
     [MASShortcut setAllowsAnyHotkeyWithOptionModifier:YES];
     
 //    [self showHotKeysWindow:self];
     
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyAlignAllToGridShortcutKey handler:MyDoOnMainThread(^{ [self alignAllWindows]; })];
+    [self bindDefaultsKey:MyAlignAllToGridShortcutKey toSelector:@selector(alignAllWindows)];
     
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyMoveLeftShortcutKey handler:MyDoOnMainThread(^{ [self moveLeft]; })];
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyMoveRightShortcutKey handler:MyDoOnMainThread(^{ [self moveRight]; })];
+    [self bindDefaultsKey:MyMoveLeftShortcutKey toSelector:@selector(moveLeft)];
+    [self bindDefaultsKey:MyMoveRightShortcutKey toSelector:@selector(moveRight)];
     
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyGrowRightShortcutKey handler:MyDoOnMainThread(^{ [self growRight]; })];
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkRightShortcutKey handler:MyDoOnMainThread(^{ [self shrinkRight]; })];
+    [self bindDefaultsKey:MyGrowRightShortcutKey toSelector:@selector(growRight)];
+    [self bindDefaultsKey:MyShrinkRightShortcutKey toSelector:@selector(shrinkRight)];
     
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkToLowerRowShortcutKey handler:MyDoOnMainThread(^{ [self shrinkToLower]; })];
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkToUpperRowShortcutKey handler:MyDoOnMainThread(^{ [self shrinkToUpper]; })];
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyFillEntireColumnShortcutKey handler:MyDoOnMainThread(^{ [self fillEntierColumn]; })];
+    [self bindDefaultsKey:MyShrinkToLowerRowShortcutKey toSelector:@selector(shrinkToLower)];
+    [self bindDefaultsKey:MyShrinkToUpperRowShortcutKey toSelector:@selector(shrinkToUpper)];
+    [self bindDefaultsKey:MyFillEntireColumnShortcutKey toSelector:@selector(fillEntierColumn)];
 }
 
 @end

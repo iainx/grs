@@ -26,6 +26,7 @@
 		94ED280716E089F60044ED33 /* SDPrettyLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED280616E089F60044ED33 /* SDPrettyLine.m */; };
 		94ED280916E08F880044ED33 /* statusitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ED280816E08F880044ED33 /* statusitem.png */; };
 		94ED280C16E0909D0044ED33 /* statusitem_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ED280B16E0909D0044ED33 /* statusitem_pressed.png */; };
+		94ED280F16E09D570044ED33 /* MyUniversalAccessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED280E16E09D570044ED33 /* MyUniversalAccessHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		94ED280616E089F60044ED33 /* SDPrettyLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPrettyLine.m; sourceTree = "<group>"; };
 		94ED280816E08F880044ED33 /* statusitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusitem.png; sourceTree = "<group>"; };
 		94ED280B16E0909D0044ED33 /* statusitem_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusitem_pressed.png; sourceTree = "<group>"; };
+		94ED280D16E09D570044ED33 /* MyUniversalAccessHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUniversalAccessHelper.h; sourceTree = "<group>"; };
+		94ED280E16E09D570044ED33 /* MyUniversalAccessHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUniversalAccessHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,8 @@
 				94ED27AE16E01A440044ED33 /* AppDelegate.m */,
 				94ED27FB16E034820044ED33 /* MyPrefsWindowController.h */,
 				94ED27FC16E034820044ED33 /* MyPrefsWindowController.m */,
+				94ED280D16E09D570044ED33 /* MyUniversalAccessHelper.h */,
+				94ED280E16E09D570044ED33 /* MyUniversalAccessHelper.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				94ED27F816E02A900044ED33 /* MyWindow.m in Sources */,
 				94ED27FE16E034820044ED33 /* MyPrefsWindowController.m in Sources */,
 				94ED280716E089F60044ED33 /* SDPrettyLine.m in Sources */,
+				94ED280F16E09D570044ED33 /* MyUniversalAccessHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
