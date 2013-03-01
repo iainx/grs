@@ -19,6 +19,4 @@
 - (CGRect) gridProps;
 - (void) moveToGridProps:(CGRect)gridProps;
 
-- (NSString*) title;
-
 @end

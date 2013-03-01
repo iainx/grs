@@ -13,6 +13,10 @@
 
 #import "MyWindow.h"
 
+dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
+    return ^{ dispatch_async(dispatch_get_main_queue(), blk); };
+}
+
 @implementation AppDelegate
 
 + (void) initialize {
@@ -23,12 +27,18 @@
 }
 
 - (void) alignAllWindows {
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    return;
+    
     for (MyWindow* win in [MyWindow allWindows]) {
         [win moveToGridProps:[win gridProps]];
     }
 }
 
 - (void) moveLeft {
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    return;
+    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.x = MAX(r.origin.x - 1, 0);
@@ -36,13 +46,20 @@
 }
 
 - (void) moveRight {
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    return;
+    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.x = MIN(r.origin.x + 1, 2);
+//    CGRect r = CGRectMake(0, 0, 1, 1);
     [win moveToGridProps:r];
 }
 
 - (void) growRight {
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    return;
+    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.size.width = MIN(r.size.width + 1, 3 - r.origin.x);
@@ -50,6 +67,9 @@
 }
 
 - (void) shrinkRight {
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    return;
+    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.size.width = MAX(r.size.width - 1, 1);
@@ -57,6 +77,9 @@
 }
 
 - (void) shrinkToLower {
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    return;
+    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.y = 1;
@@ -65,6 +88,9 @@
 }
 
 - (void) shrinkToUpper {
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    return;
+    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.y = 0;
@@ -73,6 +99,9 @@
 }
 
 - (void) fillEntierColumn {
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    return;
+    
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.y = 0;
@@ -86,17 +115,17 @@
     self.myPrefsWindowController = [[MyPrefsWindowController alloc] init];
     [self.myPrefsWindowController showWindow:self];
     
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyAlignAllToGridShortcutKey handler:^{ [self alignAllWindows]; }];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyAlignAllToGridShortcutKey handler:MyDoOnMainThread(^{ [self alignAllWindows]; })];
     
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyMoveLeftShortcutKey handler:^{ [self moveLeft]; }];
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyMoveRightShortcutKey handler:^{ [self moveRight]; }];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyMoveLeftShortcutKey handler:MyDoOnMainThread(^{ [self moveLeft]; })];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyMoveRightShortcutKey handler:MyDoOnMainThread(^{ [self moveRight]; })];
     
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyGrowRightShortcutKey handler:^{ [self growRight]; }];
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkRightShortcutKey handler:^{ [self shrinkRight]; }];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyGrowRightShortcutKey handler:MyDoOnMainThread(^{ [self growRight]; })];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkRightShortcutKey handler:MyDoOnMainThread(^{ [self shrinkRight]; })];
     
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkToLowerRowShortcutKey handler:^{ [self shrinkToLower]; }];
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkToUpperRowShortcutKey handler:^{ [self shrinkToUpper]; }];
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyFillEntireColumnShortcutKey handler:^{ [self fillEntierColumn]; }];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkToLowerRowShortcutKey handler:MyDoOnMainThread(^{ [self shrinkToLower]; })];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyShrinkToUpperRowShortcutKey handler:MyDoOnMainThread(^{ [self shrinkToUpper]; })];
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyFillEntireColumnShortcutKey handler:MyDoOnMainThread(^{ [self fillEntierColumn]; })];
 }
 
 @end

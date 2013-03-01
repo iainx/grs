@@ -24,28 +24,41 @@
             AXUIElementRef app = AXUIElementCreateApplication([runningApp processIdentifier]);
             
             CFArrayRef _windows;
-            if (AXUIElementCopyAttributeValues(app, kAXWindowsAttribute, 0, 100, &_windows) == kAXErrorSuccess) {
+            AXError result = AXUIElementCopyAttributeValues(app, kAXWindowsAttribute, 0, 100, &_windows);
+            if (result == kAXErrorSuccess) {
                 for (NSInteger i = 0; i < CFArrayGetCount(_windows); i++) {
                     AXUIElementRef win = CFArrayGetValueAtIndex(_windows, i);
                     MyWindow* window = [[MyWindow alloc] init];
-                    window.window = win;
+                    window.window = CFRetain(win);
                     [windows addObject:window];
                 }
+                CFRelease(_windows);
             }
+            
+            CFRelease(app);
         }
     }
     
     return windows;
 }
 
+- (void) dealloc {
+    if (self.window)
+        CFRelease(self.window);
+}
+
 + (MyWindow*) focusedWindow {
-    AXUIElementRef systemWideElement = AXUIElementCreateSystemWide();
+    static AXUIElementRef systemWideElement;
+    if (systemWideElement == NULL)
+        systemWideElement = AXUIElementCreateSystemWide();
     
     CFTypeRef app;
     AXUIElementCopyAttributeValue(systemWideElement, kAXFocusedApplicationAttribute, &app);
     
     CFTypeRef win;
     AXError result = AXUIElementCopyAttributeValue(app, (CFStringRef)NSAccessibilityFocusedWindowAttribute, &win);
+    CFRelease(app);
+    
     if (result == kAXErrorSuccess) {
         MyWindow* window = [[MyWindow alloc] init];
         window.window = win;
@@ -96,6 +109,7 @@
     newFrame.size.height = gridProps.size.height * halfScreenHeight;
     
     newFrame = NSInsetRect(newFrame, 5, 5);
+    newFrame = NSIntegralRect(newFrame);
     
 //    NSLog(@"was: %@", NSStringFromRect([self frame]));
 //    NSLog(@" is: %@", NSStringFromRect(newFrame));
@@ -113,17 +127,6 @@
 - (void) setFrame:(CGRect)frame {
     [self setTopLeft:frame.origin];
     [self setSize:frame.size];
-}
-
-- (NSString*) title {
-    CFTypeRef _title;
-    if (AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityTitleAttribute, (CFTypeRef *)&_title) == kAXErrorSuccess) {
-        NSString *title = (__bridge NSString *) _title;
-        if (_title != NULL) CFRelease(_title);
-        return title;
-    }
-    if (_title != NULL) CFRelease(_title);
-    return @"";
 }
 
 - (CGPoint) topLeft {
@@ -148,19 +151,6 @@
     return topLeft;
 }
 
-- (void) setTopLeft:(CGPoint)thePoint {
-    CFTypeRef positionStorage = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, (const void *)&thePoint));
-    
-    AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilityPositionAttribute, positionStorage);
-    BOOL success = (result == kAXErrorSuccess);
-    
-    if (!success)
-        NSLog(@"could not move window");
-    
-    if (positionStorage)
-        CFRelease(positionStorage);
-}
-
 - (CGSize) size {
     CFTypeRef sizeStorage;
     AXError result = AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilitySizeAttribute, &sizeStorage);
@@ -183,10 +173,23 @@
     return size;
 }
 
+- (void) setTopLeft:(CGPoint)thePoint {
+    CFTypeRef positionStorage = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, (const void *)&thePoint));
+    
+    AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilityPositionAttribute, positionStorage);
+    BOOL success = (result == kAXErrorSuccess);
+    
+    if (!success)
+        NSLog(@"could not move window");
+    
+    if (positionStorage)
+        CFRelease(positionStorage);
+}
+
 - (void) setSize:(CGSize)theSize {
     CFTypeRef sizeStorage = (CFTypeRef)(AXValueCreate(kAXValueCGSizeType, (const void *)&theSize));
     
-    AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilitySizeAttribute, (CFTypeRef *)sizeStorage);
+    AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilitySizeAttribute, sizeStorage);
     BOOL success = (result == kAXErrorSuccess);
     
     if (!success)
