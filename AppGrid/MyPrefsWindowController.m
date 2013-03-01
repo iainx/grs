@@ -44,7 +44,7 @@
 }
 
 - (IBAction) resetToDefaults:(id)sender {
-    NSBeginAlertSheet(@"Are you sure you want to reset to the default keys?",
+    NSBeginAlertSheet(@"Really reset to the default keys?",
                       @"Do Nothing",
                       @"Reset Keys",
                       nil,
@@ -53,7 +53,7 @@
                       @selector(resetKeysSheetDidEnd:returnCode:contextInfo:),
                       NULL,
                       NULL,
-                      @"This can't be undone. Well, not easily at least.");
+                      @"This will discard your custom AppGrid hot keys.");
 }
 
 @end

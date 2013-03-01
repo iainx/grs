@@ -113,6 +113,8 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSLog(@"accessibility enabled? %d", AXAPIEnabled());
     
+    [MASShortcut setAllowsAnyHotkeyWithOptionModifier:YES];
+    
     [self showHotKeysWindow:self];
     
     [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MyAlignAllToGridShortcutKey handler:MyDoOnMainThread(^{ [self alignAllWindows]; })];
