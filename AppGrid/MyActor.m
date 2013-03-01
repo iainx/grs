@@ -12,6 +12,7 @@
 #import "MASShortcut+UserDefaults.h"
 #import "MyShortcuts.h"
 #import "MyWindow.h"
+#import "MyGrid.h"
 
 @implementation MyActor
 
@@ -45,14 +46,14 @@
 - (void) moveRight {
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
-    r.origin.x = MIN(r.origin.x + 1, 2);
+    r.origin.x = MIN(r.origin.x + 1, [MyGrid width] - 1);
     [win moveToGridProps:r];
 }
 
 - (void) growRight {
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
-    r.size.width = MIN(r.size.width + 1, 3 - r.origin.x);
+    r.size.width = MIN(r.size.width + 1, [MyGrid width] - r.origin.x);
     [win moveToGridProps:r];
 }
 

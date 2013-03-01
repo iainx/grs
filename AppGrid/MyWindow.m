@@ -8,6 +8,8 @@
 
 #import "MyWindow.h"
 
+#import "MyGrid.h"
+
 @interface MyWindow ()
 
 @property CFTypeRef window;
@@ -74,7 +76,7 @@
     CGRect winFrame = [self frame];
     
     CGRect screenRect = [self realScreenFrame];
-    double thirdScrenWidth = screenRect.size.width / 3.0;
+    double thirdScrenWidth = screenRect.size.width / [MyGrid width];
     double halfScreenHeight = screenRect.size.height / 2.0;
     
     CGRect gridProps;
@@ -100,7 +102,7 @@
 - (void) moveToGridProps:(CGRect)gridProps {
     CGRect screenRect = [self realScreenFrame];
     
-    double thirdScrenWidth = screenRect.size.width / 3.0;
+    double thirdScrenWidth = screenRect.size.width / [MyGrid width];
     double halfScreenHeight = screenRect.size.height / 2.0;
     
     CGRect newFrame;
