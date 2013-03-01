@@ -10,7 +10,11 @@
 
 @interface MyWindow : NSObject
 
++ (NSArray*) allWindows;
 + (MyWindow*) focusedWindow;
+
+
+- (NSString*) title;
 
 - (NSPoint) topLeft;
 - (void) setTopLeft:(NSPoint)thePoint;

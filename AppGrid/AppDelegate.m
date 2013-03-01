@@ -16,7 +16,14 @@
 @implementation AppDelegate
 
 - (void) showWindowPosition {
-    MyWindow* win = [MyWindow focusedWindow];
+    for (MyWindow* win in [MyWindow allWindows]) {
+        NSSize p = [win size];
+        
+        p.width += 10;
+        p.height += 10;
+        
+        [win setSize:p];
+    }
     
 //    NSPoint p = [win topLeft];
 //    
@@ -25,12 +32,6 @@
 //    
 //    [win setTopLeft:p];
     
-    NSSize p = [win size];
-    
-    p.width += 10;
-    p.height += 10;
-    
-    [win setSize:p];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {

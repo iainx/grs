@@ -16,6 +16,28 @@
 
 @implementation MyWindow
 
++ (NSArray*) allWindows {
+    NSMutableArray* windows = [NSMutableArray array];
+    
+    for (NSRunningApplication* runningApp in [[NSWorkspace sharedWorkspace] runningApplications]) {
+        if ([runningApp activationPolicy] == NSApplicationActivationPolicyRegular) {
+            AXUIElementRef app = AXUIElementCreateApplication([runningApp processIdentifier]);
+            
+            CFArrayRef _windows;
+            if (AXUIElementCopyAttributeValues(app, kAXWindowsAttribute, 0, 100, &_windows) == kAXErrorSuccess) {
+                for (NSInteger i = 0; i < CFArrayGetCount(_windows); i++) {
+                    AXUIElementRef win = CFArrayGetValueAtIndex(_windows, i);
+                    MyWindow* window = [[MyWindow alloc] init];
+                    window.window = win;
+                    [windows addObject:window];
+                }
+            }
+        }
+    }
+    
+    return windows;
+}
+
 + (MyWindow*) focusedWindow {
     AXUIElementRef systemWideElement = AXUIElementCreateSystemWide();
     
@@ -31,6 +53,17 @@
     }
     
     return nil;
+}
+
+- (NSString*) title {
+    CFTypeRef _title;
+    if (AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityTitleAttribute, (CFTypeRef *)&_title) == kAXErrorSuccess) {
+        NSString *title = (__bridge NSString *) _title;
+        if (_title != NULL) CFRelease(_title);
+        return title;
+    }
+    if (_title != NULL) CFRelease(_title);
+    return @"";
 }
 
 - (NSPoint) topLeft {
