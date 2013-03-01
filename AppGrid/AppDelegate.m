@@ -8,11 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "MASShortcut+UserDefaults.h"
-#import "MyShortcuts.h"
-
-#import "MyWindow.h"
-
+#import "MASShortcut.h"
 #import "MyUniversalAccessHelper.h"
 #import "MyGrid.h"
 
@@ -23,64 +19,6 @@
         NSDictionary* defaults = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"defaults" withExtension:@"plist"]];
         [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     }
-}
-
-- (void) alignAllWindows {
-    for (MyWindow* win in [MyWindow allWindows]) {
-        [win moveToGridProps:[win gridProps]];
-    }
-}
-
-- (void) moveLeft {
-    MyWindow* win = [MyWindow focusedWindow];
-    CGRect r = [win gridProps];
-    r.origin.x = MAX(r.origin.x - 1, 0);
-    [win moveToGridProps:r];
-}
-
-- (void) moveRight {
-    MyWindow* win = [MyWindow focusedWindow];
-    CGRect r = [win gridProps];
-    r.origin.x = MIN(r.origin.x + 1, 2);
-    [win moveToGridProps:r];
-}
-
-- (void) growRight {
-    MyWindow* win = [MyWindow focusedWindow];
-    CGRect r = [win gridProps];
-    r.size.width = MIN(r.size.width + 1, 3 - r.origin.x);
-    [win moveToGridProps:r];
-}
-
-- (void) shrinkRight {
-    MyWindow* win = [MyWindow focusedWindow];
-    CGRect r = [win gridProps];
-    r.size.width = MAX(r.size.width - 1, 1);
-    [win moveToGridProps:r];
-}
-
-- (void) shrinkToLower {
-    MyWindow* win = [MyWindow focusedWindow];
-    CGRect r = [win gridProps];
-    r.origin.y = 1;
-    r.size.height = 1;
-    [win moveToGridProps:r];
-}
-
-- (void) shrinkToUpper {
-    MyWindow* win = [MyWindow focusedWindow];
-    CGRect r = [win gridProps];
-    r.origin.y = 0;
-    r.size.height = 1;
-    [win moveToGridProps:r];
-}
-
-- (void) fillEntierColumn {
-    MyWindow* win = [MyWindow focusedWindow];
-    CGRect r = [win gridProps];
-    r.origin.y = 0;
-    r.size.height = 2;
-    [win moveToGridProps:r];
 }
 
 - (void) loadStatusItem {
@@ -128,38 +66,15 @@
     [self.myPrefsWindowController showWindow:self];
 }
 
-- (void) bindDefaultsKey:(NSString*)key toSelector:(SEL)sel {
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:key handler:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if ([MyUniversalAccessHelper complainIfNeeded])
-                return;
-            
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            [self performSelector:sel];
-#pragma clang diagnostic pop
-        });
-    }];
-}
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [MyUniversalAccessHelper complainIfNeeded];
     
     [MASShortcut setAllowsAnyHotkeyWithOptionModifier:YES];
     
+    self.myActor = [[MyActor alloc] init];
+    [self.myActor bindMyKeys];
+    
 //    [self showHotKeysWindow:self];
-    
-    [self bindDefaultsKey:MyAlignAllToGridShortcutKey toSelector:@selector(alignAllWindows)];
-    
-    [self bindDefaultsKey:MyMoveLeftShortcutKey toSelector:@selector(moveLeft)];
-    [self bindDefaultsKey:MyMoveRightShortcutKey toSelector:@selector(moveRight)];
-    
-    [self bindDefaultsKey:MyGrowRightShortcutKey toSelector:@selector(growRight)];
-    [self bindDefaultsKey:MyShrinkRightShortcutKey toSelector:@selector(shrinkRight)];
-    
-    [self bindDefaultsKey:MyShrinkToLowerRowShortcutKey toSelector:@selector(shrinkToLower)];
-    [self bindDefaultsKey:MyShrinkToUpperRowShortcutKey toSelector:@selector(shrinkToUpper)];
-    [self bindDefaultsKey:MyFillEntireColumnShortcutKey toSelector:@selector(fillEntierColumn)];
 }
 
 @end

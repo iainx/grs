@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import "MyPrefsWindowController.h"
+#import "MyActor.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate>
 
@@ -16,5 +17,6 @@
 @property IBOutlet NSMenu* statusBarMenu;
 
 @property MyPrefsWindowController *myPrefsWindowController;
+@property MyActor *myActor;
 
 @end
