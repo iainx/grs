@@ -55,40 +55,40 @@
     return nil;
 }
 
-- (NSRect) gridProps {
-    NSRect winFrame = [self frame];
+- (CGRect) gridProps {
+    CGRect winFrame = [self frame];
     
-    NSRect screenRect = [self realScreenFrame];
+    CGRect screenRect = [self realScreenFrame];
     double thirdScrenWidth = screenRect.size.width / 3.0;
     double halfScreenHeight = screenRect.size.height / 2.0;
     
-    NSRect gridProps;
+    CGRect gridProps;
     
     gridProps.origin.x = round((winFrame.origin.x - NSMinX(screenRect)) / thirdScrenWidth);
     gridProps.origin.y = round((winFrame.origin.y - NSMinY(screenRect)) / halfScreenHeight);
     
-    gridProps.size.width = round(winFrame.size.width / thirdScrenWidth);
-    gridProps.size.height = round(winFrame.size.height / halfScreenHeight);
+    gridProps.size.width = MAX(round(winFrame.size.width / thirdScrenWidth), 1);
+    gridProps.size.height = MAX(round(winFrame.size.height / halfScreenHeight), 1);
     
     return gridProps;
 }
 
-- (NSRect) realScreenFrame {
-    NSRect original = [[NSScreen mainScreen] visibleFrame];
-    NSRect reference = [[NSScreen mainScreen] frame];
+- (CGRect) realScreenFrame {
+    CGRect original = [[NSScreen mainScreen] visibleFrame];
+    CGRect reference = [[NSScreen mainScreen] frame];
     return NSMakeRect(original.origin.x,
                       reference.size.height - (reference.origin.y + original.origin.y + original.size.height),
                       original.size.width,
                       original.size.height);
 }
 
-- (void) moveToGridProps:(NSRect)gridProps {
-    NSRect screenRect = [self realScreenFrame];
+- (void) moveToGridProps:(CGRect)gridProps {
+    CGRect screenRect = [self realScreenFrame];
     
     double thirdScrenWidth = screenRect.size.width / 3.0;
     double halfScreenHeight = screenRect.size.height / 2.0;
     
-    NSRect newFrame;
+    CGRect newFrame;
     
     newFrame.origin.x = (gridProps.origin.x * thirdScrenWidth) + NSMinX(screenRect);
     newFrame.origin.y = (gridProps.origin.y * halfScreenHeight) + NSMinY(screenRect);
@@ -103,16 +103,16 @@
     [self setFrame:newFrame];
 }
 
-- (NSRect) frame {
-    NSRect r;
+- (CGRect) frame {
+    CGRect r;
     r.origin = [self topLeft];
     r.size = [self size];
     return r;
 }
 
-- (void) setFrame:(NSRect)frame {
-    [self setSize:frame.size];
+- (void) setFrame:(CGRect)frame {
     [self setTopLeft:frame.origin];
+    [self setSize:frame.size];
 }
 
 - (NSString*) title {
@@ -126,55 +126,55 @@
     return @"";
 }
 
-- (NSPoint) topLeft {
-    CFTypeRef posisitionStorage;
-    AXError result = AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityPositionAttribute, &posisitionStorage);
+- (CGPoint) topLeft {
+    CFTypeRef positionStorage;
+    AXError result = AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityPositionAttribute, &positionStorage);
     
-    NSPoint topLeft;
+    CGPoint topLeft;
     if (result == kAXErrorSuccess) {
-        if (!AXValueGetValue(posisitionStorage, kAXValueCGPointType, (void *)&topLeft)) {
+        if (!AXValueGetValue(positionStorage, kAXValueCGPointType, (void *)&topLeft)) {
             NSLog(@"could not decode topLeft");
-            topLeft = NSZeroPoint;
+            topLeft = CGPointZero;
         }
     }
     else {
         NSLog(@"could not get window topLeft");
-        topLeft = NSZeroPoint;
+        topLeft = CGPointZero;
     }
     
-    if (posisitionStorage)
-        CFRelease(posisitionStorage);
+    if (positionStorage)
+        CFRelease(positionStorage);
     
     return topLeft;
 }
 
-- (void) setTopLeft:(NSPoint)thePoint {
-    CFTypeRef pos = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, (const void *)&thePoint));
+- (void) setTopLeft:(CGPoint)thePoint {
+    CFTypeRef positionStorage = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, (const void *)&thePoint));
     
-    AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilityPositionAttribute, pos);
+    AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilityPositionAttribute, positionStorage);
     BOOL success = (result == kAXErrorSuccess);
     
     if (!success)
         NSLog(@"could not move window");
     
-    if (pos)
-        CFRelease(pos);
+    if (positionStorage)
+        CFRelease(positionStorage);
 }
 
-- (NSSize) size {
+- (CGSize) size {
     CFTypeRef sizeStorage;
     AXError result = AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilitySizeAttribute, &sizeStorage);
     
-    NSSize size;
+    CGSize size;
     if (result == kAXErrorSuccess) {
         if (!AXValueGetValue(sizeStorage, kAXValueCGSizeType, (void *)&size)) {
             NSLog(@"could not decode topLeft");
-            size = NSZeroSize;
+            size = CGSizeZero;
         }
     }
     else {
         NSLog(@"could not get window size");
-        size = NSZeroSize;
+        size = CGSizeZero;
     }
     
     if (sizeStorage)
@@ -183,7 +183,7 @@
     return size;
 }
 
-- (void) setSize:(NSSize)theSize {
+- (void) setSize:(CGSize)theSize {
     CFTypeRef sizeStorage = (CFTypeRef)(AXValueCreate(kAXValueCGSizeType, (const void *)&theSize));
     
     AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilitySizeAttribute, (CFTypeRef *)sizeStorage);

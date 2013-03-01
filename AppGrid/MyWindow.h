@@ -13,11 +13,11 @@
 + (NSArray*) allWindows;
 + (MyWindow*) focusedWindow;
 
-- (NSRect) frame;
-- (void) setFrame:(NSRect)frame;
+- (CGRect) frame;
+- (void) setFrame:(CGRect)frame;
 
-- (NSRect) gridProps;
-- (void) moveToGridProps:(NSRect)gridProps;
+- (CGRect) gridProps;
+- (void) moveToGridProps:(CGRect)gridProps;
 
 - (NSString*) title;
 

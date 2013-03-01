@@ -30,35 +30,35 @@
 
 - (void) moveLeft {
     MyWindow* win = [MyWindow focusedWindow];
-    NSRect r = [win gridProps];
+    CGRect r = [win gridProps];
     r.origin.x = MAX(r.origin.x - 1, 0);
     [win moveToGridProps:r];
 }
 
 - (void) moveRight {
     MyWindow* win = [MyWindow focusedWindow];
-    NSRect r = [win gridProps];
+    CGRect r = [win gridProps];
     r.origin.x = MIN(r.origin.x + 1, 2);
     [win moveToGridProps:r];
 }
 
 - (void) growRight {
     MyWindow* win = [MyWindow focusedWindow];
-    NSRect r = [win gridProps];
+    CGRect r = [win gridProps];
     r.size.width = MIN(r.size.width + 1, 3 - r.origin.x);
     [win moveToGridProps:r];
 }
 
 - (void) shrinkRight {
     MyWindow* win = [MyWindow focusedWindow];
-    NSRect r = [win gridProps];
+    CGRect r = [win gridProps];
     r.size.width = MAX(r.size.width - 1, 1);
     [win moveToGridProps:r];
 }
 
 - (void) shrinkToLower {
     MyWindow* win = [MyWindow focusedWindow];
-    NSRect r = [win gridProps];
+    CGRect r = [win gridProps];
     r.origin.y = 1;
     r.size.height = 1;
     [win moveToGridProps:r];
@@ -66,7 +66,7 @@
 
 - (void) shrinkToUpper {
     MyWindow* win = [MyWindow focusedWindow];
-    NSRect r = [win gridProps];
+    CGRect r = [win gridProps];
     r.origin.y = 0;
     r.size.height = 1;
     [win moveToGridProps:r];
@@ -74,7 +74,7 @@
 
 - (void) fillEntierColumn {
     MyWindow* win = [MyWindow focusedWindow];
-    NSRect r = [win gridProps];
+    CGRect r = [win gridProps];
     r.origin.y = 0;
     r.size.height = 2;
     [win moveToGridProps:r];
