@@ -33,4 +33,27 @@
     self.fillEntireColumnShortcutView.associatedUserDefaultsKey = MyFillEntireColumnShortcutKey;
 }
 
+- (void) resetKeysSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void  *)contextInfo; {
+    if (returnCode == 0) {
+        NSDictionary* defaults = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"defaults" withExtension:@"plist"]];
+        for (NSString* key in defaults) {
+            NSData* val = [defaults objectForKey:key];
+            [[NSUserDefaults standardUserDefaults] setObject:val forKey:key];
+        }
+    }
+}
+
+- (IBAction) resetToDefaults:(id)sender {
+    NSBeginAlertSheet(@"Are you sure you want to reset to the default keys?",
+                      @"Do Nothing",
+                      @"Reset Keys",
+                      nil,
+                      [sender window],
+                      self,
+                      @selector(resetKeysSheetDidEnd:returnCode:contextInfo:),
+                      NULL,
+                      NULL,
+                      @"This can't be undone. Well, not easily at least.");
+}
+
 @end
