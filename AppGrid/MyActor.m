@@ -14,6 +14,12 @@
 #import "MyWindow.h"
 #import "MyGrid.h"
 
+@interface MyActor ()
+
+@property BOOL keysAreUnbound;
+
+@end
+
 @implementation MyActor
 
 - (void) bindMyKeys {
@@ -91,12 +97,19 @@
 - (void) bindDefaultsKey:(NSString*)key action:(dispatch_block_t)action {
     [MASShortcut registerGlobalShortcutWithUserDefaultsKey:key handler:^{
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.keysAreUnbound)
+                return;
+            
             if ([MyUniversalAccessHelper complainIfNeeded])
                 return;
             
             action();
         });
     }];
+}
+
+- (void) unbindMyKeys {
+    self.keysAreUnbound = YES;
 }
 
 @end

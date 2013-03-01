@@ -66,7 +66,25 @@
     [self.myPrefsWindowController showWindow:self];
 }
 
+- (void) endTrialIfNecessary {
+    NSDate* expires = [NSDate dateWithTimeIntervalSinceReferenceDate:383851680 + (60 * 60 * 24 * 7)];
+    NSDate* now = [NSDate date];
+    BOOL expired = ([now compare: expires] == NSOrderedDescending);
+    
+    if (expired) {
+        [self.myActor unbindMyKeys];
+        
+        [NSApp activateIgnoringOtherApps:YES];
+        NSRunAlertPanel(@"AppGrid's trial period is over", @"Let me know if you want an extended trial.", @"OK", nil, nil);
+        [NSApp terminate:self];
+    }
+    
+    [self performSelector:@selector(endTrialIfNecessary) withObject:nil afterDelay:60];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [self endTrialIfNecessary];
+    
     [MyUniversalAccessHelper complainIfNeeded];
     
     [MASShortcut setAllowsAnyHotkeyWithOptionModifier:YES];

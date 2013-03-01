@@ -120,8 +120,6 @@
 	if (self.selectedImageIndex == oldSelectedImage)
 		return;
     
-    NSLog(@"%ld", self.selectedImageIndex);
-	
 	NSView *oldSubview = [[self.imageViewContainer subviews] lastObject];
 	NSView *newSubview = [self.imageViews objectAtIndex:self.selectedImageIndex];
 	

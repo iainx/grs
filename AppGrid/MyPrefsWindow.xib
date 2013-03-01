@@ -408,7 +408,6 @@
 							<string key="NSFrame">{{12, 149}, {363, 5}}</string>
 							<reference key="NSSuperview" ref="9427364"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSOffsets">{0, 0}</string>
 							<object class="NSTextFieldCell" key="NSTitleCell">
@@ -588,7 +587,6 @@
 											<string key="NSFrame">{{266, 16}, {17, 17}}</string>
 											<reference key="NSSuperview" ref="620128283"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView"/>
 											<string key="NSReuseIdentifierKey">_NS:1535</string>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="23070274">
@@ -1146,7 +1144,7 @@
 				<string key="49.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBWindowTemplateEditedContentRect">{{380, 496}, {480, 360}}</string>
-				<integer value="1" key="5.NSWindowTemplate.visibleAtLaunch"/>
+				<boolean value="NO" key="5.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="50.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="51.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="52.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1206,6 +1204,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">MyPrefsWindowController</string>
 					<string key="superclassName">NSWindowController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">resetToDefaults:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">resetToDefaults:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">resetToDefaults:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="alignAllToGridShortcutView">MASShortcutView</string>
 						<string key="fillEntireColumnShortcutView">MASShortcutView</string>

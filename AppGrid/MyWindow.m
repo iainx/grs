@@ -22,8 +22,6 @@
     NSMutableArray* windows = [NSMutableArray array];
     
     for (NSRunningApplication* runningApp in [[NSWorkspace sharedWorkspace] runningApplications]) {
-//        NSLog(@"%@", [runningApp localizedName]);
-        
 //        if ([runningApp activationPolicy] == NSApplicationActivationPolicyRegular) {
             AXUIElementRef app = AXUIElementCreateApplication([runningApp processIdentifier]);
             
