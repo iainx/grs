@@ -8,6 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "MASShortcutView.h"
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+
+@property (weak) IBOutlet NSWindow* window;
+
+@property (nonatomic, weak) IBOutlet MASShortcutView *shortcutView;
 
 @end

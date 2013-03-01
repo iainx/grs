@@ -13,6 +13,13 @@
 		94ED27AC16E01A440044ED33 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27AA16E01A440044ED33 /* Credits.rtf */; };
 		94ED27AF16E01A440044ED33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27AE16E01A440044ED33 /* AppDelegate.m */; };
 		94ED27B216E01A440044ED33 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27B016E01A440044ED33 /* MainMenu.xib */; };
+		94ED27EC16E024F20044ED33 /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27E316E024F20044ED33 /* MASShortcut.m */; };
+		94ED27ED16E024F20044ED33 /* MASShortcut+Monitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27E516E024F20044ED33 /* MASShortcut+Monitoring.m */; };
+		94ED27EE16E024F20044ED33 /* MASShortcut+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27E716E024F20044ED33 /* MASShortcut+UserDefaults.m */; };
+		94ED27EF16E024F20044ED33 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27E916E024F20044ED33 /* MASShortcutView.m */; };
+		94ED27F016E024F20044ED33 /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27EB16E024F20044ED33 /* MASShortcutView+UserDefaults.m */; };
+		94ED27F416E026370044ED33 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ED27F316E026360044ED33 /* Carbon.framework */; };
+		94ED27F816E02A900044ED33 /* MyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27F716E02A900044ED33 /* MyWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,19 @@
 		94ED27AD16E01A440044ED33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		94ED27AE16E01A440044ED33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		94ED27B116E01A440044ED33 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		94ED27E216E024F20044ED33 /* MASShortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcut.h; sourceTree = "<group>"; };
+		94ED27E316E024F20044ED33 /* MASShortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcut.m; sourceTree = "<group>"; };
+		94ED27E416E024F20044ED33 /* MASShortcut+Monitoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+Monitoring.h"; sourceTree = "<group>"; };
+		94ED27E516E024F20044ED33 /* MASShortcut+Monitoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut+Monitoring.m"; sourceTree = "<group>"; };
+		94ED27E616E024F20044ED33 /* MASShortcut+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+UserDefaults.h"; sourceTree = "<group>"; };
+		94ED27E716E024F20044ED33 /* MASShortcut+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut+UserDefaults.m"; sourceTree = "<group>"; };
+		94ED27E816E024F20044ED33 /* MASShortcutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcutView.h; sourceTree = "<group>"; };
+		94ED27E916E024F20044ED33 /* MASShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcutView.m; sourceTree = "<group>"; };
+		94ED27EA16E024F20044ED33 /* MASShortcutView+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcutView+UserDefaults.h"; sourceTree = "<group>"; };
+		94ED27EB16E024F20044ED33 /* MASShortcutView+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcutView+UserDefaults.m"; sourceTree = "<group>"; };
+		94ED27F316E026360044ED33 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		94ED27F616E02A900044ED33 /* MyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindow.h; sourceTree = "<group>"; };
+		94ED27F716E02A900044ED33 /* MyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94ED27F416E026370044ED33 /* Carbon.framework in Frameworks */,
 				94ED279C16E01A440044ED33 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +67,7 @@
 		94ED278F16E01A440044ED33 = {
 			isa = PBXGroup;
 			children = (
+				94ED27F316E026360044ED33 /* Carbon.framework */,
 				94ED27A116E01A440044ED33 /* AppGrid */,
 				94ED279A16E01A440044ED33 /* Frameworks */,
 				94ED279916E01A440044ED33 /* Products */,
@@ -82,6 +104,8 @@
 		94ED27A116E01A440044ED33 /* AppGrid */ = {
 			isa = PBXGroup;
 			children = (
+				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
+				94ED27F516E02A770044ED33 /* Model */,
 				94ED27AD16E01A440044ED33 /* AppDelegate.h */,
 				94ED27AE16E01A440044ED33 /* AppDelegate.m */,
 				94ED27B016E01A440044ED33 /* MainMenu.xib */,
@@ -100,6 +124,32 @@
 				94ED27AA16E01A440044ED33 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94ED27E116E024EA0044ED33 /* GlobalShortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				94ED27E216E024F20044ED33 /* MASShortcut.h */,
+				94ED27E316E024F20044ED33 /* MASShortcut.m */,
+				94ED27E416E024F20044ED33 /* MASShortcut+Monitoring.h */,
+				94ED27E516E024F20044ED33 /* MASShortcut+Monitoring.m */,
+				94ED27E616E024F20044ED33 /* MASShortcut+UserDefaults.h */,
+				94ED27E716E024F20044ED33 /* MASShortcut+UserDefaults.m */,
+				94ED27E816E024F20044ED33 /* MASShortcutView.h */,
+				94ED27E916E024F20044ED33 /* MASShortcutView.m */,
+				94ED27EA16E024F20044ED33 /* MASShortcutView+UserDefaults.h */,
+				94ED27EB16E024F20044ED33 /* MASShortcutView+UserDefaults.m */,
+			);
+			name = GlobalShortcuts;
+			sourceTree = "<group>";
+		};
+		94ED27F516E02A770044ED33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94ED27F616E02A900044ED33 /* MyWindow.h */,
+				94ED27F716E02A900044ED33 /* MyWindow.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +218,12 @@
 			files = (
 				94ED27A816E01A440044ED33 /* main.m in Sources */,
 				94ED27AF16E01A440044ED33 /* AppDelegate.m in Sources */,
+				94ED27EC16E024F20044ED33 /* MASShortcut.m in Sources */,
+				94ED27ED16E024F20044ED33 /* MASShortcut+Monitoring.m in Sources */,
+				94ED27EE16E024F20044ED33 /* MASShortcut+UserDefaults.m in Sources */,
+				94ED27EF16E024F20044ED33 /* MASShortcutView.m in Sources */,
+				94ED27F016E024F20044ED33 /* MASShortcutView+UserDefaults.m in Sources */,
+				94ED27F816E02A900044ED33 /* MyWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,61 +8,40 @@
 
 #import "AppDelegate.h"
 
+#import "MASShortcutView+UserDefaults.h"
+#import "MASShortcut+UserDefaults.h"
+
+#import "MyWindow.h"
+
 @implementation AppDelegate
 
-- (BOOL) moveWindow:(CFTypeRef)window to:(NSPoint)thePoint {
-    CFTypeRef _position = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, (const void *)&thePoint));
+- (void) showWindowPosition {
+    MyWindow* win = [MyWindow focusedWindow];
     
-    AXError result = AXUIElementSetAttributeValue(window, (CFStringRef)NSAccessibilityPositionAttribute, _position);
-    BOOL success = (result != kAXErrorSuccess);
+//    NSPoint p = [win topLeft];
+//    
+//    p.x += 10;
+//    p.y -= 10;
+//    
+//    [win setTopLeft:p];
     
-    if (!success)
-        NSLog(@"ERROR: Could not change position");
+    NSSize p = [win size];
     
-    if (_position != NULL) CFRelease(_position);
-    return success;
+    p.width += 10;
+    p.height += 10;
+    
+    [win setSize:p];
 }
 
-//- (NSString*) titleFor:(CFTypeRef)_window2 {
-//    CFTypeRef _title;
-//    if (AXUIElementCopyAttributeValue(_window2, (CFStringRef)NSAccessibilityTitleAttribute, (CFTypeRef *)&_title) == kAXErrorSuccess) {
-//        NSString *title = (__bridge NSString *) _title;
-//        if (_title != NULL) CFRelease(_title);
-//        return title;
-//    }
-//    if (_title != NULL) CFRelease(_title);
-//    return @"";
-//}
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//        NSLog(@"%d", AXAPIEnabled());
-        
-        AXUIElementRef systemWideElement = AXUIElementCreateSystemWide();
-        
-        CFTypeRef _app;
-        AXUIElementCopyAttributeValue(systemWideElement, kAXFocusedApplicationAttribute, &_app);
-        
-//        NSLog(@"%@", _app);
-        
-        CFTypeRef _window2;
-        if (AXUIElementCopyAttributeValue(_app, (CFStringRef)NSAccessibilityFocusedWindowAttribute, &_window2) == kAXErrorSuccess) {
-            
-            
-            BOOL a =
-            [self moveWindow:_window2 to:NSMakePoint(0, 0)];
-            
-            NSLog(@"%d", a);
-            
-            
-//            NSLog(@"%@", [self titleFor:_window2]);
-        }
-        else {
-            NSLog(@"ERROR: Could not fetch focused window");
-        }
-    });
+    NSLog(@"accessibility enabled? %d", AXAPIEnabled());
+    
+    NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
+    self.shortcutView.associatedUserDefaultsKey = kPreferenceGlobalShortcut;
+    
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kPreferenceGlobalShortcut handler:^{
+        [self showWindowPosition];
+	}];
 }
 
 @end
