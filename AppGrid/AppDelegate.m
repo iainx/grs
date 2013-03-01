@@ -75,7 +75,7 @@
     [self.myActor bindMyKeys];
     
     self.howToWindowController = [[SDHowToWindowController alloc] init];
-    [self.howToWindowController showInstructionsWindow];
+    [self.howToWindowController showInstructionsWindowFirstTimeOnly];
 }
 
 @end
