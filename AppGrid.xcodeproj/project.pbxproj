@@ -24,6 +24,8 @@
 		94ED27FF16E034820044ED33 /* MyPrefsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */; };
 		94ED280216E079C50044ED33 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94ED280116E079C50044ED33 /* defaults.plist */; };
 		94ED280716E089F60044ED33 /* SDPrettyLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED280616E089F60044ED33 /* SDPrettyLine.m */; };
+		94ED280916E08F880044ED33 /* statusitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ED280816E08F880044ED33 /* statusitem.png */; };
+		94ED280C16E0909D0044ED33 /* statusitem_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ED280B16E0909D0044ED33 /* statusitem_pressed.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		94ED280116E079C50044ED33 /* defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = defaults.plist; sourceTree = "<group>"; };
 		94ED280516E089F60044ED33 /* SDPrettyLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPrettyLine.h; sourceTree = "<group>"; };
 		94ED280616E089F60044ED33 /* SDPrettyLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPrettyLine.m; sourceTree = "<group>"; };
+		94ED280816E08F880044ED33 /* statusitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusitem.png; sourceTree = "<group>"; };
+		94ED280B16E0909D0044ED33 /* statusitem_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusitem_pressed.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				94ED280416E089E90044ED33 /* View */,
 				94ED27F916E034510044ED33 /* Controller */,
 				94ED27FA16E034580044ED33 /* XIBs */,
+				94ED280A16E08F8A0044ED33 /* Graphics */,
 				94ED27A216E01A440044ED33 /* Supporting Files */,
 			);
 			path = AppGrid;
@@ -194,6 +199,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		94ED280A16E08F8A0044ED33 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				94ED280816E08F880044ED33 /* statusitem.png */,
+				94ED280B16E0909D0044ED33 /* statusitem_pressed.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +264,8 @@
 				94ED27B216E01A440044ED33 /* MainMenu.xib in Resources */,
 				94ED27FF16E034820044ED33 /* MyPrefsWindow.xib in Resources */,
 				94ED280216E079C50044ED33 /* defaults.plist in Resources */,
+				94ED280916E08F880044ED33 /* statusitem.png in Resources */,
+				94ED280C16E0909D0044ED33 /* statusitem_pressed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +421,7 @@
 				94ED27B716E01A440044ED33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

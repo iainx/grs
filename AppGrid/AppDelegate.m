@@ -86,9 +86,8 @@ dispatch_block_t MyDoOnMainThread(dispatch_block_t blk) {
 
 - (void) loadStatusItem {
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-    [self.statusItem setTitle:@"AG"];
-//    [self.statusItem setImage:[NSImage imageNamed:@"statusimage"]];
-//    [self.statusItem setAlternateImage:[NSImage imageNamed:@"statusimage_pressed"]];
+    [self.statusItem setImage:[NSImage imageNamed:@"statusitem"]];
+    [self.statusItem setAlternateImage:[NSImage imageNamed:@"statusitem_pressed"]];
     [self.statusItem setHighlightMode:YES];
     [self.statusItem setMenu:self.statusBarMenu];
 }
