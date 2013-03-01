@@ -15,6 +15,13 @@
 
 @implementation AppDelegate
 
++ (void) initialize {
+    if (self == [AppDelegate self]) {
+        NSDictionary* defaults = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"defaults" withExtension:@"plist"]];
+        [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+    }
+}
+
 - (void) alignAllWindows {
     for (MyWindow* win in [MyWindow allWindows]) {
         [win moveToGridProps:[win gridProps]];

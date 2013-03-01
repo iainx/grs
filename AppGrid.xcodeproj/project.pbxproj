@@ -22,6 +22,7 @@
 		94ED27F816E02A900044ED33 /* MyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27F716E02A900044ED33 /* MyWindow.m */; };
 		94ED27FE16E034820044ED33 /* MyPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27FC16E034820044ED33 /* MyPrefsWindowController.m */; };
 		94ED27FF16E034820044ED33 /* MyPrefsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */; };
+		94ED280216E079C50044ED33 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94ED280116E079C50044ED33 /* defaults.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		94ED27FC16E034820044ED33 /* MyPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPrefsWindowController.m; sourceTree = "<group>"; };
 		94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPrefsWindow.xib; sourceTree = "<group>"; };
 		94ED280016E034F10044ED33 /* MyShortcuts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyShortcuts.h; sourceTree = "<group>"; };
+		94ED280116E079C50044ED33 /* defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = defaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				94ED280016E034F10044ED33 /* MyShortcuts.h */,
+				94ED280116E079C50044ED33 /* defaults.plist */,
 				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
 				94ED27F516E02A770044ED33 /* Model */,
 				94ED27F916E034510044ED33 /* Controller */,
@@ -233,6 +236,7 @@
 				94ED27AC16E01A440044ED33 /* Credits.rtf in Resources */,
 				94ED27B216E01A440044ED33 /* MainMenu.xib in Resources */,
 				94ED27FF16E034820044ED33 /* MyPrefsWindow.xib in Resources */,
+				94ED280216E079C50044ED33 /* defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
