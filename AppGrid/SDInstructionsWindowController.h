@@ -11,5 +11,6 @@
 @property IBOutlet NSSegmentedControl *backForwardButton;
 
 - (void) showInstructionsWindow;
+- (void) showInstructionsWindowFirstTimeOnly;
 
 @end

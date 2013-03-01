@@ -13,7 +13,21 @@
 
 @end
 
+#define SDInstructionsWindowFirstTimePastKey @"SDInstructionsWindowFirstTimePastForVersion" // never change this line, ever.
+
 @implementation SDInstructionsWindowController
+
+- (void) showInstructionsWindowFirstTimeOnly {
+    NSString* version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+    NSString* firstTimeDefaultsKeyForVersion = [NSString stringWithFormat:@"%@%@", SDInstructionsWindowFirstTimePastKey, version];
+    
+    BOOL firstTimePast = [[NSUserDefaults standardUserDefaults] boolForKey:firstTimeDefaultsKeyForVersion];
+    
+    if (!firstTimePast) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:firstTimeDefaultsKeyForVersion];
+        [self showInstructionsWindow];
+    }
+}
 
 - (void) showInstructionsWindow {
 	[NSApp activateIgnoringOtherApps:YES];
