@@ -23,6 +23,7 @@
 		94ED27FE16E034820044ED33 /* MyPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27FC16E034820044ED33 /* MyPrefsWindowController.m */; };
 		94ED27FF16E034820044ED33 /* MyPrefsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */; };
 		94ED280216E079C50044ED33 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94ED280116E079C50044ED33 /* defaults.plist */; };
+		94ED280716E089F60044ED33 /* SDPrettyLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED280616E089F60044ED33 /* SDPrettyLine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPrefsWindow.xib; sourceTree = "<group>"; };
 		94ED280016E034F10044ED33 /* MyShortcuts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyShortcuts.h; sourceTree = "<group>"; };
 		94ED280116E079C50044ED33 /* defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = defaults.plist; sourceTree = "<group>"; };
+		94ED280516E089F60044ED33 /* SDPrettyLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPrettyLine.h; sourceTree = "<group>"; };
+		94ED280616E089F60044ED33 /* SDPrettyLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPrettyLine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,7 @@
 				94ED280116E079C50044ED33 /* defaults.plist */,
 				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
 				94ED27F516E02A770044ED33 /* Model */,
+				94ED280416E089E90044ED33 /* View */,
 				94ED27F916E034510044ED33 /* Controller */,
 				94ED27FA16E034580044ED33 /* XIBs */,
 				94ED27A216E01A440044ED33 /* Supporting Files */,
@@ -179,6 +183,15 @@
 				94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */,
 			);
 			name = XIBs;
+			sourceTree = "<group>";
+		};
+		94ED280416E089E90044ED33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94ED280516E089F60044ED33 /* SDPrettyLine.h */,
+				94ED280616E089F60044ED33 /* SDPrettyLine.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +269,7 @@
 				94ED27F016E024F20044ED33 /* MASShortcutView+UserDefaults.m in Sources */,
 				94ED27F816E02A900044ED33 /* MyWindow.m in Sources */,
 				94ED27FE16E034820044ED33 /* MyPrefsWindowController.m in Sources */,
+				94ED280716E089F60044ED33 /* SDPrettyLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
