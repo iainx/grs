@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9428037A16E2B447005E5153 /* FsprgEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036016E2B447005E5153 /* FsprgEmbeddedStoreController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9428037B16E2B447005E5153 /* FsprgOrderDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036316E2B447005E5153 /* FsprgOrderDocumentRepresentation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9428037C16E2B447005E5153 /* FsprgOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036516E2B447005E5153 /* FsprgOrderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9428037D16E2B447005E5153 /* FsprgStoreParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036716E2B447005E5153 /* FsprgStoreParameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9428037E16E2B447005E5153 /* FsprgFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036A16E2B447005E5153 /* FsprgFileDownload.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9428037F16E2B447005E5153 /* FsprgFulfillment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036C16E2B447005E5153 /* FsprgFulfillment.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9428038016E2B447005E5153 /* FsprgLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036E16E2B447005E5153 /* FsprgLicense.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9428038116E2B447005E5153 /* FsprgOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428037016E2B447005E5153 /* FsprgOrder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9428038216E2B447005E5153 /* FsprgOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428037216E2B447005E5153 /* FsprgOrderItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9428038716E2B459005E5153 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9428038616E2B459005E5153 /* WebKit.framework */; };
+		9428038916E2B6FF005E5153 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9428038816E2B6FF005E5153 /* AddressBook.framework */; };
+		9428039D16E2C506005E5153 /* CFobError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428038C16E2C506005E5153 /* CFobError.m */; };
+		9428039E16E2C506005E5153 /* CFobLicGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428038E16E2C506005E5153 /* CFobLicGenerator.m */; };
+		9428039F16E2C506005E5153 /* CFobLicVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039016E2C506005E5153 /* CFobLicVerifier.m */; };
+		942803A016E2C506005E5153 /* decoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 9428039116E2C506005E5153 /* decoder.c */; };
+		942803A116E2C506005E5153 /* encoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 9428039316E2C506005E5153 /* encoder.c */; };
+		942803A216E2C506005E5153 /* NSData+PECrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039616E2C506005E5153 /* NSData+PECrypt.m */; };
+		942803A316E2C506005E5153 /* NSString-Base64Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039816E2C506005E5153 /* NSString-Base64Extensions.m */; };
+		942803A416E2C506005E5153 /* NSString+PECrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039A16E2C506005E5153 /* NSString+PECrypt.m */; };
+		942803A916E2C5E8005E5153 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 942803A816E2C5E8005E5153 /* libcrypto.dylib */; };
+		942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803AE16E32E24005E5153 /* cocoafob-license.txt */; };
 		94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C116E0DDD700868523 /* MyGrid.m */; };
 		94D6C0C516E0DF4300868523 /* MyActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C416E0DF4300868523 /* MyActor.m */; };
 		94D6C0C816E0E2A900868523 /* SDHowToWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */; };
@@ -42,6 +63,46 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9428035E16E2B447005E5153 /* FsprgEmbeddedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStore.h; sourceTree = "<group>"; };
+		9428035F16E2B447005E5153 /* FsprgEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStoreController.h; sourceTree = "<group>"; };
+		9428036016E2B447005E5153 /* FsprgEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgEmbeddedStoreController.m; sourceTree = "<group>"; };
+		9428036116E2B447005E5153 /* FsprgEmbeddedStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStoreDelegate.h; sourceTree = "<group>"; };
+		9428036216E2B447005E5153 /* FsprgOrderDocumentRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrderDocumentRepresentation.h; sourceTree = "<group>"; };
+		9428036316E2B447005E5153 /* FsprgOrderDocumentRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrderDocumentRepresentation.m; sourceTree = "<group>"; };
+		9428036416E2B447005E5153 /* FsprgOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrderView.h; sourceTree = "<group>"; };
+		9428036516E2B447005E5153 /* FsprgOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrderView.m; sourceTree = "<group>"; };
+		9428036616E2B447005E5153 /* FsprgStoreParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgStoreParameters.h; sourceTree = "<group>"; };
+		9428036716E2B447005E5153 /* FsprgStoreParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgStoreParameters.m; sourceTree = "<group>"; };
+		9428036916E2B447005E5153 /* FsprgFileDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgFileDownload.h; sourceTree = "<group>"; };
+		9428036A16E2B447005E5153 /* FsprgFileDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgFileDownload.m; sourceTree = "<group>"; };
+		9428036B16E2B447005E5153 /* FsprgFulfillment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgFulfillment.h; sourceTree = "<group>"; };
+		9428036C16E2B447005E5153 /* FsprgFulfillment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgFulfillment.m; sourceTree = "<group>"; };
+		9428036D16E2B447005E5153 /* FsprgLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgLicense.h; sourceTree = "<group>"; };
+		9428036E16E2B447005E5153 /* FsprgLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgLicense.m; sourceTree = "<group>"; };
+		9428036F16E2B447005E5153 /* FsprgOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrder.h; sourceTree = "<group>"; };
+		9428037016E2B447005E5153 /* FsprgOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrder.m; sourceTree = "<group>"; };
+		9428037116E2B447005E5153 /* FsprgOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrderItem.h; sourceTree = "<group>"; };
+		9428037216E2B447005E5153 /* FsprgOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrderItem.m; sourceTree = "<group>"; };
+		9428038616E2B459005E5153 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		9428038816E2B6FF005E5153 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		9428038B16E2C506005E5153 /* CFobError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFobError.h; sourceTree = "<group>"; };
+		9428038C16E2C506005E5153 /* CFobError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFobError.m; sourceTree = "<group>"; };
+		9428038D16E2C506005E5153 /* CFobLicGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFobLicGenerator.h; sourceTree = "<group>"; };
+		9428038E16E2C506005E5153 /* CFobLicGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFobLicGenerator.m; sourceTree = "<group>"; };
+		9428038F16E2C506005E5153 /* CFobLicVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFobLicVerifier.h; sourceTree = "<group>"; };
+		9428039016E2C506005E5153 /* CFobLicVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFobLicVerifier.m; sourceTree = "<group>"; };
+		9428039116E2C506005E5153 /* decoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decoder.c; sourceTree = "<group>"; };
+		9428039216E2C506005E5153 /* decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decoder.h; sourceTree = "<group>"; };
+		9428039316E2C506005E5153 /* encoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encoder.c; sourceTree = "<group>"; };
+		9428039416E2C506005E5153 /* encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = encoder.h; sourceTree = "<group>"; };
+		9428039516E2C506005E5153 /* NSData+PECrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+PECrypt.h"; sourceTree = "<group>"; };
+		9428039616E2C506005E5153 /* NSData+PECrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PECrypt.m"; sourceTree = "<group>"; };
+		9428039716E2C506005E5153 /* NSString-Base64Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-Base64Extensions.h"; sourceTree = "<group>"; };
+		9428039816E2C506005E5153 /* NSString-Base64Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-Base64Extensions.m"; sourceTree = "<group>"; };
+		9428039916E2C506005E5153 /* NSString+PECrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PECrypt.h"; sourceTree = "<group>"; };
+		9428039A16E2C506005E5153 /* NSString+PECrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PECrypt.m"; sourceTree = "<group>"; };
+		942803A816E2C5E8005E5153 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
+		942803AE16E32E24005E5153 /* cocoafob-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cocoafob-license.txt"; sourceTree = "<group>"; };
 		94D6C0C016E0DDD700868523 /* MyGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGrid.h; sourceTree = "<group>"; };
 		94D6C0C116E0DDD700868523 /* MyGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGrid.m; sourceTree = "<group>"; };
 		94D6C0C316E0DF4300868523 /* MyActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActor.h; sourceTree = "<group>"; };
@@ -105,6 +166,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942803A916E2C5E8005E5153 /* libcrypto.dylib in Frameworks */,
+				9428038916E2B6FF005E5153 /* AddressBook.framework in Frameworks */,
+				9428038716E2B459005E5153 /* WebKit.framework in Frameworks */,
 				94ED27F416E026370044ED33 /* Carbon.framework in Frameworks */,
 				94ED279C16E01A440044ED33 /* Cocoa.framework in Frameworks */,
 			);
@@ -113,6 +177,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9428035D16E2B447005E5153 /* FsprgEmbeddedStore */ = {
+			isa = PBXGroup;
+			children = (
+				9428035E16E2B447005E5153 /* FsprgEmbeddedStore.h */,
+				9428035F16E2B447005E5153 /* FsprgEmbeddedStoreController.h */,
+				9428036016E2B447005E5153 /* FsprgEmbeddedStoreController.m */,
+				9428036116E2B447005E5153 /* FsprgEmbeddedStoreDelegate.h */,
+				9428036216E2B447005E5153 /* FsprgOrderDocumentRepresentation.h */,
+				9428036316E2B447005E5153 /* FsprgOrderDocumentRepresentation.m */,
+				9428036416E2B447005E5153 /* FsprgOrderView.h */,
+				9428036516E2B447005E5153 /* FsprgOrderView.m */,
+				9428036616E2B447005E5153 /* FsprgStoreParameters.h */,
+				9428036716E2B447005E5153 /* FsprgStoreParameters.m */,
+				9428036816E2B447005E5153 /* Model */,
+			);
+			path = FsprgEmbeddedStore;
+			sourceTree = "<group>";
+		};
+		9428036816E2B447005E5153 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9428036916E2B447005E5153 /* FsprgFileDownload.h */,
+				9428036A16E2B447005E5153 /* FsprgFileDownload.m */,
+				9428036B16E2B447005E5153 /* FsprgFulfillment.h */,
+				9428036C16E2B447005E5153 /* FsprgFulfillment.m */,
+				9428036D16E2B447005E5153 /* FsprgLicense.h */,
+				9428036E16E2B447005E5153 /* FsprgLicense.m */,
+				9428036F16E2B447005E5153 /* FsprgOrder.h */,
+				9428037016E2B447005E5153 /* FsprgOrder.m */,
+				9428037116E2B447005E5153 /* FsprgOrderItem.h */,
+				9428037216E2B447005E5153 /* FsprgOrderItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9428038A16E2C4E9005E5153 /* CocoaFob */ = {
+			isa = PBXGroup;
+			children = (
+				9428038B16E2C506005E5153 /* CFobError.h */,
+				9428038C16E2C506005E5153 /* CFobError.m */,
+				9428038D16E2C506005E5153 /* CFobLicGenerator.h */,
+				9428038E16E2C506005E5153 /* CFobLicGenerator.m */,
+				9428038F16E2C506005E5153 /* CFobLicVerifier.h */,
+				9428039016E2C506005E5153 /* CFobLicVerifier.m */,
+				9428039116E2C506005E5153 /* decoder.c */,
+				9428039216E2C506005E5153 /* decoder.h */,
+				9428039316E2C506005E5153 /* encoder.c */,
+				9428039416E2C506005E5153 /* encoder.h */,
+				9428039516E2C506005E5153 /* NSData+PECrypt.h */,
+				9428039616E2C506005E5153 /* NSData+PECrypt.m */,
+				9428039716E2C506005E5153 /* NSString-Base64Extensions.h */,
+				9428039816E2C506005E5153 /* NSString-Base64Extensions.m */,
+				9428039916E2C506005E5153 /* NSString+PECrypt.h */,
+				9428039A16E2C506005E5153 /* NSString+PECrypt.m */,
+			);
+			name = CocoaFob;
+			sourceTree = "<group>";
+		};
 		94D6C0C616E0E29C00868523 /* HowToWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +254,9 @@
 		94ED278F16E01A440044ED33 = {
 			isa = PBXGroup;
 			children = (
+				942803A816E2C5E8005E5153 /* libcrypto.dylib */,
+				9428038816E2B6FF005E5153 /* AddressBook.framework */,
+				9428038616E2B459005E5153 /* WebKit.framework */,
 				94ED27F316E026360044ED33 /* Carbon.framework */,
 				94ED27A116E01A440044ED33 /* AppGrid */,
 				94ED279A16E01A440044ED33 /* Frameworks */,
@@ -173,6 +298,8 @@
 				94D6C0E316E0F52B00868523 /* AppGrid.entitlements */,
 				94ED280016E034F10044ED33 /* MyShortcuts.h */,
 				94ED280116E079C50044ED33 /* defaults.plist */,
+				9428038A16E2C4E9005E5153 /* CocoaFob */,
+				9428035D16E2B447005E5153 /* FsprgEmbeddedStore */,
 				94D6C0C616E0E29C00868523 /* HowToWindow */,
 				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
 				94ED27F516E02A770044ED33 /* Model */,
@@ -188,6 +315,7 @@
 		94ED27A216E01A440044ED33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				942803AE16E32E24005E5153 /* cocoafob-license.txt */,
 				94ED27A316E01A440044ED33 /* AppGrid-Info.plist */,
 				94ED27A416E01A440044ED33 /* InfoPlist.strings */,
 				94ED27A716E01A440044ED33 /* main.m */,
@@ -335,6 +463,7 @@
 				94D6C0DE16E0EA8E00868523 /* sd_howto_4.png in Resources */,
 				94D6C0DF16E0EA8E00868523 /* sd_howto_1.png in Resources */,
 				94D6C0E516E0FCEA00868523 /* icon.icns in Resources */,
+				942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +491,23 @@
 				94D6C0CE16E0E2B300868523 /* SDHowToWindowController.m in Sources */,
 				94D6C0D116E0E4CD00868523 /* SDRoundedHowToImageView.m in Sources */,
 				94D6C0E216E0EB2100868523 /* SDHowToWindowInsetTextField.m in Sources */,
+				9428037A16E2B447005E5153 /* FsprgEmbeddedStoreController.m in Sources */,
+				9428037B16E2B447005E5153 /* FsprgOrderDocumentRepresentation.m in Sources */,
+				9428037C16E2B447005E5153 /* FsprgOrderView.m in Sources */,
+				9428037D16E2B447005E5153 /* FsprgStoreParameters.m in Sources */,
+				9428037E16E2B447005E5153 /* FsprgFileDownload.m in Sources */,
+				9428037F16E2B447005E5153 /* FsprgFulfillment.m in Sources */,
+				9428038016E2B447005E5153 /* FsprgLicense.m in Sources */,
+				9428038116E2B447005E5153 /* FsprgOrder.m in Sources */,
+				9428038216E2B447005E5153 /* FsprgOrderItem.m in Sources */,
+				9428039D16E2C506005E5153 /* CFobError.m in Sources */,
+				9428039E16E2C506005E5153 /* CFobLicGenerator.m in Sources */,
+				9428039F16E2C506005E5153 /* CFobLicVerifier.m in Sources */,
+				942803A016E2C506005E5153 /* decoder.c in Sources */,
+				942803A116E2C506005E5153 /* encoder.c in Sources */,
+				942803A216E2C506005E5153 /* NSData+PECrypt.m in Sources */,
+				942803A316E2C506005E5153 /* NSString-Base64Extensions.m in Sources */,
+				942803A416E2C506005E5153 /* NSString+PECrypt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +603,6 @@
 		94ED27B616E01A440044ED33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = AppGrid/AppGrid.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -471,7 +616,6 @@
 		94ED27B716E01A440044ED33 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = AppGrid/AppGrid.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -13,7 +13,13 @@
 
 #import "SDHowToWindowController.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate>
+#import "FsprgEmbeddedStoreController.h"
+#import "FsprgEmbeddedStoreDelegate.h"
+
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate, FsprgEmbeddedStoreDelegate>
+
+@property IBOutlet NSWindow* storeWindow;
+@property (weak) IBOutlet WebView* storeWebView;
 
 @property NSStatusItem* statusItem;
 @property IBOutlet NSMenu* statusBarMenu;
@@ -22,5 +28,7 @@
 @property MyActor *myActor;
 
 @property SDHowToWindowController* howToWindowController;
+
+@property FsprgEmbeddedStoreController *embeddedStoreController;
 
 @end
