@@ -10,25 +10,21 @@
 
 #import "MyPrefsWindowController.h"
 #import "MyActor.h"
+#import "MyLicenseWindowController.h"
+#import "MyLicenseURLHandler.h"
 
 #import "SDHowToWindowController.h"
 
-#import "FsprgEmbeddedStoreController.h"
-#import "FsprgEmbeddedStoreDelegate.h"
-
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate, FsprgEmbeddedStoreDelegate>
-
-@property IBOutlet NSWindow* storeWindow;
-@property (weak) IBOutlet WebView* storeWebView;
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate>
 
 @property NSStatusItem* statusItem;
 @property IBOutlet NSMenu* statusBarMenu;
 
 @property MyPrefsWindowController *myPrefsWindowController;
 @property MyActor *myActor;
+@property MyLicenseWindowController *myLicenseWindowController;
+@property MyLicenseURLHandler *myLicenseURLHandler;
 
 @property SDHowToWindowController* howToWindowController;
-
-@property FsprgEmbeddedStoreController *embeddedStoreController;
 
 @end
