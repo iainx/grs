@@ -8,13 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "FsprgEmbeddedStoreController.h"
-#import "FsprgEmbeddedStoreDelegate.h"
+#import "MyStoreWindowController.h"
 
-@interface MyLicenseWindowController : NSWindowController <FsprgEmbeddedStoreDelegate>
+@interface MyLicenseWindowController : NSWindowController
 
-@property (weak) IBOutlet WebView* storeWebView;
-
-@property FsprgEmbeddedStoreController *embeddedStoreController;
+@property MyStoreWindowController *myStoreWindowController;
 
 @end

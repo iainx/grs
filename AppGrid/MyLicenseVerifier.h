@@ -12,4 +12,6 @@
 
 + (BOOL) verifyLicense:(NSString*)regCode for:(NSString*)regName;
 
++ (BOOL) hasValidLicense;
+
 @end

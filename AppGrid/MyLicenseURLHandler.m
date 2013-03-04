@@ -8,18 +8,17 @@
 
 #import "MyLicenseURLHandler.h"
 
-#import "MyLicenseVerifier.h"
 #import "NSString+PECrypt.h"
 
 @interface MyLicenseURLHandler ()
 
-@property (copy) void(^handler)(BOOL validLicense);
+@property (copy) void(^handler)(NSString* username, NSString* serial);
 
 @end
 
 @implementation MyLicenseURLHandler
 
-- (void) listenForURLs:(void(^)(BOOL validLicense))handler {
+- (void) listenForURLs:(void(^)(NSString* username, NSString* serial))handler {
     [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self
                                                        andSelector:@selector(handleURLEvent:withReplyEvent:)
                                                      forEventClass:kInternetEventClass
@@ -47,8 +46,7 @@
 	NSString *username = [usernameb64 base64Decode];
 	NSString *serial = (NSString *)[userNameAndSerialNumber objectAtIndex:1];
     
-    BOOL valid = [MyLicenseVerifier verifyLicense:serial for:username];
-    self.handler(valid);
+    self.handler(username, serial);
 }
 
 @end

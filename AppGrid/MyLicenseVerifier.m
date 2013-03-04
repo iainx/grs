@@ -31,4 +31,8 @@
 	return ([verifier verifyRegCode:regCode forName:regName error:NULL]);
 }
 
++ (BOOL) hasValidLicense {
+    return NO;
+}
+
 @end

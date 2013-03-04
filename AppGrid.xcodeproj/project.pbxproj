@@ -28,10 +28,14 @@
 		942803A416E2C506005E5153 /* NSString+PECrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039A16E2C506005E5153 /* NSString+PECrypt.m */; };
 		942803A916E2C5E8005E5153 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 942803A816E2C5E8005E5153 /* libcrypto.dylib */; };
 		942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803AE16E32E24005E5153 /* cocoafob-license.txt */; };
-		942803B316E3886A005E5153 /* MyLicenseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B116E38869005E5153 /* MyLicenseWindowController.m */; };
-		942803B416E3886A005E5153 /* MyLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803B216E38869005E5153 /* MyLicenseWindow.xib */; };
+		942803B316E3886A005E5153 /* MyStoreWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B116E38869005E5153 /* MyStoreWindowController.m */; };
+		942803B416E3886A005E5153 /* MyStoreWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803B216E38869005E5153 /* MyStoreWindow.xib */; };
 		942803B716E38BC6005E5153 /* MyLicenseURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */; };
 		942803BA16E38CFB005E5153 /* MyLicenseVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B916E38CFA005E5153 /* MyLicenseVerifier.m */; };
+		942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */; };
+		942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */; };
+		942803C116E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803C016E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt */; };
+		942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803C216E3FB8C005E5153 /* masshortcut-license.txt */; };
 		94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C116E0DDD700868523 /* MyGrid.m */; };
 		94D6C0C516E0DF4300868523 /* MyActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C416E0DF4300868523 /* MyActor.m */; };
 		94D6C0C816E0E2A900868523 /* SDHowToWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */; };
@@ -107,13 +111,18 @@
 		9428039A16E2C506005E5153 /* NSString+PECrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PECrypt.m"; sourceTree = "<group>"; };
 		942803A816E2C5E8005E5153 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 		942803AE16E32E24005E5153 /* cocoafob-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cocoafob-license.txt"; sourceTree = "<group>"; };
-		942803B016E38869005E5153 /* MyLicenseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseWindowController.h; sourceTree = "<group>"; };
-		942803B116E38869005E5153 /* MyLicenseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseWindowController.m; sourceTree = "<group>"; };
-		942803B216E38869005E5153 /* MyLicenseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLicenseWindow.xib; sourceTree = "<group>"; };
+		942803B016E38869005E5153 /* MyStoreWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoreWindowController.h; sourceTree = "<group>"; };
+		942803B116E38869005E5153 /* MyStoreWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoreWindowController.m; sourceTree = "<group>"; };
+		942803B216E38869005E5153 /* MyStoreWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStoreWindow.xib; sourceTree = "<group>"; };
 		942803B516E38BC6005E5153 /* MyLicenseURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseURLHandler.h; sourceTree = "<group>"; };
 		942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseURLHandler.m; sourceTree = "<group>"; };
 		942803B816E38CFA005E5153 /* MyLicenseVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseVerifier.h; sourceTree = "<group>"; };
 		942803B916E38CFA005E5153 /* MyLicenseVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseVerifier.m; sourceTree = "<group>"; };
+		942803BB16E3DCC9005E5153 /* MyLicenseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseWindowController.h; sourceTree = "<group>"; };
+		942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseWindowController.m; sourceTree = "<group>"; };
+		942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLicenseWindow.xib; sourceTree = "<group>"; };
+		942803C016E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fastspring-embedded-store-mac-license.txt"; sourceTree = "<group>"; };
+		942803C216E3FB8C005E5153 /* masshortcut-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "masshortcut-license.txt"; sourceTree = "<group>"; };
 		94D6C0C016E0DDD700868523 /* MyGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGrid.h; sourceTree = "<group>"; };
 		94D6C0C116E0DDD700868523 /* MyGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGrid.m; sourceTree = "<group>"; };
 		94D6C0C316E0DF4300868523 /* MyActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActor.h; sourceTree = "<group>"; };
@@ -326,6 +335,7 @@
 		94ED27A216E01A440044ED33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				942803C016E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt */,
 				942803AE16E32E24005E5153 /* cocoafob-license.txt */,
 				94ED27A316E01A440044ED33 /* AppGrid-Info.plist */,
 				94ED27A416E01A440044ED33 /* InfoPlist.strings */,
@@ -371,8 +381,10 @@
 				94ED27AE16E01A440044ED33 /* AppDelegate.m */,
 				942803B516E38BC6005E5153 /* MyLicenseURLHandler.h */,
 				942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */,
-				942803B016E38869005E5153 /* MyLicenseWindowController.h */,
-				942803B116E38869005E5153 /* MyLicenseWindowController.m */,
+				942803BB16E3DCC9005E5153 /* MyLicenseWindowController.h */,
+				942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */,
+				942803B016E38869005E5153 /* MyStoreWindowController.h */,
+				942803B116E38869005E5153 /* MyStoreWindowController.m */,
 				94D6C0C316E0DF4300868523 /* MyActor.h */,
 				94D6C0C416E0DF4300868523 /* MyActor.m */,
 				94ED27FB16E034820044ED33 /* MyPrefsWindowController.h */,
@@ -388,8 +400,10 @@
 		94ED27FA16E034580044ED33 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				942803C216E3FB8C005E5153 /* masshortcut-license.txt */,
 				94ED27B016E01A440044ED33 /* MainMenu.xib */,
-				942803B216E38869005E5153 /* MyLicenseWindow.xib */,
+				942803B216E38869005E5153 /* MyStoreWindow.xib */,
+				942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */,
 				94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */,
 			);
 			name = XIBs;
@@ -482,7 +496,10 @@
 				94D6C0DF16E0EA8E00868523 /* sd_howto_1.png in Resources */,
 				94D6C0E516E0FCEA00868523 /* icon.icns in Resources */,
 				942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */,
-				942803B416E3886A005E5153 /* MyLicenseWindow.xib in Resources */,
+				942803B416E3886A005E5153 /* MyStoreWindow.xib in Resources */,
+				942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */,
+				942803C116E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt in Resources */,
+				942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,9 +544,10 @@
 				942803A216E2C506005E5153 /* NSData+PECrypt.m in Sources */,
 				942803A316E2C506005E5153 /* NSString-Base64Extensions.m in Sources */,
 				942803A416E2C506005E5153 /* NSString+PECrypt.m in Sources */,
-				942803B316E3886A005E5153 /* MyLicenseWindowController.m in Sources */,
+				942803B316E3886A005E5153 /* MyStoreWindowController.m in Sources */,
 				942803B716E38BC6005E5153 /* MyLicenseURLHandler.m in Sources */,
 				942803BA16E38CFB005E5153 /* MyLicenseVerifier.m in Sources */,
+				942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

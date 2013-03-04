@@ -12,6 +12,8 @@
 #import "MyUniversalAccessHelper.h"
 #import "MyGrid.h"
 
+#import "MyLicenseVerifier.h"
+
 @implementation AppDelegate
 
 + (void) initialize {
@@ -84,23 +86,28 @@
 
 - (IBAction) showLicenseOrStore:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
-    [self showStore:self];
-}
-
-- (IBAction) showStore:(id)sender {
+    
     self.myLicenseWindowController = [[MyLicenseWindowController alloc] init];
     [self.myLicenseWindowController showWindow:self];
+}
+
+- (void) user:(NSString*)username clickedLicenseWithSerial:(NSString*)serial {
+    BOOL valid = [MyLicenseVerifier verifyLicense:serial for:username];
+    
+    [NSApp activateIgnoringOtherApps:YES];
+    
+    // TODO: Save registration to preferences.
+    // TODO: Broadcast notification of a changed registration information.
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self endTrialIfNecessary];
     
     self.myLicenseURLHandler = [[MyLicenseURLHandler alloc] init];
-    [self.myLicenseURLHandler listenForURLs:^(BOOL validLicense) {
-        // TODO: Save registration to preferences.
-        // TODO: Broadcast notification of a changed registration information.
+    [self.myLicenseURLHandler listenForURLs:^(NSString *username, NSString *serial) {
+        [self user:username clickedLicenseWithSerial:serial];
     }];
-    
+     
     [MyUniversalAccessHelper complainIfNeeded];
     
     [MASShortcut setAllowsAnyHotkeyWithOptionModifier:YES];
