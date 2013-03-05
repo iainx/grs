@@ -18,6 +18,13 @@
 
 @implementation MyWindow
 
++ (CGRect) realFrameForScreen:(NSScreen*)screen {
+    NSScreen* primaryScreen = [[NSScreen screens] objectAtIndex:0];
+    CGRect f = [screen visibleFrame];
+    f.origin.y = NSHeight([primaryScreen frame]) - NSHeight(f) - f.origin.y;
+    return f;
+}
+
 + (NSArray*) allWindows {
     NSMutableArray* windows = [NSMutableArray array];
     
@@ -73,7 +80,7 @@
 - (CGRect) gridProps {
     CGRect winFrame = [self frame];
     
-    CGRect screenRect = [self realScreenFrame];
+    CGRect screenRect = [MyWindow realFrameForScreen:[self screen]];
     double thirdScrenWidth = screenRect.size.width / [MyGrid width];
     double halfScreenHeight = screenRect.size.height / 2.0;
     
@@ -88,17 +95,8 @@
     return gridProps;
 }
 
-- (CGRect) realScreenFrame {
-    CGRect original = [[NSScreen mainScreen] visibleFrame];
-    CGRect reference = [[NSScreen mainScreen] frame];
-    return NSMakeRect(original.origin.x,
-                      reference.size.height - (reference.origin.y + original.origin.y + original.size.height),
-                      original.size.width,
-                      original.size.height);
-}
-
 - (void) moveToGridProps:(CGRect)gridProps {
-    CGRect screenRect = [self realScreenFrame];
+    CGRect screenRect = [MyWindow realFrameForScreen:[self screen]];
     
     double thirdScrenWidth = screenRect.size.width / [MyGrid width];
     double halfScreenHeight = screenRect.size.height / 2.0;
@@ -199,6 +197,38 @@
     
     if (sizeStorage)
         CFRelease(sizeStorage);
+}
+
+//- (NSString *) getTitle {
+////    [AccessibilityWrapper createSystemWideElement];
+//    CFTypeRef _title;
+//    if (AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityTitleAttribute, (CFTypeRef *)&_title) == kAXErrorSuccess) {
+//        NSString *title = (__bridge NSString *) _title;
+//        if (_title != NULL) CFRelease(_title);
+//        return title;
+//    }
+//    if (_title != NULL) CFRelease(_title);
+//    return @"";
+//}
+
+- (NSScreen*) screen {
+    CGRect windowFrame = [self frame];
+    
+    CGFloat lastVolume = 0;
+    NSScreen* lastScreen = nil;
+    
+    for (NSScreen* screen in [NSScreen screens]) {
+        CGRect screenFrame = [MyWindow realFrameForScreen:screen];
+        CGRect intersection = CGRectIntersection(windowFrame, screenFrame);
+        CGFloat volume = intersection.size.width * intersection.size.height;
+        
+        if (volume > lastVolume) {
+            lastVolume = volume;
+            lastScreen = screen;
+        }
+    }
+    
+    return lastScreen;
 }
 
 @end
