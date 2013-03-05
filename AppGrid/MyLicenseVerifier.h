@@ -12,6 +12,7 @@
 
 @interface MyLicenseVerifier : NSObject
 
++ (BOOL) tryRegisteringWithLicenseCode:(NSString*)licenseCode licenseName:(NSString*)licenseName;
 + (BOOL) verifyLicenseCode:(NSString*)regCode forLicenseName:(NSString*)regName;
 
 + (NSString*) licenseName;
@@ -21,6 +22,6 @@
 
 + (void) sendToStore;
 
-+ (NSAlert*) alertForValidity:(BOOL)valid;
++ (NSAlert*) alertForValidity:(BOOL)valid fromLink:(BOOL)fromLink;
 
 @end

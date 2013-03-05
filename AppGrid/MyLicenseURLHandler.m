@@ -12,13 +12,13 @@
 
 @interface MyLicenseURLHandler ()
 
-@property (copy) void(^handler)(NSString* username, NSString* serial);
+@property (copy) void(^handler)(NSString* licenseName, NSString* licenseCode);
 
 @end
 
 @implementation MyLicenseURLHandler
 
-- (void) listenForURLs:(void(^)(NSString* username, NSString* serial))handler {
+- (void) listenForURLs:(void(^)(NSString* licenseName, NSString* licenseCode))handler {
     [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self
                                                        andSelector:@selector(handleURLEvent:withReplyEvent:)
                                                      forEventClass:kInternetEventClass
@@ -43,10 +43,10 @@
 	}
     
 	NSString *usernameb64 = (NSString *)[userNameAndSerialNumber objectAtIndex:0];
-	NSString *username = [usernameb64 base64Decode];
-	NSString *serial = (NSString *)[userNameAndSerialNumber objectAtIndex:1];
+	NSString *licenseName = [usernameb64 base64Decode];
+	NSString *licenseCode = (NSString *)[userNameAndSerialNumber objectAtIndex:1];
     
-    self.handler(username, serial);
+    self.handler(licenseName, licenseCode);
 }
 
 @end

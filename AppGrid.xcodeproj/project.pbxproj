@@ -16,7 +16,6 @@
 		942803A316E2C506005E5153 /* NSString-Base64Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039816E2C506005E5153 /* NSString-Base64Extensions.m */; };
 		942803A416E2C506005E5153 /* NSString+PECrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039A16E2C506005E5153 /* NSString+PECrypt.m */; };
 		942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803AE16E32E24005E5153 /* cocoafob-license.txt */; };
-		942803B416E3886A005E5153 /* MyStoreWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803B216E38869005E5153 /* MyStoreWindow.xib */; };
 		942803B716E38BC6005E5153 /* MyLicenseURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */; };
 		942803BA16E38CFB005E5153 /* MyLicenseVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B916E38CFA005E5153 /* MyLicenseVerifier.m */; };
 		942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */; };
@@ -76,7 +75,6 @@
 		9428039916E2C506005E5153 /* NSString+PECrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PECrypt.h"; sourceTree = "<group>"; };
 		9428039A16E2C506005E5153 /* NSString+PECrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PECrypt.m"; sourceTree = "<group>"; };
 		942803AE16E32E24005E5153 /* cocoafob-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cocoafob-license.txt"; sourceTree = "<group>"; };
-		942803B216E38869005E5153 /* MyStoreWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStoreWindow.xib; sourceTree = "<group>"; };
 		942803B516E38BC6005E5153 /* MyLicenseURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseURLHandler.h; sourceTree = "<group>"; };
 		942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseURLHandler.m; sourceTree = "<group>"; };
 		942803B816E38CFA005E5153 /* MyLicenseVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseVerifier.h; sourceTree = "<group>"; };
@@ -334,7 +332,6 @@
 			children = (
 				942803C216E3FB8C005E5153 /* masshortcut-license.txt */,
 				94ED27B016E01A440044ED33 /* MainMenu.xib */,
-				942803B216E38869005E5153 /* MyStoreWindow.xib */,
 				942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */,
 				94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */,
 			);
@@ -428,7 +425,6 @@
 				94D6C0DF16E0EA8E00868523 /* sd_howto_1.png in Resources */,
 				94D6C0E516E0FCEA00868523 /* icon.icns in Resources */,
 				942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */,
-				942803B416E3886A005E5153 /* MyStoreWindow.xib in Resources */,
 				942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */,
 				942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */,
 			);

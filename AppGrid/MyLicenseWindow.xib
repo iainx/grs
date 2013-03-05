@@ -55,6 +55,7 @@
 							<string key="NSFrame">{{328, 13}, {91, 32}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="540306237">
@@ -77,7 +78,7 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
-						<object class="NSButton" id="614589911">
+						<object class="NSButton" id="102115699">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{237, 13}, {91, 32}}</string>
@@ -86,13 +87,13 @@
 							<reference key="NSNextKeyView" ref="136406521"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="485042725">
+							<object class="NSButtonCell" key="NSCell" id="909295342">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Close</string>
 								<reference key="NSSupport" ref="369977441"/>
 								<string key="NSCellIdentifier">_NS:9</string>
-								<reference key="NSControlView" ref="614589911"/>
+								<reference key="NSControlView" ref="102115699"/>
 								<int key="NSButtonFlags">-2038284288</int>
 								<int key="NSButtonFlags2">129</int>
 								<string key="NSAlternateContents"/>
@@ -102,22 +103,22 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
-						<object class="NSButton" id="171570647">
+						<object class="NSButton" id="1015290851">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{110, 13}, {94, 32}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="614589911"/>
+							<reference key="NSNextKeyView" ref="102115699"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="680450781">
+							<object class="NSButtonCell" key="NSCell" id="579194890">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Buy Now</string>
 								<reference key="NSSupport" ref="369977441"/>
 								<string key="NSCellIdentifier">_NS:9</string>
-								<reference key="NSControlView" ref="171570647"/>
+								<reference key="NSControlView" ref="1015290851"/>
 								<int key="NSButtonFlags">-2038284288</int>
 								<int key="NSButtonFlags2">129</int>
 								<string key="NSAlternateContents"/>
@@ -127,23 +128,23 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
-						<object class="NSTextField" id="282872223">
+						<object class="NSTextField" id="263676964">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 83}, {95, 17}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="772132228"/>
+							<reference key="NSNextKeyView" ref="545411126"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="140854913">
+							<object class="NSTextFieldCell" key="NSCell" id="609984660">
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">71304192</int>
 								<string key="NSContents">License Name:</string>
 								<reference key="NSSupport" ref="369977441"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
-								<reference key="NSControlView" ref="282872223"/>
-								<object class="NSColor" key="NSBackgroundColor" id="728553260">
+								<reference key="NSControlView" ref="263676964"/>
+								<object class="NSColor" key="NSBackgroundColor" id="195415636">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
 									<string key="NSColorName">controlColor</string>
@@ -152,11 +153,11 @@
 										<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 									</object>
 								</object>
-								<object class="NSColor" key="NSTextColor" id="655902693">
+								<object class="NSColor" key="NSTextColor" id="987194911">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
 									<string key="NSColorName">controlTextColor</string>
-									<object class="NSColor" key="NSColor" id="428627314">
+									<object class="NSColor" key="NSColor" id="131316653">
 										<int key="NSColorSpace">3</int>
 										<bytes key="NSWhite">MAA</bytes>
 									</object>
@@ -164,24 +165,24 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
-						<object class="NSTextField" id="772132228">
+						<object class="NSTextField" id="545411126">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{117, 81}, {296, 22}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="723971116"/>
+							<reference key="NSNextKeyView" ref="336302243"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="969850330">
+							<object class="NSTextFieldCell" key="NSCell" id="748822321">
 								<int key="NSCellFlags">-1804599231</int>
 								<int key="NSCellFlags2">272630784</int>
 								<string key="NSContents"/>
 								<reference key="NSSupport" ref="369977441"/>
 								<string key="NSCellIdentifier">_NS:9</string>
-								<reference key="NSControlView" ref="772132228"/>
+								<reference key="NSControlView" ref="545411126"/>
 								<bool key="NSDrawsBackground">YES</bool>
-								<object class="NSColor" key="NSBackgroundColor" id="488946444">
+								<object class="NSColor" key="NSBackgroundColor" id="641746983">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
 									<string key="NSColorName">textBackgroundColor</string>
@@ -190,55 +191,55 @@
 										<bytes key="NSWhite">MQA</bytes>
 									</object>
 								</object>
-								<object class="NSColor" key="NSTextColor" id="56291048">
+								<object class="NSColor" key="NSTextColor" id="255983011">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
 									<string key="NSColorName">textColor</string>
-									<reference key="NSColor" ref="428627314"/>
+									<reference key="NSColor" ref="131316653"/>
 								</object>
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
-						<object class="NSTextField" id="723971116">
+						<object class="NSTextField" id="336302243">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 51}, {95, 17}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="640964346"/>
+							<reference key="NSNextKeyView" ref="186413453"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="465346729">
+							<object class="NSTextFieldCell" key="NSCell" id="196659723">
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">71304192</int>
 								<string key="NSContents">License Code:</string>
 								<reference key="NSSupport" ref="369977441"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
-								<reference key="NSControlView" ref="723971116"/>
-								<reference key="NSBackgroundColor" ref="728553260"/>
-								<reference key="NSTextColor" ref="655902693"/>
+								<reference key="NSControlView" ref="336302243"/>
+								<reference key="NSBackgroundColor" ref="195415636"/>
+								<reference key="NSTextColor" ref="987194911"/>
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
-						<object class="NSTextField" id="640964346">
+						<object class="NSTextField" id="186413453">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{117, 49}, {296, 22}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="171570647"/>
+							<reference key="NSNextKeyView" ref="1015290851"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="22306913">
+							<object class="NSTextFieldCell" key="NSCell" id="931553750">
 								<int key="NSCellFlags">-1804599231</int>
 								<int key="NSCellFlags2">272630784</int>
 								<string key="NSContents"/>
 								<reference key="NSSupport" ref="369977441"/>
 								<string key="NSCellIdentifier">_NS:9</string>
-								<reference key="NSControlView" ref="640964346"/>
+								<reference key="NSControlView" ref="186413453"/>
 								<bool key="NSDrawsBackground">YES</bool>
-								<reference key="NSBackgroundColor" ref="488946444"/>
-								<reference key="NSTextColor" ref="56291048"/>
+								<reference key="NSBackgroundColor" ref="641746983"/>
+								<reference key="NSTextColor" ref="255983011"/>
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
@@ -246,7 +247,7 @@
 					<string key="NSFrameSize">{433, 123}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView" ref="282872223"/>
+					<reference key="NSNextKeyView" ref="263676964"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
@@ -276,7 +277,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">buyNow:</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="171570647"/>
+						<reference key="destination" ref="1015290851"/>
 					</object>
 					<int key="connectionID">67</int>
 				</object>
@@ -292,16 +293,32 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">performClose:</string>
 						<reference key="source" ref="1005"/>
-						<reference key="destination" ref="614589911"/>
+						<reference key="destination" ref="102115699"/>
 					</object>
 					<int key="connectionID">54</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: licenseWindowTitle</string>
+						<reference key="source" ref="1005"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="1005"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: licenseWindowTitle</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">licenseWindowTitle</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">78</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: licenseName</string>
 						<reference key="source" ref="136406521"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="694573604">
+						<object class="NSNibBindingConnector" key="connector" id="707485123">
 							<reference key="NSSource" ref="136406521"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">enabled: licenseName</string>
@@ -321,7 +338,7 @@
 						<string key="label">enabled2: licenseCode</string>
 						<reference key="source" ref="136406521"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
+						<object class="NSNibBindingConnector" key="connector" id="977587834">
 							<reference key="NSSource" ref="136406521"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">enabled2: licenseCode</string>
@@ -334,7 +351,7 @@
 								<integer value="-1" key="NSNullPlaceholder"/>
 								<string key="NSValueTransformerName">SDStringNotEmptyValueTransformer</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="694573604"/>
+							<reference key="NSPreviousConnector" ref="707485123"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -342,11 +359,35 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: licenseName</string>
-						<reference key="source" ref="772132228"/>
+						<string key="label">enabled3: hasValidLicense</string>
+						<reference key="source" ref="136406521"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="772132228"/>
+							<reference key="NSSource" ref="136406521"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled3: hasValidLicense</string>
+							<string key="NSBinding">enabled3</string>
+							<string key="NSKeyPath">hasValidLicense</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+								<string key="NSValueTransformerName">NSNegateBoolean</string>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="977587834"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">69</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: licenseName</string>
+						<reference key="source" ref="545411126"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="545411126"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">value: licenseName</string>
 							<string key="NSBinding">value</string>
@@ -362,11 +403,31 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: licenseCode</string>
-						<reference key="source" ref="640964346"/>
+						<string key="label">enabled: hasValidLicense</string>
+						<reference key="source" ref="545411126"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="640964346"/>
+							<reference key="NSSource" ref="545411126"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: hasValidLicense</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">hasValidLicense</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">73</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: licenseCode</string>
+						<reference key="source" ref="186413453"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="186413453"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">value: licenseCode</string>
 							<string key="NSBinding">value</string>
@@ -379,6 +440,46 @@
 						</object>
 					</object>
 					<int key="connectionID">59</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: hasValidLicense</string>
+						<reference key="source" ref="186413453"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="186413453"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: hasValidLicense</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">hasValidLicense</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">76</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: hasValidLicense</string>
+						<reference key="source" ref="1015290851"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="1015290851"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: hasValidLicense</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">hasValidLicense</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">71</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -419,13 +520,13 @@
 						<int key="objectID">2</int>
 						<reference key="object" ref="1006"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="282872223"/>
-							<reference ref="772132228"/>
-							<reference ref="723971116"/>
-							<reference ref="640964346"/>
+							<reference ref="263676964"/>
+							<reference ref="545411126"/>
+							<reference ref="336302243"/>
+							<reference ref="186413453"/>
 							<reference ref="136406521"/>
-							<reference ref="614589911"/>
-							<reference ref="171570647"/>
+							<reference ref="102115699"/>
+							<reference ref="1015290851"/>
 						</array>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -444,81 +545,81 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
-						<reference key="object" ref="282872223"/>
+						<reference key="object" ref="263676964"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="140854913"/>
+							<reference ref="609984660"/>
 						</array>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
-						<reference key="object" ref="140854913"/>
-						<reference key="parent" ref="282872223"/>
+						<reference key="object" ref="609984660"/>
+						<reference key="parent" ref="263676964"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
-						<reference key="object" ref="772132228"/>
+						<reference key="object" ref="545411126"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="969850330"/>
+							<reference ref="748822321"/>
 						</array>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">24</int>
-						<reference key="object" ref="969850330"/>
-						<reference key="parent" ref="772132228"/>
+						<reference key="object" ref="748822321"/>
+						<reference key="parent" ref="545411126"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">32</int>
-						<reference key="object" ref="723971116"/>
+						<reference key="object" ref="336302243"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="465346729"/>
+							<reference ref="196659723"/>
 						</array>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">33</int>
-						<reference key="object" ref="640964346"/>
+						<reference key="object" ref="186413453"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="22306913"/>
+							<reference ref="931553750"/>
 						</array>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">35</int>
-						<reference key="object" ref="22306913"/>
-						<reference key="parent" ref="640964346"/>
+						<reference key="object" ref="931553750"/>
+						<reference key="parent" ref="186413453"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">36</int>
-						<reference key="object" ref="465346729"/>
-						<reference key="parent" ref="723971116"/>
+						<reference key="object" ref="196659723"/>
+						<reference key="parent" ref="336302243"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">50</int>
-						<reference key="object" ref="614589911"/>
+						<reference key="object" ref="102115699"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="485042725"/>
+							<reference ref="909295342"/>
 						</array>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">51</int>
-						<reference key="object" ref="485042725"/>
-						<reference key="parent" ref="614589911"/>
+						<reference key="object" ref="909295342"/>
+						<reference key="parent" ref="102115699"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">64</int>
-						<reference key="object" ref="171570647"/>
+						<reference key="object" ref="1015290851"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="680450781"/>
+							<reference ref="579194890"/>
 						</array>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">65</int>
-						<reference key="object" ref="680450781"/>
-						<reference key="parent" ref="171570647"/>
+						<reference key="object" ref="579194890"/>
+						<reference key="parent" ref="1015290851"/>
 					</object>
 				</array>
 			</object>
@@ -549,13 +650,27 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">67</int>
+			<int key="maxID">78</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">MyLicenseWindowController</string>
 					<string key="superclassName">NSWindowController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="buyNow:">id</string>
+						<string key="validateLicense:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="buyNow:">
+							<string key="name">buyNow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="validateLicense:">
+							<string key="name">validateLicense:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/MyLicenseWindowController.h</string>

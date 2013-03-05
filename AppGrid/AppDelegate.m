@@ -104,19 +104,19 @@
     [self.myLicenseWindowController showWindow:self];
 }
 
-- (void) user:(NSString*)username clickedLicenseWithSerial:(NSString*)serial {
-    BOOL valid = [MyLicenseVerifier verifyLicenseCode:serial forLicenseName:username];
+- (void) clickedLicenseWithName:(NSString*)licenseName licenceCode:(NSString*)licenseCode {
+    BOOL valid = [MyLicenseVerifier tryRegisteringWithLicenseCode:licenseCode licenseName:licenseName];
     
     [NSApp activateIgnoringOtherApps:YES];
-    [[MyLicenseVerifier alertForValidity:valid] runModal];
+    [[MyLicenseVerifier alertForValidity:valid fromLink:YES] runModal];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self endTrialIfNecessary];
     
     self.myLicenseURLHandler = [[MyLicenseURLHandler alloc] init];
-    [self.myLicenseURLHandler listenForURLs:^(NSString *username, NSString *serial) {
-        [self user:username clickedLicenseWithSerial:serial];
+    [self.myLicenseURLHandler listenForURLs:^(NSString* licenseName, NSString* licenseCode) {
+        [self clickedLicenseWithName:licenseName licenceCode:licenseCode];
     }];
      
     [MyUniversalAccessHelper complainIfNeeded];

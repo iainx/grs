@@ -10,10 +10,30 @@
 
 #import "CFobLicVerifier.h"
 
+#define MyLicenseNameDefaultsKey @"MyLicenseNameDefaultsKey"
+#define MyLicenseCodeDefaultsKey @"MyLicenseCodeDefaultsKey"
+
 @implementation MyLicenseVerifier
 
-+ (BOOL) verifyLicenseCode:(NSString*)regCode forLicenseName:(NSString*)regName {
-	regName = [NSString stringWithFormat:@"AppGrid,%@", regName];
++ (BOOL) tryRegisteringWithLicenseCode:(NSString*)licenseCode licenseName:(NSString*)licenseName {
+    BOOL valid = [self verifyLicenseCode:licenseCode forLicenseName:licenseName];
+    
+    if (valid) {
+        [[NSUserDefaults standardUserDefaults] setObject:licenseName forKey:MyLicenseNameDefaultsKey];
+        [[NSUserDefaults standardUserDefaults] setObject:licenseCode forKey:MyLicenseCodeDefaultsKey];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:MyLicenseVerifiedNotification
+                                                            object:nil];
+    }
+    
+    return valid;
+}
+
++ (BOOL) verifyLicenseCode:(NSString*)licenseCode forLicenseName:(NSString*)licenseName {
+    if (licenseCode == nil || licenseName == nil)
+        return NO;
+    
+	NSString* adjustedLicenseName = [NSString stringWithFormat:@"AppGrid,%@", licenseName];
     
 	NSString *publicKey =
     @"MIHxMIGpBgcqhkjOOAQBMIGdAkEApu5r"@"og+tkWTO1cMy3284VgEMmDxQmY7hJRmn"@"\n"
@@ -28,24 +48,21 @@
 	CFobLicVerifier * verifier = [[CFobLicVerifier alloc] init];
     [verifier setPublicKey:publicKey error:NULL];
     
-    BOOL valid = [verifier verifyRegCode:regCode forName:regName error:NULL];
-    
-    if (valid) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:MyLicenseVerifiedNotification
-                                                            object:nil];
-    }
-    
-	return valid;
+    return [verifier verifyRegCode:licenseCode
+                           forName:adjustedLicenseName
+                             error:NULL];
 }
 
 + (NSString*) licenseName {
+    return [[NSUserDefaults standardUserDefaults] stringForKey:MyLicenseNameDefaultsKey];
 }
 
 + (NSString*) licenseCode {
+    return [[NSUserDefaults standardUserDefaults] stringForKey:MyLicenseCodeDefaultsKey];
 }
 
 + (BOOL) hasValidLicense {
-    return NO;
+    return [self verifyLicenseCode:[self licenseCode] forLicenseName:[self licenseName]];
 }
 
 + (void) sendToStore {
@@ -53,7 +70,7 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:storeUrl]];
 }
 
-+ (NSAlert*) alertForValidity:(BOOL)valid {
++ (NSAlert*) alertForValidity:(BOOL)valid fromLink:(BOOL)fromLink {
     NSAlert* alert = [[NSAlert alloc] init];
     
     NSString* appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
@@ -65,11 +82,24 @@
     }
     else {
         alert.alertStyle = NSCriticalAlertStyle;
-        alert.messageText = @"Invalid or Corrupted License";
-        alert.informativeText = [NSString stringWithFormat:
-                                 @"The auto-register link you clicked has been corrupted and can't be verified.\n\n"
-                                 @"To register %@, find the license name and license code (which was emailed to you) and enter them into the License window.",
-                                 appName];
+        
+        if (fromLink) {
+            alert.messageText = @"Invalid or Corrupted License";
+            alert.informativeText = [NSString stringWithFormat:
+                                     @"The auto-register link you clicked has been corrupted and can't be verified.\n\n"
+                                     @"To register %@, find the license name and license code (which was emailed to you) and enter them into the License window.",
+                                     appName];
+        }
+        else {
+            alert.messageText = @"Invalid License";
+            alert.informativeText =
+//          @"====================================================="
+            @"This license cannot be verified. Try this:\n"
+//            @" that could be going wrong:\n"
+            @"- Paste the entire license code (it's pretty long).\n"
+            @"- Enter the exact license name you registered with.\n\n"
+            @"If after doing so you're still having this error, contact customer support for assistance.";
+        }
     }
     
     return alert;

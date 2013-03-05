@@ -13,6 +13,8 @@
 @property NSString* licenseName;
 @property NSString* licenseCode;
 
-@property (readonly) BOOL hasValidLicense;
+@property BOOL hasValidLicense;
+
+@property (readonly) NSString* licenseWindowTitle;
 
 @end

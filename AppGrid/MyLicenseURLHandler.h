@@ -10,6 +10,6 @@
 
 @interface MyLicenseURLHandler : NSObject
 
-- (void) listenForURLs:(void(^)(NSString* username, NSString* serial))handler;
+- (void) listenForURLs:(void(^)(NSString* licenseName, NSString* serial))handler;
 
 @end
