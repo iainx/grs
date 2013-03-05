@@ -8,10 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+#define MyLicenseVerifiedNotification @"MyLicenseVerifiedNotification"
+
 @interface MyLicenseVerifier : NSObject
 
-+ (BOOL) verifyLicense:(NSString*)regCode for:(NSString*)regName;
++ (BOOL) verifyLicenseCode:(NSString*)regCode forLicenseName:(NSString*)regName;
+
++ (NSString*) licenseName;
++ (NSString*) licenseCode;
 
 + (BOOL) hasValidLicense;
+
++ (void) sendToStore;
+
++ (NSAlert*) alertForValidity:(BOOL)valid;
 
 @end

@@ -22,22 +22,12 @@
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
 
-- (void) storeSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
-    
-}
-
-- (IBAction) showStore:(id)sender {
-    self.myStoreWindowController = [[MyStoreWindowController alloc] init];
-    
-//    [NSApp beginSheet:[self.myStoreWindowController window]
-//       modalForWindow:[self window]
-//        modalDelegate:self
-//       didEndSelector:@selector(storeSheetDidEnd:returnCode:contextInfo:)
-//          contextInfo:NULL];
-}
-
 - (IBAction) validateLicense:(id)sender {
     
+}
+
+- (IBAction) buyNow:(id)sender {
+    [MyLicenseVerifier sendToStore];
 }
 
 + (NSSet*) keyPathsForValuesAffectingHasValidLicense {

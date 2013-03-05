@@ -105,12 +105,10 @@
 }
 
 - (void) user:(NSString*)username clickedLicenseWithSerial:(NSString*)serial {
-    BOOL valid = [MyLicenseVerifier verifyLicense:serial for:username];
+    BOOL valid = [MyLicenseVerifier verifyLicenseCode:serial forLicenseName:username];
     
     [NSApp activateIgnoringOtherApps:YES];
-    
-    // TODO: Save registration to preferences.
-    // TODO: Broadcast notification of a changed registration information.
+    [[MyLicenseVerifier alertForValidity:valid] runModal];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {

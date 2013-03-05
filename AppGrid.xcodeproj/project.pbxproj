@@ -7,17 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9428037A16E2B447005E5153 /* FsprgEmbeddedStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036016E2B447005E5153 /* FsprgEmbeddedStoreController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9428037B16E2B447005E5153 /* FsprgOrderDocumentRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036316E2B447005E5153 /* FsprgOrderDocumentRepresentation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9428037C16E2B447005E5153 /* FsprgOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036516E2B447005E5153 /* FsprgOrderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9428037D16E2B447005E5153 /* FsprgStoreParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036716E2B447005E5153 /* FsprgStoreParameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9428037E16E2B447005E5153 /* FsprgFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036A16E2B447005E5153 /* FsprgFileDownload.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9428037F16E2B447005E5153 /* FsprgFulfillment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036C16E2B447005E5153 /* FsprgFulfillment.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9428038016E2B447005E5153 /* FsprgLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428036E16E2B447005E5153 /* FsprgLicense.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9428038116E2B447005E5153 /* FsprgOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428037016E2B447005E5153 /* FsprgOrder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9428038216E2B447005E5153 /* FsprgOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428037216E2B447005E5153 /* FsprgOrderItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9428038716E2B459005E5153 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9428038616E2B459005E5153 /* WebKit.framework */; };
-		9428038916E2B6FF005E5153 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9428038816E2B6FF005E5153 /* AddressBook.framework */; };
 		9428039D16E2C506005E5153 /* CFobError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428038C16E2C506005E5153 /* CFobError.m */; };
 		9428039E16E2C506005E5153 /* CFobLicGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428038E16E2C506005E5153 /* CFobLicGenerator.m */; };
 		9428039F16E2C506005E5153 /* CFobLicVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039016E2C506005E5153 /* CFobLicVerifier.m */; };
@@ -26,17 +15,15 @@
 		942803A216E2C506005E5153 /* NSData+PECrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039616E2C506005E5153 /* NSData+PECrypt.m */; };
 		942803A316E2C506005E5153 /* NSString-Base64Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039816E2C506005E5153 /* NSString-Base64Extensions.m */; };
 		942803A416E2C506005E5153 /* NSString+PECrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039A16E2C506005E5153 /* NSString+PECrypt.m */; };
-		942803A916E2C5E8005E5153 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 942803A816E2C5E8005E5153 /* libcrypto.dylib */; };
 		942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803AE16E32E24005E5153 /* cocoafob-license.txt */; };
-		942803B316E3886A005E5153 /* MyStoreWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B116E38869005E5153 /* MyStoreWindowController.m */; };
 		942803B416E3886A005E5153 /* MyStoreWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803B216E38869005E5153 /* MyStoreWindow.xib */; };
 		942803B716E38BC6005E5153 /* MyLicenseURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */; };
 		942803BA16E38CFB005E5153 /* MyLicenseVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B916E38CFA005E5153 /* MyLicenseVerifier.m */; };
 		942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */; };
 		942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */; };
-		942803C116E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803C016E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt */; };
 		942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803C216E3FB8C005E5153 /* masshortcut-license.txt */; };
 		946CF3FA16E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */; };
+		946CF3FF16E631FA002DA707 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 946CF3FE16E631FA002DA707 /* libcrypto.dylib */; };
 		94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C116E0DDD700868523 /* MyGrid.m */; };
 		94D6C0C516E0DF4300868523 /* MyActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C416E0DF4300868523 /* MyActor.m */; };
 		94D6C0C816E0E2A900868523 /* SDHowToWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */; };
@@ -72,28 +59,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9428035E16E2B447005E5153 /* FsprgEmbeddedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStore.h; sourceTree = "<group>"; };
-		9428035F16E2B447005E5153 /* FsprgEmbeddedStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStoreController.h; sourceTree = "<group>"; };
-		9428036016E2B447005E5153 /* FsprgEmbeddedStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgEmbeddedStoreController.m; sourceTree = "<group>"; };
-		9428036116E2B447005E5153 /* FsprgEmbeddedStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgEmbeddedStoreDelegate.h; sourceTree = "<group>"; };
-		9428036216E2B447005E5153 /* FsprgOrderDocumentRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrderDocumentRepresentation.h; sourceTree = "<group>"; };
-		9428036316E2B447005E5153 /* FsprgOrderDocumentRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrderDocumentRepresentation.m; sourceTree = "<group>"; };
-		9428036416E2B447005E5153 /* FsprgOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrderView.h; sourceTree = "<group>"; };
-		9428036516E2B447005E5153 /* FsprgOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrderView.m; sourceTree = "<group>"; };
-		9428036616E2B447005E5153 /* FsprgStoreParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgStoreParameters.h; sourceTree = "<group>"; };
-		9428036716E2B447005E5153 /* FsprgStoreParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgStoreParameters.m; sourceTree = "<group>"; };
-		9428036916E2B447005E5153 /* FsprgFileDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgFileDownload.h; sourceTree = "<group>"; };
-		9428036A16E2B447005E5153 /* FsprgFileDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgFileDownload.m; sourceTree = "<group>"; };
-		9428036B16E2B447005E5153 /* FsprgFulfillment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgFulfillment.h; sourceTree = "<group>"; };
-		9428036C16E2B447005E5153 /* FsprgFulfillment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgFulfillment.m; sourceTree = "<group>"; };
-		9428036D16E2B447005E5153 /* FsprgLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgLicense.h; sourceTree = "<group>"; };
-		9428036E16E2B447005E5153 /* FsprgLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgLicense.m; sourceTree = "<group>"; };
-		9428036F16E2B447005E5153 /* FsprgOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrder.h; sourceTree = "<group>"; };
-		9428037016E2B447005E5153 /* FsprgOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrder.m; sourceTree = "<group>"; };
-		9428037116E2B447005E5153 /* FsprgOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FsprgOrderItem.h; sourceTree = "<group>"; };
-		9428037216E2B447005E5153 /* FsprgOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FsprgOrderItem.m; sourceTree = "<group>"; };
-		9428038616E2B459005E5153 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		9428038816E2B6FF005E5153 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		9428038B16E2C506005E5153 /* CFobError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFobError.h; sourceTree = "<group>"; };
 		9428038C16E2C506005E5153 /* CFobError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFobError.m; sourceTree = "<group>"; };
 		9428038D16E2C506005E5153 /* CFobLicGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFobLicGenerator.h; sourceTree = "<group>"; };
@@ -110,10 +75,7 @@
 		9428039816E2C506005E5153 /* NSString-Base64Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-Base64Extensions.m"; sourceTree = "<group>"; };
 		9428039916E2C506005E5153 /* NSString+PECrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PECrypt.h"; sourceTree = "<group>"; };
 		9428039A16E2C506005E5153 /* NSString+PECrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PECrypt.m"; sourceTree = "<group>"; };
-		942803A816E2C5E8005E5153 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 		942803AE16E32E24005E5153 /* cocoafob-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cocoafob-license.txt"; sourceTree = "<group>"; };
-		942803B016E38869005E5153 /* MyStoreWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoreWindowController.h; sourceTree = "<group>"; };
-		942803B116E38869005E5153 /* MyStoreWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoreWindowController.m; sourceTree = "<group>"; };
 		942803B216E38869005E5153 /* MyStoreWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStoreWindow.xib; sourceTree = "<group>"; };
 		942803B516E38BC6005E5153 /* MyLicenseURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseURLHandler.h; sourceTree = "<group>"; };
 		942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseURLHandler.m; sourceTree = "<group>"; };
@@ -122,10 +84,10 @@
 		942803BB16E3DCC9005E5153 /* MyLicenseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseWindowController.h; sourceTree = "<group>"; };
 		942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseWindowController.m; sourceTree = "<group>"; };
 		942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLicenseWindow.xib; sourceTree = "<group>"; };
-		942803C016E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fastspring-embedded-store-mac-license.txt"; sourceTree = "<group>"; };
 		942803C216E3FB8C005E5153 /* masshortcut-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "masshortcut-license.txt"; sourceTree = "<group>"; };
 		946CF3F816E62ECF002DA707 /* SDStringNotEmptyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStringNotEmptyValueTransformer.h; sourceTree = "<group>"; };
 		946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStringNotEmptyValueTransformer.m; sourceTree = "<group>"; };
+		946CF3FE16E631FA002DA707 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
 		94D6C0C016E0DDD700868523 /* MyGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGrid.h; sourceTree = "<group>"; };
 		94D6C0C116E0DDD700868523 /* MyGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGrid.m; sourceTree = "<group>"; };
 		94D6C0C316E0DF4300868523 /* MyActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActor.h; sourceTree = "<group>"; };
@@ -189,9 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				942803A916E2C5E8005E5153 /* libcrypto.dylib in Frameworks */,
-				9428038916E2B6FF005E5153 /* AddressBook.framework in Frameworks */,
-				9428038716E2B459005E5153 /* WebKit.framework in Frameworks */,
+				946CF3FF16E631FA002DA707 /* libcrypto.dylib in Frameworks */,
 				94ED27F416E026370044ED33 /* Carbon.framework in Frameworks */,
 				94ED279C16E01A440044ED33 /* Cocoa.framework in Frameworks */,
 			);
@@ -200,41 +160,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9428035D16E2B447005E5153 /* FsprgEmbeddedStore */ = {
-			isa = PBXGroup;
-			children = (
-				9428035E16E2B447005E5153 /* FsprgEmbeddedStore.h */,
-				9428035F16E2B447005E5153 /* FsprgEmbeddedStoreController.h */,
-				9428036016E2B447005E5153 /* FsprgEmbeddedStoreController.m */,
-				9428036116E2B447005E5153 /* FsprgEmbeddedStoreDelegate.h */,
-				9428036216E2B447005E5153 /* FsprgOrderDocumentRepresentation.h */,
-				9428036316E2B447005E5153 /* FsprgOrderDocumentRepresentation.m */,
-				9428036416E2B447005E5153 /* FsprgOrderView.h */,
-				9428036516E2B447005E5153 /* FsprgOrderView.m */,
-				9428036616E2B447005E5153 /* FsprgStoreParameters.h */,
-				9428036716E2B447005E5153 /* FsprgStoreParameters.m */,
-				9428036816E2B447005E5153 /* Model */,
-			);
-			path = FsprgEmbeddedStore;
-			sourceTree = "<group>";
-		};
-		9428036816E2B447005E5153 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9428036916E2B447005E5153 /* FsprgFileDownload.h */,
-				9428036A16E2B447005E5153 /* FsprgFileDownload.m */,
-				9428036B16E2B447005E5153 /* FsprgFulfillment.h */,
-				9428036C16E2B447005E5153 /* FsprgFulfillment.m */,
-				9428036D16E2B447005E5153 /* FsprgLicense.h */,
-				9428036E16E2B447005E5153 /* FsprgLicense.m */,
-				9428036F16E2B447005E5153 /* FsprgOrder.h */,
-				9428037016E2B447005E5153 /* FsprgOrder.m */,
-				9428037116E2B447005E5153 /* FsprgOrderItem.h */,
-				9428037216E2B447005E5153 /* FsprgOrderItem.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		9428038A16E2C4E9005E5153 /* CocoaFob */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +183,14 @@
 			name = CocoaFob;
 			sourceTree = "<group>";
 		};
+		946CF40016E6320C002DA707 /* Licenses */ = {
+			isa = PBXGroup;
+			children = (
+				942803AE16E32E24005E5153 /* cocoafob-license.txt */,
+			);
+			name = Licenses;
+			sourceTree = "<group>";
+		};
 		94D6C0C616E0E29C00868523 /* HowToWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,10 +210,6 @@
 		94ED278F16E01A440044ED33 = {
 			isa = PBXGroup;
 			children = (
-				942803A816E2C5E8005E5153 /* libcrypto.dylib */,
-				9428038816E2B6FF005E5153 /* AddressBook.framework */,
-				9428038616E2B459005E5153 /* WebKit.framework */,
-				94ED27F316E026360044ED33 /* Carbon.framework */,
 				94ED27A116E01A440044ED33 /* AppGrid */,
 				94ED279A16E01A440044ED33 /* Frameworks */,
 				94ED279916E01A440044ED33 /* Products */,
@@ -298,6 +227,8 @@
 		94ED279A16E01A440044ED33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				946CF3FE16E631FA002DA707 /* libcrypto.dylib */,
+				94ED27F316E026360044ED33 /* Carbon.framework */,
 				94ED279B16E01A440044ED33 /* Cocoa.framework */,
 				94ED279D16E01A440044ED33 /* Other Frameworks */,
 			);
@@ -324,13 +255,13 @@
 				946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */,
 				94ED280116E079C50044ED33 /* defaults.plist */,
 				9428038A16E2C4E9005E5153 /* CocoaFob */,
-				9428035D16E2B447005E5153 /* FsprgEmbeddedStore */,
 				94D6C0C616E0E29C00868523 /* HowToWindow */,
 				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
 				94ED27F516E02A770044ED33 /* Model */,
 				94ED280416E089E90044ED33 /* View */,
 				94ED27F916E034510044ED33 /* Controller */,
 				94ED27FA16E034580044ED33 /* XIBs */,
+				946CF40016E6320C002DA707 /* Licenses */,
 				94ED280A16E08F8A0044ED33 /* Graphics */,
 				94ED27A216E01A440044ED33 /* Supporting Files */,
 			);
@@ -340,8 +271,6 @@
 		94ED27A216E01A440044ED33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				942803C016E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt */,
-				942803AE16E32E24005E5153 /* cocoafob-license.txt */,
 				94ED27A316E01A440044ED33 /* AppGrid-Info.plist */,
 				94ED27A416E01A440044ED33 /* InfoPlist.strings */,
 				94ED27A716E01A440044ED33 /* main.m */,
@@ -388,8 +317,6 @@
 				942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */,
 				942803BB16E3DCC9005E5153 /* MyLicenseWindowController.h */,
 				942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */,
-				942803B016E38869005E5153 /* MyStoreWindowController.h */,
-				942803B116E38869005E5153 /* MyStoreWindowController.m */,
 				94D6C0C316E0DF4300868523 /* MyActor.h */,
 				94D6C0C416E0DF4300868523 /* MyActor.m */,
 				94ED27FB16E034820044ED33 /* MyPrefsWindowController.h */,
@@ -503,7 +430,6 @@
 				942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */,
 				942803B416E3886A005E5153 /* MyStoreWindow.xib in Resources */,
 				942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */,
-				942803C116E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt in Resources */,
 				942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,15 +458,6 @@
 				94D6C0CE16E0E2B300868523 /* SDHowToWindowController.m in Sources */,
 				94D6C0D116E0E4CD00868523 /* SDRoundedHowToImageView.m in Sources */,
 				94D6C0E216E0EB2100868523 /* SDHowToWindowInsetTextField.m in Sources */,
-				9428037A16E2B447005E5153 /* FsprgEmbeddedStoreController.m in Sources */,
-				9428037B16E2B447005E5153 /* FsprgOrderDocumentRepresentation.m in Sources */,
-				9428037C16E2B447005E5153 /* FsprgOrderView.m in Sources */,
-				9428037D16E2B447005E5153 /* FsprgStoreParameters.m in Sources */,
-				9428037E16E2B447005E5153 /* FsprgFileDownload.m in Sources */,
-				9428037F16E2B447005E5153 /* FsprgFulfillment.m in Sources */,
-				9428038016E2B447005E5153 /* FsprgLicense.m in Sources */,
-				9428038116E2B447005E5153 /* FsprgOrder.m in Sources */,
-				9428038216E2B447005E5153 /* FsprgOrderItem.m in Sources */,
 				9428039D16E2C506005E5153 /* CFobError.m in Sources */,
 				9428039E16E2C506005E5153 /* CFobLicGenerator.m in Sources */,
 				9428039F16E2C506005E5153 /* CFobLicVerifier.m in Sources */,
@@ -549,7 +466,6 @@
 				942803A216E2C506005E5153 /* NSData+PECrypt.m in Sources */,
 				942803A316E2C506005E5153 /* NSString-Base64Extensions.m in Sources */,
 				942803A416E2C506005E5153 /* NSString+PECrypt.m in Sources */,
-				942803B316E3886A005E5153 /* MyStoreWindowController.m in Sources */,
 				942803B716E38BC6005E5153 /* MyLicenseURLHandler.m in Sources */,
 				942803BA16E38CFB005E5153 /* MyLicenseVerifier.m in Sources */,
 				942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */,

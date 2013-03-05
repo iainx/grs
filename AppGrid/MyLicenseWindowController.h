@@ -8,11 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "MyStoreWindowController.h"
-
 @interface MyLicenseWindowController : NSWindowController
-
-@property MyStoreWindowController *myStoreWindowController;
 
 @property NSString* licenseName;
 @property NSString* licenseCode;

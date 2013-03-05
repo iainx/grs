@@ -12,7 +12,7 @@
 
 @implementation MyLicenseVerifier
 
-+ (BOOL) verifyLicense:(NSString*)regCode for:(NSString*)regName {
++ (BOOL) verifyLicenseCode:(NSString*)regCode forLicenseName:(NSString*)regName {
 	regName = [NSString stringWithFormat:@"AppGrid,%@", regName];
     
 	NSString *publicKey =
@@ -28,11 +28,51 @@
 	CFobLicVerifier * verifier = [[CFobLicVerifier alloc] init];
     [verifier setPublicKey:publicKey error:NULL];
     
-	return ([verifier verifyRegCode:regCode forName:regName error:NULL]);
+    BOOL valid = [verifier verifyRegCode:regCode forName:regName error:NULL];
+    
+    if (valid) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:MyLicenseVerifiedNotification
+                                                            object:nil];
+    }
+    
+	return valid;
+}
+
++ (NSString*) licenseName {
+}
+
++ (NSString*) licenseCode {
 }
 
 + (BOOL) hasValidLicense {
     return NO;
+}
+
++ (void) sendToStore {
+    NSString* storeUrl = @"http://giantrobotsoftware.com/appgrid/store.html";
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:storeUrl]];
+}
+
++ (NSAlert*) alertForValidity:(BOOL)valid {
+    NSAlert* alert = [[NSAlert alloc] init];
+    
+    NSString* appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+    
+    if (valid) {
+        alert.alertStyle = NSInformationalAlertStyle;
+        alert.messageText = @"AppGrid successfully registered!";
+        alert.informativeText = [NSString stringWithFormat:@"Now you have the full version of %@. Congratulations!", appName];
+    }
+    else {
+        alert.alertStyle = NSCriticalAlertStyle;
+        alert.messageText = @"Invalid or Corrupted License";
+        alert.informativeText = [NSString stringWithFormat:
+                                 @"The auto-register link you clicked has been corrupted and can't be verified.\n\n"
+                                 @"To register %@, find the license name and license code (which was emailed to you) and enter them into the License window.",
+                                 appName];
+    }
+    
+    return alert;
 }
 
 @end
