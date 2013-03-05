@@ -19,4 +19,7 @@
 - (CGRect) gridProps;
 - (void) moveToGridProps:(CGRect)gridProps;
 
+- (void) moveToNextScreen;
+- (void) moveToPreviousScreen;
+
 @end

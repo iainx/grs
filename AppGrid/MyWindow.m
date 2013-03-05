@@ -95,8 +95,8 @@
     return gridProps;
 }
 
-- (void) moveToGridProps:(CGRect)gridProps {
-    CGRect screenRect = [MyWindow realFrameForScreen:[self screen]];
+- (void) moveToGridProps:(CGRect)gridProps onScreen:(NSScreen*)screen {
+    CGRect screenRect = [MyWindow realFrameForScreen:screen];
     
     double thirdScrenWidth = screenRect.size.width / [MyGrid width];
     double halfScreenHeight = screenRect.size.height / 2.0;
@@ -111,10 +111,11 @@
     newFrame = NSInsetRect(newFrame, 5, 5);
     newFrame = NSIntegralRect(newFrame);
     
-//    NSLog(@"was: %@", NSStringFromRect([self frame]));
-//    NSLog(@" is: %@", NSStringFromRect(newFrame));
-    
     [self setFrame:newFrame];
+}
+
+- (void) moveToGridProps:(CGRect)gridProps {
+    [self moveToGridProps:gridProps onScreen:[self screen]];
 }
 
 - (CGRect) frame {
@@ -125,6 +126,7 @@
 }
 
 - (void) setFrame:(CGRect)frame {
+    [self setSize:frame.size];
     [self setTopLeft:frame.origin];
     [self setSize:frame.size];
 }
@@ -217,6 +219,34 @@
     }
     
     return lastScreen;
+}
+
+- (void) moveToNextScreen {
+    NSArray* screens = [NSScreen screens];
+    NSScreen* currentScreen = [self screen];
+    
+    NSUInteger idx = [screens indexOfObject:currentScreen];
+    
+    idx += 1;
+    if (idx == [screens count])
+        idx = 0;
+    
+    NSScreen* nextScreen = [screens objectAtIndex:idx];
+    [self moveToGridProps:[self gridProps] onScreen:nextScreen];
+}
+
+- (void) moveToPreviousScreen {
+    NSArray* screens = [NSScreen screens];
+    NSScreen* currentScreen = [self screen];
+    
+    NSUInteger idx = [screens indexOfObject:currentScreen];
+    
+    idx -= 1;
+    if (idx == -1)
+        idx = [screens count] - 1;
+    
+    NSScreen* nextScreen = [screens objectAtIndex:idx];
+    [self moveToGridProps:[self gridProps] onScreen:nextScreen];
 }
 
 @end
