@@ -15,6 +15,8 @@
 
 #import "SDHowToWindowController.h"
 
+#import <Sparkle/Sparkle.h>
+
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate>
 
 @property NSStatusItem* statusItem;
@@ -26,5 +28,7 @@
 @property MyLicenseURLHandler *myLicenseURLHandler;
 
 @property SDHowToWindowController* howToWindowController;
+
+@property IBOutlet SUUpdater *updater;
 
 @end

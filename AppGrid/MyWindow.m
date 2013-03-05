@@ -177,26 +177,14 @@
 
 - (void) setTopLeft:(CGPoint)thePoint {
     CFTypeRef positionStorage = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, (const void *)&thePoint));
-    
-    AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilityPositionAttribute, positionStorage);
-    BOOL success = (result == kAXErrorSuccess);
-    
-    if (!success)
-        NSLog(@"could not move window");
-    
+    AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilityPositionAttribute, positionStorage);
     if (positionStorage)
         CFRelease(positionStorage);
 }
 
 - (void) setSize:(CGSize)theSize {
     CFTypeRef sizeStorage = (CFTypeRef)(AXValueCreate(kAXValueCGSizeType, (const void *)&theSize));
-    
-    AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilitySizeAttribute, sizeStorage);
-    BOOL success = (result == kAXErrorSuccess);
-    
-    if (!success)
-        NSLog(@"could not set window size");
-    
+    AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilitySizeAttribute, sizeStorage);
     if (sizeStorage)
         CFRelease(sizeStorage);
 }

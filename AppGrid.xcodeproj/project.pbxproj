@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941E6B4D16E668BD00B4FBA3 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941E6B4C16E668BD00B4FBA3 /* Sparkle.framework */; };
+		941E6B5016E6691D00B4FBA3 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 941E6B4C16E668BD00B4FBA3 /* Sparkle.framework */; };
 		9428039D16E2C506005E5153 /* CFobError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428038C16E2C506005E5153 /* CFobError.m */; };
 		9428039E16E2C506005E5153 /* CFobLicGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428038E16E2C506005E5153 /* CFobLicGenerator.m */; };
 		9428039F16E2C506005E5153 /* CFobLicVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039016E2C506005E5153 /* CFobLicVerifier.m */; };
@@ -57,7 +59,21 @@
 		94ED280F16E09D570044ED33 /* MyUniversalAccessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED280E16E09D570044ED33 /* MyUniversalAccessHelper.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		941E6B4F16E6690900B4FBA3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				941E6B5016E6691D00B4FBA3 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		941E6B4C16E668BD00B4FBA3 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = AppGrid/Sparkle.framework; sourceTree = "<group>"; };
 		9428038B16E2C506005E5153 /* CFobError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFobError.h; sourceTree = "<group>"; };
 		9428038C16E2C506005E5153 /* CFobError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFobError.m; sourceTree = "<group>"; };
 		9428038D16E2C506005E5153 /* CFobLicGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFobLicGenerator.h; sourceTree = "<group>"; };
@@ -152,12 +168,23 @@
 				946CF3FF16E631FA002DA707 /* libcrypto.dylib in Frameworks */,
 				94ED27F416E026370044ED33 /* Carbon.framework in Frameworks */,
 				94ED279C16E01A440044ED33 /* Cocoa.framework in Frameworks */,
+				941E6B4D16E668BD00B4FBA3 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941E6B4E16E668D100B4FBA3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				94ED280016E034F10044ED33 /* MyShortcuts.h */,
+				946CF3F816E62ECF002DA707 /* SDStringNotEmptyValueTransformer.h */,
+				946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		9428038A16E2C4E9005E5153 /* CocoaFob */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +252,7 @@
 		94ED279A16E01A440044ED33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				941E6B4C16E668BD00B4FBA3 /* Sparkle.framework */,
 				946CF3FE16E631FA002DA707 /* libcrypto.dylib */,
 				94ED27F316E026360044ED33 /* Carbon.framework */,
 				94ED279B16E01A440044ED33 /* Cocoa.framework */,
@@ -246,12 +274,6 @@
 		94ED27A116E01A440044ED33 /* AppGrid */ = {
 			isa = PBXGroup;
 			children = (
-				94D6C0E416E0FCEA00868523 /* icon.icns */,
-				94D6C0E316E0F52B00868523 /* AppGrid.entitlements */,
-				94ED280016E034F10044ED33 /* MyShortcuts.h */,
-				946CF3F816E62ECF002DA707 /* SDStringNotEmptyValueTransformer.h */,
-				946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */,
-				94ED280116E079C50044ED33 /* defaults.plist */,
 				9428038A16E2C4E9005E5153 /* CocoaFob */,
 				94D6C0C616E0E29C00868523 /* HowToWindow */,
 				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
@@ -259,6 +281,7 @@
 				94ED280416E089E90044ED33 /* View */,
 				94ED27F916E034510044ED33 /* Controller */,
 				94ED27FA16E034580044ED33 /* XIBs */,
+				941E6B4E16E668D100B4FBA3 /* Helpers */,
 				946CF40016E6320C002DA707 /* Licenses */,
 				94ED280A16E08F8A0044ED33 /* Graphics */,
 				94ED27A216E01A440044ED33 /* Supporting Files */,
@@ -274,6 +297,9 @@
 				94ED27A716E01A440044ED33 /* main.m */,
 				94ED27A916E01A440044ED33 /* AppGrid-Prefix.pch */,
 				94ED27AA16E01A440044ED33 /* Credits.rtf */,
+				94ED280116E079C50044ED33 /* defaults.plist */,
+				94D6C0E416E0FCEA00868523 /* icon.icns */,
+				94D6C0E316E0F52B00868523 /* AppGrid.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -370,6 +396,7 @@
 				94ED279416E01A440044ED33 /* Sources */,
 				94ED279516E01A440044ED33 /* Frameworks */,
 				94ED279616E01A440044ED33 /* Resources */,
+				941E6B4F16E6690900B4FBA3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -563,6 +590,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/AppGrid\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppGrid/AppGrid-Prefix.pch";
 				INFOPLIST_FILE = "AppGrid/AppGrid-Info.plist";
@@ -578,6 +609,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/AppGrid\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppGrid/AppGrid-Prefix.pch";
 				INFOPLIST_FILE = "AppGrid/AppGrid-Info.plist";
