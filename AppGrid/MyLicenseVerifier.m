@@ -73,6 +73,9 @@
 + (NSAlert*) alertForValidity:(BOOL)valid fromLink:(BOOL)fromLink {
     NSAlert* alert = [[NSAlert alloc] init];
     
+    [alert addButtonWithTitle:@"OK"];
+    [alert addButtonWithTitle:@"Visit Our Website"];
+    
     NSString* appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
     
     if (valid) {
@@ -95,10 +98,11 @@
             alert.informativeText =
 //          @"====================================================="
             @"This license cannot be verified. Try this:\n"
-//            @" that could be going wrong:\n"
             @"- Paste the entire license code (it's pretty long).\n"
             @"- Enter the exact license name you registered with.\n\n"
-            @"If after doing so you're still having this error, contact customer support for assistance.";
+            @"If after doing so you're still having this error,\n"
+            @"contact customer support for assistance. There is a\n"
+            @"link for customer support on our website.";
         }
     }
     

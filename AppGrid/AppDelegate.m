@@ -108,7 +108,10 @@
     BOOL valid = [MyLicenseVerifier tryRegisteringWithLicenseCode:licenseCode licenseName:licenseName];
     
     [NSApp activateIgnoringOtherApps:YES];
-    [[MyLicenseVerifier alertForValidity:valid fromLink:YES] runModal];
+    NSInteger result = [[MyLicenseVerifier alertForValidity:valid fromLink:YES] runModal];
+    
+    if (result == NSAlertSecondButtonReturn)
+        [MyLicenseVerifier sendToStore];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {

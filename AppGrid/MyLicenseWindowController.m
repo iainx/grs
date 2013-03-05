@@ -39,6 +39,11 @@
     [self didChangeValueForKey:@"hasValidLicense"];
 }
 
+- (void) validationAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    if (returnCode == NSAlertSecondButtonReturn)
+        [MyLicenseVerifier sendToStore];
+}
+
 - (IBAction) validateLicense:(id)sender {
     BOOL valid = [MyLicenseVerifier
                   tryRegisteringWithLicenseCode:[self.licenseCode stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
@@ -46,8 +51,8 @@
     
     [[MyLicenseVerifier alertForValidity:valid fromLink:NO]
      beginSheetModalForWindow:[self window]
-     modalDelegate:nil
-     didEndSelector:NULL
+     modalDelegate:self
+     didEndSelector:@selector(validationAlertDidEnd:returnCode:contextInfo:)
      contextInfo:NULL];
 }
 
