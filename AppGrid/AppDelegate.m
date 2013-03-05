@@ -79,19 +79,25 @@
 }
 
 - (void) endTrialIfNecessary {
-    NSDate* expires = [NSDate dateWithTimeIntervalSinceReferenceDate:383851680 + (60 * 60 * 24 * 7)];
-    NSDate* now = [NSDate date];
-    BOOL expired = ([now compare: expires] == NSOrderedDescending);
+    if ([MyLicenseVerifier hasValidLicense])
+        return;
     
-    if (expired) {
-        [self.myActor unbindMyKeys];
+    if ([MyLicenseVerifier expired]) {
+        [self.myActor disableKeys];
         
         [NSApp activateIgnoringOtherApps:YES];
-        NSRunAlertPanel(@"AppGrid's trial period is over", @"Let me know if you want an extended trial.", @"OK", nil, nil);
-        [NSApp terminate:self];
+        NSInteger result = NSRunAlertPanel(@"AppGrid trial has expired",
+                                           @"You may continue using AppGrid by purchasing a license.",
+                                           @"OK",
+                                           @"Purchase License",
+                                           nil);
+        
+        if (result == 0)
+            [MyLicenseVerifier sendToStore];
     }
-    
-    [self performSelector:@selector(endTrialIfNecessary) withObject:nil afterDelay:60];
+    else {
+        [self performSelector:@selector(endTrialIfNecessary) withObject:nil afterDelay:60];
+    }
 }
 
 - (IBAction) showLicenseWindow:(id)sender {
@@ -110,11 +116,18 @@
     NSInteger result = [[MyLicenseVerifier alertForValidity:valid fromLink:YES] runModal];
     
     if (result == NSAlertSecondButtonReturn)
-        [MyLicenseVerifier sendToStore];
+        [MyLicenseVerifier sendToWebsite];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self endTrialIfNecessary];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:MyLicenseVerifiedNotification
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [self.myActor enableKeys];
+                                                  }];
     
     self.myLicenseURLHandler = [[MyLicenseURLHandler alloc] init];
     [self.myLicenseURLHandler listenForURLs:^(NSString* licenseName, NSString* licenseCode) {

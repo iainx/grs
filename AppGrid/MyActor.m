@@ -16,7 +16,7 @@
 
 @interface MyActor ()
 
-@property BOOL keysAreUnbound;
+@property BOOL keysDisabled;
 
 @end
 
@@ -44,7 +44,7 @@
 - (void) bindDefaultsKey:(NSString*)key action:(dispatch_block_t)action {
     [MASShortcut registerGlobalShortcutWithUserDefaultsKey:key handler:^{
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.keysAreUnbound)
+            if (self.keysDisabled)
                 return;
             
             if ([MyUniversalAccessHelper complainIfNeeded])
@@ -55,8 +55,12 @@
     }];
 }
 
-- (void) unbindMyKeys {
-    self.keysAreUnbound = YES;
+- (void) disableKeys {
+    self.keysDisabled = YES;
+}
+
+- (void) enableKeys {
+    self.keysDisabled = NO;
 }
 
 - (void) alignAllWindows {

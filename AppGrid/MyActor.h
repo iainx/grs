@@ -11,6 +11,8 @@
 @interface MyActor : NSObject
 
 - (void) bindMyKeys;
-- (void) unbindMyKeys;
+
+- (void) disableKeys;
+- (void) enableKeys;
 
 @end

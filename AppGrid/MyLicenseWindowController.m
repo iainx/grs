@@ -41,7 +41,7 @@
 
 - (void) validationAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
     if (returnCode == NSAlertSecondButtonReturn)
-        [MyLicenseVerifier sendToStore];
+        [MyLicenseVerifier sendToWebsite];
 }
 
 - (IBAction) validateLicense:(id)sender {

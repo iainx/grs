@@ -20,8 +20,11 @@
 
 + (BOOL) hasValidLicense;
 
++ (void) sendToWebsite;
 + (void) sendToStore;
 
 + (NSAlert*) alertForValidity:(BOOL)valid fromLink:(BOOL)fromLink;
+
++ (BOOL) expired;
 
 @end

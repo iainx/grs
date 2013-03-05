@@ -13,7 +13,33 @@
 #define MyLicenseNameDefaultsKey @"MyLicenseNameDefaultsKey"
 #define MyLicenseCodeDefaultsKey @"MyLicenseCodeDefaultsKey"
 
+#define MyInitialDateKey @"NSWindowTopLeftPositionalSetting"
+
+#define MY_EXPIRATION_TIME (60 * 10)
+//#define MY_EXPIRATION_TIME (60 * 60 * 24 * 7)
+
 @implementation MyLicenseVerifier
+
++ (BOOL) expired {
+//    NSLog(@"%@", [self initialDate]);
+//    NSLog(@"%@", [NSDate date]);
+    NSDate* expires = [[self initialDate] dateByAddingTimeInterval:MY_EXPIRATION_TIME];
+    NSDate* now = [NSDate date];
+    return ([now compare: expires] == NSOrderedDescending);
+}
+
++ (NSDate*) initialDate {
+    NSData* data = [[NSUserDefaults standardUserDefaults] dataForKey:MyInitialDateKey];
+    
+    if (data == nil) {
+        NSData* now = [NSKeyedArchiver archivedDataWithRootObject:[NSDate date]];
+        [[NSUserDefaults standardUserDefaults] setObject:now forKey:MyInitialDateKey];
+        
+        return [self initialDate];
+    }
+    
+    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+}
 
 + (BOOL) tryRegisteringWithLicenseCode:(NSString*)licenseCode licenseName:(NSString*)licenseName {
     BOOL valid = [self verifyLicenseCode:licenseCode forLicenseName:licenseName];
@@ -63,6 +89,11 @@
 
 + (BOOL) hasValidLicense {
     return [self verifyLicenseCode:[self licenseCode] forLicenseName:[self licenseName]];
+}
+
++ (void) sendToWebsite {
+    NSString* storeUrl = @"http://giantrobotsoftware.com/appgrid/";
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:storeUrl]];
 }
 
 + (void) sendToStore {
