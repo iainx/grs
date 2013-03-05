@@ -199,18 +199,6 @@
         CFRelease(sizeStorage);
 }
 
-//- (NSString *) getTitle {
-////    [AccessibilityWrapper createSystemWideElement];
-//    CFTypeRef _title;
-//    if (AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityTitleAttribute, (CFTypeRef *)&_title) == kAXErrorSuccess) {
-//        NSString *title = (__bridge NSString *) _title;
-//        if (_title != NULL) CFRelease(_title);
-//        return title;
-//    }
-//    if (_title != NULL) CFRelease(_title);
-//    return @"";
-//}
-
 - (NSScreen*) screen {
     CGRect windowFrame = [self frame];
     
