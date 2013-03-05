@@ -64,7 +64,7 @@
 		94ED27FE16E034820044ED33 /* MyPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27FC16E034820044ED33 /* MyPrefsWindowController.m */; };
 		94ED27FF16E034820044ED33 /* MyPrefsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */; };
 		94ED280216E079C50044ED33 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94ED280116E079C50044ED33 /* defaults.plist */; };
-		94ED280716E089F60044ED33 /* SDPrettyLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED280616E089F60044ED33 /* SDPrettyLine.m */; };
+		94ED280716E089F60044ED33 /* SDInsetHorizontalLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED280616E089F60044ED33 /* SDInsetHorizontalLine.m */; };
 		94ED280916E08F880044ED33 /* statusitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ED280816E08F880044ED33 /* statusitem.png */; };
 		94ED280C16E0909D0044ED33 /* statusitem_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ED280B16E0909D0044ED33 /* statusitem_pressed.png */; };
 		94ED280F16E09D570044ED33 /* MyUniversalAccessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED280E16E09D570044ED33 /* MyUniversalAccessHelper.m */; };
@@ -173,8 +173,8 @@
 		94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPrefsWindow.xib; sourceTree = "<group>"; };
 		94ED280016E034F10044ED33 /* MyShortcuts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyShortcuts.h; sourceTree = "<group>"; };
 		94ED280116E079C50044ED33 /* defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = defaults.plist; sourceTree = "<group>"; };
-		94ED280516E089F60044ED33 /* SDPrettyLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPrettyLine.h; sourceTree = "<group>"; };
-		94ED280616E089F60044ED33 /* SDPrettyLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPrettyLine.m; sourceTree = "<group>"; };
+		94ED280516E089F60044ED33 /* SDInsetHorizontalLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDInsetHorizontalLine.h; sourceTree = "<group>"; };
+		94ED280616E089F60044ED33 /* SDInsetHorizontalLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDInsetHorizontalLine.m; sourceTree = "<group>"; };
 		94ED280816E08F880044ED33 /* statusitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusitem.png; sourceTree = "<group>"; };
 		94ED280B16E0909D0044ED33 /* statusitem_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusitem_pressed.png; sourceTree = "<group>"; };
 		94ED280D16E09D570044ED33 /* MyUniversalAccessHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUniversalAccessHelper.h; sourceTree = "<group>"; };
@@ -412,8 +412,8 @@
 		94ED280416E089E90044ED33 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				94ED280516E089F60044ED33 /* SDPrettyLine.h */,
-				94ED280616E089F60044ED33 /* SDPrettyLine.m */,
+				94ED280516E089F60044ED33 /* SDInsetHorizontalLine.h */,
+				94ED280616E089F60044ED33 /* SDInsetHorizontalLine.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -519,7 +519,7 @@
 				94ED27F016E024F20044ED33 /* MASShortcutView+UserDefaults.m in Sources */,
 				94ED27F816E02A900044ED33 /* MyWindow.m in Sources */,
 				94ED27FE16E034820044ED33 /* MyPrefsWindowController.m in Sources */,
-				94ED280716E089F60044ED33 /* SDPrettyLine.m in Sources */,
+				94ED280716E089F60044ED33 /* SDInsetHorizontalLine.m in Sources */,
 				94ED280F16E09D570044ED33 /* MyUniversalAccessHelper.m in Sources */,
 				94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */,
 				94D6C0C516E0DF4300868523 /* MyActor.m in Sources */,
@@ -648,7 +648,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppGrid/AppGrid-Prefix.pch";
 				INFOPLIST_FILE = "AppGrid/AppGrid-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -661,7 +663,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppGrid/AppGrid-Prefix.pch";
 				INFOPLIST_FILE = "AppGrid/AppGrid-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

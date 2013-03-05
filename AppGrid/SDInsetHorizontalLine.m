@@ -1,14 +1,14 @@
 //
-//  SDPrettyLine.m
+//  SDInsetHorizontalLine.m
 //  AppGrid
 //
 //  Created by Steven Degutis on 3/1/13.
 //  Copyright (c) 2013 Steven Degutis. All rights reserved.
 //
 
-#import "SDPrettyLine.h"
+#import "SDInsetHorizontalLine.h"
 
-@implementation SDPrettyLine
+@implementation SDInsetHorizontalLine
 
 - (void)drawRect:(NSRect)dirtyRect {
     NSRect bounds = [self bounds], garbage;

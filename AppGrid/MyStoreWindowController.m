@@ -25,7 +25,7 @@
     
 	FsprgStoreParameters *parameters = [FsprgStoreParameters parameters];
 	[parameters setOrderProcessType:kFsprgOrderProcessInstant];
-	[parameters setStoreId:@"applyconcat" withProductId:@"appgrid"];
+	[parameters setStoreId:@"giantrobotsoftware" withProductId:@"appgrid"];
 	[parameters setMode:kFsprgModeTest];
 	
 	ABPerson *me = [[ABAddressBook sharedAddressBook] me];

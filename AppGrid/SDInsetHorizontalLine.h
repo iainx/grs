@@ -1,5 +1,5 @@
 //
-//  SDPrettyLine.h
+//  SDInsetHorizontalLine.h
 //  AppGrid
 //
 //  Created by Steven Degutis on 3/1/13.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SDPrettyLine : NSBox
+@interface SDInsetHorizontalLine : NSBox
 
 @end
