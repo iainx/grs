@@ -52,7 +52,7 @@
 - (void) moveRight {
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
-    r.origin.x = MIN(r.origin.x + 1, [MyGrid width] - 1);
+    r.origin.x = MIN(r.origin.x + 1, [MyGrid width] - r.size.width);
     [win moveToGridProps:r];
 }
 
