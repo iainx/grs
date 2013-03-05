@@ -8,6 +8,9 @@
 
 #define MyAlignAllToGridShortcutKey @"MyAlignAllToGridShortcutKey"
 
+#define MyMoveNextScreenShortcutKey @"MyMoveNextScreenShortcutKey"
+#define MyMovePrevScreenShortcutKey @"MyMovePrevScreenShortcutKey"
+
 #define MyMoveLeftShortcutKey @"MyMoveLeftShortcutKey"
 #define MyMoveRightShortcutKey @"MyMoveRightShortcutKey"
 

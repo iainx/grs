@@ -22,6 +22,9 @@
     
     self.alignAllToGridShortcutView.associatedUserDefaultsKey = MyAlignAllToGridShortcutKey;
     
+    self.moveNextScreenShortcutView.associatedUserDefaultsKey = MyMoveNextScreenShortcutKey;
+    self.movePrevScreenShortcutView.associatedUserDefaultsKey = MyMovePrevScreenShortcutKey;
+    
     self.moveLeftShortcutView.associatedUserDefaultsKey = MyMoveLeftShortcutKey;
     self.moveRightShortcutView.associatedUserDefaultsKey = MyMoveRightShortcutKey;
     

@@ -14,6 +14,9 @@
 
 @property (nonatomic, weak) IBOutlet MASShortcutView *alignAllToGridShortcutView;
 
+@property (nonatomic, weak) IBOutlet MASShortcutView *moveNextScreenShortcutView;
+@property (nonatomic, weak) IBOutlet MASShortcutView *movePrevScreenShortcutView;
+
 @property (nonatomic, weak) IBOutlet MASShortcutView *moveLeftShortcutView;
 @property (nonatomic, weak) IBOutlet MASShortcutView *moveRightShortcutView;
 

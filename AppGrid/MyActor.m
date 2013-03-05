@@ -25,6 +25,9 @@
 - (void) bindMyKeys {
     [self bindDefaultsKey:MyAlignAllToGridShortcutKey action:^{ [self alignAllWindows]; }];
     
+    [self bindDefaultsKey:MyMovePrevScreenShortcutKey action:^{ [self moveToNextScreen]; }];
+    [self bindDefaultsKey:MyMoveNextScreenShortcutKey action:^{ [self moveToPreviousScreen]; }];
+    
     [self bindDefaultsKey:MyMoveLeftShortcutKey action:^{ [self moveLeft]; }];
     [self bindDefaultsKey:MyMoveRightShortcutKey action:^{ [self moveRight]; }];
     
@@ -68,6 +71,16 @@
     CGRect r = [win gridProps];
     r.size.width = MAX(r.size.width - 1, 1);
     [win moveToGridProps:r];
+}
+
+- (void) moveToNextScreen {
+    MyWindow* win = [MyWindow focusedWindow];
+    [win moveToNextScreen];
+}
+
+- (void) moveToPreviousScreen {
+    MyWindow* win = [MyWindow focusedWindow];
+    [win moveToPreviousScreen];
 }
 
 - (void) shrinkToLower {
