@@ -44,13 +44,13 @@
 
 - (void) menuNeedsUpdate:(NSMenu *)menu {
     if (menu == self.statusBarMenu) {
-        NSString* licenseItemTitle = @"Purchase...";
-        
-        if ([MyLicenseVerifier hasValidLicense])
-            licenseItemTitle = @"License...";
-        
-        NSMenuItem* licenseItem = [menu itemWithTag:77];
-        [licenseItem setTitle:licenseItemTitle];
+//        NSString* licenseItemTitle = @"Purchase...";
+//        
+//        if ([MyLicenseVerifier hasValidLicense])
+//            licenseItemTitle = @"License...";
+//        
+//        NSMenuItem* licenseItem = [menu itemWithTag:77];
+//        [licenseItem setTitle:licenseItemTitle];
     }
     else {
         for (NSMenuItem* item in [menu itemArray]) {
@@ -92,7 +92,7 @@
                                            @"Purchase License",
                                            nil);
         
-        if (result == 0)
+        if (result == NSAlertAlternateReturn)
             [MyLicenseVerifier sendToStore];
     }
     else {
@@ -120,8 +120,6 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [self endTrialIfNecessary];
-    
     [[NSNotificationCenter defaultCenter] addObserverForName:MyLicenseVerifiedNotification
                                                       object:nil
                                                        queue:nil
@@ -141,6 +139,8 @@
     
     self.howToWindowController = [[SDHowToWindowController alloc] init];
     [self.howToWindowController showInstructionsWindowFirstTimeOnly];
+    
+    [self endTrialIfNecessary];
 }
 
 @end

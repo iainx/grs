@@ -23,7 +23,7 @@
                                            @"Dismiss",
                                            nil);
         
-        if (result) {
+        if (result == NSAlertDefaultReturn) {
             NSString* src = @"tell application \"System Preferences\"\nactivate\nset current pane to pane \"com.apple.preference.universalaccess\"\nend tell";
             NSAppleScript *a = [[NSAppleScript alloc] initWithSource:src];
             [a executeAndReturnError:nil];

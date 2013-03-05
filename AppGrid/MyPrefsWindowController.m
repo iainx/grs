@@ -37,7 +37,7 @@
 }
 
 - (void) resetKeysSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void  *)contextInfo; {
-    if (returnCode == 0) {
+    if (returnCode == NSAlertAlternateReturn) {
         NSDictionary* defaults = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"defaults" withExtension:@"plist"]];
         for (NSString* key in defaults) {
             NSData* val = [defaults objectForKey:key];
