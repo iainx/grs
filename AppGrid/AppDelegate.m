@@ -44,14 +44,25 @@
 }
 
 - (void) menuNeedsUpdate:(NSMenu *)menu {
-    for (NSMenuItem* item in [menu itemArray]) {
-        [item setState:NSOffState];
+    if (menu == self.statusBarMenu) {
+        NSString* licenseItemTitle = @"Purchase...";
+        
+        if ([MyLicenseVerifier hasValidLicense])
+            licenseItemTitle = @"License...";
+        
+        NSMenuItem* licenseItem = [menu itemWithTag:77];
+        [licenseItem setTitle:licenseItemTitle];
     }
-    
-    NSInteger num = [MyGrid width];
-    NSString* numString = [NSString stringWithFormat:@"%ld", num];
-    
-    [[menu itemWithTitle:numString] setState:NSOnState];
+    else {
+        for (NSMenuItem* item in [menu itemArray]) {
+            [item setState:NSOffState];
+        }
+        
+        NSInteger num = [MyGrid width];
+        NSString* numString = [NSString stringWithFormat:@"%ld", num];
+        
+        [[menu itemWithTitle:numString] setState:NSOnState];
+    }
 }
 
 - (IBAction) reallyShowAboutPanel:(id)sender {
@@ -84,10 +95,12 @@
     [self performSelector:@selector(endTrialIfNecessary) withObject:nil afterDelay:60];
 }
 
-- (IBAction) showLicenseOrStore:(id)sender {
+- (IBAction) showLicenseWindow:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
     
-    self.myLicenseWindowController = [[MyLicenseWindowController alloc] init];
+    if (self.myLicenseWindowController == nil)
+        self.myLicenseWindowController = [[MyLicenseWindowController alloc] init];
+    
     [self.myLicenseWindowController showWindow:self];
 }
 

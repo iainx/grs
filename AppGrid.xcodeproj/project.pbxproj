@@ -36,6 +36,7 @@
 		942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */; };
 		942803C116E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803C016E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt */; };
 		942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803C216E3FB8C005E5153 /* masshortcut-license.txt */; };
+		946CF3FA16E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */; };
 		94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C116E0DDD700868523 /* MyGrid.m */; };
 		94D6C0C516E0DF4300868523 /* MyActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C416E0DF4300868523 /* MyActor.m */; };
 		94D6C0C816E0E2A900868523 /* SDHowToWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */; };
@@ -123,6 +124,8 @@
 		942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLicenseWindow.xib; sourceTree = "<group>"; };
 		942803C016E3FB56005E5153 /* fastspring-embedded-store-mac-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fastspring-embedded-store-mac-license.txt"; sourceTree = "<group>"; };
 		942803C216E3FB8C005E5153 /* masshortcut-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "masshortcut-license.txt"; sourceTree = "<group>"; };
+		946CF3F816E62ECF002DA707 /* SDStringNotEmptyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStringNotEmptyValueTransformer.h; sourceTree = "<group>"; };
+		946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStringNotEmptyValueTransformer.m; sourceTree = "<group>"; };
 		94D6C0C016E0DDD700868523 /* MyGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGrid.h; sourceTree = "<group>"; };
 		94D6C0C116E0DDD700868523 /* MyGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGrid.m; sourceTree = "<group>"; };
 		94D6C0C316E0DF4300868523 /* MyActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActor.h; sourceTree = "<group>"; };
@@ -317,6 +320,8 @@
 				94D6C0E416E0FCEA00868523 /* icon.icns */,
 				94D6C0E316E0F52B00868523 /* AppGrid.entitlements */,
 				94ED280016E034F10044ED33 /* MyShortcuts.h */,
+				946CF3F816E62ECF002DA707 /* SDStringNotEmptyValueTransformer.h */,
+				946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */,
 				94ED280116E079C50044ED33 /* defaults.plist */,
 				9428038A16E2C4E9005E5153 /* CocoaFob */,
 				9428035D16E2B447005E5153 /* FsprgEmbeddedStore */,
@@ -548,6 +553,7 @@
 				942803B716E38BC6005E5153 /* MyLicenseURLHandler.m in Sources */,
 				942803BA16E38CFB005E5153 /* MyLicenseVerifier.m in Sources */,
 				942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */,
+				946CF3FA16E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

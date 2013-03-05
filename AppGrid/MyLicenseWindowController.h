@@ -14,4 +14,9 @@
 
 @property MyStoreWindowController *myStoreWindowController;
 
+@property NSString* licenseName;
+@property NSString* licenseCode;
+
+@property (readonly) BOOL hasValidLicense;
+
 @end
