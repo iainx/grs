@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "MASShortcut.h"
 #import "MyUniversalAccessHelper.h"
 #import "MyGrid.h"
 
@@ -123,8 +122,6 @@
     }];
      
     [MyUniversalAccessHelper complainIfNeeded];
-    
-    [MASShortcut setAllowsAnyHotkeyWithOptionModifier:YES];
     
     self.myActor = [[MyActor alloc] init];
     [self.myActor bindMyKeys];

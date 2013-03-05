@@ -23,6 +23,8 @@
 @implementation MyActor
 
 - (void) bindMyKeys {
+    [MASShortcut setAllowsAnyHotkeyWithOptionModifier:YES];
+    
     [self bindDefaultsKey:MyAlignAllToGridShortcutKey action:^{ [self alignAllWindows]; }];
     
     [self bindDefaultsKey:MyMovePrevScreenShortcutKey action:^{ [self moveToNextScreen]; }];
@@ -36,7 +38,25 @@
     
     [self bindDefaultsKey:MyShrinkToLowerRowShortcutKey action:^{ [self shrinkToLower]; }];
     [self bindDefaultsKey:MyShrinkToUpperRowShortcutKey action:^{ [self shrinkToUpper]; }];
-    [self bindDefaultsKey:MyFillEntireColumnShortcutKey action:^{ [self fillEntierColumn]; }];
+    [self bindDefaultsKey:MyFillEntireColumnShortcutKey action:^{ [self fillEntireColumn]; }];
+}
+
+- (void) bindDefaultsKey:(NSString*)key action:(dispatch_block_t)action {
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:key handler:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.keysAreUnbound)
+                return;
+            
+            if ([MyUniversalAccessHelper complainIfNeeded])
+                return;
+            
+            action();
+        });
+    }];
+}
+
+- (void) unbindMyKeys {
+    self.keysAreUnbound = YES;
 }
 
 - (void) alignAllWindows {
@@ -99,30 +119,12 @@
     [win moveToGridProps:r];
 }
 
-- (void) fillEntierColumn {
+- (void) fillEntireColumn {
     MyWindow* win = [MyWindow focusedWindow];
     CGRect r = [win gridProps];
     r.origin.y = 0;
     r.size.height = 2;
     [win moveToGridProps:r];
-}
-
-- (void) bindDefaultsKey:(NSString*)key action:(dispatch_block_t)action {
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:key handler:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.keysAreUnbound)
-                return;
-            
-            if ([MyUniversalAccessHelper complainIfNeeded])
-                return;
-            
-            action();
-        });
-    }];
-}
-
-- (void) unbindMyKeys {
-    self.keysAreUnbound = YES;
 }
 
 @end
