@@ -30,14 +30,9 @@
 		94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C116E0DDD700868523 /* MyGrid.m */; };
 		94D6C0C516E0DF4300868523 /* MyActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C416E0DF4300868523 /* MyActor.m */; };
 		94D6C0C816E0E2A900868523 /* SDHowToWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */; };
-		94D6C0CD16E0E2B300868523 /* SDHowToWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0CA16E0E2B300868523 /* SDHowToWindow.m */; };
 		94D6C0CE16E0E2B300868523 /* SDHowToWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0CC16E0E2B300868523 /* SDHowToWindowController.m */; };
 		94D6C0D116E0E4CD00868523 /* SDRoundedHowToImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0D016E0E4CD00868523 /* SDRoundedHowToImageView.m */; };
-		94D6C0DC16E0EA8E00868523 /* sd_howto_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0D816E0EA8E00868523 /* sd_howto_2.png */; };
-		94D6C0DD16E0EA8E00868523 /* sd_howto_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0D916E0EA8E00868523 /* sd_howto_3.png */; };
-		94D6C0DE16E0EA8E00868523 /* sd_howto_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0DA16E0EA8E00868523 /* sd_howto_4.png */; };
-		94D6C0DF16E0EA8E00868523 /* sd_howto_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0DB16E0EA8E00868523 /* sd_howto_1.png */; };
-		94D6C0E216E0EB2100868523 /* SDHowToWindowInsetTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0E116E0EB2100868523 /* SDHowToWindowInsetTextField.m */; };
+		94D6C0DF16E0EA8E00868523 /* sd_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0DB16E0EA8E00868523 /* sd_intro.png */; };
 		94D6C0E516E0FCEA00868523 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0E416E0FCEA00868523 /* icon.icns */; };
 		94E0DD5316E7127F0037E5D8 /* MyFeedbackWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E0DD5116E7127F0037E5D8 /* MyFeedbackWindowController.m */; };
 		94E0DD5416E7127F0037E5D8 /* MyFeedbackWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E0DD5216E7127F0037E5D8 /* MyFeedbackWindow.xib */; };
@@ -116,18 +111,11 @@
 		94D6C0C316E0DF4300868523 /* MyActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActor.h; sourceTree = "<group>"; };
 		94D6C0C416E0DF4300868523 /* MyActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActor.m; sourceTree = "<group>"; };
 		94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDHowToWindow.xib; sourceTree = "<group>"; };
-		94D6C0C916E0E2B300868523 /* SDHowToWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHowToWindow.h; sourceTree = "<group>"; };
-		94D6C0CA16E0E2B300868523 /* SDHowToWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHowToWindow.m; sourceTree = "<group>"; };
 		94D6C0CB16E0E2B300868523 /* SDHowToWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHowToWindowController.h; sourceTree = "<group>"; };
 		94D6C0CC16E0E2B300868523 /* SDHowToWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHowToWindowController.m; sourceTree = "<group>"; };
 		94D6C0CF16E0E4CD00868523 /* SDRoundedHowToImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRoundedHowToImageView.h; sourceTree = "<group>"; };
 		94D6C0D016E0E4CD00868523 /* SDRoundedHowToImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRoundedHowToImageView.m; sourceTree = "<group>"; };
-		94D6C0D816E0EA8E00868523 /* sd_howto_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_2.png; sourceTree = "<group>"; };
-		94D6C0D916E0EA8E00868523 /* sd_howto_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_3.png; sourceTree = "<group>"; };
-		94D6C0DA16E0EA8E00868523 /* sd_howto_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_4.png; sourceTree = "<group>"; };
-		94D6C0DB16E0EA8E00868523 /* sd_howto_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_1.png; sourceTree = "<group>"; };
-		94D6C0E016E0EB2100868523 /* SDHowToWindowInsetTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHowToWindowInsetTextField.h; sourceTree = "<group>"; };
-		94D6C0E116E0EB2100868523 /* SDHowToWindowInsetTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHowToWindowInsetTextField.m; sourceTree = "<group>"; };
+		94D6C0DB16E0EA8E00868523 /* sd_intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro.png; sourceTree = "<group>"; };
 		94D6C0E316E0F52B00868523 /* AppGrid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppGrid.entitlements; sourceTree = "<group>"; };
 		94D6C0E416E0FCEA00868523 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		94E0DD5016E7127F0037E5D8 /* MyFeedbackWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFeedbackWindowController.h; sourceTree = "<group>"; };
@@ -234,11 +222,7 @@
 		94D6C0C616E0E29C00868523 /* HowToWindow */ = {
 			isa = PBXGroup;
 			children = (
-				94D6C0E016E0EB2100868523 /* SDHowToWindowInsetTextField.h */,
-				94D6C0E116E0EB2100868523 /* SDHowToWindowInsetTextField.m */,
 				94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */,
-				94D6C0C916E0E2B300868523 /* SDHowToWindow.h */,
-				94D6C0CA16E0E2B300868523 /* SDHowToWindow.m */,
 				94D6C0CB16E0E2B300868523 /* SDHowToWindowController.h */,
 				94D6C0CC16E0E2B300868523 /* SDHowToWindowController.m */,
 				94D6C0CF16E0E4CD00868523 /* SDRoundedHowToImageView.h */,
@@ -397,10 +381,7 @@
 		94ED280A16E08F8A0044ED33 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				94D6C0D816E0EA8E00868523 /* sd_howto_2.png */,
-				94D6C0D916E0EA8E00868523 /* sd_howto_3.png */,
-				94D6C0DA16E0EA8E00868523 /* sd_howto_4.png */,
-				94D6C0DB16E0EA8E00868523 /* sd_howto_1.png */,
+				94D6C0DB16E0EA8E00868523 /* sd_intro.png */,
 				94ED280816E08F880044ED33 /* statusitem.png */,
 				94ED280B16E0909D0044ED33 /* statusitem_pressed.png */,
 			);
@@ -467,10 +448,7 @@
 				94ED280916E08F880044ED33 /* statusitem.png in Resources */,
 				94ED280C16E0909D0044ED33 /* statusitem_pressed.png in Resources */,
 				94D6C0C816E0E2A900868523 /* SDHowToWindow.xib in Resources */,
-				94D6C0DC16E0EA8E00868523 /* sd_howto_2.png in Resources */,
-				94D6C0DD16E0EA8E00868523 /* sd_howto_3.png in Resources */,
-				94D6C0DE16E0EA8E00868523 /* sd_howto_4.png in Resources */,
-				94D6C0DF16E0EA8E00868523 /* sd_howto_1.png in Resources */,
+				94D6C0DF16E0EA8E00868523 /* sd_intro.png in Resources */,
 				94D6C0E516E0FCEA00868523 /* icon.icns in Resources */,
 				942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */,
 				942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */,
@@ -500,10 +478,8 @@
 				94ED280F16E09D570044ED33 /* MyUniversalAccessHelper.m in Sources */,
 				94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */,
 				94D6C0C516E0DF4300868523 /* MyActor.m in Sources */,
-				94D6C0CD16E0E2B300868523 /* SDHowToWindow.m in Sources */,
 				94D6C0CE16E0E2B300868523 /* SDHowToWindowController.m in Sources */,
 				94D6C0D116E0E4CD00868523 /* SDRoundedHowToImageView.m in Sources */,
-				94D6C0E216E0EB2100868523 /* SDHowToWindowInsetTextField.m in Sources */,
 				9428039D16E2C506005E5153 /* CFobError.m in Sources */,
 				9428039E16E2C506005E5153 /* CFobLicGenerator.m in Sources */,
 				9428039F16E2C506005E5153 /* CFobLicVerifier.m in Sources */,
