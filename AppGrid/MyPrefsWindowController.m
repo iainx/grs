@@ -21,6 +21,7 @@
     [super windowDidLoad];
     
     self.alignAllToGridShortcutView.associatedUserDefaultsKey = MyAlignAllToGridShortcutKey;
+    self.alignThisToGridShortcutView.associatedUserDefaultsKey = MyAlignThisToGridShortcutKey;
     
     self.moveNextScreenShortcutView.associatedUserDefaultsKey = MyMoveNextScreenShortcutKey;
     self.movePrevScreenShortcutView.associatedUserDefaultsKey = MyMovePrevScreenShortcutKey;
@@ -30,6 +31,11 @@
     
     self.growRightShortcutView.associatedUserDefaultsKey = MyGrowRightShortcutKey;
     self.shrinkRightShortcutView.associatedUserDefaultsKey = MyShrinkRightShortcutKey;
+    
+    self.increaseGridWidthShortcutView.associatedUserDefaultsKey = MyIncreaseGridWidthShortcutKey;
+    self.decreaseGridWidthShortcutView.associatedUserDefaultsKey = MyDecreaseGridWidthShortcutKey;
+    
+    self.maximizeShortcutView.associatedUserDefaultsKey = MyMaximizeShortcutKey;
     
     self.shrinkToLowerRowShortcutView.associatedUserDefaultsKey = MyShrinkToLowerRowShortcutKey;
     self.shrinkToUpperRowShortcutView.associatedUserDefaultsKey = MyShrinkToUpperRowShortcutKey;

@@ -22,4 +22,6 @@
 - (void) moveToNextScreen;
 - (void) moveToPreviousScreen;
 
+- (void) maximize;
+
 @end

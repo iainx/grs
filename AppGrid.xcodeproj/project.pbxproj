@@ -23,6 +23,7 @@
 		942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */; };
 		942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */; };
 		942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803C216E3FB8C005E5153 /* masshortcut-license.txt */; };
+		9465B16D16E7C46900A61E77 /* SDInsetVerticalLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9465B16C16E7C46900A61E77 /* SDInsetVerticalLine.m */; };
 		946CF3FA16E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */; };
 		946CF3FF16E631FA002DA707 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 946CF3FE16E631FA002DA707 /* libcrypto.dylib */; };
 		947C108616E7971E00B1D52E /* SDOpenAtLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 947C108516E7971E00B1D52E /* SDOpenAtLogin.m */; };
@@ -103,6 +104,8 @@
 		942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseWindowController.m; sourceTree = "<group>"; };
 		942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLicenseWindow.xib; sourceTree = "<group>"; };
 		942803C216E3FB8C005E5153 /* masshortcut-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "masshortcut-license.txt"; sourceTree = "<group>"; };
+		9465B16B16E7C46900A61E77 /* SDInsetVerticalLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDInsetVerticalLine.h; sourceTree = "<group>"; };
+		9465B16C16E7C46900A61E77 /* SDInsetVerticalLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDInsetVerticalLine.m; sourceTree = "<group>"; };
 		946CF3F816E62ECF002DA707 /* SDStringNotEmptyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStringNotEmptyValueTransformer.h; sourceTree = "<group>"; };
 		946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStringNotEmptyValueTransformer.m; sourceTree = "<group>"; };
 		946CF3FE16E631FA002DA707 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
@@ -385,6 +388,8 @@
 			children = (
 				94ED280516E089F60044ED33 /* SDInsetHorizontalLine.h */,
 				94ED280616E089F60044ED33 /* SDInsetHorizontalLine.m */,
+				9465B16B16E7C46900A61E77 /* SDInsetVerticalLine.h */,
+				9465B16C16E7C46900A61E77 /* SDInsetVerticalLine.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 				946CF3FA16E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m in Sources */,
 				94E0DD5316E7127F0037E5D8 /* MyFeedbackWindowController.m in Sources */,
 				947C108616E7971E00B1D52E /* SDOpenAtLogin.m in Sources */,
+				9465B16D16E7C46900A61E77 /* SDInsetVerticalLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

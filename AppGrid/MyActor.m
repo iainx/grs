@@ -26,6 +26,7 @@
     [MASShortcut setAllowsAnyHotkeyWithOptionModifier:YES];
     
     [self bindDefaultsKey:MyAlignAllToGridShortcutKey action:^{ [self alignAllWindows]; }];
+    [self bindDefaultsKey:MyAlignThisToGridShortcutKey action:^{ [self alignThisWindow]; }];
     
     [self bindDefaultsKey:MyMovePrevScreenShortcutKey action:^{ [self moveToNextScreen]; }];
     [self bindDefaultsKey:MyMoveNextScreenShortcutKey action:^{ [self moveToPreviousScreen]; }];
@@ -35,6 +36,11 @@
     
     [self bindDefaultsKey:MyGrowRightShortcutKey action:^{ [self growRight]; }];
     [self bindDefaultsKey:MyShrinkRightShortcutKey action:^{ [self shrinkRight]; }];
+    
+    [self bindDefaultsKey:MyIncreaseGridWidthShortcutKey action:^{ [self increaseGridWidth]; }];
+    [self bindDefaultsKey:MyDecreaseGridWidthShortcutKey action:^{ [self decreaseGridWidth]; }];
+    
+    [self bindDefaultsKey:MyMaximizeShortcutKey action:^{ [self maximize]; }];
     
     [self bindDefaultsKey:MyShrinkToLowerRowShortcutKey action:^{ [self shrinkToLower]; }];
     [self bindDefaultsKey:MyShrinkToUpperRowShortcutKey action:^{ [self shrinkToUpper]; }];
@@ -63,10 +69,29 @@
     self.keysDisabled = NO;
 }
 
+- (void) maximize {
+    [[MyWindow focusedWindow] maximize];
+}
+
+- (void) increaseGridWidth {
+    [MyGrid setWidth:[MyGrid width] + 1];
+    [self alignAllWindows];
+}
+
+- (void) decreaseGridWidth {
+    [MyGrid setWidth:MAX(2, [MyGrid width] - 1)];
+    [self alignAllWindows];
+}
+
 - (void) alignAllWindows {
     for (MyWindow* win in [MyWindow allWindows]) {
         [win moveToGridProps:[win gridProps]];
     }
+}
+
+- (void) alignThisWindow {
+    MyWindow* win = [MyWindow focusedWindow];
+    [win moveToGridProps:[win gridProps]];
 }
 
 - (void) moveLeft {

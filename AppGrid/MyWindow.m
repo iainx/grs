@@ -237,4 +237,9 @@
     [self moveToGridProps:[self gridProps] onScreen:nextScreen];
 }
 
+- (void) maximize {
+    CGRect screenRect = [MyWindow realFrameForScreen:[self screen]];
+    [self setFrame:screenRect];
+}
+
 @end

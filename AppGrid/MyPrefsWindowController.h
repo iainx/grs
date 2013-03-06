@@ -13,6 +13,7 @@
 @interface MyPrefsWindowController : NSWindowController
 
 @property (nonatomic, weak) IBOutlet MASShortcutView *alignAllToGridShortcutView;
+@property (nonatomic, weak) IBOutlet MASShortcutView *alignThisToGridShortcutView;
 
 @property (nonatomic, weak) IBOutlet MASShortcutView *moveNextScreenShortcutView;
 @property (nonatomic, weak) IBOutlet MASShortcutView *movePrevScreenShortcutView;
@@ -22,6 +23,11 @@
 
 @property (nonatomic, weak) IBOutlet MASShortcutView *growRightShortcutView;
 @property (nonatomic, weak) IBOutlet MASShortcutView *shrinkRightShortcutView;
+
+@property (nonatomic, weak) IBOutlet MASShortcutView *increaseGridWidthShortcutView;
+@property (nonatomic, weak) IBOutlet MASShortcutView *decreaseGridWidthShortcutView;
+
+@property (nonatomic, weak) IBOutlet MASShortcutView *maximizeShortcutView;
 
 @property (nonatomic, weak) IBOutlet MASShortcutView *shrinkToUpperRowShortcutView;
 @property (nonatomic, weak) IBOutlet MASShortcutView *shrinkToLowerRowShortcutView;

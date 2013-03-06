@@ -7,6 +7,7 @@
 //
 
 #define MyAlignAllToGridShortcutKey @"MyAlignAllToGridShortcutKey"
+#define MyAlignThisToGridShortcutKey @"MyAlignThisToGridShortcutKey"
 
 #define MyMoveNextScreenShortcutKey @"MyMoveNextScreenShortcutKey"
 #define MyMovePrevScreenShortcutKey @"MyMovePrevScreenShortcutKey"
@@ -16,6 +17,11 @@
 
 #define MyGrowRightShortcutKey @"MyGrowRightShortcutKey"
 #define MyShrinkRightShortcutKey @"MyShrinkRightShortcutKey"
+
+#define MyIncreaseGridWidthShortcutKey @"MyIncreaseGridWidthShortcutKey"
+#define MyDecreaseGridWidthShortcutKey @"MyDecreaseGridWidthShortcutKey"
+
+#define MyMaximizeShortcutKey @"MyMaximizeShortcutKey"
 
 #define MyShrinkToUpperRowShortcutKey @"MyShrinkToUpperRowShortcutKey"
 #define MyShrinkToLowerRowShortcutKey @"MyShrinkToLowerRowShortcutKey"
