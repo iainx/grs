@@ -34,5 +34,5 @@ if __FILE__ == $0
   lic = make_license('AppGrid', name)
   puts 'License Name: ' + name
   puts 'License Code: ' + lic
-  # puts 'Auto-register URL: ' + license_url(name, lic)
+  puts 'Auto-register URL: ' + license_url(name, lic)
 end
