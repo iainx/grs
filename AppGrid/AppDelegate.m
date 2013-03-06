@@ -143,4 +143,11 @@
     [self endTrialIfNecessary];
 }
 
+- (IBAction) showSendFeedbackWindow:(id)sender {
+    if (self.myFeedbackWindowController == nil)
+        self.myFeedbackWindowController = [[MyFeedbackWindowController alloc] init];
+    
+    [self.myFeedbackWindowController showWindow:self];
+}
+
 @end

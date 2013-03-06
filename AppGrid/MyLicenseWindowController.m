@@ -68,7 +68,7 @@
     NSString* appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
     
     if (self.hasValidLicense) {
-        return [NSString stringWithFormat:@"Valid %@ License", appName];
+        return [NSString stringWithFormat:@"Your %@ License", appName];
     }
     else {
         return [NSString stringWithFormat:@"Enter %@ License", appName];

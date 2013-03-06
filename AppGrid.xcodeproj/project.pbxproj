@@ -37,6 +37,9 @@
 		94D6C0DF16E0EA8E00868523 /* sd_howto_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0DB16E0EA8E00868523 /* sd_howto_1.png */; };
 		94D6C0E216E0EB2100868523 /* SDHowToWindowInsetTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0E116E0EB2100868523 /* SDHowToWindowInsetTextField.m */; };
 		94D6C0E516E0FCEA00868523 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0E416E0FCEA00868523 /* icon.icns */; };
+		94E0DD5316E7127F0037E5D8 /* MyFeedbackWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E0DD5116E7127F0037E5D8 /* MyFeedbackWindowController.m */; };
+		94E0DD5416E7127F0037E5D8 /* MyFeedbackWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E0DD5216E7127F0037E5D8 /* MyFeedbackWindow.xib */; };
+		94E0DD5616E712CF0037E5D8 /* sparkle-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 94E0DD5516E712CF0037E5D8 /* sparkle-license.txt */; };
 		94ED279C16E01A440044ED33 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ED279B16E01A440044ED33 /* Cocoa.framework */; };
 		94ED27A616E01A440044ED33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27A416E01A440044ED33 /* InfoPlist.strings */; };
 		94ED27A816E01A440044ED33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27A716E01A440044ED33 /* main.m */; };
@@ -121,6 +124,10 @@
 		94D6C0E116E0EB2100868523 /* SDHowToWindowInsetTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHowToWindowInsetTextField.m; sourceTree = "<group>"; };
 		94D6C0E316E0F52B00868523 /* AppGrid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppGrid.entitlements; sourceTree = "<group>"; };
 		94D6C0E416E0FCEA00868523 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		94E0DD5016E7127F0037E5D8 /* MyFeedbackWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFeedbackWindowController.h; sourceTree = "<group>"; };
+		94E0DD5116E7127F0037E5D8 /* MyFeedbackWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFeedbackWindowController.m; sourceTree = "<group>"; };
+		94E0DD5216E7127F0037E5D8 /* MyFeedbackWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFeedbackWindow.xib; sourceTree = "<group>"; };
+		94E0DD5516E712CF0037E5D8 /* sparkle-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sparkle-license.txt"; sourceTree = "<group>"; };
 		94ED279816E01A440044ED33 /* AppGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ED279B16E01A440044ED33 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		94ED279E16E01A440044ED33 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -211,6 +218,8 @@
 		946CF40016E6320C002DA707 /* Licenses */ = {
 			isa = PBXGroup;
 			children = (
+				94E0DD5516E712CF0037E5D8 /* sparkle-license.txt */,
+				942803C216E3FB8C005E5153 /* masshortcut-license.txt */,
 				942803AE16E32E24005E5153 /* cocoafob-license.txt */,
 			);
 			name = Licenses;
@@ -349,6 +358,8 @@
 				94ED280E16E09D570044ED33 /* MyUniversalAccessHelper.m */,
 				942803B816E38CFA005E5153 /* MyLicenseVerifier.h */,
 				942803B916E38CFA005E5153 /* MyLicenseVerifier.m */,
+				94E0DD5016E7127F0037E5D8 /* MyFeedbackWindowController.h */,
+				94E0DD5116E7127F0037E5D8 /* MyFeedbackWindowController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -356,8 +367,8 @@
 		94ED27FA16E034580044ED33 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				942803C216E3FB8C005E5153 /* masshortcut-license.txt */,
 				94ED27B016E01A440044ED33 /* MainMenu.xib */,
+				94E0DD5216E7127F0037E5D8 /* MyFeedbackWindow.xib */,
 				942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */,
 				94ED27FD16E034820044ED33 /* MyPrefsWindow.xib */,
 			);
@@ -454,6 +465,8 @@
 				942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */,
 				942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */,
 				942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */,
+				94E0DD5416E7127F0037E5D8 /* MyFeedbackWindow.xib in Resources */,
+				94E0DD5616E712CF0037E5D8 /* sparkle-license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +506,7 @@
 				942803BA16E38CFB005E5153 /* MyLicenseVerifier.m in Sources */,
 				942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */,
 				946CF3FA16E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m in Sources */,
+				94E0DD5316E7127F0037E5D8 /* MyFeedbackWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
