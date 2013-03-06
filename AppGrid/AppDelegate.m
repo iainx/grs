@@ -13,6 +13,8 @@
 
 #import "MyLicenseVerifier.h"
 
+#import "SDOpenAtLogin.h"
+
 @implementation AppDelegate
 
 + (void) initialize {
@@ -42,15 +44,15 @@
         [MyGrid setWidth:newNum];
 }
 
+- (IBAction) toggleOpensAtLogin:(id)sender {
+	NSInteger changingToState = ![sender state];
+	[SDOpenAtLogin setOpensAtLogin: changingToState];
+}
+
 - (void) menuNeedsUpdate:(NSMenu *)menu {
     if (menu == self.statusBarMenu) {
-//        NSString* licenseItemTitle = @"Purchase...";
-//        
-//        if ([MyLicenseVerifier hasValidLicense])
-//            licenseItemTitle = @"License...";
-//        
-//        NSMenuItem* licenseItem = [menu itemWithTag:77];
-//        [licenseItem setTitle:licenseItemTitle];
+		NSInteger state = ([SDOpenAtLogin opensAtLogin] ? NSOnState : NSOffState);
+		[[menu itemWithTitle:@"Open at Login"] setState:state];
     }
     else {
         for (NSMenuItem* item in [menu itemArray]) {
@@ -144,6 +146,8 @@
 }
 
 - (IBAction) showSendFeedbackWindow:(id)sender {
+    [NSApp activateIgnoringOtherApps:YES];
+    
     if (self.myFeedbackWindowController == nil)
         self.myFeedbackWindowController = [[MyFeedbackWindowController alloc] init];
     
