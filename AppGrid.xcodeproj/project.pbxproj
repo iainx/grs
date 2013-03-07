@@ -18,7 +18,6 @@
 		942803A316E2C506005E5153 /* NSString-Base64Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039816E2C506005E5153 /* NSString-Base64Extensions.m */; };
 		942803A416E2C506005E5153 /* NSString+PECrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428039A16E2C506005E5153 /* NSString+PECrypt.m */; };
 		942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803AE16E32E24005E5153 /* cocoafob-license.txt */; };
-		942803B716E38BC6005E5153 /* MyLicenseURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */; };
 		942803BA16E38CFB005E5153 /* MyLicenseVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803B916E38CFA005E5153 /* MyLicenseVerifier.m */; };
 		942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */; };
 		942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */; };
@@ -27,6 +26,9 @@
 		946CF3FA16E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */; };
 		946CF3FF16E631FA002DA707 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 946CF3FE16E631FA002DA707 /* libcrypto.dylib */; };
 		947C108616E7971E00B1D52E /* SDOpenAtLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 947C108516E7971E00B1D52E /* SDOpenAtLogin.m */; };
+		9493348916E853710025E663 /* MyCoolURLCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 9493348816E853710025E663 /* MyCoolURLCommand.m */; };
+		9493348C16E854700025E663 /* MyApp.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = 9493348A16E854700025E663 /* MyApp.scriptSuite */; };
+		9493348D16E854700025E663 /* MyApp.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = 9493348B16E854700025E663 /* MyApp.scriptTerminology */; };
 		94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C116E0DDD700868523 /* MyGrid.m */; };
 		94D6C0C516E0DF4300868523 /* MyActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C416E0DF4300868523 /* MyActor.m */; };
 		94D6C0C816E0E2A900868523 /* SDHowToWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */; };
@@ -91,8 +93,6 @@
 		9428039916E2C506005E5153 /* NSString+PECrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PECrypt.h"; sourceTree = "<group>"; };
 		9428039A16E2C506005E5153 /* NSString+PECrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PECrypt.m"; sourceTree = "<group>"; };
 		942803AE16E32E24005E5153 /* cocoafob-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cocoafob-license.txt"; sourceTree = "<group>"; };
-		942803B516E38BC6005E5153 /* MyLicenseURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseURLHandler.h; sourceTree = "<group>"; };
-		942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseURLHandler.m; sourceTree = "<group>"; };
 		942803B816E38CFA005E5153 /* MyLicenseVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseVerifier.h; sourceTree = "<group>"; };
 		942803B916E38CFA005E5153 /* MyLicenseVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseVerifier.m; sourceTree = "<group>"; };
 		942803BB16E3DCC9005E5153 /* MyLicenseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLicenseWindowController.h; sourceTree = "<group>"; };
@@ -106,6 +106,10 @@
 		946CF3FE16E631FA002DA707 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
 		947C108416E7971D00B1D52E /* SDOpenAtLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDOpenAtLogin.h; sourceTree = "<group>"; };
 		947C108516E7971E00B1D52E /* SDOpenAtLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDOpenAtLogin.m; sourceTree = "<group>"; };
+		9493348716E853710025E663 /* MyCoolURLCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCoolURLCommand.h; sourceTree = "<group>"; };
+		9493348816E853710025E663 /* MyCoolURLCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoolURLCommand.m; sourceTree = "<group>"; };
+		9493348A16E854700025E663 /* MyApp.scriptSuite */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptSuite; path = MyApp.scriptSuite; sourceTree = "<group>"; };
+		9493348B16E854700025E663 /* MyApp.scriptTerminology */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; path = MyApp.scriptTerminology; sourceTree = "<group>"; };
 		94D6C0C016E0DDD700868523 /* MyGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGrid.h; sourceTree = "<group>"; };
 		94D6C0C116E0DDD700868523 /* MyGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGrid.m; sourceTree = "<group>"; };
 		94D6C0C316E0DF4300868523 /* MyActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActor.h; sourceTree = "<group>"; };
@@ -205,6 +209,10 @@
 				9428039816E2C506005E5153 /* NSString-Base64Extensions.m */,
 				9428039916E2C506005E5153 /* NSString+PECrypt.h */,
 				9428039A16E2C506005E5153 /* NSString+PECrypt.m */,
+				9493348716E853710025E663 /* MyCoolURLCommand.h */,
+				9493348816E853710025E663 /* MyCoolURLCommand.m */,
+				9493348A16E854700025E663 /* MyApp.scriptSuite */,
+				9493348B16E854700025E663 /* MyApp.scriptTerminology */,
 			);
 			name = CocoaFob;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 		94ED27A116E01A440044ED33 /* AppGrid */ = {
 			isa = PBXGroup;
 			children = (
+				94ED27A316E01A440044ED33 /* AppGrid-Info.plist */,
 				9428038A16E2C4E9005E5153 /* CocoaFob */,
 				94D6C0C616E0E29C00868523 /* HowToWindow */,
 				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
@@ -291,7 +300,6 @@
 		94ED27A216E01A440044ED33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				94ED27A316E01A440044ED33 /* AppGrid-Info.plist */,
 				94ED27A416E01A440044ED33 /* InfoPlist.strings */,
 				94ED27A716E01A440044ED33 /* main.m */,
 				94ED27A916E01A440044ED33 /* AppGrid-Prefix.pch */,
@@ -338,8 +346,6 @@
 				94ED27AE16E01A440044ED33 /* AppDelegate.m */,
 				947C108416E7971D00B1D52E /* SDOpenAtLogin.h */,
 				947C108516E7971E00B1D52E /* SDOpenAtLogin.m */,
-				942803B516E38BC6005E5153 /* MyLicenseURLHandler.h */,
-				942803B616E38BC6005E5153 /* MyLicenseURLHandler.m */,
 				942803BB16E3DCC9005E5153 /* MyLicenseWindowController.h */,
 				942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */,
 				94D6C0C316E0DF4300868523 /* MyActor.h */,
@@ -455,6 +461,8 @@
 				942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */,
 				94E0DD5416E7127F0037E5D8 /* MyFeedbackWindow.xib in Resources */,
 				94E0DD5616E712CF0037E5D8 /* sparkle-license.txt in Resources */,
+				9493348C16E854700025E663 /* MyApp.scriptSuite in Resources */,
+				9493348D16E854700025E663 /* MyApp.scriptTerminology in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,13 +496,13 @@
 				942803A216E2C506005E5153 /* NSData+PECrypt.m in Sources */,
 				942803A316E2C506005E5153 /* NSString-Base64Extensions.m in Sources */,
 				942803A416E2C506005E5153 /* NSString+PECrypt.m in Sources */,
-				942803B716E38BC6005E5153 /* MyLicenseURLHandler.m in Sources */,
 				942803BA16E38CFB005E5153 /* MyLicenseVerifier.m in Sources */,
 				942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */,
 				946CF3FA16E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m in Sources */,
 				94E0DD5316E7127F0037E5D8 /* MyFeedbackWindowController.m in Sources */,
 				947C108616E7971E00B1D52E /* SDOpenAtLogin.m in Sources */,
 				9465B16D16E7C46900A61E77 /* SDInsetVerticalLine.m in Sources */,
+				9493348916E853710025E663 /* MyCoolURLCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,6 @@
 #import "MyPrefsWindowController.h"
 #import "MyActor.h"
 #import "MyLicenseWindowController.h"
-#import "MyLicenseURLHandler.h"
 #import "MyFeedbackWindowController.h"
 
 #import "SDHowToWindowController.h"
@@ -26,7 +25,6 @@
 @property MyPrefsWindowController *myPrefsWindowController;
 @property MyActor *myActor;
 @property MyLicenseWindowController *myLicenseWindowController;
-@property MyLicenseURLHandler *myLicenseURLHandler;
 @property MyFeedbackWindowController* myFeedbackWindowController;
 
 @property SDHowToWindowController* howToWindowController;

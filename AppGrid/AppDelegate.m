@@ -13,6 +13,8 @@
 
 #import "MyLicenseVerifier.h"
 
+#import "MyCoolURLCommand.h"
+
 #import "SDOpenAtLogin.h"
 
 @implementation AppDelegate
@@ -121,7 +123,9 @@
         [MyLicenseVerifier sendToWebsite];
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void) applicationWillFinishLaunching:(NSNotification *)notification {
+    self.myActor = [[MyActor alloc] init];
+    
     [[NSNotificationCenter defaultCenter] addObserverForName:MyLicenseVerifiedNotification
                                                       object:nil
                                                        queue:nil
@@ -129,15 +133,22 @@
                                                       [self.myActor enableKeys];
                                                   }];
     
-    self.myLicenseURLHandler = [[MyLicenseURLHandler alloc] init];
-    [self.myLicenseURLHandler listenForURLs:^(NSString* licenseName, NSString* licenseCode) {
-        [self clickedLicenseWithName:licenseName licenceCode:licenseCode];
-    }];
-     
-    [MyUniversalAccessHelper complainIfNeeded];
-    
-    self.myActor = [[MyActor alloc] init];
+    [[NSNotificationCenter defaultCenter] addObserverForName:MyClickedAutoRegURLNotification
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      NSString* licenseName = [[note userInfo] objectForKey:@"name"];
+                                                      NSString* licenseCode = [[note userInfo] objectForKey:@"code"];
+                                                      
+                                                      [self clickedLicenseWithName:licenseName
+                                                                       licenceCode:licenseCode];
+                                                  }];
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self.myActor bindMyKeys];
+    
+    [MyUniversalAccessHelper complainIfNeeded];
     
     self.howToWindowController = [[SDHowToWindowController alloc] init];
     [self.howToWindowController showInstructionsWindowFirstTimeOnly];
