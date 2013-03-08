@@ -1,0 +1,3 @@
+[submodule "SDToolkit"]
+	path = "Frameworks/SDToolkit"
+	url = git://github.com/sdegutis/SDToolkit.git

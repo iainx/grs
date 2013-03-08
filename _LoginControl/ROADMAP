@@ -1,0 +1,49 @@
+## Changes to table views
+    - Left table view (source list)
+        - No longer use the 'Source List' style
+        - Do not use grid lines or alternating row colors
+            - Grid lines are fugly
+            - Alternatiing row colors are used by the Right table view
+        - Add a new column to the left of the Title column
+            - This column will have no header title
+            - Will either contain nothing or a special symbol (green orb?)
+            - Indicates whether the list is currently the 'live list'
+    - Right table view (files list)
+        - Will default to being narrower
+
+## Implementation details
+    - Stop using bindings, they really complicate doing anything with tables
+    - Use data source, it's really a lot easier than it seemed at first
+    - Add Undo support (should be a lot easier when using a data source)
+    - Allow dragging and dropping items to reorder them and move/copy them to different lists
+    - Change implementation of list items to be source-independent
+        - Should not matter whether it's being inserted/deleted to/from a normal array, or the live list
+        - Will require a bit of planning to get right
+        - Better handling of broken links in all list items
+    - Lists will be stored homogeneously in the database
+        - All lists will have:
+            - Contents
+            - Title
+            - IsLiveList
+        - Live list will be different
+            - IsLiveList is True
+            - Contents will be empty
+
+## Improving workflow
+    - Use a slightly older UI, a la 10.4, since mostly power users will use the app
+        - Power users don't really care what a UI looks like
+        - New "Leopard" style window won't impress anyone
+        - Just looks too ugly and cramped
+    - Add menu items for functions, with clearly labeled keyboard shortcuts
+        - Left Table
+            - New List (Cmd-Shift-N)
+            - Duplicate List (Cmd-D)
+            - Delete List
+            - Make Live List (Cmd-L)
+        - Right Table
+            - Add Item
+            - Delete Item
+    - All of the above should also have context menu items
+    - Perhaps add a toolbar for the most important actions
+        - New List
+        - Make Live List

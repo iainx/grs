@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'RealDocks' target in the 'Docks' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+	#import "SDToolkit.h"
+#endif
