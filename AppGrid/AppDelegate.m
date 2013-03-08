@@ -17,6 +17,8 @@
 
 #import "SDOpenAtLogin.h"
 
+#import "MyCrashHandler.h"
+
 @implementation AppDelegate
 
 + (void) initialize {
@@ -51,10 +53,15 @@
 	[SDOpenAtLogin setOpensAtLogin: changingToState];
 }
 
+- (IBAction) toggleUseWindowMargins:(id)sender {
+	NSInteger changingToState = ![sender state];
+	[MyGrid setUsesWindowMargins: changingToState];
+}
+
 - (void) menuNeedsUpdate:(NSMenu *)menu {
     if (menu == self.statusBarMenu) {
-		NSInteger state = ([SDOpenAtLogin opensAtLogin] ? NSOnState : NSOffState);
-		[[menu itemWithTitle:@"Open at Login"] setState:state];
+		[[menu itemWithTitle:@"Use Window Margins"] setState:([MyGrid usesWindowMargins] ? NSOnState : NSOffState)];
+		[[menu itemWithTitle:@"Open at Login"] setState:([SDOpenAtLogin opensAtLogin] ? NSOnState : NSOffState)];
     }
     else {
         for (NSMenuItem* item in [menu itemArray]) {
@@ -146,6 +153,8 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [MyCrashHandler handleCrashes];
+    
     [self.myActor bindMyKeys];
     
     [MyUniversalAccessHelper complainIfNeeded];

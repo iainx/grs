@@ -1345,6 +1345,14 @@
 							</array>
 						</object>
 					</object>
+					<object class="NSMenuItem" id="962920754">
+						<reference key="NSMenu" ref="503314388"/>
+						<string key="NSTitle">Use Window Margins</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="426718560">
 						<reference key="NSMenu" ref="503314388"/>
 						<bool key="NSIsDisabled">YES</bool>
@@ -2187,6 +2195,14 @@
 						<reference key="destination" ref="239719929"/>
 					</object>
 					<int key="connectionID">598</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">toggleUseWindowMargins:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="962920754"/>
+					</object>
+					<int key="connectionID">600</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3213,6 +3229,7 @@
 							<reference ref="494000957"/>
 							<reference ref="783742494"/>
 							<reference ref="239719929"/>
+							<reference ref="962920754"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3302,6 +3319,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">596</int>
 						<reference key="object" ref="239719929"/>
+						<reference key="parent" ref="503314388"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">599</int>
+						<reference key="object" ref="962920754"/>
 						<reference key="parent" ref="503314388"/>
 					</object>
 				</array>
@@ -3463,6 +3485,7 @@
 				<string key="592.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="593.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="596.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="599.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3479,7 +3502,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">598</int>
+			<int key="maxID">600</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3493,6 +3516,7 @@
 						<string key="showLicenseWindow:">id</string>
 						<string key="showSendFeedbackWindow:">id</string>
 						<string key="toggleOpensAtLogin:">id</string>
+						<string key="toggleUseWindowMargins:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="changeNumberOfGridColumns:">
@@ -3517,6 +3541,10 @@
 						</object>
 						<object class="IBActionInfo" key="toggleOpensAtLogin:">
 							<string key="name">toggleOpensAtLogin:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="toggleUseWindowMargins:">
+							<string key="name">toggleUseWindowMargins:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

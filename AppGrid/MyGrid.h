@@ -13,4 +13,7 @@
 + (NSInteger) width;
 + (void) setWidth:(NSInteger)newWidth;
 
++ (BOOL) usesWindowMargins;
++ (void) setUsesWindowMargins:(BOOL)usesWindowMargins;
+
 @end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941C1BBE16E96A6A004868DE /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941C1BBD16E96A6A004868DE /* CrashReporter.framework */; };
+		941C1BBF16E96A75004868DE /* CrashReporter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 941C1BBD16E96A6A004868DE /* CrashReporter.framework */; };
+		941C1BC216E97133004868DE /* MyCrashHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C1BC116E97133004868DE /* MyCrashHandler.m */; };
+		941C1BC416E978A8004868DE /* plcrashreporter-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 941C1BC316E978A8004868DE /* plcrashreporter-license.txt */; };
 		941E6B4D16E668BD00B4FBA3 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941E6B4C16E668BD00B4FBA3 /* Sparkle.framework */; };
 		941E6B5016E6691D00B4FBA3 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 941E6B4C16E668BD00B4FBA3 /* Sparkle.framework */; };
 		9428039D16E2C506005E5153 /* CFobError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9428038C16E2C506005E5153 /* CFobError.m */; };
@@ -69,12 +73,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				941E6B5016E6691D00B4FBA3 /* Sparkle.framework in CopyFiles */,
+				941C1BBF16E96A75004868DE /* CrashReporter.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		941C1BBD16E96A6A004868DE /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
+		941C1BC016E97133004868DE /* MyCrashHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCrashHandler.h; sourceTree = "<group>"; };
+		941C1BC116E97133004868DE /* MyCrashHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCrashHandler.m; sourceTree = "<group>"; };
+		941C1BC316E978A8004868DE /* plcrashreporter-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "plcrashreporter-license.txt"; sourceTree = "<group>"; };
 		941E6B4C16E668BD00B4FBA3 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = AppGrid/Sparkle.framework; sourceTree = "<group>"; };
 		9428038B16E2C506005E5153 /* CFobError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFobError.h; sourceTree = "<group>"; };
 		9428038C16E2C506005E5153 /* CFobError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFobError.m; sourceTree = "<group>"; };
@@ -174,6 +183,7 @@
 				94ED27F416E026370044ED33 /* Carbon.framework in Frameworks */,
 				94ED279C16E01A440044ED33 /* Cocoa.framework in Frameworks */,
 				941E6B4D16E668BD00B4FBA3 /* Sparkle.framework in Frameworks */,
+				941C1BBE16E96A6A004868DE /* CrashReporter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +193,10 @@
 		941E6B4E16E668D100B4FBA3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				94ED280016E034F10044ED33 /* MyShortcuts.h */,
+				947C108416E7971D00B1D52E /* SDOpenAtLogin.h */,
+				947C108516E7971E00B1D52E /* SDOpenAtLogin.m */,
+				941C1BC016E97133004868DE /* MyCrashHandler.h */,
+				941C1BC116E97133004868DE /* MyCrashHandler.m */,
 				946CF3F816E62ECF002DA707 /* SDStringNotEmptyValueTransformer.h */,
 				946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */,
 			);
@@ -220,6 +233,7 @@
 		946CF40016E6320C002DA707 /* Licenses */ = {
 			isa = PBXGroup;
 			children = (
+				941C1BC316E978A8004868DE /* plcrashreporter-license.txt */,
 				94E0DD5516E712CF0037E5D8 /* sparkle-license.txt */,
 				942803C216E3FB8C005E5153 /* masshortcut-license.txt */,
 				942803AE16E32E24005E5153 /* cocoafob-license.txt */,
@@ -259,6 +273,7 @@
 		94ED279A16E01A440044ED33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				941C1BBD16E96A6A004868DE /* CrashReporter.framework */,
 				941E6B4C16E668BD00B4FBA3 /* Sparkle.framework */,
 				946CF3FE16E631FA002DA707 /* libcrypto.dylib */,
 				94ED27F316E026360044ED33 /* Carbon.framework */,
@@ -282,6 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				94ED27A316E01A440044ED33 /* AppGrid-Info.plist */,
+				94ED280016E034F10044ED33 /* MyShortcuts.h */,
+				94ED280116E079C50044ED33 /* defaults.plist */,
 				9428038A16E2C4E9005E5153 /* CocoaFob */,
 				94D6C0C616E0E29C00868523 /* HowToWindow */,
 				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
@@ -304,7 +321,6 @@
 				94ED27A716E01A440044ED33 /* main.m */,
 				94ED27A916E01A440044ED33 /* AppGrid-Prefix.pch */,
 				94ED27AA16E01A440044ED33 /* Credits.rtf */,
-				94ED280116E079C50044ED33 /* defaults.plist */,
 				94D6C0E416E0FCEA00868523 /* icon.icns */,
 				94D6C0E316E0F52B00868523 /* AppGrid.entitlements */,
 			);
@@ -344,8 +360,6 @@
 			children = (
 				94ED27AD16E01A440044ED33 /* AppDelegate.h */,
 				94ED27AE16E01A440044ED33 /* AppDelegate.m */,
-				947C108416E7971D00B1D52E /* SDOpenAtLogin.h */,
-				947C108516E7971E00B1D52E /* SDOpenAtLogin.m */,
 				942803BB16E3DCC9005E5153 /* MyLicenseWindowController.h */,
 				942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */,
 				94D6C0C316E0DF4300868523 /* MyActor.h */,
@@ -463,6 +477,7 @@
 				94E0DD5616E712CF0037E5D8 /* sparkle-license.txt in Resources */,
 				9493348C16E854700025E663 /* MyApp.scriptSuite in Resources */,
 				9493348D16E854700025E663 /* MyApp.scriptTerminology in Resources */,
+				941C1BC416E978A8004868DE /* plcrashreporter-license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +518,7 @@
 				947C108616E7971E00B1D52E /* SDOpenAtLogin.m in Sources */,
 				9465B16D16E7C46900A61E77 /* SDInsetVerticalLine.m in Sources */,
 				9493348916E853710025E663 /* MyCoolURLCommand.m in Sources */,
+				941C1BC216E97133004868DE /* MyCrashHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +619,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/AppGrid\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppGrid/AppGrid-Prefix.pch";
@@ -622,6 +639,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/AppGrid\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppGrid/AppGrid-Prefix.pch";

@@ -20,6 +20,8 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
+    self.window.level = NSModalPanelWindowLevel;
+    
     self.alignAllToGridShortcutView.associatedUserDefaultsKey = MyAlignAllToGridShortcutKey;
     self.alignThisToGridShortcutView.associatedUserDefaultsKey = MyAlignThisToGridShortcutKey;
     

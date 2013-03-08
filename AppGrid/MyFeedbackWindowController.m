@@ -17,6 +17,8 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
+    self.window.level = NSModalPanelWindowLevel;
+    
     self.type = @"Feature Request";
 }
 
@@ -75,6 +77,7 @@
     if (!type) type = @"";
     
     NSString* appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+    NSString* appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://grsw.herokuapp.com/feedback"]];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
@@ -83,6 +86,7 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:@{
                           @"app": appName,
+                          @"version": appVersion,
                           @"name": name,
                           @"email": email,
                           @"body": body,

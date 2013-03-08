@@ -26,5 +26,3 @@
 #define MyShrinkToUpperRowShortcutKey @"MyShrinkToUpperRowShortcutKey"
 #define MyShrinkToLowerRowShortcutKey @"MyShrinkToLowerRowShortcutKey"
 #define MyFillEntireColumnShortcutKey @"MyFillEntireColumnShortcutKey"
-
-#define MyGridWidthDefaultsKey @"MyGridWidthDefaultsKey"

@@ -108,7 +108,11 @@
     newFrame.size.width = gridProps.size.width * thirdScrenWidth;
     newFrame.size.height = gridProps.size.height * halfScreenHeight;
     
-    newFrame = NSInsetRect(newFrame, 5, 5);
+    if ([MyGrid usesWindowMargins])
+        newFrame = NSInsetRect(newFrame, 5, 5);
+//    else
+//        newFrame = NSInsetRect(newFrame, 1, 1);
+    
     newFrame = NSIntegralRect(newFrame);
     
     [self setFrame:newFrame];

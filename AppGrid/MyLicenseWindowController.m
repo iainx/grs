@@ -19,6 +19,8 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
+    self.window.level = NSModalPanelWindowLevel;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(myLicenseVerifiedNotification:)
                                                  name:MyLicenseVerifiedNotification
