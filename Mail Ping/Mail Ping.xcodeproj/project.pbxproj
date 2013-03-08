@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		943E783A16D723FC00C8FD14 /* MyLinkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 943E783916D723FC00C8FD14 /* MyLinkButton.m */; };
+		94582AFB16E29F2F0000383E /* readability-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 94582AFA16E29F2F0000383E /* readability-license.txt */; };
+		94582AFE16E29FCE0000383E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 94582AFD16E29FCE0000383E /* Reachability.m */; };
+		94582B0016E29FDF0000383E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94582AFF16E29FDF0000383E /* SystemConfiguration.framework */; };
+		94582B0216E2A12A0000383E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 94582B0116E2A12A0000383E /* Credits.rtf */; };
+		945E614316D327F90028462D /* GmailURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 945E614216D327F90028462D /* GmailURLConnection.m */; };
+		9464D0B116CEB66600403A58 /* GmailEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9464D0B016CEB66600403A58 /* GmailEntry.m */; };
+		9464D0B416CEB9A800403A58 /* GmailFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9464D0B316CEB9A800403A58 /* GmailFeed.m */; };
+		9464D0B816CEE23300403A58 /* MyAccountsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9464D0B616CEE23300403A58 /* MyAccountsWindowController.m */; };
+		9464D0B916CEE23300403A58 /* MyAccountsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9464D0B716CEE23300403A58 /* MyAccountsWindow.xib */; };
+		9464D0BD16D120C600403A58 /* MyAddAccountWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9464D0BB16D120C600403A58 /* MyAddAccountWindowController.m */; };
+		9464D0BE16D120C600403A58 /* MyAddAccountWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9464D0BC16D120C600403A58 /* MyAddAccountWindow.xib */; };
+		9464D0C116D1237700403A58 /* SDNotEmptyStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9464D0C016D1237700403A58 /* SDNotEmptyStringValueTransformer.m */; };
+		9464D0C416D1298100403A58 /* EmailAccountsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9464D0C316D1298100403A58 /* EmailAccountsController.m */; };
+		9464D0C716D12A4600403A58 /* SDKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9464D0C616D12A4600403A58 /* SDKeychain.m */; };
+		9464D0CC16D12B4300403A58 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9464D0CB16D12B4300403A58 /* Security.framework */; };
+		9464D0D016D130EE00403A58 /* statusimage_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9464D0CE16D130EE00403A58 /* statusimage_pressed.png */; };
+		9464D0D116D130EE00403A58 /* statusimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9464D0CF16D130EE00403A58 /* statusimage.png */; };
+		9464D0D716D1342300403A58 /* EmailChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9464D0D616D1342300403A58 /* EmailChecker.m */; };
+		9464D10E16D17A8700403A58 /* statusimage_unread.png in Resources */ = {isa = PBXBuildFile; fileRef = 9464D10D16D17A8700403A58 /* statusimage_unread.png */; };
+		9464D11016D1855A00403A58 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9464D10F16D1855A00403A58 /* icon.icns */; };
+		9475105416D714B100EF6B32 /* GmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9475105316D714B100EF6B32 /* GmailComposer.m */; };
+		949069FA16D7308C00F0B155 /* GmailInboxOpenerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949069F916D7308C00F0B155 /* GmailInboxOpenerDelegate.m */; };
+		94DCE58816CE9F5C00795B42 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DCE58716CE9F5C00795B42 /* Cocoa.framework */; };
+		94DCE59216CE9F5C00795B42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DCE59016CE9F5C00795B42 /* InfoPlist.strings */; };
+		94DCE59416CE9F5C00795B42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCE59316CE9F5C00795B42 /* main.m */; };
+		94DCE59B16CE9F5C00795B42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DCE59A16CE9F5C00795B42 /* AppDelegate.m */; };
+		94DCE59E16CE9F5C00795B42 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DCE59C16CE9F5C00795B42 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9464D10716D1655000403A58 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		943E783816D723FC00C8FD14 /* MyLinkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLinkButton.h; sourceTree = "<group>"; };
+		943E783916D723FC00C8FD14 /* MyLinkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLinkButton.m; sourceTree = "<group>"; };
+		94582AFA16E29F2F0000383E /* readability-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "readability-license.txt"; sourceTree = "<group>"; };
+		94582AFC16E29FCE0000383E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		94582AFD16E29FCE0000383E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		94582AFF16E29FDF0000383E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		94582B0116E2A12A0000383E /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		945E614116D327F90028462D /* GmailURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmailURLConnection.h; sourceTree = "<group>"; };
+		945E614216D327F90028462D /* GmailURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmailURLConnection.m; sourceTree = "<group>"; };
+		9464D0AF16CEB66600403A58 /* GmailEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmailEntry.h; sourceTree = "<group>"; };
+		9464D0B016CEB66600403A58 /* GmailEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmailEntry.m; sourceTree = "<group>"; };
+		9464D0B216CEB9A800403A58 /* GmailFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmailFeed.h; sourceTree = "<group>"; };
+		9464D0B316CEB9A800403A58 /* GmailFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmailFeed.m; sourceTree = "<group>"; };
+		9464D0B516CEE23300403A58 /* MyAccountsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountsWindowController.h; sourceTree = "<group>"; };
+		9464D0B616CEE23300403A58 /* MyAccountsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAccountsWindowController.m; sourceTree = "<group>"; };
+		9464D0B716CEE23300403A58 /* MyAccountsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAccountsWindow.xib; sourceTree = "<group>"; };
+		9464D0BA16D120C600403A58 /* MyAddAccountWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddAccountWindowController.h; sourceTree = "<group>"; };
+		9464D0BB16D120C600403A58 /* MyAddAccountWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddAccountWindowController.m; sourceTree = "<group>"; };
+		9464D0BC16D120C600403A58 /* MyAddAccountWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAddAccountWindow.xib; sourceTree = "<group>"; };
+		9464D0BF16D1237700403A58 /* SDNotEmptyStringValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNotEmptyStringValueTransformer.h; sourceTree = "<group>"; };
+		9464D0C016D1237700403A58 /* SDNotEmptyStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNotEmptyStringValueTransformer.m; sourceTree = "<group>"; };
+		9464D0C216D1298100403A58 /* EmailAccountsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailAccountsController.h; sourceTree = "<group>"; };
+		9464D0C316D1298100403A58 /* EmailAccountsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailAccountsController.m; sourceTree = "<group>"; };
+		9464D0C516D12A4600403A58 /* SDKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKeychain.h; sourceTree = "<group>"; };
+		9464D0C616D12A4600403A58 /* SDKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKeychain.m; sourceTree = "<group>"; };
+		9464D0CB16D12B4300403A58 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9464D0CE16D130EE00403A58 /* statusimage_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusimage_pressed.png; sourceTree = "<group>"; };
+		9464D0CF16D130EE00403A58 /* statusimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusimage.png; sourceTree = "<group>"; };
+		9464D0D516D1342300403A58 /* EmailChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailChecker.h; sourceTree = "<group>"; };
+		9464D0D616D1342300403A58 /* EmailChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailChecker.m; sourceTree = "<group>"; };
+		9464D10916D167A000403A58 /* Mail Ping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Mail Ping.entitlements"; sourceTree = "<group>"; };
+		9464D10D16D17A8700403A58 /* statusimage_unread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusimage_unread.png; sourceTree = "<group>"; };
+		9464D10F16D1855A00403A58 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		9475105216D714B100EF6B32 /* GmailComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmailComposer.h; sourceTree = "<group>"; };
+		9475105316D714B100EF6B32 /* GmailComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmailComposer.m; sourceTree = "<group>"; };
+		949069F816D7308C00F0B155 /* GmailInboxOpenerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmailInboxOpenerDelegate.h; sourceTree = "<group>"; };
+		949069F916D7308C00F0B155 /* GmailInboxOpenerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmailInboxOpenerDelegate.m; sourceTree = "<group>"; };
+		94DCE58416CE9F5C00795B42 /* Mail Ping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mail Ping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94DCE58716CE9F5C00795B42 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		94DCE58A16CE9F5C00795B42 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		94DCE58B16CE9F5C00795B42 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		94DCE58C16CE9F5C00795B42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		94DCE58F16CE9F5C00795B42 /* Mail Ping-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mail Ping-Info.plist"; sourceTree = "<group>"; };
+		94DCE59116CE9F5C00795B42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94DCE59316CE9F5C00795B42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		94DCE59516CE9F5C00795B42 /* Mail Ping-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mail Ping-Prefix.pch"; sourceTree = "<group>"; };
+		94DCE59916CE9F5C00795B42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		94DCE59A16CE9F5C00795B42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		94DCE59D16CE9F5C00795B42 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94DCE58116CE9F5C00795B42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94582B0016E29FDF0000383E /* SystemConfiguration.framework in Frameworks */,
+				9464D0CC16D12B4300403A58 /* Security.framework in Frameworks */,
+				94DCE58816CE9F5C00795B42 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94582AF916E29F240000383E /* Third Party Licenses */ = {
+			isa = PBXGroup;
+			children = (
+				94582AFA16E29F2F0000383E /* readability-license.txt */,
+			);
+			name = "Third Party Licenses";
+			sourceTree = "<group>";
+		};
+		9464D0C816D12A4D00403A58 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				94582AFC16E29FCE0000383E /* Reachability.h */,
+				94582AFD16E29FCE0000383E /* Reachability.m */,
+				9464D0C516D12A4600403A58 /* SDKeychain.h */,
+				9464D0C616D12A4600403A58 /* SDKeychain.m */,
+				9464D0BF16D1237700403A58 /* SDNotEmptyStringValueTransformer.h */,
+				9464D0C016D1237700403A58 /* SDNotEmptyStringValueTransformer.m */,
+				943E783816D723FC00C8FD14 /* MyLinkButton.h */,
+				943E783916D723FC00C8FD14 /* MyLinkButton.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9464D0C916D12A5800403A58 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				94DCE59C16CE9F5C00795B42 /* MainMenu.xib */,
+				94DCE59916CE9F5C00795B42 /* AppDelegate.h */,
+				94DCE59A16CE9F5C00795B42 /* AppDelegate.m */,
+				9475105216D714B100EF6B32 /* GmailComposer.h */,
+				9475105316D714B100EF6B32 /* GmailComposer.m */,
+				949069F816D7308C00F0B155 /* GmailInboxOpenerDelegate.h */,
+				949069F916D7308C00F0B155 /* GmailInboxOpenerDelegate.m */,
+				9464D0D516D1342300403A58 /* EmailChecker.h */,
+				9464D0D616D1342300403A58 /* EmailChecker.m */,
+				9464D0C216D1298100403A58 /* EmailAccountsController.h */,
+				9464D0C316D1298100403A58 /* EmailAccountsController.m */,
+				9464D0B716CEE23300403A58 /* MyAccountsWindow.xib */,
+				9464D0B516CEE23300403A58 /* MyAccountsWindowController.h */,
+				9464D0B616CEE23300403A58 /* MyAccountsWindowController.m */,
+				9464D0BC16D120C600403A58 /* MyAddAccountWindow.xib */,
+				9464D0BA16D120C600403A58 /* MyAddAccountWindowController.h */,
+				9464D0BB16D120C600403A58 /* MyAddAccountWindowController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9464D0CA16D12A6500403A58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9464D0AF16CEB66600403A58 /* GmailEntry.h */,
+				9464D0B016CEB66600403A58 /* GmailEntry.m */,
+				9464D0B216CEB9A800403A58 /* GmailFeed.h */,
+				9464D0B316CEB9A800403A58 /* GmailFeed.m */,
+				945E614116D327F90028462D /* GmailURLConnection.h */,
+				945E614216D327F90028462D /* GmailURLConnection.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9464D0CD16D130E600403A58 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				9464D10F16D1855A00403A58 /* icon.icns */,
+				9464D0CE16D130EE00403A58 /* statusimage_pressed.png */,
+				9464D10D16D17A8700403A58 /* statusimage_unread.png */,
+				9464D0CF16D130EE00403A58 /* statusimage.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		94DCE57B16CE9F5C00795B42 = {
+			isa = PBXGroup;
+			children = (
+				94582AFF16E29FDF0000383E /* SystemConfiguration.framework */,
+				9464D0CB16D12B4300403A58 /* Security.framework */,
+				94DCE58D16CE9F5C00795B42 /* Mail Ping */,
+				94DCE58616CE9F5C00795B42 /* Frameworks */,
+				94DCE58516CE9F5C00795B42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94DCE58516CE9F5C00795B42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94DCE58416CE9F5C00795B42 /* Mail Ping.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94DCE58616CE9F5C00795B42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94DCE58716CE9F5C00795B42 /* Cocoa.framework */,
+				94DCE58916CE9F5C00795B42 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94DCE58916CE9F5C00795B42 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94DCE58A16CE9F5C00795B42 /* AppKit.framework */,
+				94DCE58B16CE9F5C00795B42 /* CoreData.framework */,
+				94DCE58C16CE9F5C00795B42 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		94DCE58D16CE9F5C00795B42 /* Mail Ping */ = {
+			isa = PBXGroup;
+			children = (
+				94582AF916E29F240000383E /* Third Party Licenses */,
+				9464D10916D167A000403A58 /* Mail Ping.entitlements */,
+				9464D0CD16D130E600403A58 /* Graphics */,
+				9464D0C816D12A4D00403A58 /* Helpers */,
+				9464D0CA16D12A6500403A58 /* Models */,
+				9464D0C916D12A5800403A58 /* Controllers */,
+				94DCE58E16CE9F5C00795B42 /* Supporting Files */,
+			);
+			path = "Mail Ping";
+			sourceTree = "<group>";
+		};
+		94DCE58E16CE9F5C00795B42 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94582B0116E2A12A0000383E /* Credits.rtf */,
+				94DCE58F16CE9F5C00795B42 /* Mail Ping-Info.plist */,
+				94DCE59016CE9F5C00795B42 /* InfoPlist.strings */,
+				94DCE59316CE9F5C00795B42 /* main.m */,
+				94DCE59516CE9F5C00795B42 /* Mail Ping-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94DCE58316CE9F5C00795B42 /* Mail Ping */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94DCE5A116CE9F5C00795B42 /* Build configuration list for PBXNativeTarget "Mail Ping" */;
+			buildPhases = (
+				94DCE58016CE9F5C00795B42 /* Sources */,
+				94DCE58116CE9F5C00795B42 /* Frameworks */,
+				94DCE58216CE9F5C00795B42 /* Resources */,
+				9464D10716D1655000403A58 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mail Ping";
+			productName = "Mail Ping";
+			productReference = 94DCE58416CE9F5C00795B42 /* Mail Ping.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94DCE57C16CE9F5C00795B42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Steven Degutis";
+			};
+			buildConfigurationList = 94DCE57F16CE9F5C00795B42 /* Build configuration list for PBXProject "Mail Ping" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 94DCE57B16CE9F5C00795B42;
+			productRefGroup = 94DCE58516CE9F5C00795B42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94DCE58316CE9F5C00795B42 /* Mail Ping */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94DCE58216CE9F5C00795B42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DCE59216CE9F5C00795B42 /* InfoPlist.strings in Resources */,
+				94DCE59E16CE9F5C00795B42 /* MainMenu.xib in Resources */,
+				9464D0B916CEE23300403A58 /* MyAccountsWindow.xib in Resources */,
+				9464D0BE16D120C600403A58 /* MyAddAccountWindow.xib in Resources */,
+				9464D0D016D130EE00403A58 /* statusimage_pressed.png in Resources */,
+				9464D0D116D130EE00403A58 /* statusimage.png in Resources */,
+				9464D10E16D17A8700403A58 /* statusimage_unread.png in Resources */,
+				9464D11016D1855A00403A58 /* icon.icns in Resources */,
+				94582AFB16E29F2F0000383E /* readability-license.txt in Resources */,
+				94582B0216E2A12A0000383E /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94DCE58016CE9F5C00795B42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DCE59416CE9F5C00795B42 /* main.m in Sources */,
+				94DCE59B16CE9F5C00795B42 /* AppDelegate.m in Sources */,
+				9464D0B116CEB66600403A58 /* GmailEntry.m in Sources */,
+				9464D0B416CEB9A800403A58 /* GmailFeed.m in Sources */,
+				9464D0B816CEE23300403A58 /* MyAccountsWindowController.m in Sources */,
+				9464D0BD16D120C600403A58 /* MyAddAccountWindowController.m in Sources */,
+				9464D0C116D1237700403A58 /* SDNotEmptyStringValueTransformer.m in Sources */,
+				9464D0C416D1298100403A58 /* EmailAccountsController.m in Sources */,
+				9464D0C716D12A4600403A58 /* SDKeychain.m in Sources */,
+				9464D0D716D1342300403A58 /* EmailChecker.m in Sources */,
+				945E614316D327F90028462D /* GmailURLConnection.m in Sources */,
+				9475105416D714B100EF6B32 /* GmailComposer.m in Sources */,
+				943E783A16D723FC00C8FD14 /* MyLinkButton.m in Sources */,
+				949069FA16D7308C00F0B155 /* GmailInboxOpenerDelegate.m in Sources */,
+				94582AFE16E29FCE0000383E /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		94DCE59016CE9F5C00795B42 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94DCE59116CE9F5C00795B42 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		94DCE59C16CE9F5C00795B42 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94DCE59D16CE9F5C00795B42 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94DCE59F16CE9F5C00795B42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		94DCE5A016CE9F5C00795B42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		94DCE5A216CE9F5C00795B42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Mail Ping/Mail Ping.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mail Ping/Mail Ping-Prefix.pch";
+				INFOPLIST_FILE = "Mail Ping/Mail Ping-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		94DCE5A316CE9F5C00795B42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Mail Ping/Mail Ping.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mail Ping/Mail Ping-Prefix.pch";
+				INFOPLIST_FILE = "Mail Ping/Mail Ping-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94DCE57F16CE9F5C00795B42 /* Build configuration list for PBXProject "Mail Ping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DCE59F16CE9F5C00795B42 /* Debug */,
+				94DCE5A016CE9F5C00795B42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94DCE5A116CE9F5C00795B42 /* Build configuration list for PBXNativeTarget "Mail Ping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DCE5A216CE9F5C00795B42 /* Debug */,
+				94DCE5A316CE9F5C00795B42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94DCE57C16CE9F5C00795B42 /* Project object */;
+}
