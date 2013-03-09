@@ -16,7 +16,7 @@
 #define MyInitialDateKey @"NSWindowTopLeftPositionalSetting"
 
 //#define MY_EXPIRATION_TIME (60 * 10)
-#define MY_EXPIRATION_TIME (60 * 60 * 24 * 7)
+#define MY_EXPIRATION_TIME (60 * 60 * 24 * 30)
 
 @implementation MyLicenseVerifier
 
