@@ -1,0 +1,3 @@
+[submodule "giantrobotsoftware.com/build"]
+	path = giantrobotsoftware.com/build
+	url = git@github.com:sdegutis/sdegutis.github.com.git

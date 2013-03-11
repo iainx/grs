@@ -7,7 +7,7 @@
     <title>Giant Robot Software - <%= data.page.title %></title>
 
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,700" %>
-    <!-- <%= stylesheet_link_tag "normalize" %> -->
+    <%= stylesheet_link_tag "normalize" %>
 
     <% (current_page.data.css || []).each do |css| %>
     <%= stylesheet_link_tag css %>
@@ -16,16 +16,6 @@
     <% (current_page.data.js || []).each do |js| %>
     <%= javascript_include_tag js %>
     <% end %>
-
-    <!-- <%= javascript_include_tag  "all" %> -->
-
-    <!-- {% for css in page.css %} -->
-    <!-- <link href="{{css}}" rel="stylesheet" type="text/css"> -->
-    <!-- {% endfor %} -->
-
-    <!-- {% for js in page.js %} -->
-    <!-- <script src="{{js}}"></script> -->
-    <!-- {% endfor %} -->
 
   </head>
   <body>
@@ -49,6 +39,6 @@
 
     <%= yield %>
 
-    <!-- {% include analytics.html %} -->
+    <%= partial "analytics" %>
   </body>
 </html>

@@ -5,6 +5,7 @@ layout: false
 <ul>
 
   <% versions.reverse.each do |version| %>
+  <% if version.release_notes %>
   <li>
     <%= version.number %>
     <ul>
@@ -13,6 +14,7 @@ layout: false
       <% end %>
     </ul>
   </li>
+  <% end %>
   <% end %>
 
 </ul>
