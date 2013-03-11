@@ -1,0 +1,138 @@
+---
+css:
+  - app.css
+  - /etc/lightbox/jquery.fancybox.css
+js:
+  - http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
+  - http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js
+  - /etc/js/app-sshot.js
+---
+
+<div id="intro">
+
+  <h1 id="title"><%= app.name %></h1>
+
+</div>
+
+<div id="details">
+
+  <div id="primary-content">
+
+    <p id="tagline"><%= app.tagline %></p>
+
+    <% app.summary.each do |p| %>
+    <p class="summary"><%= p %></p>
+    <% end %>
+
+    <h2 class="subtitle">What can it do?</h2>
+
+    <ul id="features">
+      <% app.features.each do |feature| %>
+      <li><%= feature %></li>
+      <% end %>
+    </ul>
+
+    <% if app.num_screenshots > 0 %>
+    <h2 class="subtitle">What does it look like?</h2>
+
+    <div id="screenshots">
+
+      <% (1..app.num_screenshots).each do |i| %><a rel="group1" href="screenshot<%= i %>.png"><img src="screenshot<%= i %>-thumb.png"></a><% end %>
+
+    </div>
+    <% end %>
+
+    <% if app.my_store %>
+    <h2 class="subtitle">Can I try it for free?</h2>
+
+    <p>
+      Yep. <%= app.name %> comes with a free 30-day trial period,
+      during which it will be <i>fully functional</i>. If you'd like
+      to keep using it after the trial ends, you can buy a license.
+    </p>
+    <% end %>
+
+  </div>
+
+
+
+  <div id="secondary-content">
+
+    <ul id="info">
+      <li>
+        <span class="key">Current version:</span>
+        <span class="val"><%= app.version %></span>
+      </li>
+      <li>
+        <span class="key">Last release date:</span>
+        <span class="val"><%= app.last_release_date %></span>
+      </li>
+      <li>
+        <span class="key">Requires:</span>
+        <span class="val">Mac OS X <%= app.min_os_version %> and up</span>
+      </li>
+      <% if app.my_store %>
+      <li>
+        <span class="key">Trial Period:</span>
+        <span class="val">30 days, fully functional</span>
+      </li>
+      <li>
+        <span class="key">Price:</span>
+        <span class="val"><%= app.my_store.price %></span>
+      </li>
+      <% end %>
+      <li>
+        <span class="key">Need help?</span>
+        <span class="val"><a href="mailto:sbdegutis+<%= app.smallname %>@gmail.com?subject=<%= app.name.split(' ').join('%20') %>%20Support">Contact support</a></span>
+      </li>
+    </ul>
+
+    <div id="buttons-group">
+
+      <ul id="links">
+
+        <li>
+          <% if app.appstore %>
+          <% if app.appstore == 'comingsoon' %>
+          <a class="fancy-button coming-soon" id="appstore" href="#">
+            Coming soon
+          </a>
+          <% else %>
+          <a class="fancy-button" id="appstore" href="<%= app.appstore %>">
+            Get from App Store
+          </a>
+          <% end %>
+          <% end %>
+        </li>
+
+        <% if app.my_store %>
+        <li>
+          <a class="fancy-button" id="download" href="<%= app.smallname %>-<%= app.version %>.zip">
+            Download
+          </a>
+        </li>
+        <li>
+          <a class="fancy-button" id="buynow" href="store.html">
+            Purchase
+          </a>
+        </li>
+        <% end %>
+
+      </ul>
+
+    </div>
+
+    <div id="testimonials">
+      <% (app.testimonials || []).each do |testimonial| %>
+      <blockquote>
+        "<%= testimonial.what %>"
+        <cite>
+          &mdash; <%= testimonial.who %>
+        </cite>
+      </blockquote>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

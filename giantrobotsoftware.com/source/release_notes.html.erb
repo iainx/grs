@@ -1,0 +1,18 @@
+---
+layout: false
+---
+
+<ul>
+
+  <% versions.reverse.each do |version| %>
+  <li>
+    <%= version.number %>
+    <ul>
+      <% version.release_notes.each do |note| %>
+      <li><%= note %></li>
+      <% end %>
+    </ul>
+  </li>
+  <% end %>
+
+</ul>

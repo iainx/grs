@@ -1,0 +1,164 @@
+-
+  name: AppGrid
+  smallname: appgrid
+  version: 1.3.1
+  last_release_date: 2013-03-07
+  tagline: Manage windows, from the comfort of your home row.
+  versions:
+    -
+      number: 1.0
+      release_notes:
+        - First public version
+    -
+      number: 1.1
+      sparkle:
+        date: Tue Mar  6 10:25:00 CST 2013
+        size: 2168897
+        sig: MCwCFAEK0mo9PiELhiQnp2Em9S5xbwyJAhRyiPlSROhPO1u5SAOkuN/7hKwAXw==
+      release_notes:
+        - Can send feedback from inside AppGrid
+        - Can toggle open-at-login
+    -
+      number: 1.2
+      sparkle:
+        date: Tue Mar  6 10:45:00 CST 2013
+        size: 2168913
+        sig: MCwCFGWvNTg2vnpV6Bll6sMd5bXT8fV/AhQ7UWRxrX5iKPQYMGMXhYKeO9JX5w==
+      release_notes:
+        - Fixed app version number for auto-updater
+    -
+      number: 1.3
+      sparkle:
+        date: Tue Mar  6 13:45:00 CST 2013
+        size: 1614188
+        sig: MCwCFAZscxtr6EaMUKg1TocsBhfZ7DKaAhRpOUw+rxa5OTIfX0Jf24xK8kuArQ==
+      release_notes:
+        - Added hot key to maximize window
+        - Added hot keys to increase/decrease grid width
+        - Added hot key to snap current window to grid
+        - Changed default hot key to snap all windows to grid
+    -
+      number: 1.3.1
+      sparkle:
+        date: Tue Mar  7 19:45:00 CST 2013
+        size: 1750051
+        sig: MCwCFGRQq5wFuXTEwJAfrPKDtQhuqH7kAhR1I2IqogQ9OXZVu84AvXvaCBUO/Q==
+      release_notes:
+        - Added option to toggle the margin between windows
+        - AppGrid windows don't get lost so easily anymore
+        - Added crash reporter (just in case)
+  my_store:
+    url: https://sites.fastspring.com/giantrobotsoftware/instant/appgrid
+    price: $9.00
+  summary:
+    - AppGrid is the simple, hassle-free way to move and resize your windows. AppGrid snaps your windows to a grid, and when you move or resize them, they adjust themselves to stay in this grid.
+    - The default hot keys are designed to be ergonomic and comfortable (using vim-like keys), but you can also customize them as you see fit.
+    - With AppGrid, moving and resizing windows are independent. When you move a window, it stays the same size. When you resize it, it stays in place. AppGrid's controls are predictable and orthogonal.
+  appstore: false
+  min_os_version: 10.7
+  num_screenshots: 4
+  features:
+    - Easy to remember keys
+    - Moving and resizing windows are orthogonal
+    - Minimal UI, stays out of your way
+    - Extremely stable
+    - Customizable hot keys
+    - Customizable grid size
+    - Supports multiple monitors
+  testimonials:
+    -
+      what: I'm really, really liking grow/shrink and move window being orthogonal. No additional side effects where I don't need/want them. It feels very modular.
+      who: Colin Jones of 8th Light
+-
+  name: DeskLabels
+  smallname: desklabels
+  version: 1.0
+  tagline: Organize your Desktop like never before
+  last_release_date: 2013-03-07
+  min_os_version: 10.7
+  num_screenshots: 4
+  summary:
+    - Why hide your files into folders on your Desktop when you can group them with informative labels instead? DeskLabels allows you to place labels right on your desktop, right along with your desktop icons.
+  download?: false
+  purchase?: false
+  appstore: macappstores://itunes.apple.com/us/app/desklabels/id600071626?mt=12
+  features:
+    - Create any number of desk labels
+    - Labels resize automatically based on title
+    - Drag them around your desktop to re-position
+    - Works on dark or light backgrounds
+    - Switch between light and dark label types
+    - Use for reminders too
+    - Aesthetically pleasing UI
+  testimonials:
+    -
+      what: This App is simply great for desktop labels and reminders as well.
+      who: App Store review
+-
+  name: Mail Ping
+  smallname: mailping
+  version: 1.0
+  tagline: Unread-email notifications for multiple Gmail inboxes, done right
+  last_release_date: 2013-03-07
+  min_os_version: 10.8
+  num_screenshots: 4
+  summary:
+    - Mail Ping checks your Gmail accounts and notifies you when you have unread emails.
+    - Using innovative techniques, Mail Ping is the first app of its kind to support multiple Gmail accounts flawlessly.
+  download?: false
+  purchase?: false
+  appstore: comingsoon
+  features:
+    - Works flawlessly with multiple Gmail accounts
+    - Works for Gmail accounts on custom domains
+    - Integrates seamlessly with the Apple's built-in Notification Center
+    - Go to inbox for any Gmail account
+    - Go to compose new email for any Gmail account
+    - Rock solid, extremely reliable
+    - Minimal user interface
+-
+  name: TunesBar
+  smallname: tunesbar
+  tagline: View your currently playing iTunes track in your menu bar
+  version: 1.0
+  last_release_date: 2013-03-07
+  min_os_version: 10.8
+  num_screenshots: 3
+  summary:
+    - Sure, there are other apps that do this. But this one is the highest quality. Try it and see for yourself.
+    - Unlike some other apps, TunesBar will show the full title, without the need to scroll. And it changes to always fit the currently playing track. And, using innovative techniques, TunesBar shows your currently playing track in the highest quality font.
+  download?: false
+  purchase?: false
+  appstore: comingsoon
+  features:
+    - Simple user interface
+    - Aesthetically pleasing, crisp font
+    - Dims when track is paused
+    - Customize what track properties are displayed
+    - Customize order of displayed track properties
+    - Change TunesBar's font size to your liking
+-
+  name: Quick Timer
+  smallname: quicktimer
+  tagline: Timers, made easy
+  version: 1.0
+  last_release_date: 2013-03-07
+  min_os_version: 10.8
+  num_screenshots: 3
+  summary:
+    - Time just about anything. Piano lessons? Pizza in the oven? Several children in time-out? Giving children time limits on TV? Quick Timer can do all of it.
+    - Quick Timers is especially helpful when you're cooking multiple foods and don't have enough timers in your kitchen. Pop open as many windows as you like in Quick Timers for any task!
+    - You can name your timers too, which helps if you want to put Jimmy in time-out for 4 minutes while Johnny is playing the piano for 30 minutes.
+    - Need more time? Or need less time? Just click the buttons on the timer window to add or remove minutes from the timer!
+  download?: false
+  purchase?: false
+  appstore: macappstores://itunes.apple.com/us/app/quick-timer/id599783205?mt=12
+  features:
+    - Multiple timers
+    - Pause and un-pause timer with space bar
+    - (Optional) Name your timers
+    - Timer turns Red when 30 seconds are left
+    - Timer turns Green when done
+    - Add or remove minutes after the timer was started
+    - Extremely stable, does not crash
+    - Aesthetically pleasing, not distracting or ugly

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <title>Giant Robot Software - <%= data.page.title %></title>
+
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,700" %>
+    <!-- <%= stylesheet_link_tag "normalize" %> -->
+
+    <% (current_page.data.css || []).each do |css| %>
+    <%= stylesheet_link_tag css %>
+    <% end %>
+
+    <% (current_page.data.js || []).each do |js| %>
+    <%= javascript_include_tag js %>
+    <% end %>
+
+    <!-- <%= javascript_include_tag  "all" %> -->
+
+    <!-- {% for css in page.css %} -->
+    <!-- <link href="{{css}}" rel="stylesheet" type="text/css"> -->
+    <!-- {% endfor %} -->
+
+    <!-- {% for js in page.js %} -->
+    <!-- <script src="{{js}}"></script> -->
+    <!-- {% endfor %} -->
+
+  </head>
+  <body>
+    <div id="navbar">
+      <ul id="links">
+        <li>
+          <a href="/" style="padding-left: 50px; background: url('/etc/img/grs-logo-small.png') no-repeat 15px 5px;">
+            Giant Robot Software
+          </a>
+        </li>
+
+        <% data.apps.each do |app| %>
+        <li>
+          <a href="/<%= app.smallname %>/">
+            <%= app.name %>
+          </a>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <%= yield %>
+
+    <!-- {% include analytics.html %} -->
+  </body>
+</html>

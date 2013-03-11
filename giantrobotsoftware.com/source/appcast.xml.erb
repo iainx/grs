@@ -1,0 +1,35 @@
+---
+layout: false
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title><%= app.name %> Changelog</title>
+    <link>http://giantrobotsoftware.com/<%= app.smallname %>/appcast.xml</link>
+    <description>Most recent changes with links to updates.</description>
+    <language>en</language>
+
+    <% app.versions.reverse.each do |version| %>
+
+    <% if version.sparkle %>
+
+    <item>
+      <title>Version <%= version.number %></title>
+      <sparkle:releaseNotesLink>
+	http://giantrobotsoftware.com/<%= app.smallname %>/<%= version.number %>.html
+      </sparkle:releaseNotesLink>
+      <pubDate><%= version.sparkle.date %></pubDate>
+      <enclosure url="http://giantrobotsoftware.com/<%= app.smallname %>/<%= app.smallname %>-<%= version.number %>.zip"
+                 sparkle:version="<%= version.number %>"
+                 length="<%= version.sparkle[:size] %>"
+                 type="application/octet-stream"
+                 sparkle:dsaSignature="<%= version.sparkle.sig %>" />
+    </item>
+
+    <% end %>
+
+    <% end %>
+
+  </channel>
+</rss>
