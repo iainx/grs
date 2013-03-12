@@ -18,9 +18,9 @@ body {
     color: $text_color;
 }
 
-#navbar #links,
-#title,
-#details {
+nav ul,
+header h1,
+section {
     margin: 0px auto;
     width: 980px;
 }
@@ -29,11 +29,11 @@ body {
 /* NAV BAR */
 
 
-#navbar {
+nav {
     background-color: #484846;
 }
 
-#navbar #links {
+nav ul {
     list-style-type: none;
     background-color: #1c1c1c;
 
@@ -41,12 +41,12 @@ body {
     overflow: auto;
 }
 
-#navbar #links li {
+nav li {
     float: left;
     border-right: 1px solid #484846;
 }
 
-#navbar #links a {
+nav a {
     display: inline-block;
     padding: 10px 20px;
 
@@ -55,20 +55,24 @@ body {
     /* background-color: #1c1c1c; */
 }
 
-#navbar #links a:hover {
+nav a:hover {
     /* background-color: #62625f; */
     color: #fff;
 }
 
+nav a#home {
+  padding-left: 50px;
+  background: url('/etc/img/grs-logo-small.png') no-repeat 15px 5px;
+}
 
 /* HEADER */
 
 
-#intro {
+header {
     background-color: $medium_color;
 }
 
-#title {
+header h1 {
     padding: 30px;
 
     color: $stand_out_color;
@@ -80,19 +84,12 @@ body {
 /* LEFT SIDE */
 
 
-#primary-content {
+section article {
     float: left;
     width: 60%;
 }
 
-#primary-content p {
-    margin: 20px 0px;
-
-    line-height: 20px;
-}
-
-#primary-content .subtitle,
-#primary-content #tagline {
+section article h2 {
     margin: 20px 0px;
     margin-top: 40px;
 
@@ -101,12 +98,18 @@ body {
     font-weight: normal;
 }
 
-#primary-content #features {
+section article p {
+    margin: 20px 0px;
+
+    line-height: 20px;
+}
+
+section article #features {
     list-style-type: square;
     margin-left: 20px;
 }
 
-#primary-content #features li {
+section article #features li {
     height: 20px;
 }
 
@@ -114,125 +117,7 @@ body {
 /* RIGHT SIDE */
 
 
-#secondary-content {
+aside {
     float: right;
     width: 30%;
-}
-
-/* INFO */
-
-#info {
-    background-color: #fff;
-    padding: 20px 10px;
-
-    font-size: 90%;
-    list-style-type: none;
-}
-
-#info li {
-    height: 25px;
-
-    color: #555;
-}
-
-#info .key {
-    display: inline-block;
-    width: 120px;
-    margin-right: 5px;
-    text-align: right;
-}
-
-#info .val a {
-    color: $stand_out_color;
-    text-decoration: none;
-}
-
-#info .val a:hover {
-    color: $stand_out_color;
-    text-decoration: underline;
-}
-
-#info .val {
-    font-weight: bold;
-}
-
-
-/* TESTIMONIALS */
-
-
-#testimonials {
-    /* margin-top: 20px; */
-}
-
-#testimonials blockquote {
-    color: #888;
-
-    margin: 20px;
-    margin-top: 40px;
-    line-height: 20px;
-}
-
-#testimonials cite {
-    margin-top: 10px;
-    text-align: right;
-    display: block;
-}
-
-
-/* BUTTONS */
-
-
-#buttons-group {
-    margin-top: 20px;
-}
-
-#buttons-group #links {
-    list-style-type: none;
-}
-
-#buttons-group #links li {
-    /* text-align: center; */
-}
-
-#buttons-group #links {
-}
-
-.fancy-button {
-    display: inline-block;
-
-    width: 150px;
-    text-align: center;
-
-    margin: 5px 0px;
-    padding: 10px;
-
-    text-decoration: none;
-    background-color: #c0b1a0;
-    color: #fff;
-}
-
-.fancy-button:hover {
-    background-color: $stand_out_color;
-}
-
-/* SCREENSHOTS */
-
-#screenshots img {
-    width: 125px;
-    height: 90px;
-    border-radius: 3px;
-}
-
-#screenshots a {
-    width: 125px;
-    height: 90px;
-    display: inline-block;
-    margin: 5px;
-    padding: 1px;
-    background-color: #b5a491;
-    border-radius: 4px;
-}
-
-#screenshots a:hover {
-    background-color: #000;
 }

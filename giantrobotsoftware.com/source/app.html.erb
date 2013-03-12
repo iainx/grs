@@ -10,23 +10,23 @@ js:
 
 <% content_for :title, app.name %>
 
-<div id="intro">
+<header>
 
-  <h1 id="title"><%= app.name %></h1>
+  <h1><%= app.name %></h1>
 
-</div>
+</header>
 
-<div id="details">
+<section>
 
-  <div id="primary-content">
+  <article>
 
-    <p id="tagline"><%= app.tagline %></p>
+    <h2><%= app.tagline %></h2>
 
     <% app.summary.each do |p| %>
     <p class="summary"><%= p %></p>
     <% end %>
 
-    <h2 class="subtitle">What can it do?</h2>
+    <h2>What can it do?</h2>
 
     <ul id="features">
       <% app.features.each do |feature| %>
@@ -35,7 +35,7 @@ js:
     </ul>
 
     <% if app.num_screenshots > 0 %>
-    <h2 class="subtitle">What does it look like?</h2>
+    <h2>What does it look like?</h2>
 
     <div id="screenshots">
 
@@ -45,7 +45,7 @@ js:
     <% end %>
 
     <% if app.my_store %>
-    <h2 class="subtitle">Can I try it for free?</h2>
+    <h2>Can I try it for free?</h2>
 
     <p>
       Yep. <%= app.name %> comes with a free 30-day trial period,
@@ -54,11 +54,11 @@ js:
     </p>
     <% end %>
 
-  </div>
+  </article>
 
 
 
-  <div id="secondary-content">
+  <aside>
 
     <ul id="info">
       <li>
@@ -89,14 +89,14 @@ js:
       </li>
     </ul>
 
-    <div id="buttons-group">
+    <div id="buttons">
 
-      <ul id="links">
+      <ul>
 
         <li>
           <% if app.appstore %>
           <% if app.appstore == 'comingsoon' %>
-          <a class="fancy-button coming-soon" id="appstore" href="#">
+          <a class="coming-soon" id="appstore" href="#">
             Coming soon
           </a>
           <% else %>
@@ -135,6 +135,6 @@ js:
       <% end %>
     </div>
 
-  </div>
+  </aside>
 
-</div>
+</section>

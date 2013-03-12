@@ -1,1 +1,116 @@
 @import "base";
+
+/* INFO */
+
+#info {
+    background-color: #fff;
+    padding: 20px 10px;
+
+    font-size: 90%;
+    list-style-type: none;
+}
+
+#info li {
+    height: 25px;
+
+    color: #555;
+}
+
+#info .key {
+    display: inline-block;
+    width: 120px;
+    margin-right: 5px;
+    text-align: right;
+}
+
+#info .val a {
+    color: $stand_out_color;
+    text-decoration: none;
+}
+
+#info .val a:hover {
+    color: $stand_out_color;
+    text-decoration: underline;
+}
+
+#info .val {
+    font-weight: bold;
+}
+
+
+/* TESTIMONIALS */
+
+
+#testimonials {
+    /* margin-top: 20px; */
+}
+
+#testimonials blockquote {
+    color: #888;
+
+    margin: 20px;
+    margin-top: 40px;
+    line-height: 20px;
+}
+
+#testimonials cite {
+    margin-top: 10px;
+    text-align: right;
+    display: block;
+}
+
+
+/* BUTTONS */
+
+
+#buttons {
+    margin-top: 20px;
+}
+
+#buttons ul {
+    list-style-type: none;
+}
+
+#buttons li {
+    text-align: center;
+}
+
+#buttons a {
+    display: inline-block;
+
+    width: 150px;
+    text-align: center;
+
+    margin: 5px 0px;
+    padding: 10px;
+
+    text-decoration: none;
+    background-color: #c0b1a0;
+    color: #fff;
+}
+
+#buttons a:hover {
+    background-color: $stand_out_color;
+}
+
+/* SCREENSHOTS */
+
+#screenshots img {
+    width: 125px;
+    height: 90px;
+    border-radius: 3px;
+}
+
+#screenshots a {
+    width: 125px;
+    height: 90px;
+    display: inline-block;
+    margin: 5px;
+    padding: 1px;
+    background-color: #b5a491;
+    border-radius: 4px;
+}
+
+#screenshots a:hover {
+    background-color: #000;
+}
