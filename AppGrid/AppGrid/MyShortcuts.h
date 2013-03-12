@@ -23,6 +23,11 @@
 
 #define MyMaximizeShortcutKey @"MyMaximizeShortcutKey"
 
+#define MyFocusWindowLeftShortcutKey @"MyFocusWindowLeftShortcutKey"
+#define MyFocusWindowRightShortcutKey @"MyFocusWindowRightShortcutKey"
+#define MyFocusWindowUpShortcutKey @"MyFocusWindowUpShortcutKey"
+#define MyFocusWindowDownShortcutKey @"MyFocusWindowDownShortcutKey"
+
 #define MyShrinkToUpperRowShortcutKey @"MyShrinkToUpperRowShortcutKey"
 #define MyShrinkToLowerRowShortcutKey @"MyShrinkToLowerRowShortcutKey"
 #define MyFillEntireColumnShortcutKey @"MyFillEntireColumnShortcutKey"

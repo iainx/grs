@@ -42,6 +42,11 @@
     
     [self bindDefaultsKey:MyMaximizeShortcutKey action:^{ [self maximize]; }];
     
+    [self bindDefaultsKey:MyFocusWindowLeftShortcutKey action:^{ [self focusWindowLeft]; }];
+    [self bindDefaultsKey:MyFocusWindowRightShortcutKey action:^{ [self focusWindowRight]; }];
+    [self bindDefaultsKey:MyFocusWindowUpShortcutKey action:^{ [self focusWindowUp]; }];
+    [self bindDefaultsKey:MyFocusWindowDownShortcutKey action:^{ [self focusWindowDown]; }];
+    
     [self bindDefaultsKey:MyShrinkToLowerRowShortcutKey action:^{ [self shrinkToLower]; }];
     [self bindDefaultsKey:MyShrinkToUpperRowShortcutKey action:^{ [self shrinkToUpper]; }];
     [self bindDefaultsKey:MyFillEntireColumnShortcutKey action:^{ [self fillEntireColumn]; }];
@@ -69,6 +74,44 @@
     self.keysDisabled = NO;
 }
 
+#pragma mark -
+
+- (void) focusWindowLeft {
+    
+    static int i = 0;
+    i++;
+    
+//    NSLog(@"%@", [[MyWindow allWindows] valueForKey:@"frame"]);
+    
+    NSArray* wins = [[MyWindow focusedWindow] otherWindowsOnSameScreen];
+    NSLog(@"%@", wins);
+    
+    if (i == [wins count])
+        i = 0;
+    
+    [[wins objectAtIndex:i] focusWindow];
+    
+    NSLog(@"focusing left");
+}
+
+- (void) focusWindowRight {
+//    NSLog(@"%@", [[MyWindow visibleWindows] valueForKey:@"frame"]);
+//    NSLog(@"%@", [[MyWindow visibleWindows] valueForKey:@"title"]);
+//    NSLog(@"%@", [[MyWindow visibleWindows] valueForKey:@"role"]);
+//    NSLog(@"%@", [[MyWindow visibleWindows] valueForKey:@"isAppHidden"]);
+//    NSLog(@"%@", [[MyWindow visibleWindows] valueForKey:@"isWindowMinimized"]);
+    
+    NSLog(@"focusing right");
+}
+
+- (void) focusWindowUp {
+    NSLog(@"focusing up");
+}
+
+- (void) focusWindowDown {
+    NSLog(@"focusing down");
+}
+
 - (void) maximize {
     [[MyWindow focusedWindow] maximize];
 }
@@ -84,7 +127,7 @@
 }
 
 - (void) alignAllWindows {
-    for (MyWindow* win in [MyWindow allWindows]) {
+    for (MyWindow* win in [MyWindow visibleWindows]) {
         [win moveToGridProps:[win gridProps]];
     }
 }

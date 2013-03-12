@@ -39,6 +39,11 @@
     
     self.maximizeShortcutView.associatedUserDefaultsKey = MyMaximizeShortcutKey;
     
+    self.focusWindowLeftShortcutView.associatedUserDefaultsKey = MyFocusWindowLeftShortcutKey;
+    self.focusWindowRightShortcutView.associatedUserDefaultsKey = MyFocusWindowRightShortcutKey;
+    self.focusWindowUpShortcutView.associatedUserDefaultsKey = MyFocusWindowUpShortcutKey;
+    self.focusWindowDownShortcutView.associatedUserDefaultsKey = MyFocusWindowDownShortcutKey;
+    
     self.shrinkToLowerRowShortcutView.associatedUserDefaultsKey = MyShrinkToLowerRowShortcutKey;
     self.shrinkToUpperRowShortcutView.associatedUserDefaultsKey = MyShrinkToUpperRowShortcutKey;
     self.fillEntireColumnShortcutView.associatedUserDefaultsKey = MyFillEntireColumnShortcutKey;

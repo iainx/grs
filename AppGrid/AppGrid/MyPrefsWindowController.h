@@ -33,4 +33,9 @@
 @property (nonatomic, weak) IBOutlet MASShortcutView *shrinkToLowerRowShortcutView;
 @property (nonatomic, weak) IBOutlet MASShortcutView *fillEntireColumnShortcutView;
 
+@property (nonatomic, weak) IBOutlet MASShortcutView *focusWindowLeftShortcutView;
+@property (nonatomic, weak) IBOutlet MASShortcutView *focusWindowRightShortcutView;
+@property (nonatomic, weak) IBOutlet MASShortcutView *focusWindowUpShortcutView;
+@property (nonatomic, weak) IBOutlet MASShortcutView *focusWindowDownShortcutView;
+
 @end

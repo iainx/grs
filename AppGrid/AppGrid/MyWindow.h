@@ -11,6 +11,7 @@
 @interface MyWindow : NSObject
 
 + (NSArray*) allWindows;
++ (NSArray*) visibleWindows;
 + (MyWindow*) focusedWindow;
 
 - (CGRect) frame;
@@ -23,5 +24,9 @@
 - (void) moveToPreviousScreen;
 
 - (void) maximize;
+
+- (void) focusWindow;
+
+- (NSArray*) otherWindowsOnSameScreen;
 
 @end

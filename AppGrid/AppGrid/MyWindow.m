@@ -51,18 +51,40 @@
     return windows;
 }
 
++ (NSArray*) visibleWindows {
+    return [[self allWindows] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(MyWindow* win, NSDictionary *bindings) {
+        return ![win isAppHidden] && ![win isWindowMinimized] && [[win role] isEqualToString: (__bridge NSString*)kAXWindowRole];
+    }]];
+}
+
+- (NSArray*) otherWindowsOnSameScreen {
+    return [[MyWindow visibleWindows] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(MyWindow* win, NSDictionary *bindings) {
+        return !CFEqual(self.window, win.window) && [[self screen] isEqual: [win screen]];
+    }]];
+}
+
 - (void) dealloc {
     if (self.window)
         CFRelease(self.window);
 }
 
-+ (MyWindow*) focusedWindow {
+//unselectableApps = [NSDictionary dictionaryWithObjectsAndKeys:@"SystemUIServer", @"SystemUIServer",
+//                    @"Slate", @"Slate",
+//                    @"Dropbox", @"Dropbox",
+//                    @"loginwindow", @"loginwindow", nil];
+
++ (AXUIElementRef) systemWideElement {
     static AXUIElementRef systemWideElement;
-    if (systemWideElement == NULL)
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         systemWideElement = AXUIElementCreateSystemWide();
-    
+    });
+    return systemWideElement;
+}
+
++ (MyWindow*) focusedWindow {
     CFTypeRef app;
-    AXUIElementCopyAttributeValue(systemWideElement, kAXFocusedApplicationAttribute, &app);
+    AXUIElementCopyAttributeValue([self systemWideElement], kAXFocusedApplicationAttribute, &app);
     
     CFTypeRef win;
     AXError result = AXUIElementCopyAttributeValue(app, (CFStringRef)NSAccessibilityFocusedWindowAttribute, &win);
@@ -244,6 +266,86 @@
 - (void) maximize {
     CGRect screenRect = [MyWindow realFrameForScreen:[self screen]];
     [self setFrame:screenRect];
+}
+
+- (void) focusWindow {
+    AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilityMainAttribute, kCFBooleanTrue);
+    if (result != kAXErrorSuccess) {
+        NSLog(@"ERROR: Could not change focus to window");
+        return;
+    }
+    
+    ProcessSerialNumber psn;
+    GetProcessForPID([self processIdentifier], &psn);
+    SetFrontProcessWithOptions(&psn, kSetFrontProcessFrontWindowOnly);
+}
+
+- (pid_t) processIdentifier {
+    // may need to create system wide element right now
+    
+    pid_t pid = 0;
+    AXError result = AXUIElementGetPid(self.window, &pid);
+    if (result == kAXErrorSuccess)
+        return pid;
+    else
+        return 0;
+}
+
+- (BOOL) isAppHidden {
+//    [AccessibilityWrapper createSystemWideElement];
+    
+    AXUIElementRef app = AXUIElementCreateApplication([self processIdentifier]);
+    if (app == NULL)
+        return YES;
+    
+    CFTypeRef _isHidden;
+    BOOL isHidden = NO;
+    if (AXUIElementCopyAttributeValue(app, (CFStringRef)NSAccessibilityHiddenAttribute, (CFTypeRef *)&_isHidden) == kAXErrorSuccess) {
+        NSNumber *isHiddenNum = (__bridge NSNumber *) _isHidden;
+        isHidden = [isHiddenNum boolValue];
+    }
+    
+    CFRelease(app);
+    
+    return isHidden;
+}
+
+- (BOOL) isWindowMinimized {
+//    [AccessibilityWrapper createSystemWideElement];
+    
+    CFTypeRef _isMinimized;
+    BOOL isMinimized = NO;
+    if (AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityMinimizedAttribute, (CFTypeRef *)&_isMinimized) == kAXErrorSuccess) {
+        NSNumber *isMinimizedNum = (__bridge NSNumber *) _isMinimized;
+        isMinimized = [isMinimizedNum boolValue];
+    }
+    return isMinimized;
+}
+
+- (NSString *) title {
+    //    [AccessibilityWrapper createSystemWideElement];
+    
+    CFTypeRef _title;
+    if (AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityTitleAttribute, (CFTypeRef *)&_title) == kAXErrorSuccess) {
+        NSString *title = (__bridge NSString *) _title;
+        if (_title != NULL) CFRelease(_title);
+        return title;
+    }
+    if (_title != NULL) CFRelease(_title);
+    return @"";
+}
+
+- (NSString *) role {
+    //    [AccessibilityWrapper createSystemWideElement];
+    
+    CFTypeRef _title;
+    if (AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityRoleAttribute, (CFTypeRef *)&_title) == kAXErrorSuccess) {
+        NSString *title = (__bridge NSString *) _title;
+        if (_title != NULL) CFRelease(_title);
+        return title;
+    }
+    if (_title != NULL) CFRelease(_title);
+    return @"";
 }
 
 @end
