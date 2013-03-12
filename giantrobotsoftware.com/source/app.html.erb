@@ -78,9 +78,11 @@ js:
         <span class="key">Trial Period:</span>
         <span class="val">30 days, fully functional</span>
       </li>
+      <% end %>
+      <% if app.price %>
       <li>
         <span class="key">Price:</span>
-        <span class="val"><%= app.my_store.price %></span>
+        <span class="val"><%= app.price %></span>
       </li>
       <% end %>
       <li>

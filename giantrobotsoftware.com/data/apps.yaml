@@ -4,6 +4,26 @@
   version: 1.3.1
   last_release_date: 2013-03-07
   tagline: Manage windows, from the comfort of your home row.
+  price: $9.00
+  my_store: https://sites.fastspring.com/giantrobotsoftware/instant/appgrid
+  min_os_version: 10.7
+  num_screenshots: 4
+  summary:
+    - AppGrid is the simple, hassle-free way to move and resize your windows. AppGrid snaps your windows to a grid, and when you move or resize them, they adjust themselves to stay in this grid.
+    - The default hot keys are designed to be ergonomic and comfortable (using vim-like keys), but you can also customize them as you see fit.
+    - With AppGrid, moving and resizing windows are independent. When you move a window, it stays the same size. When you resize it, it stays in place. AppGrid's controls are predictable and orthogonal.
+  features:
+    - Easy to remember keys
+    - Moving and resizing windows are orthogonal
+    - Minimal UI, stays out of your way
+    - Extremely stable
+    - Customizable hot keys
+    - Customizable grid size
+    - Supports multiple monitors
+  testimonials:
+    -
+      what: I'm really, really liking grow/shrink and move window being orthogonal. No additional side effects where I don't need/want them. It feels very modular.
+      who: Colin Jones of 8th Light
   versions:
     -
       number: 1.0
@@ -47,34 +67,13 @@
         - Added option to toggle the margin between windows
         - AppGrid windows don't get lost so easily anymore
         - Added crash reporter (just in case)
-  my_store:
-    url: https://sites.fastspring.com/giantrobotsoftware/instant/appgrid
-    price: $9.00
-  summary:
-    - AppGrid is the simple, hassle-free way to move and resize your windows. AppGrid snaps your windows to a grid, and when you move or resize them, they adjust themselves to stay in this grid.
-    - The default hot keys are designed to be ergonomic and comfortable (using vim-like keys), but you can also customize them as you see fit.
-    - With AppGrid, moving and resizing windows are independent. When you move a window, it stays the same size. When you resize it, it stays in place. AppGrid's controls are predictable and orthogonal.
-  appstore: false
-  min_os_version: 10.7
-  num_screenshots: 4
-  features:
-    - Easy to remember keys
-    - Moving and resizing windows are orthogonal
-    - Minimal UI, stays out of your way
-    - Extremely stable
-    - Customizable hot keys
-    - Customizable grid size
-    - Supports multiple monitors
-  testimonials:
-    -
-      what: I'm really, really liking grow/shrink and move window being orthogonal. No additional side effects where I don't need/want them. It feels very modular.
-      who: Colin Jones of 8th Light
 -
   name: DeskLabels
   smallname: desklabels
   version: 1.0
-  tagline: Organize your Desktop like never before
   last_release_date: 2013-03-07
+  tagline: Organize your Desktop like never before
+  price: $1.99
   min_os_version: 10.7
   num_screenshots: 4
   summary:
@@ -99,6 +98,7 @@
   smallname: mailping
   version: 1.0
   tagline: Unread-email notifications for multiple Gmail inboxes, done right
+  price: $0.99
   last_release_date: 2013-03-07
   min_os_version: 10.8
   num_screenshots: 4
@@ -107,7 +107,7 @@
     - Using innovative techniques, Mail Ping is the first app of its kind to support multiple Gmail accounts flawlessly.
   download?: false
   purchase?: false
-  appstore: comingsoon
+  appstore: macappstores://itunes.apple.com/us/app/mail-ping/id604713773?mt=12
   features:
     - Works flawlessly with multiple Gmail accounts
     - Works for Gmail accounts on custom domains
@@ -142,6 +142,7 @@
   smallname: quicktimer
   tagline: Timers, made easy
   version: 1.0
+  price: $0.99
   last_release_date: 2013-03-07
   min_os_version: 10.8
   num_screenshots: 3
