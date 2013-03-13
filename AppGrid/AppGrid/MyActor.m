@@ -89,7 +89,7 @@ NSPoint SDMidpoint(NSRect r) {
     NSArray* otherWindows = [thisWindow otherWindowsOnSameScreen];
     
     MyWindow* chosenWin;
-    double chosenScore = 1000000000;
+    double chosenScore = DBL_MAX;
     
     for (MyWindow* win in otherWindows) {
         NSPoint otherPoint = SDMidpoint([win frame]);
