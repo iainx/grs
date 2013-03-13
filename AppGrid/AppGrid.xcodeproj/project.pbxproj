@@ -26,6 +26,7 @@
 		942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */; };
 		942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */; };
 		942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803C216E3FB8C005E5153 /* masshortcut-license.txt */; };
+		94360B7916F1399700F83999 /* cert.png in Resources */ = {isa = PBXBuildFile; fileRef = 94360B7816F1399700F83999 /* cert.png */; };
 		9465B16D16E7C46900A61E77 /* SDInsetVerticalLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9465B16C16E7C46900A61E77 /* SDInsetVerticalLine.m */; };
 		946CF3FA16E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */; };
 		946CF3FF16E631FA002DA707 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 946CF3FE16E631FA002DA707 /* libcrypto.dylib */; };
@@ -108,6 +109,7 @@
 		942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseWindowController.m; sourceTree = "<group>"; };
 		942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLicenseWindow.xib; sourceTree = "<group>"; };
 		942803C216E3FB8C005E5153 /* masshortcut-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "masshortcut-license.txt"; sourceTree = "<group>"; };
+		94360B7816F1399700F83999 /* cert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cert.png; sourceTree = "<group>"; };
 		9465B16B16E7C46900A61E77 /* SDInsetVerticalLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDInsetVerticalLine.h; sourceTree = "<group>"; };
 		9465B16C16E7C46900A61E77 /* SDInsetVerticalLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDInsetVerticalLine.m; sourceTree = "<group>"; };
 		946CF3F816E62ECF002DA707 /* SDStringNotEmptyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStringNotEmptyValueTransformer.h; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 		94ED280A16E08F8A0044ED33 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				94360B7816F1399700F83999 /* cert.png */,
 				94D6C0DB16E0EA8E00868523 /* sd_intro.png */,
 				94ED280816E08F880044ED33 /* statusitem.png */,
 				94ED280B16E0909D0044ED33 /* statusitem_pressed.png */,
@@ -478,6 +481,7 @@
 				9493348C16E854700025E663 /* MyApp.scriptSuite in Resources */,
 				9493348D16E854700025E663 /* MyApp.scriptTerminology in Resources */,
 				941C1BC416E978A8004868DE /* plcrashreporter-license.txt in Resources */,
+				94360B7916F1399700F83999 /* cert.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
