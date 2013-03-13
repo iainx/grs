@@ -29,4 +29,6 @@
 
 - (NSArray*) otherWindowsOnSameScreen;
 
+- (NSString *) title;
+
 @end

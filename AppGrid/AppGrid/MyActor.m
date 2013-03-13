@@ -76,40 +76,87 @@
 
 #pragma mark -
 
+NSPoint SDMidpoint(NSRect r) {
+    return NSMakePoint(NSMidX(r), NSMidY(r));
+}
+
+- (MyWindow*) windowWithDirectionFn:(double(^)(double angle))whichDirectionFn
+                  shouldDisregardFn:(BOOL(^)(double deltaX, double deltaY))shouldDisregardFn
+{
+    MyWindow* thisWindow = [MyWindow focusedWindow];
+    NSPoint startingPoint = SDMidpoint([thisWindow frame]);
+    
+    NSArray* otherWindows = [thisWindow otherWindowsOnSameScreen];
+    
+    MyWindow* chosenWin;
+    double chosenScore = 1000000000;
+    
+    for (MyWindow* win in otherWindows) {
+        NSPoint otherPoint = SDMidpoint([win frame]);
+        
+        double deltaX = otherPoint.x - startingPoint.x;
+        double deltaY = otherPoint.y - startingPoint.y;
+        
+//        NSLog(@"delta x = %f", deltaX);
+//        NSLog(@"delta y = %f", deltaY);
+        
+        if (shouldDisregardFn(deltaX, deltaY))
+            continue;
+        
+        double angle = atan2(deltaY, deltaX);
+        double distance = hypot(deltaX, deltaY);
+        
+        double angleDifference = whichDirectionFn(angle);
+        
+        double score = distance / cos(angleDifference / 2.0);
+//        double score2 = distance / pow(cos(angleDifference / 2.0), 2);
+//        double score3 = distance / pow(cos(angleDifference / 2.0), 3);
+//        double score4 = distance / pow(cos(angleDifference / 2.0), 4);
+        
+//        NSLog(@"score1 = %f", score);
+//        NSLog(@"score2 = %f", score2);
+//        NSLog(@"score3 = %f", score3);
+//        NSLog(@"score4 = %f", score4);
+//        NSLog(@"title = %@", [win title]);
+//        NSLog(@"\n");
+        
+        if (score < chosenScore) {
+            chosenScore = score;
+            chosenWin = win;
+        }
+    }
+    
+//    NSLog(@"\n\n");
+    
+    return chosenWin;
+}
+
 - (void) focusWindowLeft {
+    MyWindow* chosenWin = [self windowWithDirectionFn:^double(double angle) { return M_PI - abs(angle); }
+                                    shouldDisregardFn:^BOOL(double deltaX, double deltaY) { return (deltaX >= 0); }];
     
-    static int i = 0;
-    i++;
-    
-//    NSLog(@"%@", [[MyWindow allWindows] valueForKey:@"frame"]);
-    
-    NSArray* wins = [[MyWindow focusedWindow] otherWindowsOnSameScreen];
-    NSLog(@"%@", wins);
-    
-    if (i == [wins count])
-        i = 0;
-    
-    [[wins objectAtIndex:i] focusWindow];
-    
-    NSLog(@"focusing left");
+    [chosenWin focusWindow];
 }
 
 - (void) focusWindowRight {
-//    NSLog(@"%@", [[MyWindow visibleWindows] valueForKey:@"frame"]);
-//    NSLog(@"%@", [[MyWindow visibleWindows] valueForKey:@"title"]);
-//    NSLog(@"%@", [[MyWindow visibleWindows] valueForKey:@"role"]);
-//    NSLog(@"%@", [[MyWindow visibleWindows] valueForKey:@"isAppHidden"]);
-//    NSLog(@"%@", [[MyWindow visibleWindows] valueForKey:@"isWindowMinimized"]);
+    MyWindow* chosenWin = [self windowWithDirectionFn:^double(double angle) { return 0.0 - angle; }
+                                    shouldDisregardFn:^BOOL(double deltaX, double deltaY) { return (deltaX <= 0); }];
     
-    NSLog(@"focusing right");
+    [chosenWin focusWindow];
 }
 
 - (void) focusWindowUp {
-    NSLog(@"focusing up");
+    MyWindow* chosenWin = [self windowWithDirectionFn:^double(double angle) { return -M_PI_2 - angle; }
+                                    shouldDisregardFn:^BOOL(double deltaX, double deltaY) { return (deltaY >= 0); }];
+    
+    [chosenWin focusWindow];
 }
 
 - (void) focusWindowDown {
-    NSLog(@"focusing down");
+    MyWindow* chosenWin = [self windowWithDirectionFn:^double(double angle) { return M_PI_2 - angle; }
+                                    shouldDisregardFn:^BOOL(double deltaX, double deltaY) { return (deltaY <= 0); }];
+    
+    [chosenWin focusWindow];
 }
 
 - (void) maximize {
