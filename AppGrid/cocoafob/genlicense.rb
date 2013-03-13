@@ -26,7 +26,7 @@ end
 
 def license_url(name, lickey)
   licensee_name_b64 = Base64.encode64(name)
-  return "appgrid://#{licensee_name_b64}/#{lickey}"
+  return "appgrid://#{licensee_name_b64.chop}/#{lickey}"
 end
 
 if __FILE__ == $0
