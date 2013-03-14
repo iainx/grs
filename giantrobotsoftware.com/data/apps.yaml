@@ -77,7 +77,7 @@
       release_notes:
         - "<b>Feature</b>: Added new hot keys to focus window in a given direction"
         - "<b>Fix</b>: No longer moves or resizes hidden or minimized windows"
-        - "<b>Fix</b>: License window looks much nicer after purchasing a license"
+        - "<b>Fix</b>: Shinier license window (after purchasing a license)"
 -
   name: DeskLabels
   smallname: desklabels
