@@ -96,15 +96,7 @@
     if ([MyLicenseVerifier expired]) {
         [self.myActor disableKeys];
         
-        [NSApp activateIgnoringOtherApps:YES];
-        NSInteger result = NSRunAlertPanel(@"AppGrid trial has expired",
-                                           @"You may continue using AppGrid by purchasing a license.",
-                                           @"OK",
-                                           @"Purchase License",
-                                           nil);
-        
-        if (result == NSAlertAlternateReturn)
-            [MyLicenseVerifier sendToStore];
+        [[MyLicenseVerifier sharedLicenseVerifier] nag];
     }
     else {
         [self performSelector:@selector(endTrialIfNecessary) withObject:nil afterDelay:60];

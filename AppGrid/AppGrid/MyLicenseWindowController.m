@@ -29,6 +29,17 @@
     [self resetMyProperties];
 }
 
++ (NSSet*) keyPathsForValuesAffectingLicenseWindowHeight {
+    return [NSSet setWithArray:@[@"hasValidLicense"]];
+}
+
+- (CGFloat) licenseWindowHeight {
+    if (self.hasValidLicense)
+        return 152;
+    else
+        return 123;
+}
+
 - (void) resetMyProperties {
     self.licenseName = [[MyLicenseVerifier licenseName] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     self.licenseCode = [[MyLicenseVerifier licenseCode] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

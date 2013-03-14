@@ -27,4 +27,8 @@
 
 + (BOOL) expired;
 
+
++ (MyLicenseVerifier*) sharedLicenseVerifier;
+- (void) nag;
+
 @end

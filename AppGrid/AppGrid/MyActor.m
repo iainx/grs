@@ -14,6 +14,8 @@
 #import "MyWindow.h"
 #import "MyGrid.h"
 
+#import "MyLicenseVerifier.h"
+
 @interface MyActor ()
 
 @property BOOL keysDisabled;
@@ -54,10 +56,12 @@
 
 - (void) bindDefaultsKey:(NSString*)key action:(dispatch_block_t)action {
     [MASShortcut registerGlobalShortcutWithUserDefaultsKey:key handler:^{
+        if (self.keysDisabled) {
+            [[MyLicenseVerifier sharedLicenseVerifier] nag];
+            return;
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.keysDisabled)
-                return;
-            
             if ([MyUniversalAccessHelper complainIfNeeded])
                 return;
             

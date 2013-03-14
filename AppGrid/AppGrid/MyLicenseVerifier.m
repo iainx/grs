@@ -18,6 +18,12 @@
 //#define MY_EXPIRATION_TIME (60 * 10)
 #define MY_EXPIRATION_TIME (60 * 60 * 24 * 30)
 
+@interface MyLicenseVerifier ()
+
+@property BOOL isNagging;
+
+@end
+
 @implementation MyLicenseVerifier
 
 + (BOOL) expired {
@@ -138,6 +144,40 @@
     }
     
     return alert;
+}
+
++ (MyLicenseVerifier*) sharedLicenseVerifier {
+    static MyLicenseVerifier* sharedLicenseVerifier;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedLicenseVerifier = [[MyLicenseVerifier alloc] init];
+    });
+    return sharedLicenseVerifier;
+}
+
+- (void) nag {
+    if (self.isNagging)
+        return;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.isNagging = YES;
+        
+        [NSApp activateIgnoringOtherApps:YES];
+        NSInteger result = NSRunAlertPanel(@"AppGrid trial has expired",
+                                           @"You may continue using AppGrid by purchasing a license.",
+                                           @"OK",
+                                           @"Purchase License...",
+                                           @"Enter License");
+        
+        if (result == NSAlertAlternateReturn)
+            [MyLicenseVerifier sendToStore];
+        
+        if (result == NSAlertOtherReturn)
+            [[NSApp delegate] performSelector:@selector(showLicenseWindow:) withObject:self];
+        
+        self.isNagging = NO;
+    });
+    
 }
 
 @end

@@ -16,5 +16,6 @@
 @property BOOL hasValidLicense;
 
 @property (readonly) NSString* licenseWindowTitle;
+@property (readonly) CGFloat licenseWindowHeight;
 
 @end
