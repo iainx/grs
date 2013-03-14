@@ -39,7 +39,7 @@
         
         note.title = entry.title;
         note.subtitle = [NSString stringWithFormat:@"%@ <%@>", entry.authorName, entry.authorEmail];
-        note.informativeText = entry.summary;
+        note.informativeText = [NSString stringWithFormat:@"(To %@)\n%@", email, entry.summary];
         
         note.soundName = NSUserNotificationDefaultSoundName;
         

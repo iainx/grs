@@ -87,6 +87,7 @@
 		9475105316D714B100EF6B32 /* GmailComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmailComposer.m; sourceTree = "<group>"; };
 		949069F816D7308C00F0B155 /* GmailInboxOpenerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmailInboxOpenerDelegate.h; sourceTree = "<group>"; };
 		949069F916D7308C00F0B155 /* GmailInboxOpenerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmailInboxOpenerDelegate.m; sourceTree = "<group>"; };
+		94A9214516F23CE30057F5EF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		94DCE58416CE9F5C00795B42 /* Mail Ping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mail Ping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DCE58716CE9F5C00795B42 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		94DCE58A16CE9F5C00795B42 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -189,8 +190,6 @@
 		94DCE57B16CE9F5C00795B42 = {
 			isa = PBXGroup;
 			children = (
-				94582AFF16E29FDF0000383E /* SystemConfiguration.framework */,
-				9464D0CB16D12B4300403A58 /* Security.framework */,
 				94DCE58D16CE9F5C00795B42 /* Mail Ping */,
 				94DCE58616CE9F5C00795B42 /* Frameworks */,
 				94DCE58516CE9F5C00795B42 /* Products */,
@@ -208,6 +207,9 @@
 		94DCE58616CE9F5C00795B42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94A9214516F23CE30057F5EF /* IOKit.framework */,
+				94582AFF16E29FDF0000383E /* SystemConfiguration.framework */,
+				9464D0CB16D12B4300403A58 /* Security.framework */,
 				94DCE58716CE9F5C00795B42 /* Cocoa.framework */,
 				94DCE58916CE9F5C00795B42 /* Other Frameworks */,
 			);
@@ -227,12 +229,13 @@
 		94DCE58D16CE9F5C00795B42 /* Mail Ping */ = {
 			isa = PBXGroup;
 			children = (
-				94582AF916E29F240000383E /* Third Party Licenses */,
+				94DCE58F16CE9F5C00795B42 /* Mail Ping-Info.plist */,
 				9464D10916D167A000403A58 /* Mail Ping.entitlements */,
 				9464D0CD16D130E600403A58 /* Graphics */,
 				9464D0C816D12A4D00403A58 /* Helpers */,
 				9464D0CA16D12A6500403A58 /* Models */,
 				9464D0C916D12A5800403A58 /* Controllers */,
+				94582AF916E29F240000383E /* Third Party Licenses */,
 				94DCE58E16CE9F5C00795B42 /* Supporting Files */,
 			);
 			path = "Mail Ping";
@@ -242,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				94582B0116E2A12A0000383E /* Credits.rtf */,
-				94DCE58F16CE9F5C00795B42 /* Mail Ping-Info.plist */,
 				94DCE59016CE9F5C00795B42 /* InfoPlist.strings */,
 				94DCE59316CE9F5C00795B42 /* main.m */,
 				94DCE59516CE9F5C00795B42 /* Mail Ping-Prefix.pch */,
