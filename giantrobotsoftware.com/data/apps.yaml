@@ -102,8 +102,11 @@
     - Aesthetically pleasing UI
   testimonials:
     -
-      what: This App is simply great for desktop labels and reminders as well.
-      who: App Store review
+      what: "&#9733;&#9733;&#9733;&#9733;&#9733; This App is simply great for desktop labels and reminders as well."
+      who: "App Store (US) review"
+    -
+      what: "&#9733;&#9733;&#9733;&#9733;&#9733; I found this application after a search for something that would make my life easier when working with my desktop files and folders so I purchased this and what a difference it makes! Just one glance at my labels instead of looking at each individual file or folder title is so much easier. If you have files or folders on your desktop that you would like to label then I would recommend that you give this application a try."
+      who: "App Store (UK) review"
 -
   name: Mail Ping
   smallname: mailping
