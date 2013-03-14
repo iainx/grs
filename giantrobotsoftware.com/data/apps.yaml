@@ -67,6 +67,16 @@
         - Added option to toggle the margin between windows
         - AppGrid windows don't get lost so easily anymore
         - Added crash reporter (just in case)
+    -
+      number: 1.4
+      sparkle:
+        date: Wed Mar  13 20:45:00 CST 2013
+        size: 1768794
+        sig: MCwCFAfRS5H2ITFkPSLIxTf6/jRPh4t6AhQvxStRyUXHoWv3+v6hNdH1xqn2/g==
+      release_notes:
+        - "<b>Feature</b>: Added new hot keys to focus window in a given direction"
+        - "<b>Fix</b>: No longer moves or resizes hidden or minimized windows"
+        - "<b>Fix</b>: License window looks much nicer after purchasing a license"
 -
   name: DeskLabels
   smallname: desklabels
