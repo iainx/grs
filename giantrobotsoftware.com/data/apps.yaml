@@ -127,6 +127,10 @@
     - Go to compose new email for any Gmail account
     - Rock solid, extremely reliable
     - Minimal user interface
+  testimonials:
+    -
+      what: If you’re a Gmail user and like to stick to its web interface but at the same time receive notifications for all your emails, Mail Ping is an app worth $1.99 in the Mac App Store that might interest you.
+      who: AddictiveTips.com
 -
   name: TunesBar
   smallname: tunesbar
