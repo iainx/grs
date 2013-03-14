@@ -9,9 +9,10 @@
   min_os_version: 10.7
   num_screenshots: 4
   summary:
-    - AppGrid is the simple, hassle-free way to move and resize your windows. AppGrid snaps your windows to a grid, and when you move or resize them, they adjust themselves to stay in this grid.
-    - The default hot keys are designed to be ergonomic and comfortable (using vim-like keys), but you can also customize them as you see fit.
-    - With AppGrid, moving and resizing windows are independent. When you move a window, it stays the same size. When you resize it, it stays in place. AppGrid's controls are predictable and orthogonal.
+    - AppGrid allows you to use global hot key shortcuts to move and resize your windows.
+    - Unlike other window managers, which come with bells and whistles and features galore, AppGrid is intentionally <b>simple</b> and <b>minimalist</b>. This makes it extremely easy to learn. AppGrid's controls are designed to be <b>natural</b> and <b>intuitive</b>.
+    - When you use AppGrid's shortcuts to move or resize your windows, they are automatically adjusted to fit into a grid. By default this grid divides your screen into a 3 x 2 grid, but you can configure the size.
+    - The default hot keys are designed to be ergonomic and comfortable, using the keys on or near the home row. But you can also customize them as you see fit.
   features:
     - Easy to remember keys
     - Moving and resizing windows are orthogonal
