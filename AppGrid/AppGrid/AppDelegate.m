@@ -19,6 +19,8 @@
 
 #import "MyCrashHandler.h"
 
+#import "SDWelcomeWindowController.h"
+
 @implementation AppDelegate
 
 + (void) initialize {
@@ -151,8 +153,7 @@
     
     [MyUniversalAccessHelper complainIfNeeded];
     
-    self.howToWindowController = [[SDHowToWindowController alloc] init];
-    [self.howToWindowController showInstructionsWindowFirstTimeOnly];
+    [SDWelcomeWindowController showInstructionsWindowFirstTimeOnly];
     
     [self endTrialIfNecessary];
 }

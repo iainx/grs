@@ -26,6 +26,10 @@
 		942803BE16E3DCC9005E5153 /* MyLicenseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */; };
 		942803BF16E3DCC9005E5153 /* MyLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */; };
 		942803C316E3FB8C005E5153 /* masshortcut-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942803C216E3FB8C005E5153 /* masshortcut-license.txt */; };
+		942D393A16F384B5006D869C /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 942D393916F384B5006D869C /* Credits.html */; };
+		942D394416F3898D006D869C /* SDWelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942D393F16F3898D006D869C /* SDWelcomeWindow.xib */; };
+		942D394516F3898D006D869C /* SDWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942D394116F3898D006D869C /* SDWelcomeWindowController.m */; };
+		942D394616F3898D006D869C /* SDWelcomeWindowRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 942D394316F3898D006D869C /* SDWelcomeWindowRoundedImageView.m */; };
 		94360B7916F1399700F83999 /* cert.png in Resources */ = {isa = PBXBuildFile; fileRef = 94360B7816F1399700F83999 /* cert.png */; };
 		9465B16D16E7C46900A61E77 /* SDInsetVerticalLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9465B16C16E7C46900A61E77 /* SDInsetVerticalLine.m */; };
 		946CF3FA16E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 946CF3F916E62ECF002DA707 /* SDStringNotEmptyValueTransformer.m */; };
@@ -36,9 +40,6 @@
 		9493348D16E854700025E663 /* MyApp.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = 9493348B16E854700025E663 /* MyApp.scriptTerminology */; };
 		94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C116E0DDD700868523 /* MyGrid.m */; };
 		94D6C0C516E0DF4300868523 /* MyActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0C416E0DF4300868523 /* MyActor.m */; };
-		94D6C0C816E0E2A900868523 /* SDHowToWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */; };
-		94D6C0CE16E0E2B300868523 /* SDHowToWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0CC16E0E2B300868523 /* SDHowToWindowController.m */; };
-		94D6C0D116E0E4CD00868523 /* SDRoundedHowToImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6C0D016E0E4CD00868523 /* SDRoundedHowToImageView.m */; };
 		94D6C0DF16E0EA8E00868523 /* sd_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0DB16E0EA8E00868523 /* sd_intro.png */; };
 		94D6C0E516E0FCEA00868523 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94D6C0E416E0FCEA00868523 /* icon.icns */; };
 		94E0DD5316E7127F0037E5D8 /* MyFeedbackWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E0DD5116E7127F0037E5D8 /* MyFeedbackWindowController.m */; };
@@ -47,7 +48,6 @@
 		94ED279C16E01A440044ED33 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ED279B16E01A440044ED33 /* Cocoa.framework */; };
 		94ED27A616E01A440044ED33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27A416E01A440044ED33 /* InfoPlist.strings */; };
 		94ED27A816E01A440044ED33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27A716E01A440044ED33 /* main.m */; };
-		94ED27AC16E01A440044ED33 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27AA16E01A440044ED33 /* Credits.rtf */; };
 		94ED27AF16E01A440044ED33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27AE16E01A440044ED33 /* AppDelegate.m */; };
 		94ED27B216E01A440044ED33 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ED27B016E01A440044ED33 /* MainMenu.xib */; };
 		94ED27EC16E024F20044ED33 /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ED27E316E024F20044ED33 /* MASShortcut.m */; };
@@ -109,6 +109,12 @@
 		942803BC16E3DCC9005E5153 /* MyLicenseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLicenseWindowController.m; sourceTree = "<group>"; };
 		942803BD16E3DCC9005E5153 /* MyLicenseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLicenseWindow.xib; sourceTree = "<group>"; };
 		942803C216E3FB8C005E5153 /* masshortcut-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "masshortcut-license.txt"; sourceTree = "<group>"; };
+		942D393916F384B5006D869C /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		942D393F16F3898D006D869C /* SDWelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDWelcomeWindow.xib; sourceTree = "<group>"; };
+		942D394016F3898D006D869C /* SDWelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWelcomeWindowController.h; sourceTree = "<group>"; };
+		942D394116F3898D006D869C /* SDWelcomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWelcomeWindowController.m; sourceTree = "<group>"; };
+		942D394216F3898D006D869C /* SDWelcomeWindowRoundedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWelcomeWindowRoundedImageView.h; sourceTree = "<group>"; };
+		942D394316F3898D006D869C /* SDWelcomeWindowRoundedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWelcomeWindowRoundedImageView.m; sourceTree = "<group>"; };
 		94360B7816F1399700F83999 /* cert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cert.png; sourceTree = "<group>"; };
 		9465B16B16E7C46900A61E77 /* SDInsetVerticalLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDInsetVerticalLine.h; sourceTree = "<group>"; };
 		9465B16C16E7C46900A61E77 /* SDInsetVerticalLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDInsetVerticalLine.m; sourceTree = "<group>"; };
@@ -125,11 +131,6 @@
 		94D6C0C116E0DDD700868523 /* MyGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGrid.m; sourceTree = "<group>"; };
 		94D6C0C316E0DF4300868523 /* MyActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActor.h; sourceTree = "<group>"; };
 		94D6C0C416E0DF4300868523 /* MyActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActor.m; sourceTree = "<group>"; };
-		94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDHowToWindow.xib; sourceTree = "<group>"; };
-		94D6C0CB16E0E2B300868523 /* SDHowToWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHowToWindowController.h; sourceTree = "<group>"; };
-		94D6C0CC16E0E2B300868523 /* SDHowToWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHowToWindowController.m; sourceTree = "<group>"; };
-		94D6C0CF16E0E4CD00868523 /* SDRoundedHowToImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRoundedHowToImageView.h; sourceTree = "<group>"; };
-		94D6C0D016E0E4CD00868523 /* SDRoundedHowToImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRoundedHowToImageView.m; sourceTree = "<group>"; };
 		94D6C0DB16E0EA8E00868523 /* sd_intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro.png; sourceTree = "<group>"; };
 		94D6C0E316E0F52B00868523 /* AppGrid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppGrid.entitlements; sourceTree = "<group>"; };
 		94D6C0E416E0FCEA00868523 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
@@ -146,7 +147,6 @@
 		94ED27A516E01A440044ED33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94ED27A716E01A440044ED33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94ED27A916E01A440044ED33 /* AppGrid-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppGrid-Prefix.pch"; sourceTree = "<group>"; };
-		94ED27AB16E01A440044ED33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		94ED27AD16E01A440044ED33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		94ED27AE16E01A440044ED33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		94ED27B116E01A440044ED33 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -243,16 +243,16 @@
 			name = Licenses;
 			sourceTree = "<group>";
 		};
-		94D6C0C616E0E29C00868523 /* HowToWindow */ = {
+		94D6C0C616E0E29C00868523 /* WelcomeWindow */ = {
 			isa = PBXGroup;
 			children = (
-				94D6C0C716E0E2A900868523 /* SDHowToWindow.xib */,
-				94D6C0CB16E0E2B300868523 /* SDHowToWindowController.h */,
-				94D6C0CC16E0E2B300868523 /* SDHowToWindowController.m */,
-				94D6C0CF16E0E4CD00868523 /* SDRoundedHowToImageView.h */,
-				94D6C0D016E0E4CD00868523 /* SDRoundedHowToImageView.m */,
+				942D393F16F3898D006D869C /* SDWelcomeWindow.xib */,
+				942D394016F3898D006D869C /* SDWelcomeWindowController.h */,
+				942D394116F3898D006D869C /* SDWelcomeWindowController.m */,
+				942D394216F3898D006D869C /* SDWelcomeWindowRoundedImageView.h */,
+				942D394316F3898D006D869C /* SDWelcomeWindowRoundedImageView.m */,
 			);
-			name = HowToWindow;
+			name = WelcomeWindow;
 			sourceTree = "<group>";
 		};
 		94ED278F16E01A440044ED33 = {
@@ -302,7 +302,7 @@
 				94ED280016E034F10044ED33 /* MyShortcuts.h */,
 				94ED280116E079C50044ED33 /* defaults.plist */,
 				9428038A16E2C4E9005E5153 /* CocoaFob */,
-				94D6C0C616E0E29C00868523 /* HowToWindow */,
+				94D6C0C616E0E29C00868523 /* WelcomeWindow */,
 				94ED27E116E024EA0044ED33 /* GlobalShortcuts */,
 				94ED27F516E02A770044ED33 /* Model */,
 				94ED280416E089E90044ED33 /* View */,
@@ -321,8 +321,8 @@
 			children = (
 				94ED27A416E01A440044ED33 /* InfoPlist.strings */,
 				94ED27A716E01A440044ED33 /* main.m */,
+				942D393916F384B5006D869C /* Credits.html */,
 				94ED27A916E01A440044ED33 /* AppGrid-Prefix.pch */,
-				94ED27AA16E01A440044ED33 /* Credits.rtf */,
 				94D6C0E416E0FCEA00868523 /* icon.icns */,
 				94D6C0E316E0F52B00868523 /* AppGrid.entitlements */,
 			);
@@ -464,13 +464,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				94ED27A616E01A440044ED33 /* InfoPlist.strings in Resources */,
-				94ED27AC16E01A440044ED33 /* Credits.rtf in Resources */,
 				94ED27B216E01A440044ED33 /* MainMenu.xib in Resources */,
 				94ED27FF16E034820044ED33 /* MyPrefsWindow.xib in Resources */,
 				94ED280216E079C50044ED33 /* defaults.plist in Resources */,
 				94ED280916E08F880044ED33 /* statusitem.png in Resources */,
 				94ED280C16E0909D0044ED33 /* statusitem_pressed.png in Resources */,
-				94D6C0C816E0E2A900868523 /* SDHowToWindow.xib in Resources */,
 				94D6C0DF16E0EA8E00868523 /* sd_intro.png in Resources */,
 				94D6C0E516E0FCEA00868523 /* icon.icns in Resources */,
 				942803AF16E32E24005E5153 /* cocoafob-license.txt in Resources */,
@@ -482,6 +480,8 @@
 				9493348D16E854700025E663 /* MyApp.scriptTerminology in Resources */,
 				941C1BC416E978A8004868DE /* plcrashreporter-license.txt in Resources */,
 				94360B7916F1399700F83999 /* cert.png in Resources */,
+				942D393A16F384B5006D869C /* Credits.html in Resources */,
+				942D394416F3898D006D869C /* SDWelcomeWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,8 +505,6 @@
 				94ED280F16E09D570044ED33 /* MyUniversalAccessHelper.m in Sources */,
 				94D6C0C216E0DDD700868523 /* MyGrid.m in Sources */,
 				94D6C0C516E0DF4300868523 /* MyActor.m in Sources */,
-				94D6C0CE16E0E2B300868523 /* SDHowToWindowController.m in Sources */,
-				94D6C0D116E0E4CD00868523 /* SDRoundedHowToImageView.m in Sources */,
 				9428039D16E2C506005E5153 /* CFobError.m in Sources */,
 				9428039E16E2C506005E5153 /* CFobLicGenerator.m in Sources */,
 				9428039F16E2C506005E5153 /* CFobLicVerifier.m in Sources */,
@@ -523,6 +521,8 @@
 				9465B16D16E7C46900A61E77 /* SDInsetVerticalLine.m in Sources */,
 				9493348916E853710025E663 /* MyCoolURLCommand.m in Sources */,
 				941C1BC216E97133004868DE /* MyCrashHandler.m in Sources */,
+				942D394516F3898D006D869C /* SDWelcomeWindowController.m in Sources */,
+				942D394616F3898D006D869C /* SDWelcomeWindowRoundedImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,14 +535,6 @@
 				94ED27A516E01A440044ED33 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		94ED27AA16E01A440044ED33 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				94ED27AB16E01A440044ED33 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		94ED27B016E01A440044ED33 /* MainMenu.xib */ = {
