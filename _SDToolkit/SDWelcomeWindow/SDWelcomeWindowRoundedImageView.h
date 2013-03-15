@@ -5,6 +5,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SDRoundedWelcomeImageView : NSImageView
+@interface SDWelcomeWindowRoundedImageView : NSImageView
 
 @end

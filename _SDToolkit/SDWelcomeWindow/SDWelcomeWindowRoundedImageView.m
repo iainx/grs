@@ -3,10 +3,10 @@
 //  Copyright (c) 2013 Steven Degutis. All rights reserved.
 //
 
-#import "SDRoundedWelcomeImageView.h"
+#import "SDWelcomeWindowRoundedImageView.h"
 
 
-@implementation SDRoundedWelcomeImageView
+@implementation SDWelcomeWindowRoundedImageView
 
 - (void) drawRect:(NSRect)dirtyRect {
 	float r = 7.0;
