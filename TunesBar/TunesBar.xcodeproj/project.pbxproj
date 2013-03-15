@@ -34,7 +34,33 @@
 		94ABDC1D16F3545B00D47E36 /* SDHowToWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDC1516F3545B00D47E36 /* SDHowToWindow.xib */; };
 		94ABDC1E16F3545B00D47E36 /* SDHowToWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1716F3545B00D47E36 /* SDHowToWindowController.m */; };
 		94ABDC2016F3545B00D47E36 /* SDRoundedHowToImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1B16F3545B00D47E36 /* SDRoundedHowToImageView.m */; };
+		94ABDC5216F36E7F00D47E36 /* TunesBarHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 94ABDC5016F36E4200D47E36 /* TunesBarHelper.app */; };
+		94ABDC5416F36E9400D47E36 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94ABDC4F16F36E4200D47E36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94ABDC4B16F36E4100D47E36 /* TunesBarHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 94ABDC2B16F36E4100D47E36;
+			remoteInfo = TunesBarHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		94ABDC5116F36E6B00D47E36 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				94ABDC5216F36E7F00D47E36 /* TunesBarHelper.app in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		94ABDBB216F2D40D00D47E36 /* TunesBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TunesBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +110,8 @@
 		94ABDC1A16F3545B00D47E36 /* SDRoundedHowToImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRoundedHowToImageView.h; sourceTree = "<group>"; };
 		94ABDC1B16F3545B00D47E36 /* SDRoundedHowToImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRoundedHowToImageView.m; sourceTree = "<group>"; };
 		94ABDC2116F35E2C00D47E36 /* TunesBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TunesBar.entitlements; sourceTree = "<group>"; };
+		94ABDC4B16F36E4100D47E36 /* TunesBarHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TunesBarHelper.xcodeproj; path = TunesBarHelper/TunesBarHelper.xcodeproj; sourceTree = "<group>"; };
+		94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94ABDC5416F36E9400D47E36 /* ServiceManagement.framework in Frameworks */,
 				94ABDBDB16F34A7F00D47E36 /* ScriptingBridge.framework in Frameworks */,
 				94ABDBB616F2D40D00D47E36 /* Cocoa.framework in Frameworks */,
 			);
@@ -102,6 +131,7 @@
 		94ABDBA916F2D40D00D47E36 = {
 			isa = PBXGroup;
 			children = (
+				94ABDC4B16F36E4100D47E36 /* TunesBarHelper.xcodeproj */,
 				94ABDBBB16F2D40D00D47E36 /* TunesBar */,
 				94ABDBB416F2D40D00D47E36 /* Frameworks */,
 				94ABDBB316F2D40D00D47E36 /* Products */,
@@ -119,6 +149,7 @@
 		94ABDBB416F2D40D00D47E36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */,
 				94ABDBDA16F34A7F00D47E36 /* ScriptingBridge.framework */,
 				94ABDBB516F2D40D00D47E36 /* Cocoa.framework */,
 				94ABDBB716F2D40D00D47E36 /* Other Frameworks */,
@@ -139,8 +170,8 @@
 		94ABDBBB16F2D40D00D47E36 /* TunesBar */ = {
 			isa = PBXGroup;
 			children = (
-				94ABDC2116F35E2C00D47E36 /* TunesBar.entitlements */,
 				94ABDBBD16F2D40D00D47E36 /* TunesBar-Info.plist */,
+				94ABDC2116F35E2C00D47E36 /* TunesBar.entitlements */,
 				94ABDBC416F2D40D00D47E36 /* Credits.rtf */,
 				94ABDBE916F34C4200D47E36 /* DefaultsKeys.h */,
 				94ABDC0816F351AC00D47E36 /* DefaultValues.plist */,
@@ -240,6 +271,14 @@
 			name = SDToolkit;
 			sourceTree = "<group>";
 		};
+		94ABDC4C16F36E4100D47E36 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94ABDC5016F36E4200D47E36 /* TunesBarHelper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +289,8 @@
 				94ABDBAE16F2D40D00D47E36 /* Sources */,
 				94ABDBAF16F2D40D00D47E36 /* Frameworks */,
 				94ABDBB016F2D40D00D47E36 /* Resources */,
+				94ABDC5116F36E6B00D47E36 /* Copy Files */,
+				94ABDC5616F3750A00D47E36 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -280,12 +321,28 @@
 			mainGroup = 94ABDBA916F2D40D00D47E36;
 			productRefGroup = 94ABDBB316F2D40D00D47E36 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 94ABDC4C16F36E4100D47E36 /* Products */;
+					ProjectRef = 94ABDC4B16F36E4100D47E36 /* TunesBarHelper.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				94ABDBB116F2D40D00D47E36 /* TunesBar */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		94ABDC5016F36E4200D47E36 /* TunesBarHelper.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TunesBarHelper.app;
+			remoteRef = 94ABDC4F16F36E4200D47E36 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		94ABDBB016F2D40D00D47E36 /* Resources */ = {
@@ -309,6 +366,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		94ABDC5616F3750A00D47E36 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -f \"${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/TunesBarHelper.app/Contents/${EMBEDDED_PROFILE_NAME}\"\ncodesign -f -s \"${CODE_SIGN_IDENTITY}\" -i \"org.degutis.TunesBarHelper\" --entitlements \"${SOURCE_ROOT}/TunesBarHelper/TunesBarHelper/TunesBarHelper.entitlements\" \"${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/TunesBarHelper.app\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		94ABDBAE16F2D40D00D47E36 /* Sources */ = {
@@ -423,12 +496,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TunesBar/TunesBar.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Steven Degutis";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBar/TunesBar-Prefix.pch";
 				INFOPLIST_FILE = "TunesBar/TunesBar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "DEC68129-5270-4D21-97E3-0031ADA5ACBD";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -437,12 +511,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TunesBar/TunesBar.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Steven Degutis";
 				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBar/TunesBar-Prefix.pch";
 				INFOPLIST_FILE = "TunesBar/TunesBar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "DEC68129-5270-4D21-97E3-0031ADA5ACBD";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -466,6 +542,7 @@
 				94ABDBD116F2D40D00D47E36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
