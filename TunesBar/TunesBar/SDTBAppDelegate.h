@@ -10,12 +10,10 @@
 
 #import "SDStatusItemController.h"
 #import "SDPreferencesWindowController.h"
-#import "SDWelcomeWindowController.h"
 
 @interface SDTBAppDelegate : NSObject <NSApplicationDelegate>
 
 @property IBOutlet SDStatusItemController* statusItemController;
 @property SDPreferencesWindowController* preferencesWindowController;
-@property SDWelcomeWindowController* howToWindowController;
 
 @end

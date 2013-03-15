@@ -7,7 +7,7 @@
 
 @interface SDWelcomeWindowController : NSWindowController
 
-- (void) showInstructionsWindow;
-- (void) showInstructionsWindowFirstTimeOnly;
++ (void) showInstructionsWindow;
++ (void) showInstructionsWindowFirstTimeOnly;
 
 @end

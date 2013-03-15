@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942D393E16F38886006D869C /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 942D393D16F38886006D869C /* Credits.html */; };
 		94ABDBB616F2D40D00D47E36 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDBB516F2D40D00D47E36 /* Cocoa.framework */; };
 		94ABDBC016F2D40D00D47E36 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBBE16F2D40D00D47E36 /* InfoPlist.strings */; };
 		94ABDBC216F2D40D00D47E36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBC116F2D40D00D47E36 /* main.m */; };
-		94ABDBC616F2D40D00D47E36 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBC416F2D40D00D47E36 /* Credits.rtf */; };
 		94ABDBC916F2D40D00D47E36 /* SDTBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBC816F2D40D00D47E36 /* SDTBAppDelegate.m */; };
 		94ABDBCC16F2D40D00D47E36 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBCA16F2D40D00D47E36 /* MainMenu.xib */; };
 		94ABDBD916F348FE00D47E36 /* iTunesProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBD816F348FE00D47E36 /* iTunesProxy.m */; };
@@ -33,7 +33,7 @@
 		94ABDC1216F3537300D47E36 /* RSRTVArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1116F3537300D47E36 /* RSRTVArrayController.m */; };
 		94ABDC1D16F3545B00D47E36 /* SDWelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDC1516F3545B00D47E36 /* SDWelcomeWindow.xib */; };
 		94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1716F3545B00D47E36 /* SDWelcomeWindowController.m */; };
-		94ABDC2016F3545B00D47E36 /* SDRoundedWelcomeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1B16F3545B00D47E36 /* SDRoundedWelcomeImageView.m */; };
+		94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */; };
 		94ABDC5216F36E7F00D47E36 /* TunesBarHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 94ABDC5016F36E4200D47E36 /* TunesBarHelper.app */; };
 		94ABDC5416F36E9400D47E36 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		942D393D16F38886006D869C /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		94ABDBB216F2D40D00D47E36 /* TunesBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TunesBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDBB516F2D40D00D47E36 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		94ABDBB816F2D40D00D47E36 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -72,7 +73,6 @@
 		94ABDBBF16F2D40D00D47E36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94ABDBC116F2D40D00D47E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94ABDBC316F2D40D00D47E36 /* TunesBar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TunesBar-Prefix.pch"; sourceTree = "<group>"; };
-		94ABDBC516F2D40D00D47E36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		94ABDBC716F2D40D00D47E36 /* SDTBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDTBAppDelegate.h; sourceTree = "<group>"; };
 		94ABDBC816F2D40D00D47E36 /* SDTBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDTBAppDelegate.m; sourceTree = "<group>"; };
 		94ABDBCB16F2D40D00D47E36 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 		94ABDC1516F3545B00D47E36 /* SDWelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDWelcomeWindow.xib; sourceTree = "<group>"; };
 		94ABDC1616F3545B00D47E36 /* SDWelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWelcomeWindowController.h; sourceTree = "<group>"; };
 		94ABDC1716F3545B00D47E36 /* SDWelcomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWelcomeWindowController.m; sourceTree = "<group>"; };
-		94ABDC1A16F3545B00D47E36 /* SDRoundedWelcomeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRoundedWelcomeImageView.h; sourceTree = "<group>"; };
-		94ABDC1B16F3545B00D47E36 /* SDRoundedWelcomeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRoundedWelcomeImageView.m; sourceTree = "<group>"; };
+		94ABDC1A16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWelcomeWindowRoundedImageView.h; sourceTree = "<group>"; };
+		94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWelcomeWindowRoundedImageView.m; sourceTree = "<group>"; };
 		94ABDC2116F35E2C00D47E36 /* TunesBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TunesBar.entitlements; sourceTree = "<group>"; };
 		94ABDC4B16F36E4100D47E36 /* TunesBarHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TunesBarHelper.xcodeproj; path = TunesBarHelper/TunesBarHelper.xcodeproj; sourceTree = "<group>"; };
 		94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
@@ -172,9 +172,9 @@
 			children = (
 				94ABDBBD16F2D40D00D47E36 /* TunesBar-Info.plist */,
 				94ABDC2116F35E2C00D47E36 /* TunesBar.entitlements */,
-				94ABDBC416F2D40D00D47E36 /* Credits.rtf */,
 				94ABDBE916F34C4200D47E36 /* DefaultsKeys.h */,
 				94ABDC0816F351AC00D47E36 /* DefaultValues.plist */,
+				942D393D16F38886006D869C /* Credits.html */,
 				94ABDBFA16F3508F00D47E36 /* SDToolkit */,
 				94ABDBD516F348EC00D47E36 /* Helpers */,
 				94ABDBD416F348CB00D47E36 /* Graphics */,
@@ -265,8 +265,8 @@
 				94ABDC1516F3545B00D47E36 /* SDWelcomeWindow.xib */,
 				94ABDC1616F3545B00D47E36 /* SDWelcomeWindowController.h */,
 				94ABDC1716F3545B00D47E36 /* SDWelcomeWindowController.m */,
-				94ABDC1A16F3545B00D47E36 /* SDRoundedWelcomeImageView.h */,
-				94ABDC1B16F3545B00D47E36 /* SDRoundedWelcomeImageView.m */,
+				94ABDC1A16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.h */,
+				94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */,
 			);
 			name = SDToolkit;
 			sourceTree = "<group>";
@@ -350,7 +350,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94ABDBC016F2D40D00D47E36 /* InfoPlist.strings in Resources */,
-				94ABDBC616F2D40D00D47E36 /* Credits.rtf in Resources */,
 				94ABDBCC16F2D40D00D47E36 /* MainMenu.xib in Resources */,
 				94ABDBF216F34D2600D47E36 /* sd_intro.png in Resources */,
 				94ABDBF516F34D2600D47E36 /* TunesBar.icns in Resources */,
@@ -362,6 +361,7 @@
 				94ABDC0416F350F800D47E36 /* GeneralPrefPane.xib in Resources */,
 				94ABDC0916F351AC00D47E36 /* DefaultValues.plist in Resources */,
 				94ABDC1D16F3545B00D47E36 /* SDWelcomeWindow.xib in Resources */,
+				942D393E16F38886006D869C /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +399,7 @@
 				94ABDC0C16F3527000D47E36 /* SDFontSizeSliderCell.m in Sources */,
 				94ABDC1216F3537300D47E36 /* RSRTVArrayController.m in Sources */,
 				94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */,
-				94ABDC2016F3545B00D47E36 /* SDRoundedWelcomeImageView.m in Sources */,
+				94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,14 +412,6 @@
 				94ABDBBF16F2D40D00D47E36 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		94ABDBC416F2D40D00D47E36 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				94ABDBC516F2D40D00D47E36 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		94ABDBCA16F2D40D00D47E36 /* MainMenu.xib */ = {

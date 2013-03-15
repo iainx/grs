@@ -14,6 +14,8 @@
 
 #import <ServiceManagement/ServiceManagement.h>
 
+#import "SDWelcomeWindowController.h"
+
 @implementation SDTBAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -25,8 +27,7 @@
     [[iTunesProxy proxy] loadInitialTunesBarInfo];
     [self.statusItemController setupStatusItem];
     
-    self.howToWindowController = [[SDWelcomeWindowController alloc] init];
-    [self.howToWindowController showInstructionsWindowFirstTimeOnly];
+    [SDWelcomeWindowController showInstructionsWindowFirstTimeOnly];
 }
 
 - (IBAction) showPreferencesWindow:(id)sender {
