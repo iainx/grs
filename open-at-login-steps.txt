@@ -7,7 +7,7 @@
     rm -f "${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/DeskLabelsHelper.app/Contents/${EMBEDDED_PROFILE_NAME}"
     codesign -f -s "${CODE_SIGN_IDENTITY}" -i "org.degutis.DeskLabelsHelper" --entitlements "${SOURCE_ROOT}/DeskLabelsHelper/DeskLabelsHelper/DeskLabelsHelper.entitlements" "${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/DeskLabelsHelper.app"
 - add ServiceManagement.framework to main app's target
-- enable entitlements and sandbox in main app's target
+- enable entitlements and sandbox in both apps' targets
 - change main app's target "Strip Debug Symbols During Copy" to NO
 - add code to main app
 - in helper app, set "Application is background only" to YES
