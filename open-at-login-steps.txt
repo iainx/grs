@@ -1,0 +1,18 @@
+- create new [MyApp]Helper subproject
+- add copy files build phase to main app's target:
+  - destination = Wrapper
+  - subpath = Contents/Library/LoginItems
+  - drag+drop helper's app (under Products)
+- add run script build phase to main app's target, making sure to search/replace the string "DeskLabels" as appropriate
+    rm -f "${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/DeskLabelsHelper.app/Contents/${EMBEDDED_PROFILE_NAME}"
+    codesign -f -s "${CODE_SIGN_IDENTITY}" -i "org.degutis.DeskLabelsHelper" --entitlements "${SOURCE_ROOT}/DeskLabelsHelper/DeskLabelsHelper/DeskLabelsHelper.entitlements" "${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/DeskLabelsHelper.app"
+- add ServiceManagement.framework to main app's target
+- enable entitlements and sandbox in main app's target
+- change main app's target "Strip Debug Symbols During Copy" to NO
+- add code to main app
+- in helper app, set "Application is background only" to YES
+- in helper app, remove window from mainmenu.xib
+- in helper app's target, set "Skip Install" to YES
+- add code to helper app:
+    [[NSWorkspace sharedWorkspace] launchApplication:@"Mail Ping"];
+    [NSApp terminate:nil];
