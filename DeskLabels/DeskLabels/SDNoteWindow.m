@@ -17,7 +17,7 @@
 		[self setBackgroundColor:[NSColor clearColor]];
 		[self setOpaque:NO];
 		[self setLevel:kCGDesktopIconWindowLevel + 1];
-        [self setAnimationBehavior:NSWindowAnimationBehaviorAlertPanel];
+//        [self setAnimationBehavior:NSWindowAnimationBehaviorAlertPanel];
         [self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorStationary];
         
         NSNotificationCenter* nc = [[NSWorkspace sharedWorkspace] notificationCenter];
