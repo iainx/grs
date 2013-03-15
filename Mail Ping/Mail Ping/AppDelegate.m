@@ -10,7 +10,7 @@
 
 #import "EmailAccountsController.h"
 
-//#import <ServiceManagement/ServiceManagement.h>
+#import <ServiceManagement/ServiceManagement.h>
 
 #import "Reachability.h"
 
@@ -71,30 +71,35 @@
 }
 
 - (IBAction) toggleOpenAtLogin:(id)sender {
-//	NSInteger changingToState = ![sender state];
-//    SMLoginItemSetEnabled(CFSTR("org.degutis.MailPingHelper"), changingToState);
+	NSInteger changingToState = ![sender state];
+    if (!SMLoginItemSetEnabled(CFSTR("org.degutis.MailPingHelper"), changingToState)) {
+        NSRunAlertPanel(@"Could not change Open at Login status",
+                        @"For some reason, this failed. Most likely it's because the app isn't in the Applications folder.",
+                        @"OK",
+                        nil,
+                        nil);
+    }
 }
 
-//- (BOOL) opensAtLogin {
-//    CFArrayRef jobDictsCF = SMCopyAllJobDictionaries( kSMDomainUserLaunchd );
-//    NSArray* jobDicts = (__bridge_transfer NSArray*)jobDictsCF;
-//    // Note: Sandbox issue when using SMJobCopyDictionary()
-//    
-//    if ((jobDicts != nil) && [jobDicts count] > 0) {
-//        BOOL bOnDemand = NO;
-//        
-//        for (NSDictionary* job in jobDicts) {
-//            if ([@"org.degutis.MailPingHelper" isEqualToString:[job objectForKey:@"Label"]]) {
-//                bOnDemand = [[job objectForKey:@"OnDemand"] boolValue];
-//                break;
-//            }
-//        }
-//        
-//        return bOnDemand;
-//    }
-//    return NO;
-//}
-
+- (BOOL) opensAtLogin {
+    CFArrayRef jobDictsCF = SMCopyAllJobDictionaries( kSMDomainUserLaunchd );
+    NSArray* jobDicts = (__bridge_transfer NSArray*)jobDictsCF;
+    // Note: Sandbox issue when using SMJobCopyDictionary()
+    
+    if ((jobDicts != nil) && [jobDicts count] > 0) {
+        BOOL bOnDemand = NO;
+        
+        for (NSDictionary* job in jobDicts) {
+            if ([[job objectForKey:@"Label"] isEqualToString: @"org.degutis.MailPingHelper"]) {
+                bOnDemand = [[job objectForKey:@"OnDemand"] boolValue];
+                break;
+            }
+        }
+        
+        return bOnDemand;
+    }
+    return NO;
+}
 
 #define SECOND 1
 #define MINUTE (60 * SECOND)
@@ -134,6 +139,9 @@
     NSAttributedString* attrTitle = [[NSAttributedString alloc] initWithString:title
                                                                     attributes:@{NSFontAttributeName: font}];
     [menuItem setAttributedTitle:attrTitle];
+    
+    BOOL opensAtLogin = [self opensAtLogin];
+    [[menu itemWithTitle:@"Open at Login"] setState:(opensAtLogin ? NSOnState : NSOffState)];
 }
 
 - (IBAction) showAboutPanel:(id)sender {

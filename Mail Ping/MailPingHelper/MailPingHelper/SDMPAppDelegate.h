@@ -1,5 +1,5 @@
 //
-//  main.m
+//  SDMPAppDelegate.h
 //  MailPingHelper
 //
 //  Created by Steven Degutis on 3/15/13.
@@ -8,7 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-int main(int argc, char *argv[])
-{
-    return NSApplicationMain(argc, (const char **)argv);
-}
+@interface SDMPAppDelegate : NSObject <NSApplicationDelegate>
+
+@property (assign) IBOutlet NSWindow *window;
+
+@end

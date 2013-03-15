@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942D394916F38A50006D869C /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 942D394816F38A50006D869C /* Credits.html */; };
+		942D397916F38B0B006D869C /* MailPingHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 942D397816F38AD0006D869C /* MailPingHelper.app */; };
+		942D397C16F38B72006D869C /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942D397B16F38B72006D869C /* ServiceManagement.framework */; };
 		943E783A16D723FC00C8FD14 /* MyLinkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 943E783916D723FC00C8FD14 /* MyLinkButton.m */; };
 		94582AFB16E29F2F0000383E /* readability-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 94582AFA16E29F2F0000383E /* readability-license.txt */; };
 		94582AFE16E29FCE0000383E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 94582AFD16E29FCE0000383E /* Reachability.m */; };
 		94582B0016E29FDF0000383E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94582AFF16E29FDF0000383E /* SystemConfiguration.framework */; };
-		94582B0216E2A12A0000383E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 94582B0116E2A12A0000383E /* Credits.rtf */; };
 		945E614316D327F90028462D /* GmailURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 945E614216D327F90028462D /* GmailURLConnection.m */; };
 		9464D0B116CEB66600403A58 /* GmailEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9464D0B016CEB66600403A58 /* GmailEntry.m */; };
 		9464D0B416CEB9A800403A58 /* GmailFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9464D0B316CEB9A800403A58 /* GmailFeed.m */; };
@@ -37,6 +39,16 @@
 		94DCE59E16CE9F5C00795B42 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DCE59C16CE9F5C00795B42 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		942D397716F38AD0006D869C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 942D397316F38ACF006D869C /* MailPingHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 942D395316F38ACF006D869C;
+			remoteInfo = MailPingHelper;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		9464D10716D1655000403A58 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -44,19 +56,22 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
+				942D397916F38B0B006D869C /* MailPingHelper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		942D394816F38A50006D869C /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		942D397316F38ACF006D869C /* MailPingHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MailPingHelper.xcodeproj; path = MailPingHelper/MailPingHelper.xcodeproj; sourceTree = "<group>"; };
+		942D397B16F38B72006D869C /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		943E783816D723FC00C8FD14 /* MyLinkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLinkButton.h; sourceTree = "<group>"; };
 		943E783916D723FC00C8FD14 /* MyLinkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLinkButton.m; sourceTree = "<group>"; };
 		94582AFA16E29F2F0000383E /* readability-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "readability-license.txt"; sourceTree = "<group>"; };
 		94582AFC16E29FCE0000383E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		94582AFD16E29FCE0000383E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		94582AFF16E29FDF0000383E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		94582B0116E2A12A0000383E /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		945E614116D327F90028462D /* GmailURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmailURLConnection.h; sourceTree = "<group>"; };
 		945E614216D327F90028462D /* GmailURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmailURLConnection.m; sourceTree = "<group>"; };
 		9464D0AF16CEB66600403A58 /* GmailEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmailEntry.h; sourceTree = "<group>"; };
@@ -107,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942D397C16F38B72006D869C /* ServiceManagement.framework in Frameworks */,
 				94582B0016E29FDF0000383E /* SystemConfiguration.framework in Frameworks */,
 				9464D0CC16D12B4300403A58 /* Security.framework in Frameworks */,
 				94DCE58816CE9F5C00795B42 /* Cocoa.framework in Frameworks */,
@@ -116,6 +132,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		942D397416F38ACF006D869C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				942D397816F38AD0006D869C /* MailPingHelper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		94582AF916E29F240000383E /* Third Party Licenses */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +214,7 @@
 		94DCE57B16CE9F5C00795B42 = {
 			isa = PBXGroup;
 			children = (
+				942D397316F38ACF006D869C /* MailPingHelper.xcodeproj */,
 				94DCE58D16CE9F5C00795B42 /* Mail Ping */,
 				94DCE58616CE9F5C00795B42 /* Frameworks */,
 				94DCE58516CE9F5C00795B42 /* Products */,
@@ -207,6 +232,7 @@
 		94DCE58616CE9F5C00795B42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				942D397B16F38B72006D869C /* ServiceManagement.framework */,
 				94A9214516F23CE30057F5EF /* IOKit.framework */,
 				94582AFF16E29FDF0000383E /* SystemConfiguration.framework */,
 				9464D0CB16D12B4300403A58 /* Security.framework */,
@@ -244,7 +270,7 @@
 		94DCE58E16CE9F5C00795B42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				94582B0116E2A12A0000383E /* Credits.rtf */,
+				942D394816F38A50006D869C /* Credits.html */,
 				94DCE59016CE9F5C00795B42 /* InfoPlist.strings */,
 				94DCE59316CE9F5C00795B42 /* main.m */,
 				94DCE59516CE9F5C00795B42 /* Mail Ping-Prefix.pch */,
@@ -263,6 +289,7 @@
 				94DCE58116CE9F5C00795B42 /* Frameworks */,
 				94DCE58216CE9F5C00795B42 /* Resources */,
 				9464D10716D1655000403A58 /* CopyFiles */,
+				942D397A16F38B17006D869C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -292,12 +319,28 @@
 			mainGroup = 94DCE57B16CE9F5C00795B42;
 			productRefGroup = 94DCE58516CE9F5C00795B42 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 942D397416F38ACF006D869C /* Products */;
+					ProjectRef = 942D397316F38ACF006D869C /* MailPingHelper.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				94DCE58316CE9F5C00795B42 /* Mail Ping */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		942D397816F38AD0006D869C /* MailPingHelper.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = MailPingHelper.app;
+			remoteRef = 942D397716F38AD0006D869C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		94DCE58216CE9F5C00795B42 /* Resources */ = {
@@ -313,11 +356,27 @@
 				9464D10E16D17A8700403A58 /* statusimage_unread.png in Resources */,
 				9464D11016D1855A00403A58 /* icon.icns in Resources */,
 				94582AFB16E29F2F0000383E /* readability-license.txt in Resources */,
-				94582B0216E2A12A0000383E /* Credits.rtf in Resources */,
+				942D394916F38A50006D869C /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		942D397A16F38B17006D869C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -f \"${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/MailPingHelper.app/Contents/${EMBEDDED_PROFILE_NAME}\"\ncodesign -f -s \"${CODE_SIGN_IDENTITY}\" -i \"org.degutis.MailPingHelper\" --entitlements \"${SOURCE_ROOT}/MailPingHelper/MailPingHelper/MailPingHelper.entitlements\" \"${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/MailPingHelper.app\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		94DCE58016CE9F5C00795B42 /* Sources */ = {
@@ -431,13 +490,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Mail Ping/Mail Ping.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Steven Degutis";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mail Ping/Mail Ping-Prefix.pch";
 				INFOPLIST_FILE = "Mail Ping/Mail Ping-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "9C6A07D5-32FB-4E78-820D-283C2BA72CDD";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -446,14 +505,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Mail Ping/Mail Ping.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Steven Degutis";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mail Ping/Mail Ping-Prefix.pch";
 				INFOPLIST_FILE = "Mail Ping/Mail Ping-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "9C6A07D5-32FB-4E78-820D-283C2BA72CDD";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
