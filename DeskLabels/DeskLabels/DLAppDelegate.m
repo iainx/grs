@@ -8,6 +8,9 @@
 
 #import "DLAppDelegate.h"
 
+
+#import "SDArrangeDesktopWindowController.h"
+
 #import <ServiceManagement/ServiceManagement.h>
 
 #import "SDPreferencesWindowController.h"
@@ -27,6 +30,8 @@
 @property NSMutableArray* noteControllers;
 
 @property SDPreferencesWindowController* prefsController;
+
+@property SDArrangeDesktopWindowController* arrangeDesktopWindowController;
 
 @end
 
@@ -130,7 +135,10 @@
 - (IBAction) arrangeDesktop:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
     
-    NSLog(@"todo");
+    if (self.arrangeDesktopWindowController == nil)
+        self.arrangeDesktopWindowController = [[SDArrangeDesktopWindowController alloc] init];
+    
+    [self.arrangeDesktopWindowController showWindow:self];
 }
 
 - (IBAction) toggleOpenAtLogin:(id)sender {

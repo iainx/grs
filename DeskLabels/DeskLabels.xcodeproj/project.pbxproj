@@ -41,6 +41,12 @@
 		94D3385B16F3BD3500D1D0FD /* NSWindow+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3385A16F3BD3500D1D0FD /* NSWindow+Geometry.m */; };
 		94D3388D16F3C0C500D1D0FD /* DeskLabelsHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 94D3388A16F3C0AB00D1D0FD /* DeskLabelsHelper.app */; };
 		94D3389116F3C0FB00D1D0FD /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D3389016F3C0FB00D1D0FD /* ServiceManagement.framework */; };
+		94D3389916F3CB9A00D1D0FD /* SDArrangeDesktopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389416F3CB9A00D1D0FD /* SDArrangeDesktopWindow.m */; };
+		94D3389A16F3CB9A00D1D0FD /* SDResizeJunkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389616F3CB9A00D1D0FD /* SDResizeJunkView.m */; };
+		94D3389B16F3CB9A00D1D0FD /* SDMoveAroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389816F3CB9A00D1D0FD /* SDMoveAroundView.m */; };
+		94D3389F16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389E16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m */; };
+		94D338A116F3CBD900D1D0FD /* ArrangeDesktopWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D338A016F3CBD800D1D0FD /* ArrangeDesktopWindow.xib */; };
+		94D338A316F3CC3F00D1D0FD /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D338A216F3CC3F00D1D0FD /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +130,16 @@
 		94D3388516F3C0AA00D1D0FD /* DeskLabelsHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeskLabelsHelper.xcodeproj; path = DeskLabelsHelper/DeskLabelsHelper.xcodeproj; sourceTree = "<group>"; };
 		94D3388F16F3C0E900D1D0FD /* DeskLabels.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DeskLabels.entitlements; sourceTree = "<group>"; };
 		94D3389016F3C0FB00D1D0FD /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		94D3389316F3CB9A00D1D0FD /* SDArrangeDesktopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDArrangeDesktopWindow.h; sourceTree = "<group>"; };
+		94D3389416F3CB9A00D1D0FD /* SDArrangeDesktopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDArrangeDesktopWindow.m; sourceTree = "<group>"; };
+		94D3389516F3CB9A00D1D0FD /* SDResizeJunkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDResizeJunkView.h; sourceTree = "<group>"; };
+		94D3389616F3CB9A00D1D0FD /* SDResizeJunkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDResizeJunkView.m; sourceTree = "<group>"; };
+		94D3389716F3CB9A00D1D0FD /* SDMoveAroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDMoveAroundView.h; sourceTree = "<group>"; };
+		94D3389816F3CB9A00D1D0FD /* SDMoveAroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDMoveAroundView.m; sourceTree = "<group>"; };
+		94D3389D16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDArrangeDesktopWindowController.h; sourceTree = "<group>"; };
+		94D3389E16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDArrangeDesktopWindowController.m; sourceTree = "<group>"; };
+		94D338A016F3CBD800D1D0FD /* ArrangeDesktopWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrangeDesktopWindow.xib; sourceTree = "<group>"; };
+		94D338A216F3CC3F00D1D0FD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94D338A316F3CC3F00D1D0FD /* ScriptingBridge.framework in Frameworks */,
 				94D3389116F3C0FB00D1D0FD /* ServiceManagement.framework in Frameworks */,
 				9486EB3416F3969C0030B017 /* Cocoa.framework in Frameworks */,
 			);
@@ -160,6 +177,7 @@
 		9486EB3216F3969C0030B017 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94D338A216F3CC3F00D1D0FD /* ScriptingBridge.framework */,
 				94D3389016F3C0FB00D1D0FD /* ServiceManagement.framework */,
 				9486EB3316F3969C0030B017 /* Cocoa.framework */,
 				9486EB3516F3969C0030B017 /* Other Frameworks */,
@@ -216,6 +234,8 @@
 				94D3383616F3B69B00D1D0FD /* SDEditTitleController.m */,
 				94D3385416F3BCD700D1D0FD /* SDGeneralPrefPane.h */,
 				94D3385516F3BCD700D1D0FD /* SDGeneralPrefPane.m */,
+				94D3389D16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.h */,
+				94D3389E16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +247,7 @@
 				94D3382D16F3B04F00D1D0FD /* NoteWindow.xib */,
 				94D3383816F3B6A000D1D0FD /* EditTitlePanel.xib */,
 				94D3385616F3BCD700D1D0FD /* GeneralPrefPane.xib */,
+				94D338A016F3CBD800D1D0FD /* ArrangeDesktopWindow.xib */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -242,6 +263,12 @@
 				94D3383B16F3B8FD00D1D0FD /* SDEditTitlePanel.m */,
 				9486EB5A16F39A110030B017 /* SDTitleFieldEditor.h */,
 				9486EB5B16F39A110030B017 /* SDTitleFieldEditor.m */,
+				94D3389316F3CB9A00D1D0FD /* SDArrangeDesktopWindow.h */,
+				94D3389416F3CB9A00D1D0FD /* SDArrangeDesktopWindow.m */,
+				94D3389516F3CB9A00D1D0FD /* SDResizeJunkView.h */,
+				94D3389616F3CB9A00D1D0FD /* SDResizeJunkView.m */,
+				94D3389716F3CB9A00D1D0FD /* SDMoveAroundView.h */,
+				94D3389816F3CB9A00D1D0FD /* SDMoveAroundView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -376,6 +403,7 @@
 				94D3384D16F3BC9E00D1D0FD /* Credits.html in Resources */,
 				94D3385216F3BCBC00D1D0FD /* SDPreferencesWindow.xib in Resources */,
 				94D3385816F3BCD700D1D0FD /* GeneralPrefPane.xib in Resources */,
+				94D338A116F3CBD900D1D0FD /* ArrangeDesktopWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +445,10 @@
 				94D3385316F3BCBC00D1D0FD /* SDPreferencesWindowController.m in Sources */,
 				94D3385716F3BCD700D1D0FD /* SDGeneralPrefPane.m in Sources */,
 				94D3385B16F3BD3500D1D0FD /* NSWindow+Geometry.m in Sources */,
+				94D3389916F3CB9A00D1D0FD /* SDArrangeDesktopWindow.m in Sources */,
+				94D3389A16F3CB9A00D1D0FD /* SDResizeJunkView.m in Sources */,
+				94D3389B16F3CB9A00D1D0FD /* SDMoveAroundView.m in Sources */,
+				94D3389F16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
