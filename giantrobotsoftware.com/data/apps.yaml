@@ -137,24 +137,26 @@
 -
   name: TunesBar
   smallname: tunesbar
-  tagline: View your currently playing iTunes track in your menu bar
+  tagline: View your currently playing iTunes track in your menu bar.
   version: 1.0
-  last_release_date: 2013-03-07
-  min_os_version: 10.8
-  num_screenshots: 3
+  price: $1.99
+  last_release_date: 2013-03-15
+  min_os_version: 10.6.6
+  num_screenshots: 4
   summary:
-    - Sure, there are other apps that do this. But this one is the highest quality. Try it and see for yourself.
-    - Unlike some other apps, TunesBar will show the full title, without the need to scroll. And it changes to always fit the currently playing track. And, using innovative techniques, TunesBar shows your currently playing track in the highest quality font.
+    - "Sure, there are other apps that do this. But this one is the highest quality. Try it and see for yourself."
+    - "Unlike similar apps, TunesBar will show the full title, without the need to scroll. And it changes to always fit the currently playing track. And, using innovative techniques, TunesBar shows your currently playing track in the highest quality font."
   download?: false
   purchase?: false
   appstore: comingsoon
   features:
-    - Simple user interface
-    - Aesthetically pleasing, crisp font
-    - Dims when track is paused
-    - Customize what track properties are displayed
-    - Customize order of displayed track properties
-    - Change TunesBar's font size to your liking
+    - "Simple user interface"
+    - "Clear, crisp font"
+    - "Auto-resizes to fit track information, instead of scrolling"
+    - "Dims when track is paused"
+    - "Customize what track properties are displayed"
+    - "Customize order of displayed track properties"
+    - "Change TunesBar's font size to your liking"
 -
   name: Quick Timer
   smallname: quicktimer
