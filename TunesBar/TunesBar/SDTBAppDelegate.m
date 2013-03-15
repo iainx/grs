@@ -25,7 +25,7 @@
     [[iTunesProxy proxy] loadInitialTunesBarInfo];
     [self.statusItemController setupStatusItem];
     
-    self.howToWindowController = [[SDHowToWindowController alloc] init];
+    self.howToWindowController = [[SDWelcomeWindowController alloc] init];
     [self.howToWindowController showInstructionsWindowFirstTimeOnly];
 }
 

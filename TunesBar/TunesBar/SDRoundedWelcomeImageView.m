@@ -3,10 +3,10 @@
 //  Copyright (c) 2013 Steven Degutis. All rights reserved.
 //
 
-#import "SDRoundedHowToImageView.h"
+#import "SDRoundedWelcomeImageView.h"
 
 
-@implementation SDRoundedHowToImageView
+@implementation SDRoundedWelcomeImageView
 
 - (void) drawRect:(NSRect)dirtyRect {
 	float r = 7.0;
@@ -17,10 +17,6 @@
 	
 	NSBezierPath *borderFillPath = [NSBezierPath bezierPathWithRoundedRect:bounds xRadius:r yRadius:r];
 	NSBezierPath *imageClipPath = [NSBezierPath bezierPathWithRoundedRect:imageClipBounds xRadius:r2 yRadius:r2];
-	
-	// draw background
-//	[[NSColor windowBackgroundColor] setFill];
-//	[NSBezierPath fillRect:bounds];
 	
 	// draw border
 	[[NSColor colorWithCalibratedWhite:0.20 alpha:1.0] setFill];
