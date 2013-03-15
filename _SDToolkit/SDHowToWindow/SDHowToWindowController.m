@@ -4,7 +4,7 @@
 //
 
 #import "SDHowToWindowController.h"
-#import "SDRoundedHowToImageView.h"
+#import "SDHowToRoundedImageView.h"
 
 @interface SDHowToWindowController ()
 
@@ -20,7 +20,16 @@
 
 @implementation SDHowToWindowController
 
-- (void) showInstructionsWindowFirstTimeOnly {
++ (SDHowToWindowController*) sharedHowToWindowController {
+    static SDHowToWindowController* sharedHowToWindowController;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedHowToWindowController = [[SDHowToWindowController alloc] init];
+    });
+    return sharedHowToWindowController;
+}
+
++ (void) showInstructionsWindowFirstTimeOnly {
     NSString* version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     NSString* firstTimeDefaultsKeyForVersion = [NSString stringWithFormat:@"%@%@", SDInstructionsWindowFirstTimePastKey, version];
     
@@ -32,10 +41,10 @@
     }
 }
 
-- (void) showInstructionsWindow {
++ (void) showInstructionsWindow {
 	[NSApp activateIgnoringOtherApps:YES];
-	[[self window] center];
-	[self showWindow:self];
+	[[[self sharedHowToWindowController] window] center];
+	[[self sharedHowToWindowController] showWindow:self];
 }
 
 - (NSString*) windowNibName {
@@ -76,7 +85,7 @@
 //		imageViewFrame.origin = NSMakePoint(1.0, 1.0);
 		imageViewFrame = NSIntegralRect(imageViewFrame);
 		
-		NSImageView *imageView = [[SDRoundedHowToImageView alloc] initWithFrame:imageViewFrame];
+		NSImageView *imageView = [[SDHowToRoundedImageView alloc] initWithFrame:imageViewFrame];
 		[imageView setImageScaling:NSScaleNone];
 		[imageView setImageAlignment:NSImageAlignCenter];
 		[imageView setImage:image];
@@ -120,8 +129,6 @@
 	if (self.selectedImageIndex == oldSelectedImage)
 		return;
     
-    NSLog(@"%ld", self.selectedImageIndex);
-	
 	NSView *oldSubview = [[self.imageViewContainer subviews] lastObject];
 	NSView *newSubview = [self.imageViews objectAtIndex:self.selectedImageIndex];
 	
