@@ -51,6 +51,7 @@
 		947520160FFC6D3C0049E92E /* SDGeneralPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 947520150FFC6D3C0049E92E /* SDGeneralPrefPane.m */; };
 		947520190FFC6D640049E92E /* GeneralPrefPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947520180FFC6D640049E92E /* GeneralPrefPane.xib */; };
 		947D26AE1027921D003B8602 /* DeskLabels.icns in Resources */ = {isa = PBXBuildFile; fileRef = 947D26AD1027921D003B8602 /* DeskLabels.icns */; };
+		94893CFA16F29C9E00B86AE4 /* SDMoveAroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94893CF916F29C9E00B86AE4 /* SDMoveAroundView.m */; };
 		948E374416DC698B00138A68 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948E374316DC698B00138A68 /* ScriptingBridge.framework */; };
 		948E374616DC70EA00138A68 /* ArrangeDesktopWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 948E374516DC70EA00138A68 /* ArrangeDesktopWindow.xib */; };
 		948E374916DC710300138A68 /* SDArrangeDesktopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 948E374816DC710300138A68 /* SDArrangeDesktopWindow.m */; };
@@ -156,6 +157,8 @@
 		947520150FFC6D3C0049E92E /* SDGeneralPrefPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDGeneralPrefPane.m; path = Source/SDGeneralPrefPane.m; sourceTree = "<group>"; };
 		947520180FFC6D640049E92E /* GeneralPrefPane.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GeneralPrefPane.xib; path = XIBs/GeneralPrefPane.xib; sourceTree = "<group>"; };
 		947D26AD1027921D003B8602 /* DeskLabels.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = DeskLabels.icns; path = Graphics/DeskLabels.icns; sourceTree = "<group>"; };
+		94893CF816F29C9E00B86AE4 /* SDMoveAroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDMoveAroundView.h; sourceTree = "<group>"; };
+		94893CF916F29C9E00B86AE4 /* SDMoveAroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDMoveAroundView.m; sourceTree = "<group>"; };
 		948E374216DC695400138A68 /* Finder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Finder.h; sourceTree = "<group>"; };
 		948E374316DC698B00138A68 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		948E374516DC70EA00138A68 /* ArrangeDesktopWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrangeDesktopWindow.xib; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				948E374316DC698B00138A68 /* ScriptingBridge.framework */,
+				9466B59616C187C9009ECA41 /* ServiceManagement.framework */,
 				9413C9E80FFA780500BC5D43 /* QuartzCore.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -226,8 +231,7 @@
 		29B97314FDCFA39411CA2CEA /* DeskNotation */ = {
 			isa = PBXGroup;
 			children = (
-				948E374316DC698B00138A68 /* ScriptingBridge.framework */,
-				9466B59616C187C9009ECA41 /* ServiceManagement.framework */,
+				8D1107310486CEB800E47090 /* Info.plist */,
 				9466B59516C1843C009ECA41 /* DeskLabels.entitlements */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -251,7 +255,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107310486CEB800E47090 /* Info.plist */,
 				94751FD60FFC65CE0049E92E /* Credits.rtfd */,
 				94751B1D0FFB02C70049E92E /* Graphics */,
 				94751D040FFBD6D90049E92E /* XIBs */,
@@ -363,6 +366,8 @@
 				948E374816DC710300138A68 /* SDArrangeDesktopWindow.m */,
 				94A7B3C616E1794800B70A70 /* SDResizeJunkView.h */,
 				94A7B3C716E1794800B70A70 /* SDResizeJunkView.m */,
+				94893CF816F29C9E00B86AE4 /* SDMoveAroundView.h */,
+				94893CF916F29C9E00B86AE4 /* SDMoveAroundView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 				948E374916DC710300138A68 /* SDArrangeDesktopWindow.m in Sources */,
 				948E374C16DC719500138A68 /* SDArrangeDesktopWindowController.m in Sources */,
 				94A7B3C816E1794800B70A70 /* SDResizeJunkView.m in Sources */,
+				94893CFA16F29C9E00B86AE4 /* SDMoveAroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
