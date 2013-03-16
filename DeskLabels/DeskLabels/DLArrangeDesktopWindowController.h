@@ -12,9 +12,8 @@
 
 @interface DLArrangeDesktopWindowController : NSWindowController <NSWindowDelegate>
 
-@property (weak) IBOutlet DLArrangeDesktopView* resizeJunkView;
-@property (weak) IBOutlet NSButton* button;
-
 @property NSArray* noteControllers;
+
+@property (copy) dispatch_block_t doneArrangingDesktop;
 
 @end

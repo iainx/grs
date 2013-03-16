@@ -10,9 +10,6 @@
 
 #import "Finder.h"
 
-void CoreDockSendNotification(CFStringRef, void *);
-
-
 @interface DLFinderProxy ()
 
 @property FinderApplication* finder;
@@ -32,12 +29,25 @@ void CoreDockSendNotification(CFStringRef, void *);
     return finderProxy;
 }
 
-- (SBElementArray*) desktopIcons {
-    return self.finder.desktop.items;
+- (NSArray*) desktopIcons {
+    SBElementArray* icons = self.finder.desktop.items;
+    NSArray* positions = [icons arrayByApplyingSelector:@selector(desktopPosition)];
+    NSArray* finderItems = [icons get];
+    
+    NSMutableArray* desktopIcons = [NSMutableArray array];
+    
+    for (int i = 0; i < [icons count]; i++) {
+        DLDesktopIcon* desktopIcon = [[DLDesktopIcon alloc] init];
+        desktopIcon.finderItem = [finderItems objectAtIndex:i];
+        desktopIcon.initialPosition = [[positions objectAtIndex:i] pointValue];
+        [desktopIcons addObject:desktopIcon];
+    }
+    
+    return desktopIcons;
 }
 
 + (void) showDesktop {
-    CoreDockSendNotification(CFSTR("com.apple.showdesktop.awake"), NULL);
+    [NSTask launchedTaskWithLaunchPath:@"/Applications/Mission Control.app/Contents/MacOS/Mission Control" arguments:@[@"1"]];
 }
 
 @end

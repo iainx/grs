@@ -8,10 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "DLIconGroupView.h"
+#import "DLMovableIconGroupView.h"
 
-@interface DLIconGroupViewController : NSViewController
+@interface DLIconGroupViewController : NSViewController <DLMovableIconGroupViewDelegate>
 
-@property (weak) IBOutlet DLIconGroupView* moveAroundView;
+@property (weak) IBOutlet DLMovableIconGroupView* movableIconGroupView;
+
+@property (copy) void(^iconGroupKilled)(DLIconGroupViewController* me);
+
+- (void) addToView:(NSView*)view withBoxFrame:(NSRect)box desktopIcons:(NSArray*)desktopIcons notes:(NSArray*)notes;
 
 @end

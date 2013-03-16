@@ -56,6 +56,7 @@
 }
 
 - (void) resetCursorRects {
+    [super resetCursorRects];
     [self addCursorRect:[self visibleRect] cursor:[NSCursor crosshairCursor]];
 }
 

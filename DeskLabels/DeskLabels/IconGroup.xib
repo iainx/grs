@@ -34,7 +34,7 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSCustomView" id="1005">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSButton" id="10123595">
@@ -42,6 +42,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{5, 235}, {30, 30}}</string>
 						<reference key="NSSuperview" ref="1005"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="517218703"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="1056454794">
@@ -72,25 +73,20 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{20, 20}, {440, 232}}</string>
 						<reference key="NSSuperview" ref="1005"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<string key="NSClassName">DLIconGroupView</string>
+						<string key="NSClassName">DLMovableIconGroupView</string>
 					</object>
 				</array>
 				<string key="NSFrameSize">{480, 272}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="10123595"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<array class="NSMutableArray" key="connectionRecords">
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">moveAroundView</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="517218703"/>
-					</object>
-					<int key="connectionID">21</int>
-				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">view</string>
@@ -100,12 +96,28 @@
 					<int key="connectionID">22</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">movableIconGroupView</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="517218703"/>
+					</object>
+					<int key="connectionID">27</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">killIconGroupBox:</string>
-						<reference key="source" ref="517218703"/>
+						<string key="label">killIconGroup:</string>
+						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="10123595"/>
 					</object>
-					<int key="connectionID">26</int>
+					<int key="connectionID">28</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="517218703"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">29</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -177,22 +189,41 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">26</int>
+			<int key="maxID">29</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
+					<string key="className">DLCloseButtonCell</string>
+					<string key="superclassName">NSButtonCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/DLCloseButtonCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">DLIconGroupViewController</string>
 					<string key="superclassName">NSViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">killIconGroup:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">killIconGroup:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">killIconGroup:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">moveAroundView</string>
-						<string key="NS.object.0">SDMoveAroundView</string>
+						<string key="NS.key.0">movableIconGroupView</string>
+						<string key="NS.object.0">DLMovableIconGroupView</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">moveAroundView</string>
+						<string key="NS.key.0">movableIconGroupView</string>
 						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">moveAroundView</string>
-							<string key="candidateClassName">SDMoveAroundView</string>
+							<string key="name">movableIconGroupView</string>
+							<string key="candidateClassName">DLMovableIconGroupView</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -201,22 +232,22 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">SDMoveAroundView</string>
+					<string key="className">DLMovableIconGroupView</string>
 					<string key="superclassName">NSView</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">killIconGroupBox:</string>
-						<string key="NS.object.0">NSView</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">delegate</string>
+						<string key="NS.object.0">id</string>
 					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">killIconGroupBox:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">killIconGroupBox:</string>
-							<string key="candidateClassName">NSView</string>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">delegate</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">delegate</string>
+							<string key="candidateClassName">id</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/SDMoveAroundView.h</string>
+						<string key="minorKey">./Classes/DLMovableIconGroupView.h</string>
 					</object>
 				</object>
 			</array>

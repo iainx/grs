@@ -17,6 +17,7 @@
 		948B4F0516F3E35300FB155E /* IconGroup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 948B4F0416F3E35300FB155E /* IconGroup.xib */; };
 		948B4F0816F3E72D00FB155E /* DLIconGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0716F3E72D00FB155E /* DLIconGroupViewController.m */; };
 		948B4F0B16F425E600FB155E /* DLNotesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0A16F425E600FB155E /* DLNotesManager.m */; };
+		948B4F0E16F4B59A00FB155E /* DLDesktopIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0D16F4B59A00FB155E /* DLDesktopIcon.m */; };
 		94D3382216F3A87800D1D0FD /* DeskLabels.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381A16F3A87800D1D0FD /* DeskLabels.icns */; };
 		94D3382316F3A87800D1D0FD /* sd_howto_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381B16F3A87800D1D0FD /* sd_howto_1.png */; };
 		94D3382416F3A87800D1D0FD /* sd_howto_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381C16F3A87800D1D0FD /* sd_howto_2.png */; };
@@ -47,7 +48,7 @@
 		94D3389116F3C0FB00D1D0FD /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D3389016F3C0FB00D1D0FD /* ServiceManagement.framework */; };
 		94D3389916F3CB9A00D1D0FD /* DLArrangeDesktopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389416F3CB9A00D1D0FD /* DLArrangeDesktopWindow.m */; };
 		94D3389A16F3CB9A00D1D0FD /* DLArrangeDesktopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389616F3CB9A00D1D0FD /* DLArrangeDesktopView.m */; };
-		94D3389B16F3CB9A00D1D0FD /* DLIconGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389816F3CB9A00D1D0FD /* DLIconGroupView.m */; };
+		94D3389B16F3CB9A00D1D0FD /* DLMovableIconGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389816F3CB9A00D1D0FD /* DLMovableIconGroupView.m */; };
 		94D3389F16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389E16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.m */; };
 		94D338A116F3CBD900D1D0FD /* ArrangeDesktopWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D338A016F3CBD800D1D0FD /* ArrangeDesktopWindow.xib */; };
 		94D338A316F3CC3F00D1D0FD /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D338A216F3CC3F00D1D0FD /* ScriptingBridge.framework */; };
@@ -100,6 +101,8 @@
 		948B4F0716F3E72D00FB155E /* DLIconGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLIconGroupViewController.m; sourceTree = "<group>"; };
 		948B4F0916F425E600FB155E /* DLNotesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLNotesManager.h; sourceTree = "<group>"; };
 		948B4F0A16F425E600FB155E /* DLNotesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLNotesManager.m; sourceTree = "<group>"; };
+		948B4F0C16F4B59A00FB155E /* DLDesktopIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLDesktopIcon.h; sourceTree = "<group>"; };
+		948B4F0D16F4B59A00FB155E /* DLDesktopIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLDesktopIcon.m; sourceTree = "<group>"; };
 		94D3381A16F3A87800D1D0FD /* DeskLabels.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DeskLabels.icns; sourceTree = "<group>"; };
 		94D3381B16F3A87800D1D0FD /* sd_howto_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_1.png; sourceTree = "<group>"; };
 		94D3381C16F3A87800D1D0FD /* sd_howto_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_2.png; sourceTree = "<group>"; };
@@ -145,8 +148,8 @@
 		94D3389416F3CB9A00D1D0FD /* DLArrangeDesktopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLArrangeDesktopWindow.m; sourceTree = "<group>"; };
 		94D3389516F3CB9A00D1D0FD /* DLArrangeDesktopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLArrangeDesktopView.h; sourceTree = "<group>"; };
 		94D3389616F3CB9A00D1D0FD /* DLArrangeDesktopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLArrangeDesktopView.m; sourceTree = "<group>"; };
-		94D3389716F3CB9A00D1D0FD /* DLIconGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLIconGroupView.h; sourceTree = "<group>"; };
-		94D3389816F3CB9A00D1D0FD /* DLIconGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLIconGroupView.m; sourceTree = "<group>"; };
+		94D3389716F3CB9A00D1D0FD /* DLMovableIconGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMovableIconGroupView.h; sourceTree = "<group>"; };
+		94D3389816F3CB9A00D1D0FD /* DLMovableIconGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMovableIconGroupView.m; sourceTree = "<group>"; };
 		94D3389D16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLArrangeDesktopWindowController.h; sourceTree = "<group>"; };
 		94D3389E16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLArrangeDesktopWindowController.m; sourceTree = "<group>"; };
 		94D338A016F3CBD800D1D0FD /* ArrangeDesktopWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrangeDesktopWindow.xib; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 			children = (
 				948B4F0016F3CEBC00FB155E /* DLFinderProxy.h */,
 				948B4F0116F3CEBC00FB155E /* DLFinderProxy.m */,
+				948B4F0C16F4B59A00FB155E /* DLDesktopIcon.h */,
+				948B4F0D16F4B59A00FB155E /* DLDesktopIcon.m */,
 				9486EB4516F3969C0030B017 /* DLAppDelegate.h */,
 				9486EB4616F3969C0030B017 /* DLAppDelegate.m */,
 				948B4F0916F425E600FB155E /* DLNotesManager.h */,
@@ -285,8 +290,8 @@
 				94D3389416F3CB9A00D1D0FD /* DLArrangeDesktopWindow.m */,
 				94D3389516F3CB9A00D1D0FD /* DLArrangeDesktopView.h */,
 				94D3389616F3CB9A00D1D0FD /* DLArrangeDesktopView.m */,
-				94D3389716F3CB9A00D1D0FD /* DLIconGroupView.h */,
-				94D3389816F3CB9A00D1D0FD /* DLIconGroupView.m */,
+				94D3389716F3CB9A00D1D0FD /* DLMovableIconGroupView.h */,
+				94D3389816F3CB9A00D1D0FD /* DLMovableIconGroupView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -466,11 +471,12 @@
 				94D3385B16F3BD3500D1D0FD /* NSWindow+Geometry.m in Sources */,
 				94D3389916F3CB9A00D1D0FD /* DLArrangeDesktopWindow.m in Sources */,
 				94D3389A16F3CB9A00D1D0FD /* DLArrangeDesktopView.m in Sources */,
-				94D3389B16F3CB9A00D1D0FD /* DLIconGroupView.m in Sources */,
+				94D3389B16F3CB9A00D1D0FD /* DLMovableIconGroupView.m in Sources */,
 				94D3389F16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.m in Sources */,
 				948B4F0216F3CEBC00FB155E /* DLFinderProxy.m in Sources */,
 				948B4F0816F3E72D00FB155E /* DLIconGroupViewController.m in Sources */,
 				948B4F0B16F425E600FB155E /* DLNotesManager.m in Sources */,
+				948B4F0E16F4B59A00FB155E /* DLDesktopIcon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

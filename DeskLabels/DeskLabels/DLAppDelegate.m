@@ -87,8 +87,15 @@
 - (IBAction) arrangeDesktop:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
     
-    if (self.arrangeDesktopWindowController == nil)
+    if (self.arrangeDesktopWindowController == nil) {
         self.arrangeDesktopWindowController = [[DLArrangeDesktopWindowController alloc] init];
+        
+        __weak DLAppDelegate* weakSelf = self;
+        
+        self.arrangeDesktopWindowController.doneArrangingDesktop = ^{
+            weakSelf.arrangeDesktopWindowController = nil;
+        };
+    }
     
     [DLFinderProxy showDesktop];
     

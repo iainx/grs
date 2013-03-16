@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import <ScriptingBridge/ScriptingBridge.h>
+#import "DLDesktopIcon.h"
 
 @interface DLFinderProxy : NSObject
 
 + (DLFinderProxy*) finderProxy;
 
-- (SBElementArray*) desktopIcons;
+- (NSArray*) desktopIcons;
 
 + (void) showDesktop;
 
