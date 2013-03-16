@@ -17,4 +17,9 @@
 
 - (NSDictionary*) dictionaryRepresentation;
 
+- (NSRect) labelRectInScreen;
+
+- (void) recordInitialPosition;
+- (void) setCurrentPositionByOffset:(NSPoint)offset;
+
 @end

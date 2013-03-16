@@ -78,6 +78,7 @@
 - (void) mouseUp:(NSEvent *)theEvent {
     if (self.didDrag) {
         NSRect box = [self currentIconsBoxRect];
+        box = NSInsetRect(box, -0.5, -0.5);
         
         box.origin.x -= 6.0;
         box.origin.y -= 6.0;

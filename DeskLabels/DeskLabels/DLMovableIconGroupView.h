@@ -16,7 +16,7 @@
 
 @end
 
-@interface DLMovableIconGroupView : NSView
+@interface DLMovableIconGroupView : NSBox
 
 @property (weak) IBOutlet id<DLMovableIconGroupViewDelegate> delegate;
 

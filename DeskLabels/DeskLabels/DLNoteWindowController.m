@@ -29,6 +29,8 @@
 @property NSTrackingArea *boxTrackingArea;
 @property NSTrackingArea *buttonTrackingArea;
 
+@property NSPoint initialPosition;
+
 @end
 
 @implementation DLNoteWindowController
@@ -235,6 +237,23 @@
     self.currentEditTitleController = nil;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:SDSomeNoteChangedSomehowNotification object:nil];
+}
+
+
+
+- (NSRect) labelRectInScreen {
+    return [self.window convertRectToScreen:[self.backgroundBox convertRect:[self.backgroundBox bounds] toView:nil]];
+}
+
+- (void) recordInitialPosition {
+    self.initialPosition = [self.window frame].origin;
+}
+
+- (void) setCurrentPositionByOffset:(NSPoint)offset {
+    NSPoint newPoint = self.initialPosition;
+    newPoint.x += offset.x;
+    newPoint.y += offset.y;
+    [self.window setFrameOrigin:newPoint];
 }
 
 @end

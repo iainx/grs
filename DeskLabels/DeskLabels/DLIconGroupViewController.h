@@ -12,8 +12,6 @@
 
 @interface DLIconGroupViewController : NSViewController <DLMovableIconGroupViewDelegate>
 
-@property (weak) IBOutlet DLMovableIconGroupView* movableIconGroupView;
-
 @property (copy) void(^iconGroupKilled)(DLIconGroupViewController* me);
 
 - (void) addToView:(NSView*)view withBoxFrame:(NSRect)box desktopIcons:(NSArray*)desktopIcons notes:(NSArray*)notes;

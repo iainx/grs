@@ -28,15 +28,25 @@
 
 @implementation DLMovableIconGroupView
 
-- (void)drawRect:(NSRect)dirtyRect {
-    NSRect box = [self bounds];
+- (void) awakeFromNib {
+    [super awakeFromNib];
     
-    [[[NSColor whiteColor] colorWithAlphaComponent:0.1] setFill];
-    [NSBezierPath fillRect:box];
-    
-    [[[NSColor blackColor] colorWithAlphaComponent:0.4] setFill];
-    [NSBezierPath strokeRect:box];
+    [self setBoxType:NSBoxCustom];
+    [self setFillColor:[[NSColor whiteColor] colorWithAlphaComponent:0.1]];
+    [self setBorderColor:[[NSColor blackColor] colorWithAlphaComponent:0.4]];
+    [self setBorderType:NSLineBorder];
+    [self setBorderWidth:1.0];
 }
+
+//- (void)drawRect:(NSRect)dirtyRect {
+//    NSRect box = [self bounds];
+//    
+//    [[[NSColor whiteColor] colorWithAlphaComponent:0.1] setFill];
+//    [NSBezierPath fillRect:box];
+//    
+//    [[[NSColor blackColor] colorWithAlphaComponent:0.4] setFill];
+//    [NSBezierPath strokeRect:box];
+//}
 
 - (void) resetCursorRects {
     [super resetCursorRects];
@@ -50,7 +60,6 @@
     
     NSPoint p = [theEvent locationInWindow];
     self.initialMousePoint = NSMakePoint(round(p.x), round(p.y));
-//    self.initialBoxPoint = [[self superview] frame].origin;
 }
 
 - (void) mouseDragged:(NSEvent *)theEvent {
@@ -62,47 +71,11 @@
     CGFloat offsetY = currentPoint.y - self.initialMousePoint.y;
     
     [self.delegate didMoveByOffset:NSMakePoint(offsetX, offsetY)];
-    
-//    
-//    NSRect newFrame = [[self superview] frame];
-//    newFrame.origin.x = self.initialBoxPoint.x + offsetX;
-//    newFrame.origin.y = self.initialBoxPoint.y + offsetY;
-//    [[self superview] setFrame:newFrame];
-//    
-//    
-//    for (NSMutableDictionary* itemDict in self.desktopIcons) {
-//        FinderItem* item = [itemDict objectForKey:@"item"];
-//        NSString* pointStr = [itemDict objectForKey:@"initialPoint"];
-//        NSPoint point = NSPointFromString(pointStr);
-//        
-//        point.x += offsetX;
-//        point.y -= offsetY;
-//        
-//        item.desktopPosition = point;
-//    }
 }
 
 - (void) mouseUp:(NSEvent *)theEvent {
-    if (self.didDrag) {
-        
+    if (self.didDrag)
         [self.delegate didStopMoving];
-        
-//        NSPoint currentPoint = [theEvent locationInWindow];
-//        
-//        CGFloat offsetX = currentPoint.x - self.initialMousePoint.x;
-//        CGFloat offsetY = currentPoint.y - self.initialMousePoint.y;
-//        
-//        for (NSMutableDictionary* itemDict in self.desktopIcons) {
-//            NSString* pointStr = [itemDict objectForKey:@"initialPoint"];
-//            NSPoint point = NSPointFromString(pointStr);
-//            
-//            point.x += offsetX;
-//            point.y -= offsetY;
-//            
-//            [itemDict setObject:NSStringFromPoint(point)
-//                         forKey:@"initialPoint"];
-//        }
-    }
 }
 
 @end

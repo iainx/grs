@@ -9,8 +9,11 @@
 #import "DLIconGroupViewController.h"
 
 #import "DLDesktopIcon.h"
+#import "DLNoteWindowController.h"
 
 @interface DLIconGroupViewController ()
+
+@property (weak) IBOutlet DLMovableIconGroupView* movableIconGroupView;
 
 @property NSArray* movableDesktopIcons;
 @property NSArray* movableNotes;
@@ -36,7 +39,7 @@
     
     [superview addSubview:self.view];
     
-    NSRect movableViewBounds = [[self.view window] convertRectToScreen:[self.view convertRect:[self.view bounds] toView:nil]];
+    NSRect movableViewBounds = [[self.movableIconGroupView window] convertRectToScreen:[self.movableIconGroupView convertRect:[self.movableIconGroupView bounds] toView:nil]];
     
     self.movableDesktopIcons = [desktopIcons filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(DLDesktopIcon* desktopIcon, NSDictionary *bindings)
     {
@@ -44,10 +47,19 @@
         convertedPoint.y = [[[self.view window] screen] frame].size.height - desktopIcon.initialPosition.y;
         return NSPointInRect(convertedPoint, movableViewBounds);
     }]];
+    
+    self.movableNotes = [notes filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(DLNoteWindowController* noteController, NSDictionary *bindings)
+    {
+        return NSIntersectsRect(movableViewBounds, [noteController labelRectInScreen]);
+    }]];
 }
 
 - (void) didStartMoving {
     self.initialBoxPoint = [self.view frame].origin;
+    
+    for (DLNoteWindowController* noteController in self.movableNotes) {
+        [noteController recordInitialPosition];
+    }
 }
 
 - (void) didMoveByOffset:(NSPoint)offset {
@@ -59,6 +71,10 @@
     for (DLDesktopIcon* desktopIcon in self.movableDesktopIcons) {
         [desktopIcon setCurrentPositionByOffset:offset];
     }
+    
+    for (DLNoteWindowController* noteController in self.movableNotes) {
+        [noteController setCurrentPositionByOffset:offset];
+    }
 }
 
 - (void) didStopMoving {
@@ -66,27 +82,5 @@
         [desktopIcon resetInitialPosition];
     }
 }
-
-//- (void) takeNoticeOfLabels:(NSArray*)labels {
-//    //    NSMutableArray* deskLabels = [NSMutableArray array];
-//    //
-//    //    NSRect myBounds = [[self window] convertRectToScreen:[self convertRect:[self bounds] toView:nil]];
-//    //
-//    //    for (DLNoteWindowController* noteController in labels) {
-//    //        NSRect labelRect = NSInsetRect([[[noteController window] contentView] frame], 36, 30);
-//    //
-//    //        NSLog(@"%@", NSStringFromRect(labelRect));
-//    //
-//    //        if (!NSIntersectsRect(labelRect, myBounds))
-//    //            continue;
-//    //
-//    //        [deskLabels addObject:[@{
-//    //                               @"item": icon,
-//    //                               @"initialPoint": NSStringFromPoint(pos),
-//    //                               } mutableCopy]];
-//    //    }
-//    //
-//    //    self.deskLabels = deskLabels;
-//}
 
 @end
