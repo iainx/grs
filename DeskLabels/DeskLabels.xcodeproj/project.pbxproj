@@ -12,10 +12,11 @@
 		9486EB4016F3969C0030B017 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486EB3F16F3969C0030B017 /* main.m */; };
 		9486EB4716F3969C0030B017 /* DLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486EB4616F3969C0030B017 /* DLAppDelegate.m */; };
 		9486EB4A16F3969D0030B017 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9486EB4816F3969D0030B017 /* MainMenu.xib */; };
-		9486EB5C16F39A110030B017 /* SDTitleFieldEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486EB5B16F39A110030B017 /* SDTitleFieldEditor.m */; };
+		9486EB5C16F39A110030B017 /* DLTitleFieldEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486EB5B16F39A110030B017 /* DLTitleFieldEditor.m */; };
 		948B4F0216F3CEBC00FB155E /* DLFinderProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0116F3CEBC00FB155E /* DLFinderProxy.m */; };
 		948B4F0516F3E35300FB155E /* IconGroup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 948B4F0416F3E35300FB155E /* IconGroup.xib */; };
 		948B4F0816F3E72D00FB155E /* DLIconGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0716F3E72D00FB155E /* DLIconGroupViewController.m */; };
+		948B4F0B16F425E600FB155E /* DLNotesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0A16F425E600FB155E /* DLNotesManager.m */; };
 		94D3382216F3A87800D1D0FD /* DeskLabels.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381A16F3A87800D1D0FD /* DeskLabels.icns */; };
 		94D3382316F3A87800D1D0FD /* sd_howto_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381B16F3A87800D1D0FD /* sd_howto_1.png */; };
 		94D3382416F3A87800D1D0FD /* sd_howto_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381C16F3A87800D1D0FD /* sd_howto_2.png */; };
@@ -26,11 +27,11 @@
 		94D3382916F3A87800D1D0FD /* closebox.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D3382116F3A87800D1D0FD /* closebox.png */; };
 		94D3382C16F3A9A500D1D0FD /* DLNoteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3382B16F3A9A500D1D0FD /* DLNoteWindowController.m */; };
 		94D3382E16F3B04F00D1D0FD /* NoteWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D3382D16F3B04F00D1D0FD /* NoteWindow.xib */; };
-		94D3383116F3B06F00D1D0FD /* SDNoteWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3383016F3B06F00D1D0FD /* SDNoteWindow.m */; };
-		94D3383416F3B09600D1D0FD /* SDCloseButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3383316F3B09600D1D0FD /* SDCloseButtonCell.m */; };
-		94D3383716F3B69B00D1D0FD /* SDEditTitleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3383616F3B69B00D1D0FD /* SDEditTitleController.m */; };
+		94D3383116F3B06F00D1D0FD /* DLNoteWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3383016F3B06F00D1D0FD /* DLNoteWindow.m */; };
+		94D3383416F3B09600D1D0FD /* DLCloseButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3383316F3B09600D1D0FD /* DLCloseButtonCell.m */; };
+		94D3383716F3B69B00D1D0FD /* DLEditTitleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3383616F3B69B00D1D0FD /* DLEditTitleController.m */; };
 		94D3383916F3B6A000D1D0FD /* EditTitlePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D3383816F3B6A000D1D0FD /* EditTitlePanel.xib */; };
-		94D3383C16F3B8FE00D1D0FD /* SDEditTitlePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3383B16F3B8FD00D1D0FD /* SDEditTitlePanel.m */; };
+		94D3383C16F3B8FE00D1D0FD /* DLEditTitlePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3383B16F3B8FD00D1D0FD /* DLEditTitlePanel.m */; };
 		94D3384716F3BC8900D1D0FD /* SDHowToWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3383F16F3BC8900D1D0FD /* SDHowToWindow.m */; };
 		94D3384816F3BC8900D1D0FD /* SDHowToWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D3384016F3BC8900D1D0FD /* SDHowToWindow.xib */; };
 		94D3384916F3BC8900D1D0FD /* SDHowToWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3384216F3BC8900D1D0FD /* SDHowToWindowController.m */; };
@@ -39,15 +40,15 @@
 		94D3384D16F3BC9E00D1D0FD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 94D3384C16F3BC9E00D1D0FD /* Credits.html */; };
 		94D3385216F3BCBC00D1D0FD /* SDPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D3384F16F3BCBC00D1D0FD /* SDPreferencesWindow.xib */; };
 		94D3385316F3BCBC00D1D0FD /* SDPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3385116F3BCBC00D1D0FD /* SDPreferencesWindowController.m */; };
-		94D3385716F3BCD700D1D0FD /* SDGeneralPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3385516F3BCD700D1D0FD /* SDGeneralPrefPane.m */; };
+		94D3385716F3BCD700D1D0FD /* DLGeneralPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3385516F3BCD700D1D0FD /* DLGeneralPrefPane.m */; };
 		94D3385816F3BCD700D1D0FD /* GeneralPrefPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D3385616F3BCD700D1D0FD /* GeneralPrefPane.xib */; };
 		94D3385B16F3BD3500D1D0FD /* NSWindow+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3385A16F3BD3500D1D0FD /* NSWindow+Geometry.m */; };
 		94D3388D16F3C0C500D1D0FD /* DeskLabelsHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 94D3388A16F3C0AB00D1D0FD /* DeskLabelsHelper.app */; };
 		94D3389116F3C0FB00D1D0FD /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D3389016F3C0FB00D1D0FD /* ServiceManagement.framework */; };
-		94D3389916F3CB9A00D1D0FD /* SDArrangeDesktopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389416F3CB9A00D1D0FD /* SDArrangeDesktopWindow.m */; };
-		94D3389A16F3CB9A00D1D0FD /* SDResizeJunkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389616F3CB9A00D1D0FD /* SDResizeJunkView.m */; };
-		94D3389B16F3CB9A00D1D0FD /* SDMoveAroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389816F3CB9A00D1D0FD /* SDMoveAroundView.m */; };
-		94D3389F16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389E16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m */; };
+		94D3389916F3CB9A00D1D0FD /* DLArrangeDesktopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389416F3CB9A00D1D0FD /* DLArrangeDesktopWindow.m */; };
+		94D3389A16F3CB9A00D1D0FD /* DLArrangeDesktopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389616F3CB9A00D1D0FD /* DLArrangeDesktopView.m */; };
+		94D3389B16F3CB9A00D1D0FD /* DLIconGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389816F3CB9A00D1D0FD /* DLIconGroupView.m */; };
+		94D3389F16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D3389E16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.m */; };
 		94D338A116F3CBD900D1D0FD /* ArrangeDesktopWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D338A016F3CBD800D1D0FD /* ArrangeDesktopWindow.xib */; };
 		94D338A316F3CC3F00D1D0FD /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D338A216F3CC3F00D1D0FD /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
@@ -89,14 +90,16 @@
 		9486EB4616F3969C0030B017 /* DLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLAppDelegate.m; sourceTree = "<group>"; };
 		9486EB4916F3969D0030B017 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9486EB5216F396F00030B017 /* Finder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Finder.h; sourceTree = "<group>"; };
-		9486EB5A16F39A110030B017 /* SDTitleFieldEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTitleFieldEditor.h; sourceTree = "<group>"; };
-		9486EB5B16F39A110030B017 /* SDTitleFieldEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTitleFieldEditor.m; sourceTree = "<group>"; };
+		9486EB5A16F39A110030B017 /* DLTitleFieldEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLTitleFieldEditor.h; sourceTree = "<group>"; };
+		9486EB5B16F39A110030B017 /* DLTitleFieldEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLTitleFieldEditor.m; sourceTree = "<group>"; };
 		9486EB5D16F39A360030B017 /* SharedDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedDefines.h; sourceTree = "<group>"; };
 		948B4F0016F3CEBC00FB155E /* DLFinderProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLFinderProxy.h; sourceTree = "<group>"; };
 		948B4F0116F3CEBC00FB155E /* DLFinderProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLFinderProxy.m; sourceTree = "<group>"; };
 		948B4F0416F3E35300FB155E /* IconGroup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconGroup.xib; sourceTree = "<group>"; };
 		948B4F0616F3E72D00FB155E /* DLIconGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLIconGroupViewController.h; sourceTree = "<group>"; };
 		948B4F0716F3E72D00FB155E /* DLIconGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLIconGroupViewController.m; sourceTree = "<group>"; };
+		948B4F0916F425E600FB155E /* DLNotesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLNotesManager.h; sourceTree = "<group>"; };
+		948B4F0A16F425E600FB155E /* DLNotesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLNotesManager.m; sourceTree = "<group>"; };
 		94D3381A16F3A87800D1D0FD /* DeskLabels.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DeskLabels.icns; sourceTree = "<group>"; };
 		94D3381B16F3A87800D1D0FD /* sd_howto_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_1.png; sourceTree = "<group>"; };
 		94D3381C16F3A87800D1D0FD /* sd_howto_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_2.png; sourceTree = "<group>"; };
@@ -108,15 +111,15 @@
 		94D3382A16F3A9A500D1D0FD /* DLNoteWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLNoteWindowController.h; sourceTree = "<group>"; };
 		94D3382B16F3A9A500D1D0FD /* DLNoteWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLNoteWindowController.m; sourceTree = "<group>"; };
 		94D3382D16F3B04F00D1D0FD /* NoteWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteWindow.xib; sourceTree = "<group>"; };
-		94D3382F16F3B06F00D1D0FD /* SDNoteWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNoteWindow.h; sourceTree = "<group>"; };
-		94D3383016F3B06F00D1D0FD /* SDNoteWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNoteWindow.m; sourceTree = "<group>"; };
-		94D3383216F3B09600D1D0FD /* SDCloseButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCloseButtonCell.h; sourceTree = "<group>"; };
-		94D3383316F3B09600D1D0FD /* SDCloseButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCloseButtonCell.m; sourceTree = "<group>"; };
-		94D3383516F3B69B00D1D0FD /* SDEditTitleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDEditTitleController.h; sourceTree = "<group>"; };
-		94D3383616F3B69B00D1D0FD /* SDEditTitleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDEditTitleController.m; sourceTree = "<group>"; };
+		94D3382F16F3B06F00D1D0FD /* DLNoteWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLNoteWindow.h; sourceTree = "<group>"; };
+		94D3383016F3B06F00D1D0FD /* DLNoteWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLNoteWindow.m; sourceTree = "<group>"; };
+		94D3383216F3B09600D1D0FD /* DLCloseButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCloseButtonCell.h; sourceTree = "<group>"; };
+		94D3383316F3B09600D1D0FD /* DLCloseButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCloseButtonCell.m; sourceTree = "<group>"; };
+		94D3383516F3B69B00D1D0FD /* DLEditTitleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLEditTitleController.h; sourceTree = "<group>"; };
+		94D3383616F3B69B00D1D0FD /* DLEditTitleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLEditTitleController.m; sourceTree = "<group>"; };
 		94D3383816F3B6A000D1D0FD /* EditTitlePanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTitlePanel.xib; sourceTree = "<group>"; };
-		94D3383A16F3B8FD00D1D0FD /* SDEditTitlePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDEditTitlePanel.h; sourceTree = "<group>"; };
-		94D3383B16F3B8FD00D1D0FD /* SDEditTitlePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDEditTitlePanel.m; sourceTree = "<group>"; };
+		94D3383A16F3B8FD00D1D0FD /* DLEditTitlePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLEditTitlePanel.h; sourceTree = "<group>"; };
+		94D3383B16F3B8FD00D1D0FD /* DLEditTitlePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLEditTitlePanel.m; sourceTree = "<group>"; };
 		94D3383E16F3BC8900D1D0FD /* SDHowToWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHowToWindow.h; sourceTree = "<group>"; };
 		94D3383F16F3BC8900D1D0FD /* SDHowToWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHowToWindow.m; sourceTree = "<group>"; };
 		94D3384016F3BC8900D1D0FD /* SDHowToWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDHowToWindow.xib; sourceTree = "<group>"; };
@@ -130,22 +133,22 @@
 		94D3384F16F3BCBC00D1D0FD /* SDPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDPreferencesWindow.xib; sourceTree = "<group>"; };
 		94D3385016F3BCBC00D1D0FD /* SDPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPreferencesWindowController.h; sourceTree = "<group>"; };
 		94D3385116F3BCBC00D1D0FD /* SDPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPreferencesWindowController.m; sourceTree = "<group>"; };
-		94D3385416F3BCD700D1D0FD /* SDGeneralPrefPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDGeneralPrefPane.h; sourceTree = "<group>"; };
-		94D3385516F3BCD700D1D0FD /* SDGeneralPrefPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDGeneralPrefPane.m; sourceTree = "<group>"; };
+		94D3385416F3BCD700D1D0FD /* DLGeneralPrefPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGeneralPrefPane.h; sourceTree = "<group>"; };
+		94D3385516F3BCD700D1D0FD /* DLGeneralPrefPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGeneralPrefPane.m; sourceTree = "<group>"; };
 		94D3385616F3BCD700D1D0FD /* GeneralPrefPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPrefPane.xib; sourceTree = "<group>"; };
 		94D3385916F3BD3500D1D0FD /* NSWindow+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+Geometry.h"; sourceTree = "<group>"; };
 		94D3385A16F3BD3500D1D0FD /* NSWindow+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+Geometry.m"; sourceTree = "<group>"; };
 		94D3388516F3C0AA00D1D0FD /* DeskLabelsHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeskLabelsHelper.xcodeproj; path = DeskLabelsHelper/DeskLabelsHelper.xcodeproj; sourceTree = "<group>"; };
 		94D3388F16F3C0E900D1D0FD /* DeskLabels.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DeskLabels.entitlements; sourceTree = "<group>"; };
 		94D3389016F3C0FB00D1D0FD /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		94D3389316F3CB9A00D1D0FD /* SDArrangeDesktopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDArrangeDesktopWindow.h; sourceTree = "<group>"; };
-		94D3389416F3CB9A00D1D0FD /* SDArrangeDesktopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDArrangeDesktopWindow.m; sourceTree = "<group>"; };
-		94D3389516F3CB9A00D1D0FD /* SDResizeJunkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDResizeJunkView.h; sourceTree = "<group>"; };
-		94D3389616F3CB9A00D1D0FD /* SDResizeJunkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDResizeJunkView.m; sourceTree = "<group>"; };
-		94D3389716F3CB9A00D1D0FD /* SDMoveAroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDMoveAroundView.h; sourceTree = "<group>"; };
-		94D3389816F3CB9A00D1D0FD /* SDMoveAroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDMoveAroundView.m; sourceTree = "<group>"; };
-		94D3389D16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDArrangeDesktopWindowController.h; sourceTree = "<group>"; };
-		94D3389E16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDArrangeDesktopWindowController.m; sourceTree = "<group>"; };
+		94D3389316F3CB9A00D1D0FD /* DLArrangeDesktopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLArrangeDesktopWindow.h; sourceTree = "<group>"; };
+		94D3389416F3CB9A00D1D0FD /* DLArrangeDesktopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLArrangeDesktopWindow.m; sourceTree = "<group>"; };
+		94D3389516F3CB9A00D1D0FD /* DLArrangeDesktopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLArrangeDesktopView.h; sourceTree = "<group>"; };
+		94D3389616F3CB9A00D1D0FD /* DLArrangeDesktopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLArrangeDesktopView.m; sourceTree = "<group>"; };
+		94D3389716F3CB9A00D1D0FD /* DLIconGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLIconGroupView.h; sourceTree = "<group>"; };
+		94D3389816F3CB9A00D1D0FD /* DLIconGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLIconGroupView.m; sourceTree = "<group>"; };
+		94D3389D16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLArrangeDesktopWindowController.h; sourceTree = "<group>"; };
+		94D3389E16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLArrangeDesktopWindowController.m; sourceTree = "<group>"; };
 		94D338A016F3CBD800D1D0FD /* ArrangeDesktopWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrangeDesktopWindow.xib; sourceTree = "<group>"; };
 		94D338A216F3CC3F00D1D0FD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -238,14 +241,16 @@
 				948B4F0116F3CEBC00FB155E /* DLFinderProxy.m */,
 				9486EB4516F3969C0030B017 /* DLAppDelegate.h */,
 				9486EB4616F3969C0030B017 /* DLAppDelegate.m */,
+				948B4F0916F425E600FB155E /* DLNotesManager.h */,
+				948B4F0A16F425E600FB155E /* DLNotesManager.m */,
 				94D3382A16F3A9A500D1D0FD /* DLNoteWindowController.h */,
 				94D3382B16F3A9A500D1D0FD /* DLNoteWindowController.m */,
-				94D3383516F3B69B00D1D0FD /* SDEditTitleController.h */,
-				94D3383616F3B69B00D1D0FD /* SDEditTitleController.m */,
-				94D3385416F3BCD700D1D0FD /* SDGeneralPrefPane.h */,
-				94D3385516F3BCD700D1D0FD /* SDGeneralPrefPane.m */,
-				94D3389D16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.h */,
-				94D3389E16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m */,
+				94D3383516F3B69B00D1D0FD /* DLEditTitleController.h */,
+				94D3383616F3B69B00D1D0FD /* DLEditTitleController.m */,
+				94D3385416F3BCD700D1D0FD /* DLGeneralPrefPane.h */,
+				94D3385516F3BCD700D1D0FD /* DLGeneralPrefPane.m */,
+				94D3389D16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.h */,
+				94D3389E16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.m */,
 				948B4F0616F3E72D00FB155E /* DLIconGroupViewController.h */,
 				948B4F0716F3E72D00FB155E /* DLIconGroupViewController.m */,
 			);
@@ -268,20 +273,20 @@
 		9486EB5316F399E40030B017 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				94D3382F16F3B06F00D1D0FD /* SDNoteWindow.h */,
-				94D3383016F3B06F00D1D0FD /* SDNoteWindow.m */,
-				94D3383216F3B09600D1D0FD /* SDCloseButtonCell.h */,
-				94D3383316F3B09600D1D0FD /* SDCloseButtonCell.m */,
-				94D3383A16F3B8FD00D1D0FD /* SDEditTitlePanel.h */,
-				94D3383B16F3B8FD00D1D0FD /* SDEditTitlePanel.m */,
-				9486EB5A16F39A110030B017 /* SDTitleFieldEditor.h */,
-				9486EB5B16F39A110030B017 /* SDTitleFieldEditor.m */,
-				94D3389316F3CB9A00D1D0FD /* SDArrangeDesktopWindow.h */,
-				94D3389416F3CB9A00D1D0FD /* SDArrangeDesktopWindow.m */,
-				94D3389516F3CB9A00D1D0FD /* SDResizeJunkView.h */,
-				94D3389616F3CB9A00D1D0FD /* SDResizeJunkView.m */,
-				94D3389716F3CB9A00D1D0FD /* SDMoveAroundView.h */,
-				94D3389816F3CB9A00D1D0FD /* SDMoveAroundView.m */,
+				94D3382F16F3B06F00D1D0FD /* DLNoteWindow.h */,
+				94D3383016F3B06F00D1D0FD /* DLNoteWindow.m */,
+				94D3383216F3B09600D1D0FD /* DLCloseButtonCell.h */,
+				94D3383316F3B09600D1D0FD /* DLCloseButtonCell.m */,
+				94D3383A16F3B8FD00D1D0FD /* DLEditTitlePanel.h */,
+				94D3383B16F3B8FD00D1D0FD /* DLEditTitlePanel.m */,
+				9486EB5A16F39A110030B017 /* DLTitleFieldEditor.h */,
+				9486EB5B16F39A110030B017 /* DLTitleFieldEditor.m */,
+				94D3389316F3CB9A00D1D0FD /* DLArrangeDesktopWindow.h */,
+				94D3389416F3CB9A00D1D0FD /* DLArrangeDesktopWindow.m */,
+				94D3389516F3CB9A00D1D0FD /* DLArrangeDesktopView.h */,
+				94D3389616F3CB9A00D1D0FD /* DLArrangeDesktopView.m */,
+				94D3389716F3CB9A00D1D0FD /* DLIconGroupView.h */,
+				94D3389816F3CB9A00D1D0FD /* DLIconGroupView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -446,25 +451,26 @@
 			files = (
 				9486EB4016F3969C0030B017 /* main.m in Sources */,
 				9486EB4716F3969C0030B017 /* DLAppDelegate.m in Sources */,
-				9486EB5C16F39A110030B017 /* SDTitleFieldEditor.m in Sources */,
+				9486EB5C16F39A110030B017 /* DLTitleFieldEditor.m in Sources */,
 				94D3382C16F3A9A500D1D0FD /* DLNoteWindowController.m in Sources */,
-				94D3383116F3B06F00D1D0FD /* SDNoteWindow.m in Sources */,
-				94D3383416F3B09600D1D0FD /* SDCloseButtonCell.m in Sources */,
-				94D3383716F3B69B00D1D0FD /* SDEditTitleController.m in Sources */,
-				94D3383C16F3B8FE00D1D0FD /* SDEditTitlePanel.m in Sources */,
+				94D3383116F3B06F00D1D0FD /* DLNoteWindow.m in Sources */,
+				94D3383416F3B09600D1D0FD /* DLCloseButtonCell.m in Sources */,
+				94D3383716F3B69B00D1D0FD /* DLEditTitleController.m in Sources */,
+				94D3383C16F3B8FE00D1D0FD /* DLEditTitlePanel.m in Sources */,
 				94D3384716F3BC8900D1D0FD /* SDHowToWindow.m in Sources */,
 				94D3384916F3BC8900D1D0FD /* SDHowToWindowController.m in Sources */,
 				94D3384A16F3BC8900D1D0FD /* SDHowToWindowInsetTextField.m in Sources */,
 				94D3384B16F3BC8900D1D0FD /* SDHowToRoundedImageView.m in Sources */,
 				94D3385316F3BCBC00D1D0FD /* SDPreferencesWindowController.m in Sources */,
-				94D3385716F3BCD700D1D0FD /* SDGeneralPrefPane.m in Sources */,
+				94D3385716F3BCD700D1D0FD /* DLGeneralPrefPane.m in Sources */,
 				94D3385B16F3BD3500D1D0FD /* NSWindow+Geometry.m in Sources */,
-				94D3389916F3CB9A00D1D0FD /* SDArrangeDesktopWindow.m in Sources */,
-				94D3389A16F3CB9A00D1D0FD /* SDResizeJunkView.m in Sources */,
-				94D3389B16F3CB9A00D1D0FD /* SDMoveAroundView.m in Sources */,
-				94D3389F16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m in Sources */,
+				94D3389916F3CB9A00D1D0FD /* DLArrangeDesktopWindow.m in Sources */,
+				94D3389A16F3CB9A00D1D0FD /* DLArrangeDesktopView.m in Sources */,
+				94D3389B16F3CB9A00D1D0FD /* DLIconGroupView.m in Sources */,
+				94D3389F16F3CBC500D1D0FD /* DLArrangeDesktopWindowController.m in Sources */,
 				948B4F0216F3CEBC00FB155E /* DLFinderProxy.m in Sources */,
 				948B4F0816F3E72D00FB155E /* DLIconGroupViewController.m in Sources */,
+				948B4F0B16F425E600FB155E /* DLNotesManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

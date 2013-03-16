@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SDArrangeDesktopWindow : NSWindow
+@interface DLArrangeDesktopWindow : NSWindow
 
 @end

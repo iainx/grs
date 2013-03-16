@@ -6,21 +6,21 @@
 //  Copyright 2009 8th Light. All rights reserved.
 //
 
-#import "SDEditTitleController.h"
+#import "DLEditTitleController.h"
 
-#import "SDTitleFieldEditor.h"
+#import "DLTitleFieldEditor.h"
 
 
-@interface SDEditTitleController ()
+@interface DLEditTitleController ()
 
 @property (weak) IBOutlet NSTextField *upcomingTitleField;
 
-@property SDTitleFieldEditor *fieldEditor;
+@property DLTitleFieldEditor *fieldEditor;
 
 @end
 
 
-@implementation SDEditTitleController
+@implementation DLEditTitleController
 
 @synthesize forthcomingTitle;
 
@@ -45,7 +45,7 @@
 
 - (id)windowWillReturnFieldEditor:(NSWindow *)window toObject:(id)anObject {
     if (self.fieldEditor == nil)
-        self.fieldEditor = [[SDTitleFieldEditor alloc] init];
+        self.fieldEditor = [[DLTitleFieldEditor alloc] init];
     
 	if (anObject == self.upcomingTitleField)
 		return self.fieldEditor;

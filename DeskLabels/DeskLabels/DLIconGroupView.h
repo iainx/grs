@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SDMoveAroundView : NSView
+@interface DLIconGroupView : NSView
 
 - (void) takeNoticeOfIcons;
 - (void) takeNoticeOfLabels:(NSArray*)labels;

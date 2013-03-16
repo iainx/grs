@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "SDResizeJunkView.h"
+#import "DLArrangeDesktopView.h"
 
-@interface SDArrangeDesktopWindowController : NSWindowController <NSWindowDelegate>
+@interface DLArrangeDesktopWindowController : NSWindowController <NSWindowDelegate>
 
-@property (weak) IBOutlet SDResizeJunkView* resizeJunkView;
+@property (weak) IBOutlet DLArrangeDesktopView* resizeJunkView;
 @property (weak) IBOutlet NSButton* button;
 
 @property NSArray* noteControllers;

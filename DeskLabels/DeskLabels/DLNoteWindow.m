@@ -6,11 +6,11 @@
 //  Copyright 2009 8th Light. All rights reserved.
 //
 
-#import "SDNoteWindow.h"
+#import "DLNoteWindow.h"
 
 //#import "SDEditTitleController.h"
 
-@implementation SDNoteWindow
+@implementation DLNoteWindow
 
 - (id) initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
 	if ([super initWithContentRect:contentRect styleMask:NSBorderlessWindowMask backing:bufferingType defer:flag]) {

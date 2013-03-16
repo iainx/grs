@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SDResizeJunkView : NSBox
+@interface DLArrangeDesktopView : NSBox
 
 @property (copy) void(^wantsBoxInRect)(NSRect box);
 

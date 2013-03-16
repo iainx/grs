@@ -9,6 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface SDNoteWindow : NSWindow
+@interface DLNoteWindow : NSWindow
 
 @end

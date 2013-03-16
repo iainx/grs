@@ -8,10 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "SDMoveAroundView.h"
+#import "DLIconGroupView.h"
 
 @interface DLIconGroupViewController : NSViewController
 
-@property (weak) IBOutlet SDMoveAroundView* moveAroundView;
+@property (weak) IBOutlet DLIconGroupView* moveAroundView;
 
 @end

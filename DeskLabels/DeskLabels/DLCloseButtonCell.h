@@ -1,5 +1,5 @@
 //
-//  SDTitleFieldEditor.h
+//  SDCloseButton.h
 //  DeskNotation
 //
 //  Created by Steven Degutis on 6/30/09.
@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface SDTitleFieldEditor : NSTextView {
+@interface DLCloseButtonCell : NSButtonCell {
 
 }
 

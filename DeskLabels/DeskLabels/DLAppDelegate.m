@@ -9,30 +9,30 @@
 #import "DLAppDelegate.h"
 
 
-#import "SDArrangeDesktopWindowController.h"
+#import "DLArrangeDesktopWindowController.h"
 
 #import <ServiceManagement/ServiceManagement.h>
 
 #import "DLFinderProxy.h"
 
 #import "SDPreferencesWindowController.h"
-#import "SDGeneralPrefPane.h"
-
-#import "SharedDefines.h"
-#import "DLNoteWindowController.h"
+#import "DLGeneralPrefPane.h"
 
 #import "SDHowToWindowController.h"
+
+#import "DLNotesManager.h"
+
 
 @interface DLAppDelegate ()
 
 @property NSStatusItem *statusItem;
 @property IBOutlet NSMenu *statusItemMenu;
 
-@property NSMutableArray* noteControllers;
+@property DLNotesManager* notesManager;
 
 @property SDPreferencesWindowController* prefsController;
 
-@property SDArrangeDesktopWindowController* arrangeDesktopWindowController;
+@property DLArrangeDesktopWindowController* arrangeDesktopWindowController;
 
 @end
 
@@ -47,69 +47,20 @@
 	[self.statusItem setMenu:self.statusItemMenu];
 }
 
-- (void) someNoteChangedSomehow:(NSNotification*)note {
-    [self saveNotes];
-}
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	[self loadNotes];
+    self.notesManager = [[DLNotesManager alloc] init];
+    [self.notesManager loadNotes];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(someNoteChangedSomehow:)
-                                                 name:SDSomeNoteChangedSomehowNotification
-                                               object:nil];
-    
-	if ([self.noteControllers count] == 0)
+	if ([self.notesManager.noteControllers count] == 0)
         [SDHowToWindowController showInstructionsWindow];
 }
 
-- (void) loadNotes {
-    self.noteControllers = [NSMutableArray array];
-    
-	NSArray *notes = [[NSUserDefaults standardUserDefaults] arrayForKey:@"notes"];
-	
-	for (NSDictionary *dict in notes)
-		[self createNoteWithDictionary:dict];
-}
-
-- (void) saveNotes {
-	NSMutableArray *array = [NSMutableArray array];
-	
-	for (DLNoteWindowController *controller in self.noteControllers)
-		[array addObject:[controller dictionaryRepresentation]];
-	
-	[[NSUserDefaults standardUserDefaults] setObject:array forKey:@"notes"];
-}
-
-- (void) createNoteWithDictionary:(NSDictionary*)dictionary {
-	DLNoteWindowController *controller = [[DLNoteWindowController alloc] init];
-    controller.dictionaryToLoadFrom = dictionary;
-    controller.noteKilled = ^(DLNoteWindowController* deadController) {
-        [self.noteControllers removeObject:deadController];
-        [self saveNotes];
-    };
-	[self.noteControllers addObject:controller];
-    [controller showWindow:self];
-}
-
 - (IBAction) addNote:(id)sender {
-	[self createNoteWithDictionary:nil];
-    [self saveNotes];
+    [self.notesManager addNote];
 }
 
 - (IBAction) removeAllNotes:(id)sender {
-	NSAlert *alert = [[NSAlert alloc] init];
-	
-	[alert setMessageText:@"Remove all desktop labels?"];
-	[alert setInformativeText:@"This operation cannot be undone. Seriously."];
-	
-	[alert addButtonWithTitle:@"OK"];
-	[alert addButtonWithTitle:@"Cancel"];
-	
-	if ([alert runModal] == NSAlertFirstButtonReturn) {
-		[self.noteControllers removeAllObjects];
-        [self saveNotes];
-    }
+    [self.notesManager removeAllNotes];
 }
 
 - (IBAction) reallyShowAboutPanel:(id)sender {
@@ -122,7 +73,7 @@
     
     if (self.prefsController == nil) {
         self.prefsController = [[SDPreferencesWindowController alloc] init];
-        [self.prefsController usePreferencePaneControllerClasses:@[[SDGeneralPrefPane self]]];
+        [self.prefsController usePreferencePaneControllerClasses:@[[DLGeneralPrefPane self]]];
     }
     
     [self.prefsController showWindow:sender];
@@ -137,11 +88,11 @@
     [NSApp activateIgnoringOtherApps:YES];
     
     if (self.arrangeDesktopWindowController == nil)
-        self.arrangeDesktopWindowController = [[SDArrangeDesktopWindowController alloc] init];
+        self.arrangeDesktopWindowController = [[DLArrangeDesktopWindowController alloc] init];
     
     [DLFinderProxy showDesktop];
     
-    self.arrangeDesktopWindowController.noteControllers = self.noteControllers;
+    self.arrangeDesktopWindowController.noteControllers = self.notesManager.noteControllers;
     [self.arrangeDesktopWindowController showWindow:self];
 }
 
@@ -178,7 +129,7 @@
 
 - (BOOL) validateMenuItem:(NSMenuItem *)menuItem {
     if ([menuItem action] == @selector(removeAllNotes:))
-        return [self.noteControllers count] > 0;
+        return [self.notesManager.noteControllers count] > 0;
     else
         return YES;
 }

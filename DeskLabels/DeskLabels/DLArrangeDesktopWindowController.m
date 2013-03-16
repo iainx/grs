@@ -6,16 +6,16 @@
 //
 //
 
-#import "SDArrangeDesktopWindowController.h"
+#import "DLArrangeDesktopWindowController.h"
 
 //#import "DLFinderProxy.h"
 
 #import "DLIconGroupViewController.h"
 
-#import "SDMoveAroundView.h"
+#import "DLIconGroupView.h"
 
 
-@implementation SDArrangeDesktopWindowController
+@implementation DLArrangeDesktopWindowController
 
 - (NSString*) windowNibName {
     return @"ArrangeDesktopWindow";

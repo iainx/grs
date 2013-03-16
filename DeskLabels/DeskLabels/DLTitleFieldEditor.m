@@ -6,10 +6,10 @@
 //  Copyright 2009 8th Light. All rights reserved.
 //
 
-#import "SDTitleFieldEditor.h"
+#import "DLTitleFieldEditor.h"
 
 
-@implementation SDTitleFieldEditor
+@implementation DLTitleFieldEditor
 
 - (id) init {
 	if (self = [super init]) {

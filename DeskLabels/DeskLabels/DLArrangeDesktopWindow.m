@@ -6,9 +6,9 @@
 //
 //
 
-#import "SDArrangeDesktopWindow.h"
+#import "DLArrangeDesktopWindow.h"
 
-@implementation SDArrangeDesktopWindow
+@implementation DLArrangeDesktopWindow
 
 - (id) initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
 	if ([super initWithContentRect:[[NSScreen mainScreen] frame]

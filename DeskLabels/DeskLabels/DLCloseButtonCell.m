@@ -6,10 +6,10 @@
 //  Copyright 2009 8th Light. All rights reserved.
 //
 
-#import "SDCloseButtonCell.h"
+#import "DLCloseButtonCell.h"
 
 
-@implementation SDCloseButtonCell
+@implementation DLCloseButtonCell
 
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
 	NSString *imageName = ([self isHighlighted] ? @"closebox_pressed" : @"closebox");

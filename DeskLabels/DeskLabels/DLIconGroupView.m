@@ -6,7 +6,7 @@
 //
 //
 
-#import "SDMoveAroundView.h"
+#import "DLIconGroupView.h"
 
 #import "DLFinderProxy.h"
 
@@ -16,7 +16,7 @@
 #import "DLNoteWindowController.h"
 
 
-@interface SDMoveAroundView ()
+@interface DLIconGroupView ()
 
 @property NSPoint initialMousePoint;
 @property NSPoint initialBoxPoint;
@@ -29,7 +29,7 @@
 @end
 
 
-@implementation SDMoveAroundView
+@implementation DLIconGroupView
 
 - (void)drawRect:(NSRect)dirtyRect {
     NSRect box = [self bounds];

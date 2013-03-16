@@ -10,7 +10,7 @@
 
 #import "SDPreferencesWindowController.h"
 
-@interface SDGeneralPrefPane : NSViewController <SDPreferencePane>
+@interface DLGeneralPrefPane : NSViewController <SDPreferencePane>
 
 - (IBAction) changeAppearance:(id)sender;
 

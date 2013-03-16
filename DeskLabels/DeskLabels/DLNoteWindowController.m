@@ -9,12 +9,12 @@
 #import "DLNoteWindowController.h"
 
 #import "SharedDefines.h"
-#import "SDEditTitleController.h"
+#import "DLEditTitleController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface DLNoteWindowController ()
 
-@property SDEditTitleController *currentEditTitleController;
+@property DLEditTitleController *currentEditTitleController;
 
 @property (weak) IBOutlet NSTextField *titleLabel;
 @property (weak) IBOutlet NSBox *backgroundBox;
@@ -207,7 +207,7 @@
 }
 
 - (void) editTitle {
-	self.currentEditTitleController = [[SDEditTitleController alloc] init];
+	self.currentEditTitleController = [[DLEditTitleController alloc] init];
 	
 	[self.currentEditTitleController setTitleFieldWidth:NSWidth([self.titleLabel frame])];
 	[self.currentEditTitleController setTitle:[self.titleLabel stringValue]];

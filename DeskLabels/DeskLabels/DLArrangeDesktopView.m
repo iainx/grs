@@ -6,10 +6,10 @@
 //
 //
 
-#import "SDResizeJunkView.h"
+#import "DLArrangeDesktopView.h"
 
 
-@interface SDResizeJunkView ()
+@interface DLArrangeDesktopView ()
 
 @property NSPoint initialPoint;
 @property NSPoint currentPoint;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation SDResizeJunkView
+@implementation DLArrangeDesktopView
 
 - (void) awakeFromNib {
     [super awakeFromNib];

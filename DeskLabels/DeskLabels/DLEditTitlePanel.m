@@ -6,10 +6,10 @@
 //  Copyright 2009 8th Light. All rights reserved.
 //
 
-#import "SDEditTitlePanel.h"
+#import "DLEditTitlePanel.h"
 
 
-@implementation SDEditTitlePanel
+@implementation DLEditTitlePanel
 
 - (id) initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
 	if ([super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag]) {

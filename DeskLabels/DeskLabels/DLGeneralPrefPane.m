@@ -6,11 +6,11 @@
 //  Copyright 2009 8th Light. All rights reserved.
 //
 
-#import "SDGeneralPrefPane.h"
+#import "DLGeneralPrefPane.h"
 
 #import "SharedDefines.h"
 
-@implementation SDGeneralPrefPane
+@implementation DLGeneralPrefPane
 
 - (NSString*) title {
     return @"General";

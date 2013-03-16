@@ -8,9 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class SDTitleFieldEditor;
+@class DLTitleFieldEditor;
 
-@interface SDEditTitleController : NSWindowController
+@interface DLEditTitleController : NSWindowController
 
 @property (copy) NSString *forthcomingTitle;
 
