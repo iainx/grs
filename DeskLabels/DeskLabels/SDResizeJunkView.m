@@ -9,12 +9,12 @@
 #import "SDResizeJunkView.h"
 
 
-#import "SDMoveAroundView.h"
-
 @interface SDResizeJunkView ()
 
 @property NSPoint initialPoint;
 @property NSPoint currentPoint;
+
+@property BOOL didDrag;
 
 @end
 
@@ -60,35 +60,36 @@
 }
 
 - (void) mouseDown:(NSEvent *)theEvent {
+    self.didDrag = NO;
+    
     NSPoint p = [self convertPoint:[theEvent locationInWindow] fromView:nil];
     self.initialPoint = NSMakePoint(round(p.x), round(p.y));
-    
-    NSLog(@"mouse down");
 }
 
 - (void) mouseDragged:(NSEvent *)theEvent {
+    self.didDrag = YES;
+    
     self.currentPoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
     
     [self setNeedsDisplay:YES];
-    
-    NSLog(@"mouse dragged");
 }
 
 - (void) mouseUp:(NSEvent *)theEvent {
-    NSRect box = [self currentIconsBoxRect];
-    
-    box.origin.x -= 6.0;
-    box.origin.y -= 6.0;
-    
-    SDMoveAroundView* moveAroundView = [[SDMoveAroundView alloc] initWithFrame:box];
-    [self addSubview:moveAroundView];
+    if (self.didDrag) {
+        NSRect box = [self currentIconsBoxRect];
+        
+        box.origin.x -= 6.0;
+        box.origin.y -= 6.0;
+        
+        self.wantsBoxInRect(box);
+    }
     
     self.initialPoint = NSZeroPoint;
     self.currentPoint = NSZeroPoint;
     
     [self setNeedsDisplay:YES];
     
-    NSLog(@"mouse up");
+    self.didDrag = NO;
 }
 
 @end

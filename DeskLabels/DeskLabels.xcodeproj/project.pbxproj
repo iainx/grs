@@ -13,6 +13,9 @@
 		9486EB4716F3969C0030B017 /* DLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486EB4616F3969C0030B017 /* DLAppDelegate.m */; };
 		9486EB4A16F3969D0030B017 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9486EB4816F3969D0030B017 /* MainMenu.xib */; };
 		9486EB5C16F39A110030B017 /* SDTitleFieldEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9486EB5B16F39A110030B017 /* SDTitleFieldEditor.m */; };
+		948B4F0216F3CEBC00FB155E /* DLFinderProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0116F3CEBC00FB155E /* DLFinderProxy.m */; };
+		948B4F0516F3E35300FB155E /* IconGroup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 948B4F0416F3E35300FB155E /* IconGroup.xib */; };
+		948B4F0816F3E72D00FB155E /* DLIconGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0716F3E72D00FB155E /* DLIconGroupViewController.m */; };
 		94D3382216F3A87800D1D0FD /* DeskLabels.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381A16F3A87800D1D0FD /* DeskLabels.icns */; };
 		94D3382316F3A87800D1D0FD /* sd_howto_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381B16F3A87800D1D0FD /* sd_howto_1.png */; };
 		94D3382416F3A87800D1D0FD /* sd_howto_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381C16F3A87800D1D0FD /* sd_howto_2.png */; };
@@ -89,6 +92,11 @@
 		9486EB5A16F39A110030B017 /* SDTitleFieldEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTitleFieldEditor.h; sourceTree = "<group>"; };
 		9486EB5B16F39A110030B017 /* SDTitleFieldEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTitleFieldEditor.m; sourceTree = "<group>"; };
 		9486EB5D16F39A360030B017 /* SharedDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedDefines.h; sourceTree = "<group>"; };
+		948B4F0016F3CEBC00FB155E /* DLFinderProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLFinderProxy.h; sourceTree = "<group>"; };
+		948B4F0116F3CEBC00FB155E /* DLFinderProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLFinderProxy.m; sourceTree = "<group>"; };
+		948B4F0416F3E35300FB155E /* IconGroup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconGroup.xib; sourceTree = "<group>"; };
+		948B4F0616F3E72D00FB155E /* DLIconGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLIconGroupViewController.h; sourceTree = "<group>"; };
+		948B4F0716F3E72D00FB155E /* DLIconGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLIconGroupViewController.m; sourceTree = "<group>"; };
 		94D3381A16F3A87800D1D0FD /* DeskLabels.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DeskLabels.icns; sourceTree = "<group>"; };
 		94D3381B16F3A87800D1D0FD /* sd_howto_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_1.png; sourceTree = "<group>"; };
 		94D3381C16F3A87800D1D0FD /* sd_howto_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_2.png; sourceTree = "<group>"; };
@@ -226,6 +234,8 @@
 		9486EB5016F396B60030B017 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				948B4F0016F3CEBC00FB155E /* DLFinderProxy.h */,
+				948B4F0116F3CEBC00FB155E /* DLFinderProxy.m */,
 				9486EB4516F3969C0030B017 /* DLAppDelegate.h */,
 				9486EB4616F3969C0030B017 /* DLAppDelegate.m */,
 				94D3382A16F3A9A500D1D0FD /* DLNoteWindowController.h */,
@@ -236,6 +246,8 @@
 				94D3385516F3BCD700D1D0FD /* SDGeneralPrefPane.m */,
 				94D3389D16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.h */,
 				94D3389E16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m */,
+				948B4F0616F3E72D00FB155E /* DLIconGroupViewController.h */,
+				948B4F0716F3E72D00FB155E /* DLIconGroupViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -248,6 +260,7 @@
 				94D3383816F3B6A000D1D0FD /* EditTitlePanel.xib */,
 				94D3385616F3BCD700D1D0FD /* GeneralPrefPane.xib */,
 				94D338A016F3CBD800D1D0FD /* ArrangeDesktopWindow.xib */,
+				948B4F0416F3E35300FB155E /* IconGroup.xib */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -404,6 +417,7 @@
 				94D3385216F3BCBC00D1D0FD /* SDPreferencesWindow.xib in Resources */,
 				94D3385816F3BCD700D1D0FD /* GeneralPrefPane.xib in Resources */,
 				94D338A116F3CBD900D1D0FD /* ArrangeDesktopWindow.xib in Resources */,
+				948B4F0516F3E35300FB155E /* IconGroup.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +463,8 @@
 				94D3389A16F3CB9A00D1D0FD /* SDResizeJunkView.m in Sources */,
 				94D3389B16F3CB9A00D1D0FD /* SDMoveAroundView.m in Sources */,
 				94D3389F16F3CBC500D1D0FD /* SDArrangeDesktopWindowController.m in Sources */,
+				948B4F0216F3CEBC00FB155E /* DLFinderProxy.m in Sources */,
+				948B4F0816F3E72D00FB155E /* DLIconGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

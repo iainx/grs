@@ -10,4 +10,6 @@
 
 @interface SDResizeJunkView : NSBox
 
+@property (copy) void(^wantsBoxInRect)(NSRect box);
+
 @end

@@ -10,4 +10,7 @@
 
 @interface SDMoveAroundView : NSView
 
+- (void) takeNoticeOfIcons;
+- (void) takeNoticeOfLabels:(NSArray*)labels;
+
 @end

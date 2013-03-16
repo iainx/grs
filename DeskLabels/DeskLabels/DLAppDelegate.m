@@ -13,6 +13,8 @@
 
 #import <ServiceManagement/ServiceManagement.h>
 
+#import "DLFinderProxy.h"
+
 #import "SDPreferencesWindowController.h"
 #import "SDGeneralPrefPane.h"
 
@@ -20,7 +22,6 @@
 #import "DLNoteWindowController.h"
 
 #import "SDHowToWindowController.h"
-
 
 @interface DLAppDelegate ()
 
@@ -138,6 +139,9 @@
     if (self.arrangeDesktopWindowController == nil)
         self.arrangeDesktopWindowController = [[SDArrangeDesktopWindowController alloc] init];
     
+    [DLFinderProxy showDesktop];
+    
+    self.arrangeDesktopWindowController.noteControllers = self.noteControllers;
     [self.arrangeDesktopWindowController showWindow:self];
 }
 

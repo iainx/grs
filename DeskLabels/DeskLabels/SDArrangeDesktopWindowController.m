@@ -8,44 +8,40 @@
 
 #import "SDArrangeDesktopWindowController.h"
 
+//#import "DLFinderProxy.h"
+
+#import "DLIconGroupViewController.h"
+
+#import "SDMoveAroundView.h"
+
+
 @implementation SDArrangeDesktopWindowController
 
 - (NSString*) windowNibName {
     return @"ArrangeDesktopWindow";
 }
 
-- (void)windowDidLoad {
-    [super windowDidLoad];
+- (void) awakeFromNib {
+    [super awakeFromNib];
     
-//    NSMutableArray* apps = [NSMutableArray array];
-//    
-//    for (NSRunningApplication* app in [[NSWorkspace sharedWorkspace] runningApplications]) {
-//        if (app.hidden == NO) {
-//            [apps addObject:app];
-//            //            [app hide];
-//        }
-//    }
-//    
-//    self.apps = apps;
-//    
-//    [NSMenu setMenuBarVisible:NO];
-//    
-//    [[NSWorkspace sharedWorkspace] hideOtherApplications];
-//    
-//    [self performSelector:@selector(finishTheJob) withObject:nil afterDelay:0];
+    NSRect frame = self.button.frame;
+    frame.origin.y = NSHeight([[[self window] screen] frame]) - 70.0 - NSHeight(frame);
+    self.button.frame = frame;
+    
+    self.resizeJunkView.wantsBoxInRect = ^(NSRect box) {
+        box = NSInsetRect(box, -20, -20);
+        
+        DLIconGroupViewController* iconGroupController = [[DLIconGroupViewController alloc] init];
+        iconGroupController.view.frame = box;
+        [self.resizeJunkView addSubview:iconGroupController.view];
+        
+        [iconGroupController.moveAroundView takeNoticeOfIcons];
+        [iconGroupController.moveAroundView takeNoticeOfLabels:self.noteControllers];
+    };
 }
-
-//- (void) finishTheJob {
-//    [NSApp activateIgnoringOtherApps:YES];
-//}
 
 - (IBAction) doneArrangingDesktop:(id)sender {
     [self close];
-//    [NSMenu setMenuBarVisible:YES];
-//    
-//    for (NSRunningApplication* app in self.apps) {
-//        [app unhide];
-//    }
 }
 
 @end
