@@ -61,14 +61,18 @@
     [self.movieView gotoBeginning:self];
 }
 
-- (void) windowDidExpose:(NSNotification *)notification {
-    NSLog(@" window did expose ");
-}
-
 - (void) windowDidLoad {
     NSError *__autoreleasing error;
 	QTMovie* movie = [QTMovie movieNamed:@"howto" error:&error];
     self.movieView.movie = movie;
+    
+    [self.movieView setBackButtonVisible:NO];
+    [self.movieView setCustomButtonVisible:NO];
+    [self.movieView setHotSpotButtonVisible:NO];
+    [self.movieView setStepButtonsVisible:NO];
+    [self.movieView setTranslateButtonVisible:NO];
+    [self.movieView setVolumeButtonVisible:NO];
+    [self.movieView setZoomButtonsVisible:NO];
     
 	NSWindow *window = [self window];
 	[window setContentBorderThickness:34.0 forEdge:NSMinYEdge];
