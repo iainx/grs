@@ -10,12 +10,24 @@
 
 @interface DLDragGroupView ()
 
+@property (weak) IBOutlet id<DLDragGroupViewDelegate> dragGroupDelegate;
+
 @property BOOL isDragging;
 @property NSPoint initialMousePoint;
 
 @end
 
 @implementation DLDragGroupView
+
+//- (void) awakeFromNib {
+//	NSTrackingAreaOptions options = (NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways | NSTrackingInVisibleRect);
+//	NSTrackingArea* cursorTrackingArea = [[NSTrackingArea alloc] initWithRect:NSZeroRect
+//                                                                      options:options
+//                                                                        owner:self
+//                                                                     userInfo:nil];
+//	
+//	[self addTrackingArea:cursorTrackingArea];
+//}
 
 - (void) resetCursorRects {
     [self discardCursorRects];
@@ -59,5 +71,13 @@
     [self.window invalidateCursorRectsForView:self];
 }
 
+//- (void) mouseEntered:(NSEvent *)theEvent {
+//    NSCursor* cursor = self.isDragging ? [NSCursor closedHandCursor] : [NSCursor openHandCursor];
+//    [cursor push];
+//}
+//
+//- (void) mouseExited:(NSEvent *)theEvent {
+//    [NSCursor pop];
+//}
 
 @end

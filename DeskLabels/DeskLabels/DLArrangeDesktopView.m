@@ -53,12 +53,19 @@
     
     NSRect box = [self currentIconsBoxRect];
     
-    NSBezierPath* path = [NSBezierPath bezierPathWithRect:box];
+    NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:box xRadius:12 yRadius:12];
+    
+    CGFloat array[2];
+    array[0] = 7.0; //segment painted with stroke color
+    array[1] = 4.0; //segment not painted with a color
+    
+    [path setLineWidth:2.0];
+    [path setLineDash:array count:2 phase:0];
     
     [[[NSColor whiteColor] colorWithAlphaComponent:0.1] setFill];
     [path fill];
     
-    [[[NSColor blackColor] colorWithAlphaComponent:0.4] setStroke];
+    [[[NSColor blackColor] colorWithAlphaComponent:0.8] setStroke];
     [path stroke];
 }
 

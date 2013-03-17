@@ -15,6 +15,7 @@
 			<string>NSButton</string>
 			<string>NSButtonCell</string>
 			<string>NSCustomObject</string>
+			<string>NSCustomView</string>
 			<string>NSView</string>
 			<string>NSWindowTemplate</string>
 		</array>
@@ -55,6 +56,17 @@
 								<object class="NSView" id="159785397">
 									<reference key="NSNextResponder" ref="391017303"/>
 									<int key="NSvFlags">274</int>
+									<array class="NSMutableArray" key="NSSubviews">
+										<object class="NSCustomView" id="726488318">
+											<reference key="NSNextResponder" ref="159785397"/>
+											<int key="NSvFlags">274</int>
+											<string key="NSFrame">{{-1, -1}, {456, 246}}</string>
+											<reference key="NSSuperview" ref="159785397"/>
+											<reference key="NSWindow"/>
+											<string key="NSReuseIdentifierKey">_NS:9</string>
+											<string key="NSClassName">DLDragGroupView</string>
+										</object>
+									</array>
 									<string key="NSFrame">{{1, 1}, {454, 244}}</string>
 									<reference key="NSSuperview" ref="391017303"/>
 									<reference key="NSWindow"/>
@@ -184,6 +196,14 @@
 					</object>
 					<int key="connectionID">4</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dragGroupDelegate</string>
+						<reference key="source" ref="726488318"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">22</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -231,6 +251,9 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
 						<reference key="object" ref="391017303"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="726488318"/>
+						</array>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -246,6 +269,11 @@
 						<reference key="object" ref="474212011"/>
 						<reference key="parent" ref="341774419"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">20</int>
+						<reference key="object" ref="726488318"/>
+						<reference key="parent" ref="391017303"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -260,13 +288,14 @@
 				<string key="14.CustomClassName">DLCloseButtonCell</string>
 				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="20.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">19</int>
+			<int key="maxID">22</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -287,6 +316,25 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">DLDragGroupView</string>
+					<string key="superclassName">NSView</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">dragGroupDelegate</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">dragGroupDelegate</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">dragGroupDelegate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/DLDragGroupView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">DLDragGroupWindow</string>
 					<string key="superclassName">NSWindow</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -297,6 +345,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DLDragGroupWindowController</string>
 					<string key="superclassName">NSWindowController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">killDragWindow:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">killDragWindow:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">killDragWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">dragGroupBox</string>
 						<string key="NS.object.0">NSBox</string>

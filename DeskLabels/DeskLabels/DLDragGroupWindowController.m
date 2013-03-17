@@ -8,8 +8,6 @@
 
 #import "DLDragGroupWindowController.h"
 
-#import "DLDragGroupView.h"
-
 #import "DLFinderProxy.h"
 
 #import "DLNoteWindowController.h"
@@ -32,10 +30,6 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     [self.window setMovableByWindowBackground:YES];
-    
-    DLDragGroupView* dragGroupView = [[DLDragGroupView alloc] init];
-    dragGroupView.dragGroupDelegate = self;
-    [self.dragGroupBox setContentView:dragGroupView];
 }
 
 - (IBAction) killDragWindow:(id)sender {

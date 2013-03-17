@@ -18,6 +18,4 @@
 
 @interface DLDragGroupView : NSView
 
-@property (weak) id<DLDragGroupViewDelegate> dragGroupDelegate;
-
 @end
