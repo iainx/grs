@@ -5,7 +5,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SDHowToWindowController : NSWindowController
+@interface SDHowToWindowController : NSWindowController <NSWindowDelegate>
 
 + (void) showInstructionsWindow;
 + (void) showInstructionsWindowFirstTimeOnly;

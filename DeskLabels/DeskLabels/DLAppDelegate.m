@@ -97,8 +97,6 @@
         };
     }
     
-    [DLFinderProxy showDesktop];
-    
     self.arrangeDesktopWindowController.noteControllers = self.notesManager.noteControllers;
     [self.arrangeDesktopWindowController showWindow:self];
 }

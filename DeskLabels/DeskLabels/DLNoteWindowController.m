@@ -136,7 +136,7 @@
 }
 
 - (void) futureSetHoveringOverNote:(BOOL)hovering {
-	[self performSelector:@selector(setHoveringOverNote:) withObject:[NSNumber numberWithBool:hovering] afterDelay:0.5];
+	[self performSelector:@selector(setHoveringOverNote:) withObject:[NSNumber numberWithBool:hovering] afterDelay:0.1];
 }
 
 - (void) futureCancelSetHoveringOverNote:(BOOL)hovering {

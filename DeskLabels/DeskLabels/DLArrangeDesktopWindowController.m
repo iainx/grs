@@ -36,6 +36,9 @@
 - (void) awakeFromNib {
     [super awakeFromNib];
     
+    [NSMenu setMenuBarVisible:NO];
+    [DLFinderProxy showDesktop];
+    
     // for cursors
     [self.window setAcceptsMouseMovedEvents:YES];
     
@@ -64,7 +67,7 @@
         };
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[weakSelf window] invalidateCursorRectsForView:self.arrangeDesktopView];
+            [[weakSelf window] invalidateCursorRectsForView:weakSelf.arrangeDesktopView];
             
             for (DLIconGroupViewController* iconGroup in weakSelf.iconGroups) {
                 [[weakSelf window] invalidateCursorRectsForView:iconGroup.view];
@@ -75,6 +78,9 @@
 
 - (IBAction) doneArrangingDesktop:(id)sender {
     [self close];
+    
+    [DLFinderProxy showDesktop];
+    [NSMenu setMenuBarVisible:YES];
     
     self.doneArrangingDesktop();
 }
