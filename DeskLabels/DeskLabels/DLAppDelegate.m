@@ -22,6 +22,8 @@
 
 #import "DLNotesManager.h"
 
+#import "DLDragGroupWindowController.h"
+
 
 @interface DLAppDelegate ()
 
@@ -29,6 +31,7 @@
 @property IBOutlet NSMenu *statusItemMenu;
 
 @property DLNotesManager* notesManager;
+@property NSMutableArray* dragGroups;
 
 @property SDPreferencesWindowController* prefsController;
 
@@ -48,6 +51,8 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    self.dragGroups = [NSMutableArray array];
+    
     self.notesManager = [[DLNotesManager alloc] init];
     [self.notesManager loadNotes];
     
@@ -99,6 +104,18 @@
     
     self.arrangeDesktopWindowController.noteControllers = self.notesManager.noteControllers;
     [self.arrangeDesktopWindowController showWindow:self];
+}
+
+- (IBAction) newArrangeDesktop:(id)sender {
+    [NSApp activateIgnoringOtherApps:YES];
+    
+    DLDragGroupWindowController* dragGroupWindowController = [[DLDragGroupWindowController alloc] init];
+    dragGroupWindowController.dragGroupKilled = ^(DLDragGroupWindowController* me) {
+        [self.dragGroups removeObject:me];
+    };
+    [dragGroupWindowController showWindow:self];
+    
+    [self.dragGroups addObject:dragGroupWindowController];
 }
 
 - (IBAction) toggleOpenAtLogin:(id)sender {

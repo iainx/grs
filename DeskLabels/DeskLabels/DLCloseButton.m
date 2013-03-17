@@ -14,4 +14,8 @@
     [self addCursorRect:[self visibleRect] cursor:[NSCursor arrowCursor]];
 }
 
+- (BOOL) acceptsFirstResponder {
+    return NO;
+}
+
 @end

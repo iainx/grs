@@ -96,7 +96,7 @@
         box.origin.x -= 6.0;
         box.origin.y -= 6.0;
         
-        self.wantsBoxInRect(box);
+//        self.wantsBoxInRect(box);
     }
     
     self.initialPoint = NSZeroPoint;
