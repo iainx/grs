@@ -12,7 +12,7 @@
 @implementation DLEditTitlePanel
 
 - (id) initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
-	if ([super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag]) {
+	if (self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag]) {
 		[self setBackgroundColor:[NSColor clearColor]];
 		[self setOpaque:NO];
 	}

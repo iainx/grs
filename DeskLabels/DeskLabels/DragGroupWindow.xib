@@ -57,17 +57,17 @@
 									<reference key="NSNextResponder" ref="391017303"/>
 									<int key="NSvFlags">274</int>
 									<array class="NSMutableArray" key="NSSubviews">
-										<object class="NSCustomView" id="726488318">
+										<object class="NSCustomView" id="14674516">
 											<reference key="NSNextResponder" ref="159785397"/>
 											<int key="NSvFlags">274</int>
-											<string key="NSFrame">{{-1, -1}, {456, 246}}</string>
+											<string key="NSFrame">{{-1, -1}, {454, 244}}</string>
 											<reference key="NSSuperview" ref="159785397"/>
 											<reference key="NSWindow"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<string key="NSClassName">DLDragGroupView</string>
 										</object>
 									</array>
-									<string key="NSFrame">{{1, 1}, {454, 244}}</string>
+									<string key="NSFrame">{{2, 2}, {452, 242}}</string>
 									<reference key="NSSuperview" ref="391017303"/>
 									<reference key="NSWindow"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
@@ -107,6 +107,7 @@
 							<int key="NSBoxType">4</int>
 							<int key="NSTitlePosition">0</int>
 							<bool key="NSTransparent">NO</bool>
+							<real value="2" key="NSBorderWidth2"/>
 							<double key="NSCornerRadius2">12</double>
 							<object class="NSColor" key="NSBorderColor2">
 								<int key="NSColorSpace">3</int>
@@ -199,7 +200,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">dragGroupDelegate</string>
-						<reference key="source" ref="726488318"/>
+						<reference key="source" ref="14674516"/>
 						<reference key="destination" ref="1001"/>
 					</object>
 					<int key="connectionID">22</int>
@@ -252,7 +253,7 @@
 						<int key="objectID">5</int>
 						<reference key="object" ref="391017303"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="726488318"/>
+							<reference ref="14674516"/>
 						</array>
 						<reference key="parent" ref="1006"/>
 					</object>
@@ -271,7 +272,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">20</int>
-						<reference key="object" ref="726488318"/>
+						<reference key="object" ref="14674516"/>
 						<reference key="parent" ref="391017303"/>
 					</object>
 				</array>
@@ -345,17 +346,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DLDragGroupWindowController</string>
 					<string key="superclassName">NSWindowController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">killDragWindow:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">killDragWindow:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">killDragWindow:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">dragGroupBox</string>
 						<string key="NS.object.0">NSBox</string>

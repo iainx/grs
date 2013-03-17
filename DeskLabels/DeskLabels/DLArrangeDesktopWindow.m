@@ -11,7 +11,7 @@
 @implementation DLArrangeDesktopWindow
 
 - (id) initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
-	if ([super initWithContentRect:[[NSScreen mainScreen] frame]
+	if (self = [super initWithContentRect:[[NSScreen mainScreen] frame]
                          styleMask:NSBorderlessWindowMask
                            backing:bufferingType
                              defer:flag])

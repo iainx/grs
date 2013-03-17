@@ -1324,7 +1324,7 @@
 					</object>
 					<object class="NSMenuItem" id="1063518425">
 						<reference key="NSMenu" ref="69922205"/>
-						<string key="NSTitle">Arrange Desktop</string>
+						<string key="NSTitle">Create Drag-Group Box</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -3384,45 +3384,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DLAppDelegate</string>
 					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="addNote:">id</string>
-						<string key="arrangeDesktop:">id</string>
-						<string key="reallyShowAboutPanel:">id</string>
-						<string key="removeAllNotes:">id</string>
-						<string key="showHowToWindow:">id</string>
-						<string key="showPreferences:">id</string>
-						<string key="toggleOpenAtLogin:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="addNote:">
-							<string key="name">addNote:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="arrangeDesktop:">
-							<string key="name">arrangeDesktop:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="reallyShowAboutPanel:">
-							<string key="name">reallyShowAboutPanel:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="removeAllNotes:">
-							<string key="name">removeAllNotes:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="showHowToWindow:">
-							<string key="name">showHowToWindow:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="showPreferences:">
-							<string key="name">showPreferences:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="toggleOpenAtLogin:">
-							<string key="name">toggleOpenAtLogin:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">statusItemMenu</string>
 						<string key="NS.object.0">NSMenu</string>

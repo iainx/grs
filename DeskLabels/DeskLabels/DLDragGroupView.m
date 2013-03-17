@@ -28,6 +28,15 @@
 //	
 //	[self addTrackingArea:cursorTrackingArea];
 //}
+//
+//- (void) mouseEntered:(NSEvent *)theEvent {
+//    NSCursor* cursor = self.isDragging ? [NSCursor closedHandCursor] : [NSCursor openHandCursor];
+//    [cursor push];
+//}
+//
+//- (void) mouseExited:(NSEvent *)theEvent {
+//    [NSCursor pop];
+//}
 
 - (void) resetCursorRects {
     [self discardCursorRects];
@@ -70,14 +79,5 @@
     self.isDragging = NO;
     [self.window invalidateCursorRectsForView:self];
 }
-
-//- (void) mouseEntered:(NSEvent *)theEvent {
-//    NSCursor* cursor = self.isDragging ? [NSCursor closedHandCursor] : [NSCursor openHandCursor];
-//    [cursor push];
-//}
-//
-//- (void) mouseExited:(NSEvent *)theEvent {
-//    [NSCursor pop];
-//}
 
 @end

@@ -57,10 +57,12 @@
 		NSString *frameString = [self.dictionaryToLoadFrom objectForKey:@"frame"];
 		
 		NSRect frame = NSRectFromString(frameString);
-		
+        
 		[self setTitle:title];
+        
+        __weak DLNoteWindowController* me = self;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[self window] setFrame:frame display:NO];
+            [[me window] setFrame:frame display:NO];
         });
 		
 		[self showWindowWithAnimation:NO];
@@ -136,11 +138,13 @@
 }
 
 - (void) futureSetHoveringOverNote:(BOOL)hovering {
-	[self performSelector:@selector(setHoveringOverNote:) withObject:[NSNumber numberWithBool:hovering] afterDelay:0.1];
+    [self setHoveringOverNote:@(hovering)];
+    
+//	[self performSelector:@selector(setHoveringOverNote:) withObject:[NSNumber numberWithBool:hovering] afterDelay:1.0];
 }
 
 - (void) futureCancelSetHoveringOverNote:(BOOL)hovering {
-	[[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(setHoveringOverNote:) object:[NSNumber numberWithBool:hovering]];
+//	[[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(setHoveringOverNote:) object:[NSNumber numberWithBool:hovering]];
 }
 
 // end shoot
@@ -150,8 +154,9 @@
 		[self futureCancelSetHoveringOverNote:NO];
 		[self futureSetHoveringOverNote:YES];
 	}
-	else if ([event trackingArea] == self.buttonTrackingArea)
+	else if ([event trackingArea] == self.buttonTrackingArea) {
 		self.mouseHoveringOverButton = YES;
+    }
 	
 	[self conditionallyShowCloseButton];
 }
@@ -168,6 +173,16 @@
 }
 
 - (IBAction) deleteNote:(id)sender {
+    NSLog(@"deleting..");
+    
+	[self.backgroundBox removeTrackingArea:self.boxTrackingArea];
+	[self.closeButton removeTrackingArea:self.buttonTrackingArea];
+    
+    self.boxTrackingArea = nil;
+    self.buttonTrackingArea = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 	NSWindow *window = [self window];
 	
 	CAAnimation *animation = [[window animationForKey:@"alphaValue"] copy];
@@ -177,6 +192,8 @@
 }
 
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
+    theAnimation.delegate = nil;
+    
     self.noteKilled(self);
 }
 
@@ -254,6 +271,10 @@
     newPoint.x += offset.x;
     newPoint.y += offset.y;
     [self.window setFrameOrigin:newPoint];
+}
+
+- (void) dealloc {
+    NSLog(@"dead: %@", self);
 }
 
 @end
