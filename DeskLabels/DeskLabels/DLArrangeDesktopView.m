@@ -20,8 +20,26 @@
 
 @implementation DLArrangeDesktopView
 
+- (void) resetCursorRects {
+    [self discardCursorRects];
+    
+    NSCursor* cursor = [NSCursor crosshairCursor];
+    [self addCursorRect:[self visibleRect] cursor:cursor];
+//    [cursor setOnMouseEntered:YES];
+}
+
+- (void) mouseMoved:(NSEvent *)theEvent {
+    [self.window invalidateCursorRectsForView:self];
+}
+
+//- (void)cursorUpdate:(NSEvent *)event {
+//    [[NSCursor crosshairCursor] set];
+//}
+
 - (void) awakeFromNib {
     [super awakeFromNib];
+    
+    [[self window] invalidateCursorRectsForView:self];
     
     [self setBoxType:NSBoxCustom];
     [self setFillColor:[[NSColor blackColor] colorWithAlphaComponent:0.25]];
@@ -55,11 +73,6 @@
     [NSBezierPath strokeRect:box];
 }
 
-- (void) resetCursorRects {
-    [super resetCursorRects];
-    [self addCursorRect:[self visibleRect] cursor:[NSCursor crosshairCursor]];
-}
-
 - (void) mouseDown:(NSEvent *)theEvent {
     self.didDrag = NO;
     
@@ -78,8 +91,8 @@
 - (void) mouseUp:(NSEvent *)theEvent {
     if (self.didDrag) {
         NSRect box = [self currentIconsBoxRect];
-        box = NSInsetRect(box, -0.5, -0.5);
         
+        // TODO: fix this magic number somehow
         box.origin.x -= 6.0;
         box.origin.y -= 6.0;
         

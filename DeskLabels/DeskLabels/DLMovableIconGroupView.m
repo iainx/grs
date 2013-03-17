@@ -28,33 +28,46 @@
 
 @implementation DLMovableIconGroupView
 
-- (void) awakeFromNib {
-    [super awakeFromNib];
-    
-    [self setBoxType:NSBoxCustom];
-    [self setFillColor:[[NSColor whiteColor] colorWithAlphaComponent:0.1]];
-    [self setBorderColor:[[NSColor blackColor] colorWithAlphaComponent:0.4]];
-    [self setBorderType:NSLineBorder];
-    [self setBorderWidth:1.0];
-}
-
-//- (void)drawRect:(NSRect)dirtyRect {
-//    NSRect box = [self bounds];
-//    
-//    [[[NSColor whiteColor] colorWithAlphaComponent:0.1] setFill];
-//    [NSBezierPath fillRect:box];
-//    
-//    [[[NSColor blackColor] colorWithAlphaComponent:0.4] setFill];
-//    [NSBezierPath strokeRect:box];
+//- (void)cursorUpdate:(NSEvent *)event {
+//    [[NSCursor openHandCursor] set];
 //}
 
 - (void) resetCursorRects {
-    [super resetCursorRects];
-    [self addCursorRect:[self visibleRect] cursor:[NSCursor crosshairCursor]];
+    [self discardCursorRects];
+    
+    NSCursor* cursor = self.didDrag ? [NSCursor closedHandCursor] : [NSCursor openHandCursor];
+    [self addCursorRect:[self visibleRect] cursor:cursor];
+//    [cursor setOnMouseEntered:YES];
+    
+//    cursor = [NSCursor crosshairCursor];
+//    [self addCursorRect:[self visibleRect] cursor:cursor];
+//    [cursor setOnMouseExited:YES];
+}
+
+- (void) mouseMoved:(NSEvent *)theEvent {
+    [self.window invalidateCursorRectsForView:self];
+}
+
+- (void) awakeFromNib {
+    [super awakeFromNib];
+    
+    [[self window] invalidateCursorRectsForView:self];
+}
+
+- (void)drawRect:(NSRect)dirtyRect {
+    NSRect box = [self bounds];
+    
+    [[[NSColor whiteColor] colorWithAlphaComponent:0.1] setFill];
+    [NSBezierPath fillRect:box];
+    
+    [[[NSColor blackColor] colorWithAlphaComponent:0.4] setFill];
+    [NSBezierPath strokeRect:box];
 }
 
 - (void) mouseDown:(NSEvent *)theEvent {
     self.didDrag = NO;
+    
+    [[self window] invalidateCursorRectsForView:self];
     
     [self.delegate didStartMoving];
     
@@ -76,6 +89,9 @@
 - (void) mouseUp:(NSEvent *)theEvent {
     if (self.didDrag)
         [self.delegate didStopMoving];
+    
+    self.didDrag = NO;
+    [[self window] invalidateCursorRectsForView:self];
 }
 
 @end

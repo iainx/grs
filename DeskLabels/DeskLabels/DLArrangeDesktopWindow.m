@@ -32,4 +32,8 @@
 	return self;
 }
 
+- (BOOL)canBecomeKeyWindow {
+    return YES;
+}
+
 @end

@@ -36,7 +36,8 @@
 - (void) awakeFromNib {
     [super awakeFromNib];
     
-    [self.window invalidateCursorRectsForView:self.arrangeDesktopView];
+    // for cursors
+    [self.window setAcceptsMouseMovedEvents:YES];
     
     self.desktopIcons = [[DLFinderProxy finderProxy] desktopIcons];
     
@@ -61,6 +62,14 @@
             [iconGroup.view removeFromSuperview];
             [weakSelf.iconGroups removeObject:iconGroup];
         };
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[weakSelf window] invalidateCursorRectsForView:self.arrangeDesktopView];
+            
+            for (DLIconGroupViewController* iconGroup in weakSelf.iconGroups) {
+                [[weakSelf window] invalidateCursorRectsForView:iconGroup.view];
+            }
+        });
     };
 }
 

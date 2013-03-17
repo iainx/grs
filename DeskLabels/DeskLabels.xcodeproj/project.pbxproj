@@ -18,6 +18,7 @@
 		948B4F0816F3E72D00FB155E /* DLIconGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0716F3E72D00FB155E /* DLIconGroupViewController.m */; };
 		948B4F0B16F425E600FB155E /* DLNotesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0A16F425E600FB155E /* DLNotesManager.m */; };
 		948B4F0E16F4B59A00FB155E /* DLDesktopIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F0D16F4B59A00FB155E /* DLDesktopIcon.m */; };
+		948B4F1116F567AF00FB155E /* DLCloseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 948B4F1016F567AE00FB155E /* DLCloseButton.m */; };
 		94D3382216F3A87800D1D0FD /* DeskLabels.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381A16F3A87800D1D0FD /* DeskLabels.icns */; };
 		94D3382316F3A87800D1D0FD /* sd_howto_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381B16F3A87800D1D0FD /* sd_howto_1.png */; };
 		94D3382416F3A87800D1D0FD /* sd_howto_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D3381C16F3A87800D1D0FD /* sd_howto_2.png */; };
@@ -103,6 +104,8 @@
 		948B4F0A16F425E600FB155E /* DLNotesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLNotesManager.m; sourceTree = "<group>"; };
 		948B4F0C16F4B59A00FB155E /* DLDesktopIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLDesktopIcon.h; sourceTree = "<group>"; };
 		948B4F0D16F4B59A00FB155E /* DLDesktopIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLDesktopIcon.m; sourceTree = "<group>"; };
+		948B4F0F16F567AE00FB155E /* DLCloseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCloseButton.h; sourceTree = "<group>"; };
+		948B4F1016F567AE00FB155E /* DLCloseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCloseButton.m; sourceTree = "<group>"; };
 		94D3381A16F3A87800D1D0FD /* DeskLabels.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DeskLabels.icns; sourceTree = "<group>"; };
 		94D3381B16F3A87800D1D0FD /* sd_howto_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_1.png; sourceTree = "<group>"; };
 		94D3381C16F3A87800D1D0FD /* sd_howto_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_howto_2.png; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 			children = (
 				94D3382F16F3B06F00D1D0FD /* DLNoteWindow.h */,
 				94D3383016F3B06F00D1D0FD /* DLNoteWindow.m */,
+				948B4F0F16F567AE00FB155E /* DLCloseButton.h */,
+				948B4F1016F567AE00FB155E /* DLCloseButton.m */,
 				94D3383216F3B09600D1D0FD /* DLCloseButtonCell.h */,
 				94D3383316F3B09600D1D0FD /* DLCloseButtonCell.m */,
 				94D3383A16F3B8FD00D1D0FD /* DLEditTitlePanel.h */,
@@ -477,6 +482,7 @@
 				948B4F0816F3E72D00FB155E /* DLIconGroupViewController.m in Sources */,
 				948B4F0B16F425E600FB155E /* DLNotesManager.m in Sources */,
 				948B4F0E16F4B59A00FB155E /* DLDesktopIcon.m in Sources */,
+				948B4F1116F567AF00FB155E /* DLCloseButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

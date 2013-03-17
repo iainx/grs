@@ -28,6 +28,10 @@
     return @"IconGroup";
 }
 
+//- (void) awakeFromNib {
+//    [super awakeFromNib];
+//}
+
 - (IBAction) killIconGroup:(id)sender {
     self.iconGroupKilled(self);
 }
