@@ -48,7 +48,7 @@
                                                object:nil];
     
 	[[self window] setMovableByWindowBackground:YES];
-	//[[[self window] contentView] setWantsLayer:YES];
+	[[[self window] contentView] setWantsLayer:YES];
 	
 	[self updateNoteAppearance];
 	
@@ -138,13 +138,11 @@
 }
 
 - (void) futureSetHoveringOverNote:(BOOL)hovering {
-    [self setHoveringOverNote:@(hovering)];
-    
-//	[self performSelector:@selector(setHoveringOverNote:) withObject:[NSNumber numberWithBool:hovering] afterDelay:1.0];
+	[self performSelector:@selector(setHoveringOverNote:) withObject:@(hovering) afterDelay:0.1];
 }
 
 - (void) futureCancelSetHoveringOverNote:(BOOL)hovering {
-//	[[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(setHoveringOverNote:) object:[NSNumber numberWithBool:hovering]];
+	[[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(setHoveringOverNote:) object:@(hovering)];
 }
 
 // end shoot
