@@ -8,8 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface DLDragGroupWindowController : NSWindowController <NSWindowDelegate>
+#import "DLDragGroupWindow.h"
+
+@interface DLDragGroupWindowController : NSWindowController <NSWindowDelegate, DLDragGroupWindowDelegate>
 
 @property (copy) void(^dragGroupKilled)(DLDragGroupWindowController* me);
+
+- (void) useBox:(NSRect)box withNoteControllers:(NSArray*)noteControllers;
 
 @end

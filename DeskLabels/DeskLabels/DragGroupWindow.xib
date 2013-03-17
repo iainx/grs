@@ -48,15 +48,15 @@
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
-						<object class="NSBox" id="746524693">
+						<object class="NSBox" id="700601250">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">18</int>
 							<array class="NSMutableArray" key="NSSubviews">
-								<object class="NSView" id="436920362">
-									<reference key="NSNextResponder" ref="746524693"/>
+								<object class="NSView" id="542971785">
+									<reference key="NSNextResponder" ref="700601250"/>
 									<int key="NSvFlags">274</int>
 									<string key="NSFrame">{{1, 1}, {454, 244}}</string>
-									<reference key="NSSuperview" ref="746524693"/>
+									<reference key="NSSuperview" ref="700601250"/>
 									<reference key="NSWindow"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
 								</object>
@@ -64,7 +64,7 @@
 							<string key="NSFrame">{{12, 12}, {456, 246}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="436920362"/>
+							<reference key="NSNextKeyView" ref="542971785"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSOffsets">{0, 0}</string>
 							<object class="NSTextFieldCell" key="NSTitleCell">
@@ -90,7 +90,7 @@
 									<bytes key="NSWhite">MCAwLjgwMDAwMDAxMTkAA</bytes>
 								</object>
 							</object>
-							<reference key="NSContentView" ref="436920362"/>
+							<reference key="NSContentView" ref="542971785"/>
 							<int key="NSBorderType">1</int>
 							<int key="NSBoxType">4</int>
 							<int key="NSTitlePosition">0</int>
@@ -108,15 +108,15 @@
 								<bytes key="NSWhite">MCAwLjEAA</bytes>
 							</object>
 						</object>
-						<object class="NSButton" id="644035183">
+						<object class="NSButton" id="596640479">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{0, 240}, {30, 30}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="746524693"/>
+							<reference key="NSNextKeyView" ref="700601250"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="337157231">
+							<object class="NSButtonCell" key="NSCell" id="440526595">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">0</int>
 								<string key="NSContents"/>
@@ -125,7 +125,7 @@
 									<double key="NSSize">13</double>
 									<int key="NSfFlags">1044</int>
 								</object>
-								<reference key="NSControlView" ref="644035183"/>
+								<reference key="NSControlView" ref="596640479"/>
 								<int key="NSButtonFlags">-2046033920</int>
 								<int key="NSButtonFlags2">134</int>
 								<object class="NSCustomResource" key="NSNormalImage">
@@ -143,7 +143,7 @@
 					<string key="NSFrameSize">{480, 270}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView" ref="644035183"/>
+					<reference key="NSNextKeyView" ref="596640479"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
@@ -164,7 +164,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">killDragWindow:</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="644035183"/>
+						<reference key="destination" ref="596640479"/>
 					</object>
 					<int key="connectionID">15</int>
 				</object>
@@ -172,7 +172,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">dragBox</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="746524693"/>
+						<reference key="destination" ref="700601250"/>
 					</object>
 					<int key="connectionID">16</int>
 				</object>
@@ -183,6 +183,14 @@
 						<reference key="destination" ref="1001"/>
 					</object>
 					<int key="connectionID">4</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dragGroupDelegate</string>
+						<reference key="source" ref="1005"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">17</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -223,28 +231,28 @@
 						<int key="objectID">2</int>
 						<reference key="object" ref="1006"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="644035183"/>
-							<reference ref="746524693"/>
+							<reference ref="596640479"/>
+							<reference ref="700601250"/>
 						</array>
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
-						<reference key="object" ref="746524693"/>
+						<reference key="object" ref="700601250"/>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
-						<reference key="object" ref="644035183"/>
+						<reference key="object" ref="596640479"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="337157231"/>
+							<reference ref="440526595"/>
 						</array>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
-						<reference key="object" ref="337157231"/>
-						<reference key="parent" ref="644035183"/>
+						<reference key="object" ref="440526595"/>
+						<reference key="parent" ref="596640479"/>
 					</object>
 				</array>
 			</object>
@@ -267,7 +275,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">16</int>
+			<int key="maxID">17</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -298,6 +306,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DLDragGroupWindow</string>
 					<string key="superclassName">NSWindow</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">dragGroupDelegate</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">dragGroupDelegate</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">dragGroupDelegate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/DLDragGroupWindow.h</string>
@@ -306,17 +325,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DLDragGroupWindowController</string>
 					<string key="superclassName">NSWindowController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">killDragWindow:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">killDragWindow:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">killDragWindow:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">dragBox</string>
 						<string key="NS.object.0">DLDragBox</string>

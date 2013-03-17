@@ -21,25 +21,12 @@
 @implementation DLArrangeDesktopView
 
 - (void) resetCursorRects {
-    [self discardCursorRects];
-    
     NSCursor* cursor = [NSCursor crosshairCursor];
     [self addCursorRect:[self visibleRect] cursor:cursor];
-//    [cursor setOnMouseEntered:YES];
 }
-
-- (void) mouseMoved:(NSEvent *)theEvent {
-    [self.window invalidateCursorRectsForView:self];
-}
-
-//- (void)cursorUpdate:(NSEvent *)event {
-//    [[NSCursor crosshairCursor] set];
-//}
 
 - (void) awakeFromNib {
     [super awakeFromNib];
-    
-    [[self window] invalidateCursorRectsForView:self];
     
     [self setBoxType:NSBoxCustom];
     [self setFillColor:[[NSColor blackColor] colorWithAlphaComponent:0.25]];
@@ -96,7 +83,7 @@
         box.origin.x -= 6.0;
         box.origin.y -= 6.0;
         
-//        self.wantsBoxInRect(box);
+        self.wantsBoxInRect(box);
     }
     
     self.initialPoint = NSZeroPoint;

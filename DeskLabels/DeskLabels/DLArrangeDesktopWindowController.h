@@ -12,8 +12,6 @@
 
 @interface DLArrangeDesktopWindowController : NSWindowController <NSWindowDelegate>
 
-@property NSArray* noteControllers;
-
-@property (copy) dispatch_block_t doneArrangingDesktop;
+@property (copy) void(^wantsBoxInRect)(NSRect box);
 
 @end

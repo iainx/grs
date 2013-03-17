@@ -46,8 +46,4 @@
     return desktopIcons;
 }
 
-+ (void) showDesktop {
-    [NSTask launchedTaskWithLaunchPath:@"/Applications/Mission Control.app/Contents/MacOS/Mission Control" arguments:@[@"1"]];
-}
-
 @end

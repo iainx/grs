@@ -95,27 +95,23 @@
     if (self.arrangeDesktopWindowController == nil) {
         self.arrangeDesktopWindowController = [[DLArrangeDesktopWindowController alloc] init];
         
-        __weak DLAppDelegate* weakSelf = self;
+        __weak DLAppDelegate* me = self;
         
-        self.arrangeDesktopWindowController.doneArrangingDesktop = ^{
-            weakSelf.arrangeDesktopWindowController = nil;
+        self.arrangeDesktopWindowController.wantsBoxInRect = ^(NSRect box) {
+            me.arrangeDesktopWindowController = nil;
+            
+            DLDragGroupWindowController* dragGroupWindowController = [[DLDragGroupWindowController alloc] init];
+            dragGroupWindowController.dragGroupKilled = ^(DLDragGroupWindowController* deadGroup) {
+                [me.dragGroups removeObject:deadGroup];
+            };
+            [dragGroupWindowController useBox:box withNoteControllers:me.notesManager.noteControllers];
+            [dragGroupWindowController showWindow:me];
+            
+            [me.dragGroups addObject:dragGroupWindowController];
         };
     }
     
-    self.arrangeDesktopWindowController.noteControllers = self.notesManager.noteControllers;
     [self.arrangeDesktopWindowController showWindow:self];
-}
-
-- (IBAction) newArrangeDesktop:(id)sender {
-    [NSApp activateIgnoringOtherApps:YES];
-    
-    DLDragGroupWindowController* dragGroupWindowController = [[DLDragGroupWindowController alloc] init];
-    dragGroupWindowController.dragGroupKilled = ^(DLDragGroupWindowController* me) {
-        [self.dragGroups removeObject:me];
-    };
-    [dragGroupWindowController showWindow:self];
-    
-    [self.dragGroups addObject:dragGroupWindowController];
 }
 
 - (IBAction) toggleOpenAtLogin:(id)sender {

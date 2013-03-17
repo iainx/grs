@@ -16,6 +16,4 @@
 
 - (NSArray*) desktopIcons;
 
-+ (void) showDesktop;
-
 @end
