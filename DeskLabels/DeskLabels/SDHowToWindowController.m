@@ -56,7 +56,6 @@
 }
 
 - (void) windowWillClose:(NSNotification *)notification {
-    NSLog(@"ok fine");
     [self.movieView pause:self];
     [self.movieView gotoBeginning:self];
 }

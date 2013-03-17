@@ -53,11 +53,13 @@
     
     NSRect box = [self currentIconsBoxRect];
     
-    [[[NSColor whiteColor] colorWithAlphaComponent:0.1] setFill];
-    [NSBezierPath fillRect:box];
+    NSBezierPath* path = [NSBezierPath bezierPathWithRect:box];
     
-    [[[NSColor blackColor] colorWithAlphaComponent:0.4] setFill];
-    [NSBezierPath strokeRect:box];
+    [[[NSColor whiteColor] colorWithAlphaComponent:0.1] setFill];
+    [path fill];
+    
+    [[[NSColor blackColor] colorWithAlphaComponent:0.4] setStroke];
+    [path stroke];
 }
 
 - (void) mouseDown:(NSEvent *)theEvent {
@@ -77,13 +79,8 @@
 
 - (void) mouseUp:(NSEvent *)theEvent {
     if (self.didDrag) {
-        NSRect box = [self currentIconsBoxRect];
-        
-        // TODO: fix this magic number somehow
-        box.origin.x -= 6.0;
-        box.origin.y -= 6.0;
-        
-        self.wantsBoxInRect(box);
+        self.wantsBoxInRect([self currentIconsBoxRect]);
+        return;
     }
     
     self.initialPoint = NSZeroPoint;

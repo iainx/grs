@@ -8,16 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@protocol DLDragGroupWindowDelegate <NSObject>
-
-- (void) didStartMoving;
-- (void) didStopMoving;
-- (void) didMoveByOffset:(NSPoint)offset;
-
-@end
-
 @interface DLDragGroupWindow : NSWindow
-
-@property (weak) IBOutlet id<DLDragGroupWindowDelegate> dragGroupDelegate;
 
 @end

@@ -8,9 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "DLDragGroupWindow.h"
+#import "DLDragGroupView.h"
 
-@interface DLDragGroupWindowController : NSWindowController <NSWindowDelegate, DLDragGroupWindowDelegate>
+@interface DLDragGroupWindowController : NSWindowController <NSWindowDelegate, DLDragGroupViewDelegate>
 
 @property (copy) void(^dragGroupKilled)(DLDragGroupWindowController* me);
 

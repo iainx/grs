@@ -8,7 +8,7 @@
 
 #import "DLDragGroupWindowController.h"
 
-#import "DLDragBox.h"
+#import "DLDragGroupView.h"
 
 #import "DLFinderProxy.h"
 
@@ -16,7 +16,7 @@
 
 @interface DLDragGroupWindowController ()
 
-@property (weak) IBOutlet DLDragBox* dragBox;
+@property (weak) IBOutlet NSBox* dragGroupBox;
 
 @property NSArray* movableDesktopIcons;
 @property NSArray* movableNotes;
@@ -32,6 +32,10 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     [self.window setMovableByWindowBackground:YES];
+    
+    DLDragGroupView* dragGroupView = [[DLDragGroupView alloc] init];
+    dragGroupView.dragGroupDelegate = self;
+    [self.dragGroupBox setContentView:dragGroupView];
 }
 
 - (IBAction) killDragWindow:(id)sender {
@@ -48,7 +52,7 @@
     
     NSArray* desktopIcons = [[DLFinderProxy finderProxy] desktopIcons];
     
-    NSRect movableViewBounds = [self.window convertRectToScreen:[self.dragBox convertRect:[self.dragBox bounds] toView:nil]];
+    NSRect movableViewBounds = [self.window convertRectToScreen:[self.dragGroupBox convertRect:[self.dragGroupBox bounds] toView:nil]];
     
     self.movableDesktopIcons = [desktopIcons filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(DLDesktopIcon* desktopIcon, NSDictionary *bindings)
                                                                           {
@@ -66,16 +70,12 @@
 #pragma mark - Drag stuff
 
 - (void) didStartMoving {
-    [self.dragBox startedDragging];
-    
     for (DLNoteWindowController* noteController in self.movableNotes) {
         [noteController recordInitialPosition];
     }
 }
 
 - (void) didStopMoving {
-    [self.dragBox stoppedDragging];
-    
     for (DLDesktopIcon* desktopIcon in self.movableDesktopIcons) {
         [desktopIcon resetInitialPosition];
     }

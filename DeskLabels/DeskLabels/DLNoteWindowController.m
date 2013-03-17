@@ -180,13 +180,7 @@
     self.noteKilled(self);
 }
 
-- (void)windowWillMove:(NSNotification *)notification {
-    NSLog(@"window will move");
-}
-
 - (void)windowDidMove:(NSNotification *)notification {
-    NSLog(@"window did move");
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:SDSomeNoteChangedSomehowNotification object:nil];
 }
 

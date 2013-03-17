@@ -8,14 +8,6 @@
 
 #import "DLDragGroupWindow.h"
 
-@interface DLDragGroupWindow ()
-
-@property NSPoint initialMousePoint;
-
-@property BOOL didDrag;
-
-@end
-
 @implementation DLDragGroupWindow
 
 - (id) initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
@@ -37,33 +29,6 @@
 
 - (BOOL)canBecomeKeyWindow {
     return YES;
-}
-
-- (void) mouseDown:(NSEvent *)theEvent {
-    self.didDrag = NO;
-    
-    [self.dragGroupDelegate didStartMoving];
-    
-    NSPoint p = [NSEvent mouseLocation];
-    self.initialMousePoint = NSMakePoint(round(p.x), round(p.y));
-}
-
-- (void) mouseDragged:(NSEvent *)theEvent {
-    self.didDrag = YES;
-    
-    NSPoint currentPoint = [NSEvent mouseLocation];
-    
-    CGFloat offsetX = currentPoint.x - self.initialMousePoint.x;
-    CGFloat offsetY = currentPoint.y - self.initialMousePoint.y;
-    
-    [self.dragGroupDelegate didMoveByOffset:NSMakePoint(offsetX, offsetY)];
-}
-
-- (void) mouseUp:(NSEvent *)theEvent {
-    if (self.didDrag)
-        [self.dragGroupDelegate didStopMoving];
-    
-    self.didDrag = NO;
 }
 
 @end
