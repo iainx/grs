@@ -25,7 +25,7 @@
 
 - (void) maximize;
 
-- (void) focusWindow;
+- (BOOL) focusWindow;
 
 - (NSArray*) otherWindowsOnSameScreen;
 

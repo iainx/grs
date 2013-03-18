@@ -53,7 +53,10 @@
 
 + (NSArray*) visibleWindows {
     return [[self allWindows] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(MyWindow* win, NSDictionary *bindings) {
-        return ![win isAppHidden] && ![win isWindowMinimized] && [[win role] isEqualToString: (__bridge NSString*)kAXWindowRole];
+        return ![win isAppHidden]
+        && ![win isWindowMinimized]
+        && [[win role] isEqualToString: (__bridge NSString*)kAXWindowRole]
+        && ![[win subrole] isEqualToString: (__bridge NSString*)kAXUnknownSubrole];
     }]];
 }
 
@@ -268,21 +271,20 @@
     [self setFrame:screenRect];
 }
 
-- (void) focusWindow {
-    AXError result = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilityMainAttribute, kCFBooleanTrue);
-    if (result != kAXErrorSuccess) {
+- (BOOL) focusWindow {
+    AXError changedMainWindowResult = AXUIElementSetAttributeValue(self.window, (CFStringRef)NSAccessibilityMainAttribute, kCFBooleanTrue);
+    if (changedMainWindowResult != kAXErrorSuccess) {
         NSLog(@"ERROR: Could not change focus to window");
-        return;
+        return NO;
     }
     
     ProcessSerialNumber psn;
     GetProcessForPID([self processIdentifier], &psn);
-    SetFrontProcessWithOptions(&psn, kSetFrontProcessFrontWindowOnly);
+    OSStatus focusAppResult = SetFrontProcessWithOptions(&psn, kSetFrontProcessFrontWindowOnly);
+    return focusAppResult == 0;
 }
 
 - (pid_t) processIdentifier {
-    // may need to create system wide element right now
-    
     pid_t pid = 0;
     AXError result = AXUIElementGetPid(self.window, &pid);
     if (result == kAXErrorSuccess)
@@ -292,8 +294,6 @@
 }
 
 - (BOOL) isAppHidden {
-//    [AccessibilityWrapper createSystemWideElement];
-    
     AXUIElementRef app = AXUIElementCreateApplication([self processIdentifier]);
     if (app == NULL)
         return YES;
@@ -310,42 +310,33 @@
     return isHidden;
 }
 
-- (BOOL) isWindowMinimized {
-//    [AccessibilityWrapper createSystemWideElement];
+- (id) getWindowProperty:(NSString*)propType withDefaultValue:(id)defaultValue {
+    id returnVal = defaultValue;
     
-    CFTypeRef _isMinimized;
-    BOOL isMinimized = NO;
-    if (AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityMinimizedAttribute, (CFTypeRef *)&_isMinimized) == kAXErrorSuccess) {
-        NSNumber *isMinimizedNum = (__bridge NSNumber *) _isMinimized;
-        isMinimized = [isMinimizedNum boolValue];
-    }
-    return isMinimized;
+    CFTypeRef _someProperty;
+    
+    if (AXUIElementCopyAttributeValue(self.window, (__bridge CFStringRef)propType, (CFTypeRef *)&_someProperty) == kAXErrorSuccess)
+        returnVal = (__bridge id) _someProperty;
+    
+    if (_someProperty != NULL) CFRelease(_someProperty);
+    
+    return returnVal;
 }
 
 - (NSString *) title {
-    //    [AccessibilityWrapper createSystemWideElement];
-    
-    CFTypeRef _title;
-    if (AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityTitleAttribute, (CFTypeRef *)&_title) == kAXErrorSuccess) {
-        NSString *title = (__bridge NSString *) _title;
-        if (_title != NULL) CFRelease(_title);
-        return title;
-    }
-    if (_title != NULL) CFRelease(_title);
-    return @"";
+    return [self getWindowProperty:NSAccessibilityTitleAttribute withDefaultValue:@""];
 }
 
 - (NSString *) role {
-    //    [AccessibilityWrapper createSystemWideElement];
-    
-    CFTypeRef _title;
-    if (AXUIElementCopyAttributeValue(self.window, (CFStringRef)NSAccessibilityRoleAttribute, (CFTypeRef *)&_title) == kAXErrorSuccess) {
-        NSString *title = (__bridge NSString *) _title;
-        if (_title != NULL) CFRelease(_title);
-        return title;
-    }
-    if (_title != NULL) CFRelease(_title);
-    return @"";
+    return [self getWindowProperty:NSAccessibilityRoleAttribute withDefaultValue:@""];
+}
+
+- (NSString *) subrole {
+    return [self getWindowProperty:NSAccessibilitySubroleAttribute withDefaultValue:@""];
+}
+
+- (BOOL) isWindowMinimized {
+    return [[self getWindowProperty:NSAccessibilityMinimizedAttribute withDefaultValue:@(NO)] boolValue];
 }
 
 @end
