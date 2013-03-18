@@ -1,10 +1,10 @@
 -
   name: AppGrid
   smallname: appgrid
-  version: 1.4
-  last_release_date: 2013-03-13
+  version: 1.4.1
+  last_release_date: 2013-03-18
   tagline: Manage windows, from the comfort of your home row.
-  price: $9.00
+  price: $8.99
   my_store: https://sites.fastspring.com/giantrobotsoftware/instant/appgrid
   min_os_version: 10.7
   num_screenshots: 4
@@ -78,6 +78,16 @@
         - "<b>Feature</b>: Added new hot keys to focus window in a given direction"
         - "<b>Fix</b>: No longer moves or resizes hidden or minimized windows"
         - "<b>Fix</b>: Shinier license window (after purchasing a license)"
+    -
+      number: 1.4.1
+      sparkle:
+        date: Wed Mar  18 08:45:00 CST 2013
+        size: 1769463
+        sig: MCwCFAYTEXKBZPLCxtyiIzV3Xo05RvIlAhQjFrbyg/N8/zXSAEIljIvHPwHiVw==
+      release_notes:
+        - "<b>Fix</b>: Borderless+floating windows no longer block AppGrid from moving focus in direction"
+        - "<b>Fix</b>: AppGrid no longer tries to snap borderless+floating windows to grid"
+        - "<b>Fix</b>: Various performance improvements"
 -
   name: DeskLabels
   smallname: desklabels
