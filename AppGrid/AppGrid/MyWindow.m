@@ -301,7 +301,7 @@
     CFTypeRef _isHidden;
     BOOL isHidden = NO;
     if (AXUIElementCopyAttributeValue(app, (CFStringRef)NSAccessibilityHiddenAttribute, (CFTypeRef *)&_isHidden) == kAXErrorSuccess) {
-        NSNumber *isHiddenNum = (__bridge NSNumber *) _isHidden;
+        NSNumber *isHiddenNum = CFBridgingRelease(_isHidden);
         isHidden = [isHiddenNum boolValue];
     }
     
@@ -311,16 +311,11 @@
 }
 
 - (id) getWindowProperty:(NSString*)propType withDefaultValue:(id)defaultValue {
-    id returnVal = defaultValue;
-    
     CFTypeRef _someProperty;
+    if (AXUIElementCopyAttributeValue(self.window, (__bridge CFStringRef)propType, &_someProperty) == kAXErrorSuccess)
+        return CFBridgingRelease(_someProperty);
     
-    if (AXUIElementCopyAttributeValue(self.window, (__bridge CFStringRef)propType, (CFTypeRef *)&_someProperty) == kAXErrorSuccess)
-        returnVal = (__bridge id) _someProperty;
-    
-    if (_someProperty != NULL) CFRelease(_someProperty);
-    
-    return returnVal;
+    return defaultValue;
 }
 
 - (NSString *) title {
