@@ -12,9 +12,13 @@
 
 #import "DLNoteWindowController.h"
 
+#import "SharedDefines.h"
+
 @interface DLDragGroupWindowController ()
 
 @property (weak) IBOutlet NSBox* dragGroupBox;
+
+@property (weak) id appearanceChangingObserver;
 
 @property NSArray* movableDesktopIcons;
 @property NSArray* movableNotes;
@@ -29,10 +33,39 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    
     [self.window setMovableByWindowBackground:YES];
+    
+    __weak DLDragGroupWindowController* me = self;
+    
+    self.appearanceChangingObserver =
+    [[NSNotificationCenter defaultCenter] addObserverForName:SDNoteAppearanceDidChangeNotification
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [me updateBoxAppearance];
+                                                  }];
+    
+    [self updateBoxAppearance];
+}
+
+- (void) updateBoxAppearance {
+	switch ([[NSUserDefaults standardUserDefaults] integerForKey:@"appearance"]) {
+		case 0: // dark
+            [self.dragGroupBox setBorderColor:[[NSColor blackColor] colorWithAlphaComponent:0.8]];
+            
+			break;
+		case 1: // light
+            [self.dragGroupBox setBorderColor:[[NSColor whiteColor] colorWithAlphaComponent:0.8]];
+            
+			break;
+	}
 }
 
 - (IBAction) killDragWindow:(id)sender {
+    [[NSNotificationCenter defaultCenter] removeObserver:self.appearanceChangingObserver];
+//    self.appearanceChangingObserver = nil;
+    
     [self close];
     self.dragGroupKilled(self);
 }

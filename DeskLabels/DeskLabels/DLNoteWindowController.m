@@ -20,6 +20,8 @@
 @property (weak) IBOutlet NSBox *backgroundBox;
 @property (weak) IBOutlet NSButton *closeButton;
 
+@property (weak) id appearanceChangingObserver;
+
 @property BOOL mouseHoveringOverBox;
 @property BOOL mouseHoveringOverButton;
 @property BOOL isEditing;
@@ -42,10 +44,15 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(noteAppearanceDidChange:)
-                                                 name:SDNoteAppearanceDidChangeNotification
-                                               object:nil];
+    __weak DLNoteWindowController* me = self;
+    
+    self.appearanceChangingObserver =
+    [[NSNotificationCenter defaultCenter] addObserverForName:SDNoteAppearanceDidChangeNotification
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [me updateNoteAppearance];
+                                                  }];
     
 	[[self window] setMovableByWindowBackground:YES];
 	[[[self window] contentView] setWantsLayer:YES];
@@ -60,7 +67,6 @@
         
 		[self setTitle:title];
         
-        __weak DLNoteWindowController* me = self;
         dispatch_async(dispatch_get_main_queue(), ^{
             [[me window] setFrame:frame display:NO];
         });
@@ -98,10 +104,6 @@
 			[self.titleLabel setTextColor:[NSColor blackColor]];
 			break;
 	}
-}
-
-- (void) noteAppearanceDidChange:(NSNotification*)notification {
-	[self updateNoteAppearance];
 }
 
 - (void) showWindowWithAnimation:(BOOL)animate {
@@ -171,15 +173,13 @@
 }
 
 - (IBAction) deleteNote:(id)sender {
-    NSLog(@"deleting..");
-    
 	[self.backgroundBox removeTrackingArea:self.boxTrackingArea];
 	[self.closeButton removeTrackingArea:self.buttonTrackingArea];
     
     self.boxTrackingArea = nil;
     self.buttonTrackingArea = nil;
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self.appearanceChangingObserver];
     
 	NSWindow *window = [self window];
 	

@@ -63,6 +63,7 @@
 											<string key="NSFrame">{{-1, -1}, {454, 244}}</string>
 											<reference key="NSSuperview" ref="159785397"/>
 											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<string key="NSClassName">DLDragGroupView</string>
 										</object>
@@ -70,6 +71,7 @@
 									<string key="NSFrame">{{2, 2}, {452, 242}}</string>
 									<reference key="NSSuperview" ref="391017303"/>
 									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView" ref="14674516"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
 								</object>
 							</array>
@@ -111,7 +113,7 @@
 							<double key="NSCornerRadius2">12</double>
 							<object class="NSColor" key="NSBorderColor2">
 								<int key="NSColorSpace">3</int>
-								<bytes key="NSWhite">MC4yNQA</bytes>
+								<bytes key="NSWhite">MCAwLjgAA</bytes>
 								<object class="NSColorSpace" key="NSCustomColorSpace">
 									<int key="NSID">2</int>
 								</object>

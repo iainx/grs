@@ -27,7 +27,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>10.8</string>
 	<key>LSUIElement</key>
-	<false/>
+	<true/>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2013 Steven Degutis. All rights reserved.</string>
 	<key>NSMainNibFile</key>
