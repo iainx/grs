@@ -87,6 +87,7 @@
       release_notes:
         - "<b>Fix</b>: Borderless+floating windows no longer block AppGrid from moving focus in direction"
         - "<b>Fix</b>: AppGrid no longer tries to snap borderless+floating windows to grid"
+        - "<b>Fix</b>: Move-right no longer allows windows past the right-edge of the screen"
         - "<b>Fix</b>: Various performance improvements"
 -
   name: DeskLabels
