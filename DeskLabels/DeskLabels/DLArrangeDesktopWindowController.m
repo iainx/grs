@@ -28,8 +28,8 @@
     __weak DLArrangeDesktopWindowController* me = self;
     
     self.arrangeDesktopView.wantsBoxInRect = ^(NSRect box) {
-        [me close];
         me.wantsBoxInRect(box);
+        [me close];
     };
 }
 

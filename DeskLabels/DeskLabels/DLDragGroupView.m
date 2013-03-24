@@ -15,6 +15,9 @@
 @property BOOL isDragging;
 @property NSPoint initialMousePoint;
 
+@property NSTimer* timmer;
+@property NSPoint doitPoint;
+
 @end
 
 @implementation DLDragGroupView
@@ -61,6 +64,14 @@
 }
 
 - (void) mouseDragged:(NSEvent *)theEvent {
+    if (self.isDragging == NO) {
+        self.timmer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                       target:self
+                                                     selector:@selector(doit:)
+                                                     userInfo:nil
+                                                      repeats:YES];
+    }
+    
     self.isDragging = YES;
     [self.window invalidateCursorRectsForView:self];
     
@@ -69,15 +80,22 @@
     CGFloat offsetX = currentPoint.x - self.initialMousePoint.x;
     CGFloat offsetY = currentPoint.y - self.initialMousePoint.y;
     
-    [self.dragGroupDelegate didMoveByOffset:NSMakePoint(offsetX, offsetY)];
+    self.doitPoint = NSMakePoint(offsetX, offsetY);
 }
 
 - (void) mouseUp:(NSEvent *)theEvent {
+    [self.timmer invalidate];
+    self.timmer = nil;
+    
     if (self.isDragging)
         [self.dragGroupDelegate didStopMoving];
     
     self.isDragging = NO;
     [self.window invalidateCursorRectsForView:self];
+}
+
+- (void) doit:(NSTimer*)timer {
+    [self.dragGroupDelegate didMoveByOffset:self.doitPoint];
 }
 
 @end
