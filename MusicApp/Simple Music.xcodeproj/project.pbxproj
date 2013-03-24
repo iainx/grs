@@ -118,20 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				94ADDD9816BF69CD007630BB /* Third Party */,
-				940C59CE1672942F00F2BF03 /* MainMenu.xib */,
-				940C59CB1672942F00F2BF03 /* AppDelegate.h */,
-				940C59CC1672942F00F2BF03 /* AppDelegate.m */,
-				9436FC1C16BD4B2500A56793 /* MainWindow.xib */,
-				9436FC1A16BD4B2500A56793 /* MainWindowController.h */,
-				9436FC1B16BD4B2500A56793 /* MainWindowController.m */,
-				94ADDD9916BF6C2D007630BB /* PlaylistTableViewController.h */,
-				94ADDD9A16BF6C2D007630BB /* PlaylistTableViewController.m */,
-				9436FC1F16BD4CBF00A56793 /* MusicManager.h */,
-				9436FC2016BD4CBF00A56793 /* MusicManager.m */,
-				9436FC1716BD403300A56793 /* MusicImporter.h */,
-				9436FC1816BD403300A56793 /* MusicImporter.m */,
-				9436FC2516BD593500A56793 /* TrackHelper.h */,
-				9436FC2616BD593500A56793 /* TrackHelper.m */,
+				94F9993616FEA1F80035A0AA /* XIBs */,
+				94F9993516FEA1F20035A0AA /* Controllers */,
 				940C59C01672942E00F2BF03 /* Supporting Files */,
 			);
 			path = "Simple Music";
@@ -158,6 +146,34 @@
 				9436FC2316BD52F200A56793 /* NSFileManager+DirectoryLocations.m */,
 			);
 			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		94F9993516FEA1F20035A0AA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				940C59CB1672942F00F2BF03 /* AppDelegate.h */,
+				940C59CC1672942F00F2BF03 /* AppDelegate.m */,
+				9436FC1A16BD4B2500A56793 /* MainWindowController.h */,
+				9436FC1B16BD4B2500A56793 /* MainWindowController.m */,
+				94ADDD9916BF6C2D007630BB /* PlaylistTableViewController.h */,
+				94ADDD9A16BF6C2D007630BB /* PlaylistTableViewController.m */,
+				9436FC1F16BD4CBF00A56793 /* MusicManager.h */,
+				9436FC2016BD4CBF00A56793 /* MusicManager.m */,
+				9436FC1716BD403300A56793 /* MusicImporter.h */,
+				9436FC1816BD403300A56793 /* MusicImporter.m */,
+				9436FC2516BD593500A56793 /* TrackHelper.h */,
+				9436FC2616BD593500A56793 /* TrackHelper.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		94F9993616FEA1F80035A0AA /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				940C59CE1672942F00F2BF03 /* MainMenu.xib */,
+				9436FC1C16BD4B2500A56793 /* MainWindow.xib */,
+			);
+			name = XIBs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

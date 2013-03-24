@@ -12,8 +12,8 @@
 
 @interface TrackHelper : NSObject
 
-+ (NSString*) titleFor:(AVURLAsset*)asset;
-+ (NSString*) albumFor:(AVURLAsset*)asset;
-+ (NSString*) artistFor:(AVURLAsset*)asset;
++ (NSString*) titleFor:(AVURLAsset*)asset handler:(dispatch_block_t)handler;
++ (NSString*) albumFor:(AVURLAsset*)asset handler:(dispatch_block_t)handler;
++ (NSString*) artistFor:(AVURLAsset*)asset handler:(dispatch_block_t)handler;
 
 @end

@@ -114,11 +114,17 @@
     AVURLAsset* asset = [[self.musicManager mainPlaylist] objectAtIndex:row];
     
     if ([[tableColumn identifier] isEqualToString: @"Title"])
-        return [TrackHelper titleFor:asset];
+        return [TrackHelper titleFor:asset handler:^{
+            [tableView reloadData];
+        }];
     else if ([[tableColumn identifier] isEqualToString: @"Artist"])
-        return [TrackHelper artistFor:asset];
+        return [TrackHelper artistFor:asset handler:^{
+            [tableView reloadData];
+        }];
     else if ([[tableColumn identifier] isEqualToString: @"Album"])
-        return [TrackHelper albumFor:asset];
+        return [TrackHelper albumFor:asset handler:^{
+            [tableView reloadData];
+        }];
     else
         return @"Unknown Property";
 }
