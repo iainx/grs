@@ -19,6 +19,11 @@
 @implementation SDTBAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [[NSImage imageNamed:@"NextTrack"] setTemplate:YES];
+    [[NSImage imageNamed:@"PreviousTrack"] setTemplate:YES];
+    [[NSImage imageNamed:@"Play"] setTemplate:YES];
+    [[NSImage imageNamed:@"Pause"] setTemplate:YES];
+    
 	NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"DefaultValues" ofType:@"plist"];
 	NSDictionary *initialValues = [NSDictionary dictionaryWithContentsOfFile:plistPath];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:initialValues];
