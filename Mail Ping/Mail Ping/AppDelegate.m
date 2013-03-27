@@ -18,6 +18,13 @@
 
 @implementation AppDelegate
 
+- (id) init {
+    if (self = [super init]) {
+        [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UseAlertSound": @YES}];
+    }
+    return self;
+}
+
 - (void) loadStatusItem {
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     [self.statusItem setImage:[NSImage imageNamed:@"statusimage"]];

@@ -14,6 +14,7 @@
 			<string>NSCustomObject</string>
 			<string>NSMenu</string>
 			<string>NSMenuItem</string>
+			<string>NSUserDefaultsController</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1425,6 +1426,14 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
+					<object class="NSMenuItem" id="542176042">
+						<reference key="NSMenu" ref="579856396"/>
+						<string key="NSTitle">Use Alert Sound</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="266371569">
 						<reference key="NSMenu" ref="579856396"/>
 						<bool key="NSIsDisabled">YES</bool>
@@ -1460,6 +1469,9 @@
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
 				</array>
+			</object>
+			<object class="NSUserDefaultsController" id="474853557">
+				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -2207,6 +2219,22 @@
 						<reference key="destination" ref="656320086"/>
 					</object>
 					<int key="connectionID">577</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.UseAlertSound</string>
+						<reference key="source" ref="542176042"/>
+						<reference key="destination" ref="474853557"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="542176042"/>
+							<reference key="NSDestination" ref="474853557"/>
+							<string key="NSLabel">value: values.UseAlertSound</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.UseAlertSound</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">583</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3209,6 +3237,7 @@
 							<reference ref="946528863"/>
 							<reference ref="715587179"/>
 							<reference ref="718927595"/>
+							<reference ref="542176042"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3331,6 +3360,16 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">578</int>
 						<reference key="object" ref="507580221"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">580</int>
+						<reference key="object" ref="542176042"/>
+						<reference key="parent" ref="579856396"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">582</int>
+						<reference key="object" ref="474853557"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</array>
@@ -3497,6 +3536,8 @@
 				<string key="576.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="578.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="580.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="582.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3513,7 +3554,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">579</int>
+			<int key="maxID">583</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

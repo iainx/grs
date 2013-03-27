@@ -41,7 +41,8 @@
         note.subtitle = [NSString stringWithFormat:@"%@ <%@>", entry.authorName, entry.authorEmail];
         note.informativeText = [NSString stringWithFormat:@"(To %@)\n%@", email, entry.summary];
         
-        note.soundName = NSUserNotificationDefaultSoundName;
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UseAlertSound"])
+            note.soundName = NSUserNotificationDefaultSoundName;
         
         note.hasActionButton = YES;
         note.actionButtonTitle = @"Read";
