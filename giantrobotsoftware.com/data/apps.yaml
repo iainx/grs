@@ -103,7 +103,7 @@
   version: 1.0
   last_release_date: 2013-03-07
   tagline: Organize your Desktop like never before
-  price: $1.99
+  price: $0.99
   min_os_version: 10.7
   num_screenshots: 4
   summary:
@@ -131,7 +131,7 @@
   smallname: mailping
   version: 1.0
   tagline: Unread-email notifications for multiple Gmail inboxes, done right
-  price: $1.99
+  price: $0.99
   last_release_date: 2013-03-07
   min_os_version: 10.8
   num_screenshots: 4
@@ -158,7 +158,7 @@
   smallname: tunesbar
   tagline: View your currently playing iTunes track in your menu bar.
   version: 1.0
-  price: $1.99
+  price: $0.99
   last_release_date: 2013-03-15
   min_os_version: 10.6.6
   num_screenshots: 4
