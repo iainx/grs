@@ -55,8 +55,7 @@
     return [[self allWindows] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(MyWindow* win, NSDictionary *bindings) {
         return ![win isAppHidden]
         && ![win isWindowMinimized]
-        && [[win role] isEqualToString: (__bridge NSString*)kAXWindowRole]
-        && ![[win subrole] isEqualToString: (__bridge NSString*)kAXUnknownSubrole];
+        && [[win subrole] isEqualToString: (__bridge NSString*)kAXStandardWindowSubrole];
     }]];
 }
 
