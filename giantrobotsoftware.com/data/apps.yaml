@@ -96,7 +96,7 @@
         size: 1769397
         sig: MCwCFAOpTvhykPQXVO7EP+5Xo715WCLwAhR8/SvGmFzty96fSzjRUrdTcPTReA==
       release_notes:
-        - "<b>Fix</b>: Some windows were being ignored by "Snap all windows to grid"
+        - "<b>Fix</b>: Some windows were being ignored by \"Snap all windows to grid\""
 -
   name: DeskLabels
   smallname: desklabels
@@ -167,7 +167,7 @@
     - "Unlike similar apps, TunesBar will show the full title, without the need to scroll. And it changes to always fit the currently playing track. And, using innovative techniques, TunesBar shows your currently playing track in the highest quality font."
   download?: false
   purchase?: false
-  appstore: comingsoon
+  appstore: macappstores://itunes.apple.com/us/app/tunesbar/id604778393?mt=12
   features:
     - "Simple user interface"
     - "Clear, crisp font"
