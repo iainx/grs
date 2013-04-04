@@ -4,7 +4,5 @@
 <dict>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
-	<key>com.apple.security.temporary-exception.apple-events</key>
-	<string>com.apple.Finder</string>
 </dict>
 </plist>
