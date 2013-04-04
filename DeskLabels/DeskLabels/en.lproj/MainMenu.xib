@@ -1316,6 +1316,7 @@
 						<reference key="NSMenu" ref="69922205"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
+						<bool key="NSIsHidden">YES</bool>
 						<string key="NSTitle"/>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -1324,6 +1325,7 @@
 					</object>
 					<object class="NSMenuItem" id="1063518425">
 						<reference key="NSMenu" ref="69922205"/>
+						<bool key="NSIsHidden">YES</bool>
 						<string key="NSTitle">Create Drag-Group Box</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
