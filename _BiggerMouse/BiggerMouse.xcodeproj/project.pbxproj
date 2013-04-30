@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9474BB8B17187AC100778DE6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9474BB8A17187AC100778DE6 /* Cocoa.framework */; };
+		9474BB9517187AC100778DE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9474BB9317187AC100778DE6 /* InfoPlist.strings */; };
+		9474BB9717187AC100778DE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9474BB9617187AC100778DE6 /* main.m */; };
+		9474BB9B17187AC100778DE6 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9474BB9917187AC100778DE6 /* Credits.rtf */; };
+		9474BB9E17187AC100778DE6 /* BMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9474BB9D17187AC100778DE6 /* BMAppDelegate.m */; };
+		9474BBA117187AC100778DE6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9474BB9F17187AC100778DE6 /* MainMenu.xib */; };
+		9474BBAA17187CC900778DE6 /* BMWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9474BBA917187CC900778DE6 /* BMWindow.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9474BB8717187AC100778DE6 /* BiggerMouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiggerMouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9474BB8A17187AC100778DE6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9474BB8D17187AC100778DE6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9474BB8E17187AC100778DE6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9474BB8F17187AC100778DE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9474BB9217187AC100778DE6 /* BiggerMouse-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BiggerMouse-Info.plist"; path = "BiggerMouse/BiggerMouse-Info.plist"; sourceTree = "<group>"; };
+		9474BB9417187AC100778DE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9474BB9617187AC100778DE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9474BB9817187AC100778DE6 /* BiggerMouse-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BiggerMouse-Prefix.pch"; sourceTree = "<group>"; };
+		9474BB9A17187AC100778DE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9474BB9C17187AC100778DE6 /* BMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMAppDelegate.h; sourceTree = "<group>"; };
+		9474BB9D17187AC100778DE6 /* BMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMAppDelegate.m; sourceTree = "<group>"; };
+		9474BBA017187AC100778DE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9474BBA717187AC600778DE6 /* BiggerMouse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = BiggerMouse.entitlements; path = BiggerMouse/BiggerMouse.entitlements; sourceTree = "<group>"; };
+		9474BBA817187CC900778DE6 /* BMWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMWindow.h; sourceTree = "<group>"; };
+		9474BBA917187CC900778DE6 /* BMWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMWindow.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9474BB8417187AC100778DE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9474BB8B17187AC100778DE6 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9474BB7E17187AC100778DE6 = {
+			isa = PBXGroup;
+			children = (
+				9474BBA717187AC600778DE6 /* BiggerMouse.entitlements */,
+				9474BB9217187AC100778DE6 /* BiggerMouse-Info.plist */,
+				9474BB9917187AC100778DE6 /* Credits.rtf */,
+				9474BB9017187AC100778DE6 /* BiggerMouse */,
+				9474BB8917187AC100778DE6 /* Frameworks */,
+				9474BB8817187AC100778DE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9474BB8817187AC100778DE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9474BB8717187AC100778DE6 /* BiggerMouse.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9474BB8917187AC100778DE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9474BB8A17187AC100778DE6 /* Cocoa.framework */,
+				9474BB8C17187AC100778DE6 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9474BB8C17187AC100778DE6 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9474BB8D17187AC100778DE6 /* AppKit.framework */,
+				9474BB8E17187AC100778DE6 /* CoreData.framework */,
+				9474BB8F17187AC100778DE6 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9474BB9017187AC100778DE6 /* BiggerMouse */ = {
+			isa = PBXGroup;
+			children = (
+				9474BB9C17187AC100778DE6 /* BMAppDelegate.h */,
+				9474BB9D17187AC100778DE6 /* BMAppDelegate.m */,
+				9474BBA817187CC900778DE6 /* BMWindow.h */,
+				9474BBA917187CC900778DE6 /* BMWindow.m */,
+				9474BB9F17187AC100778DE6 /* MainMenu.xib */,
+				9474BB9117187AC100778DE6 /* Supporting Files */,
+			);
+			path = BiggerMouse;
+			sourceTree = "<group>";
+		};
+		9474BB9117187AC100778DE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9474BB9317187AC100778DE6 /* InfoPlist.strings */,
+				9474BB9617187AC100778DE6 /* main.m */,
+				9474BB9817187AC100778DE6 /* BiggerMouse-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9474BB8617187AC100778DE6 /* BiggerMouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9474BBA417187AC100778DE6 /* Build configuration list for PBXNativeTarget "BiggerMouse" */;
+			buildPhases = (
+				9474BB8317187AC100778DE6 /* Sources */,
+				9474BB8417187AC100778DE6 /* Frameworks */,
+				9474BB8517187AC100778DE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BiggerMouse;
+			productName = BiggerMouse;
+			productReference = 9474BB8717187AC100778DE6 /* BiggerMouse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9474BB7F17187AC100778DE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BM;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Steven;
+			};
+			buildConfigurationList = 9474BB8217187AC100778DE6 /* Build configuration list for PBXProject "BiggerMouse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9474BB7E17187AC100778DE6;
+			productRefGroup = 9474BB8817187AC100778DE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9474BB8617187AC100778DE6 /* BiggerMouse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9474BB8517187AC100778DE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9474BB9517187AC100778DE6 /* InfoPlist.strings in Resources */,
+				9474BB9B17187AC100778DE6 /* Credits.rtf in Resources */,
+				9474BBA117187AC100778DE6 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9474BB8317187AC100778DE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9474BB9717187AC100778DE6 /* main.m in Sources */,
+				9474BB9E17187AC100778DE6 /* BMAppDelegate.m in Sources */,
+				9474BBAA17187CC900778DE6 /* BMWindow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9474BB9317187AC100778DE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9474BB9417187AC100778DE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9474BB9917187AC100778DE6 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9474BB9A17187AC100778DE6 /* en */,
+			);
+			name = Credits.rtf;
+			path = BiggerMouse;
+			sourceTree = "<group>";
+		};
+		9474BB9F17187AC100778DE6 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9474BBA017187AC100778DE6 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9474BBA217187AC100778DE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9474BBA317187AC100778DE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9474BBA517187AC100778DE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BiggerMouse/BiggerMouse.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BiggerMouse/BiggerMouse-Prefix.pch";
+				INFOPLIST_FILE = "BiggerMouse/BiggerMouse-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9474BBA617187AC100778DE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BiggerMouse/BiggerMouse.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BiggerMouse/BiggerMouse-Prefix.pch";
+				INFOPLIST_FILE = "BiggerMouse/BiggerMouse-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9474BB8217187AC100778DE6 /* Build configuration list for PBXProject "BiggerMouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9474BBA217187AC100778DE6 /* Debug */,
+				9474BBA317187AC100778DE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9474BBA417187AC100778DE6 /* Build configuration list for PBXNativeTarget "BiggerMouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9474BBA517187AC100778DE6 /* Debug */,
+				9474BBA617187AC100778DE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9474BB7F17187AC100778DE6 /* Project object */;
+}
