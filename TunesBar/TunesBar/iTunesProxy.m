@@ -23,6 +23,7 @@
 @property (copy) NSString *trackAlbum;
 @property (copy) NSString *trackGenre;
 @property (copy) NSString *trackTotalTime;
+@property (copy) NSImage *coverArtwork;
 
 @end
 
@@ -70,10 +71,11 @@
 - (void) _iTunesUpdated:(NSNotification*)notification {
 	self.shouldUseCache = YES;
 	
+    NSLog(@"Updated: %@", [notification userInfo]);
 	[self _updatePropertiesUsingDictionary:[notification userInfo]];
 	[self.delegate iTunesUpdated];
 	
-	self.shouldUseCache = NO;
+ 	self.shouldUseCache = NO;
 }
 
 - (void) _updatePropertiesUsingDictionary:(NSDictionary*)dictionary {
@@ -94,6 +96,7 @@
 		self.trackAlbum = nil;
 		self.trackGenre = nil;
 		self.trackTotalTime = nil;
+        self.coverArtwork = nil;
 	}
 	else {
 		iTunesTrack *track = nil;
@@ -122,7 +125,13 @@
 			int min = (duration / 60);
 			int sec = (duration % 60);
 			
-			self.trackTotalTime = [NSString stringWithFormat:@"%02d:%02d", min, sec];
+            self.trackTotalTime = [NSString stringWithFormat:@"%02d:%02d", min, sec];
+            
+            iTunesTrack *currentTrack = [self.iTunes currentTrack];
+            SBElementArray *artworks = [currentTrack artworks];
+            iTunesArtwork *artwork = [artworks objectAtIndex:0];
+            
+            self.coverArtwork = [artwork data];
 		}
 	}
 }

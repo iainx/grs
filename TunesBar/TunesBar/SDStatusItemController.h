@@ -12,6 +12,12 @@
 
 @interface SDStatusItemController : NSResponder <iTunesDelegate>
 
+@property (readwrite, weak) IBOutlet NSView *hubView;
+@property (readwrite, weak) IBOutlet NSImageView *imageView;
+@property (readwrite, weak) IBOutlet NSTextField *titleField;
+@property (readwrite, weak) IBOutlet NSTextField *albumField;
+@property (readwrite, weak) IBOutlet NSTextField *artistField;
+
 - (void) setupStatusItem;
 
 @end

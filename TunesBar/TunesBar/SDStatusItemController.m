@@ -10,7 +10,7 @@
 
 #import "DefaultsKeys.h"
 #import "SDTBStatusItemHelper.h"
-
+#import "MAAttachedWindow.h"
 
 @interface SDStatusItemController ()
 
@@ -21,8 +21,14 @@
 @end
 
 
-@implementation SDStatusItemController
+@implementation SDStatusItemController {
+    NSMutableArray *_displayStrings;
+    NSTimer *_displayTimer;
+    NSUInteger _displayIndex;
+    MAAttachedWindow *_attachedWindow;
+}
 
+static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 - (void) setupStatusItem {
     [[NSUserDefaults standardUserDefaults] addObserver:self
                                             forKeyPath:kSDSeparatorLeftKey
@@ -51,8 +57,46 @@
     
 	self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	[self.statusItem setHighlightMode:YES];
-	[self.statusItem setMenu:self.statusItemMenu];
-	[self _updateTitle];
+	//[self.statusItem setMenu:self.statusItemMenu];
+    [self.statusItem setAction:@selector(showInfoPanel:)];
+    [self.statusItem setTarget:self];
+    
+    [self _updateTitle];
+}
+
+- (void)showInfoPanel:(id)sender
+{
+    NSEvent *event = [NSApp currentEvent];
+    
+    if (_attachedWindow) {
+        [[event window] removeChildWindow:_attachedWindow];
+        _attachedWindow = nil;
+        
+        [self resetTimer];
+        return;
+    }
+    
+    NSRect frame = [[event window] frame];
+    
+    _attachedWindow = [[MAAttachedWindow alloc] initWithView:_hubView
+                                                      attachedToPoint:NSMakePoint(NSMidX(frame), frame.origin.y)
+                                                               onSide:MAPositionAutomatic];
+    [[event window] addChildWindow:_attachedWindow ordered:NSWindowAbove];
+    
+    [_displayTimer invalidate];
+    _displayTimer = nil;
+    
+    [self updateHudInfo];
+}
+
+- (void)updateHudInfo
+{
+    iTunesProxy *iProxy = [iTunesProxy proxy];
+    
+    [_imageView setImage:[iProxy coverArtwork]];
+    [_titleField setStringValue:[iProxy trackName]];
+    [_artistField setStringValue:[iProxy trackArtist]];
+    [_albumField setStringValue:[iProxy trackAlbum]];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -61,50 +105,82 @@
                        context:(void *)context
 {
 	[self _updateTitle];
+    if (_attachedWindow) {
+        [self updateHudInfo];
+    }
 }
 
 - (void) iTunesUpdated {
 	[self _updateTitle];
+    if (_attachedWindow) {
+        [self updateHudInfo];
+    }
 }
 
 - (void) _updateTitle {
-	NSString *newTitle = nil;
-	
-	NSArray *titleDisplayOptions = [[NSUserDefaults standardUserDefaults] arrayForKey:@"titleOptions"];
-	
-	NSString *leftSeparator = [[NSUserDefaults standardUserDefaults] stringForKey:kSDSeparatorLeftKey];
-	NSString *midSeparator = [[NSUserDefaults standardUserDefaults] stringForKey:kSDSeparatorMidKey];
-	NSString *rightSeparator = [[NSUserDefaults standardUserDefaults] stringForKey:kSDSeparatorRightKey];
-	
 	if ([[iTunesProxy proxy] isRunning]) {
-		NSMutableArray *stringsToDisplay = [NSMutableArray array];
+		_displayStrings = [NSMutableArray array];
 		
+        NSArray *titleDisplayOptions = [[NSUserDefaults standardUserDefaults] arrayForKey:@"titleOptions"];
+        
 		for (NSDictionary *titleOptions in titleDisplayOptions) {
 			NSNumber *enabled = [titleOptions objectForKey:@"Enabled"];
 			
 			if ([enabled boolValue] == YES) {
 				NSString *key = [titleOptions objectForKey:@"iTunesKey"];
 				NSString *title = [[iTunesProxy proxy] valueForKey:key];
-				if (title)
-					[stringsToDisplay addObject:title];
+				if (title) {
+					[_displayStrings addObject:title];
+                }
 			}
 		}
-		
-		newTitle = [stringsToDisplay componentsJoinedByString:[NSString stringWithFormat:@"  %@  ", midSeparator ]];
-		newTitle = [NSString stringWithFormat:@"%@  %@  %@", leftSeparator, newTitle, rightSeparator ];
+	} else {
+        _displayStrings = nil;
+        [_displayTimer invalidate];
+        _displayTimer = nil;
+        return;
 	}
-	else {
-		newTitle = [NSString stringWithFormat:@"%@  TunesBar  %@", leftSeparator, rightSeparator ];
-	}
-	
-	NSInteger fontSize = [[NSUserDefaults standardUserDefaults] integerForKey:@"fontSize"];
+	   
+    _displayIndex = -1;
+    [self changeDisplayString:nil];
+    
+    if (_attachedWindow == nil) {
+        [self resetTimer];
+    }
+}
+
+- (void)changeDisplayString:(NSTimer *)timer
+{
+    if ([_displayStrings count] == 0) {
+        return;
+    }
+    
+    _displayIndex++;
+    if (_displayIndex >= [_displayStrings count]) {
+        _displayIndex = 0;
+    }
+    
+    NSInteger fontSize = [[NSUserDefaults standardUserDefaults] integerForKey:@"fontSize"];
 	NSFont *font = [NSFont systemFontOfSize:fontSize];
 	
 	NSColor *foreColor = [NSColor blackColor];
-	if ([[iTunesProxy proxy] isPlaying] == NO)
+	if ([[iTunesProxy proxy] isPlaying] == NO) {
 		foreColor = [foreColor colorWithAlphaComponent:0.65];
+    }
 	
-	[SDTBStatusItemHelper setImagesWithTitle:newTitle font:font foreColor:foreColor onStatusItem:self.statusItem];
+	[SDTBStatusItemHelper setImagesWithTitle:_displayStrings[_displayIndex]
+                                        font:font
+                                   foreColor:foreColor
+                                onStatusItem:self.statusItem];
+}
+
+- (void)resetTimer
+{
+    [_displayTimer invalidate];
+    _displayTimer = [NSTimer scheduledTimerWithTimeInterval:INFO_CHANGE_DELAY target:self
+                                                   selector:@selector(changeDisplayString:)
+                                                   userInfo:self
+                                                    repeats:YES];
 }
 
 - (IBAction) playPause:(id)sender {

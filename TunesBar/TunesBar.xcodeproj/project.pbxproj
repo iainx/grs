@@ -36,6 +36,11 @@
 		94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */; };
 		94ABDC5216F36E7F00D47E36 /* TunesBarHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 94ABDC5016F36E4200D47E36 /* TunesBarHelper.app */; };
 		94ABDC5416F36E9400D47E36 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */; };
+		AE042EC3173B1A6A00F76543 /* MAAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AE042EC2173B1A6A00F76543 /* MAAttachedWindow.m */; };
+		AE82EF9D17D6942C005AEEAA /* NextTrack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE82EF9917D6942C005AEEAA /* NextTrack@2x.png */; };
+		AE82EF9E17D6942C005AEEAA /* Pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE82EF9A17D6942C005AEEAA /* Pause@2x.png */; };
+		AE82EF9F17D6942C005AEEAA /* Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE82EF9B17D6942C005AEEAA /* Play@2x.png */; };
+		AE82EFA017D6942C005AEEAA /* PreviousTrack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE82EF9C17D6942C005AEEAA /* PreviousTrack@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +117,12 @@
 		94ABDC2116F35E2C00D47E36 /* TunesBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TunesBar.entitlements; sourceTree = "<group>"; };
 		94ABDC4B16F36E4100D47E36 /* TunesBarHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TunesBarHelper.xcodeproj; path = TunesBarHelper/TunesBarHelper.xcodeproj; sourceTree = "<group>"; };
 		94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		AE042EC1173B1A6A00F76543 /* MAAttachedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAAttachedWindow.h; sourceTree = "<group>"; };
+		AE042EC2173B1A6A00F76543 /* MAAttachedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAAttachedWindow.m; sourceTree = "<group>"; };
+		AE82EF9917D6942C005AEEAA /* NextTrack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextTrack@2x.png"; sourceTree = "<group>"; };
+		AE82EF9A17D6942C005AEEAA /* Pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause@2x.png"; sourceTree = "<group>"; };
+		AE82EF9B17D6942C005AEEAA /* Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play@2x.png"; sourceTree = "<group>"; };
+		AE82EF9C17D6942C005AEEAA /* PreviousTrack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PreviousTrack@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +216,8 @@
 				94ABDBDE16F34B6000D47E36 /* SDStatusItemController.m */,
 				94ABDC0016F350F100D47E36 /* SDGeneralPrefPane.h */,
 				94ABDC0116F350F100D47E36 /* SDGeneralPrefPane.m */,
+				AE042EC1173B1A6A00F76543 /* MAAttachedWindow.h */,
+				AE042EC2173B1A6A00F76543 /* MAAttachedWindow.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -224,9 +237,13 @@
 				94ABDBEA16F34D2600D47E36 /* sd_intro.png */,
 				94ABDBED16F34D2600D47E36 /* TunesBar.icns */,
 				94ABDBEE16F34D2600D47E36 /* NextTrack.png */,
+				AE82EF9917D6942C005AEEAA /* NextTrack@2x.png */,
 				94ABDBEF16F34D2600D47E36 /* PreviousTrack.png */,
+				AE82EF9C17D6942C005AEEAA /* PreviousTrack@2x.png */,
 				94ABDBF016F34D2600D47E36 /* Play.png */,
+				AE82EF9B17D6942C005AEEAA /* Play@2x.png */,
 				94ABDBF116F34D2600D47E36 /* Pause.png */,
+				AE82EF9A17D6942C005AEEAA /* Pause@2x.png */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -362,6 +379,10 @@
 				94ABDC0916F351AC00D47E36 /* DefaultValues.plist in Resources */,
 				94ABDC1D16F3545B00D47E36 /* SDWelcomeWindow.xib in Resources */,
 				942D393E16F38886006D869C /* Credits.html in Resources */,
+				AE82EF9D17D6942C005AEEAA /* NextTrack@2x.png in Resources */,
+				AE82EF9E17D6942C005AEEAA /* Pause@2x.png in Resources */,
+				AE82EF9F17D6942C005AEEAA /* Play@2x.png in Resources */,
+				AE82EFA017D6942C005AEEAA /* PreviousTrack@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +400,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -f \"${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/TunesBarHelper.app/Contents/${EMBEDDED_PROFILE_NAME}\"\ncodesign -f -s \"${CODE_SIGN_IDENTITY}\" -i \"org.degutis.TunesBarHelper\" --entitlements \"${SOURCE_ROOT}/TunesBarHelper/TunesBarHelper/TunesBarHelper.entitlements\" \"${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/TunesBarHelper.app\"";
+			shellScript = "#rm -f \"${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/TunesBarHelper.app/Contents/${EMBEDDED_PROFILE_NAME}\"\n#codesign -f -s \"${CODE_SIGN_IDENTITY}\" -i \"org.degutis.TunesBarHelper\" --entitlements \"${SOURCE_ROOT}/TunesBarHelper/TunesBarHelper/TunesBarHelper.entitlements\" \"${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/TunesBarHelper.app\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -400,6 +421,7 @@
 				94ABDC1216F3537300D47E36 /* RSRTVArrayController.m in Sources */,
 				94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */,
 				94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */,
+				AE042EC3173B1A6A00F76543 /* MAAttachedWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,14 +509,11 @@
 		94ABDBD016F2D40D00D47E36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TunesBar/TunesBar.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Steven Degutis";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBar/TunesBar-Prefix.pch";
 				INFOPLIST_FILE = "TunesBar/TunesBar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DEC68129-5270-4D21-97E3-0031ADA5ACBD";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -502,15 +521,12 @@
 		94ABDBD116F2D40D00D47E36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TunesBar/TunesBar.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Steven Degutis";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBar/TunesBar-Prefix.pch";
 				INFOPLIST_FILE = "TunesBar/TunesBar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DEC68129-5270-4D21-97E3-0031ADA5ACBD";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

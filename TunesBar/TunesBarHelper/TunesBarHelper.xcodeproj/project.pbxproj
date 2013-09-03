@@ -266,8 +266,6 @@
 		94ABDC4916F36E4100D47E36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TunesBarHelper/TunesBarHelper.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBarHelper/TunesBarHelper-Prefix.pch";
@@ -281,8 +279,6 @@
 		94ABDC4A16F36E4100D47E36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TunesBarHelper/TunesBarHelper.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBarHelper/TunesBarHelper-Prefix.pch";
@@ -312,6 +308,7 @@
 				94ABDC4A16F36E4100D47E36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

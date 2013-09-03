@@ -17,7 +17,7 @@
 {
 	NSShadow *shadow = [[NSShadow alloc] init];
 	[shadow setShadowBlurRadius:1.0];
-	[shadow setShadowColor:[NSColor colorWithCalibratedWhite:1.0 alpha:0.7]];
+	[shadow setShadowColor:[NSColor colorWithCalibratedWhite:1.0 alpha:0.3]];
 	[shadow setShadowOffset:NSMakeSize(0, -1)];
 	
 	NSDictionary *attributes = @{
@@ -38,14 +38,23 @@
 	NSEnableScreenUpdates();
 }
 
-+ (NSImage*) imageFromString:(NSString*)title attributes:(NSDictionary*)attributes {
++ (NSImage*) imageFromString:(NSString*)title
+                  attributes:(NSDictionary*)attributes
+{
 	NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attributes];
-	
 	NSSize frameSize = [title sizeWithAttributes:attributes];
+    
 	NSImage *image = [[NSImage alloc] initWithSize:frameSize];
 	[image lockFocus];
+    
+    NSGraphicsContext *context = [NSGraphicsContext currentContext];
+    CGContextRef cgContext = [context graphicsPort];
+    
+    CGContextSetShouldSmoothFonts(cgContext, FALSE);
+    
 	[attributedTitle drawAtPoint:NSMakePoint(0, 0)];
 	[image unlockFocus];
+    
 	return image;
 }
 
