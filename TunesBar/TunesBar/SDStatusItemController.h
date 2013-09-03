@@ -17,6 +17,9 @@
 @property (readwrite, weak) IBOutlet NSTextField *titleField;
 @property (readwrite, weak) IBOutlet NSTextField *albumField;
 @property (readwrite, weak) IBOutlet NSTextField *artistField;
+@property (readwrite, weak) IBOutlet NSButton *playButton;
+@property (readwrite, weak) IBOutlet NSButton *previousButton;
+@property (readwrite, weak) IBOutlet NSButton *nextButton;
 
 - (void) setupStatusItem;
 

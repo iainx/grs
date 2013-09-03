@@ -93,6 +93,11 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 {
     iTunesProxy *iProxy = [iTunesProxy proxy];
     
+    if ([iProxy isPlaying]) {
+        [_playButton setState:1];
+    } else {
+        [_playButton setState:0];
+    }
     [_imageView setImage:[iProxy coverArtwork]];
     [_titleField setStringValue:[iProxy trackName]];
     [_artistField setStringValue:[iProxy trackArtist]];
