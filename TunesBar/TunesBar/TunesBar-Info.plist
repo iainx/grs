@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>TunesBar.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.degutis.TunesBar</string>
+	<string>com.sleepfive.TunesbarPlus</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -26,13 +26,13 @@
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.6.6</string>
+	<key>LSUIElement</key>
+	<true/>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2013 Steven Degutis. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>LSUIElement</key>
-	<true/>
 </dict>
 </plist>
