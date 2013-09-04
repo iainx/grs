@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>firstTimeUsing_v3_0</key>
+	<key>firstTimeUsing_v4_0</key>
 	<true/>
 	<key>fontSize</key>
 	<integer>12</integer>

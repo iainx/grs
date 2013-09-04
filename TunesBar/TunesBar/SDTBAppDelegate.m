@@ -5,6 +5,9 @@
 //  Created by Steven Degutis on 3/14/13.
 //  Copyright (c) 2013 Steven Degutis. All rights reserved.
 //
+//  Modified by Iain Holmes
+//  Copyright (c) 2013 Sleep(5)
+//
 
 #import "SDTBAppDelegate.h"
 
@@ -53,7 +56,7 @@
 
 - (IBAction) toggleOpenAtLogin:(id)sender {
 	NSInteger changingToState = ![sender state];
-    if (!SMLoginItemSetEnabled(CFSTR("org.degutis.TunesBarHelper"), changingToState)) {
+    if (!SMLoginItemSetEnabled(CFSTR("com.sleepfive.TunesBarPlusHelper"), changingToState)) {
         NSRunAlertPanel(@"Could not change Open at Login status",
                         @"For some reason, this failed. Most likely it's because the app isn't in the Applications folder.",
                         @"OK",
@@ -71,7 +74,7 @@
         BOOL bOnDemand = NO;
 
         for (NSDictionary* job in jobDicts) {
-            if ([[job objectForKey:@"Label"] isEqualToString: @"org.degutis.TunesBarHelper"]) {
+            if ([[job objectForKey:@"Label"] isEqualToString: @"com.sleepfive.TunesBarPlusHelper"]) {
                 bOnDemand = [[job objectForKey:@"OnDemand"] boolValue];
                 break;
             }
