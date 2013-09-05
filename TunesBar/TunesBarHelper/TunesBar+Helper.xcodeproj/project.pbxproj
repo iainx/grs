@@ -16,15 +16,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		94ABDC2B16F36E4100D47E36 /* TunesBarHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TunesBarHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94ABDC2B16F36E4100D47E36 /* TunesBar+Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TunesBar+Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDC2E16F36E4100D47E36 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		94ABDC3116F36E4100D47E36 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		94ABDC3216F36E4100D47E36 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		94ABDC3316F36E4100D47E36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		94ABDC3616F36E4100D47E36 /* TunesBarHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TunesBarHelper-Info.plist"; sourceTree = "<group>"; };
+		94ABDC3616F36E4100D47E36 /* TunesBar+Helper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TunesBar+Helper-Info.plist"; sourceTree = "<group>"; };
 		94ABDC3816F36E4100D47E36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94ABDC3A16F36E4100D47E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		94ABDC3C16F36E4100D47E36 /* TunesBarHelper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TunesBarHelper-Prefix.pch"; sourceTree = "<group>"; };
+		94ABDC3C16F36E4100D47E36 /* TunesBar+Helper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TunesBar+Helper-Prefix.pch"; sourceTree = "<group>"; };
 		94ABDC3E16F36E4100D47E36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		94ABDC4016F36E4100D47E36 /* SDTBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDTBAppDelegate.h; sourceTree = "<group>"; };
 		94ABDC4116F36E4100D47E36 /* SDTBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDTBAppDelegate.m; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		94ABDC2C16F36E4100D47E36 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94ABDC2B16F36E4100D47E36 /* TunesBarHelper.app */,
+				94ABDC2B16F36E4100D47E36 /* TunesBar+Helper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,10 +95,10 @@
 		94ABDC3516F36E4100D47E36 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				94ABDC3616F36E4100D47E36 /* TunesBarHelper-Info.plist */,
+				94ABDC3616F36E4100D47E36 /* TunesBar+Helper-Info.plist */,
 				94ABDC3716F36E4100D47E36 /* InfoPlist.strings */,
 				94ABDC3A16F36E4100D47E36 /* main.m */,
-				94ABDC3C16F36E4100D47E36 /* TunesBarHelper-Prefix.pch */,
+				94ABDC3C16F36E4100D47E36 /* TunesBar+Helper-Prefix.pch */,
 				94ABDC3D16F36E4100D47E36 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -107,9 +107,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94ABDC2A16F36E4100D47E36 /* TunesBarHelper */ = {
+		94ABDC2A16F36E4100D47E36 /* TunesBar+Helper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94ABDC4816F36E4100D47E36 /* Build configuration list for PBXNativeTarget "TunesBarHelper" */;
+			buildConfigurationList = 94ABDC4816F36E4100D47E36 /* Build configuration list for PBXNativeTarget "TunesBar+Helper" */;
 			buildPhases = (
 				94ABDC2716F36E4100D47E36 /* Sources */,
 				94ABDC2816F36E4100D47E36 /* Frameworks */,
@@ -119,9 +119,9 @@
 			);
 			dependencies = (
 			);
-			name = TunesBarHelper;
+			name = "TunesBar+Helper";
 			productName = TunesBarHelper;
-			productReference = 94ABDC2B16F36E4100D47E36 /* TunesBarHelper.app */;
+			productReference = 94ABDC2B16F36E4100D47E36 /* TunesBar+Helper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -134,7 +134,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Steven Degutis";
 			};
-			buildConfigurationList = 94ABDC2616F36E4100D47E36 /* Build configuration list for PBXProject "TunesBarHelper" */;
+			buildConfigurationList = 94ABDC2616F36E4100D47E36 /* Build configuration list for PBXProject "TunesBar+Helper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -146,7 +146,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94ABDC2A16F36E4100D47E36 /* TunesBarHelper */,
+				94ABDC2A16F36E4100D47E36 /* TunesBar+Helper */,
 			);
 		};
 /* End PBXProject section */
@@ -268,9 +268,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TunesBarHelper/TunesBarHelper-Prefix.pch";
-				INFOPLIST_FILE = "TunesBarHelper/TunesBarHelper-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TunesBarHelper/TunesBar+Helper-Prefix.pch";
+				INFOPLIST_FILE = "TunesBarHelper/TunesBar+Helper-Info.plist";
+				PRODUCT_NAME = "TunesBar+Helper";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -281,9 +281,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TunesBarHelper/TunesBarHelper-Prefix.pch";
-				INFOPLIST_FILE = "TunesBarHelper/TunesBarHelper-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TunesBarHelper/TunesBar+Helper-Prefix.pch";
+				INFOPLIST_FILE = "TunesBarHelper/TunesBar+Helper-Info.plist";
+				PRODUCT_NAME = "TunesBar+Helper";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -292,7 +292,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94ABDC2616F36E4100D47E36 /* Build configuration list for PBXProject "TunesBarHelper" */ = {
+		94ABDC2616F36E4100D47E36 /* Build configuration list for PBXProject "TunesBar+Helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94ABDC4616F36E4100D47E36 /* Debug */,
@@ -301,7 +301,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94ABDC4816F36E4100D47E36 /* Build configuration list for PBXNativeTarget "TunesBarHelper" */ = {
+		94ABDC4816F36E4100D47E36 /* Build configuration list for PBXNativeTarget "TunesBar+Helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94ABDC4916F36E4100D47E36 /* Debug */,

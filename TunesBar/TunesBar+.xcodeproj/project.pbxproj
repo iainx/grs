@@ -18,7 +18,7 @@
 		94ABDBDF16F34B6000D47E36 /* SDStatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBDE16F34B6000D47E36 /* SDStatusItemController.m */; };
 		94ABDBE816F34B8600D47E36 /* SDTBStatusItemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBE716F34B8600D47E36 /* SDTBStatusItemHelper.m */; };
 		94ABDBF216F34D2600D47E36 /* sd_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBEA16F34D2600D47E36 /* sd_intro.png */; };
-		94ABDBF516F34D2600D47E36 /* TunesBar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBED16F34D2600D47E36 /* TunesBar.icns */; };
+		94ABDBF516F34D2600D47E36 /* TunesBar+.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBED16F34D2600D47E36 /* TunesBar+.icns */; };
 		94ABDBF616F34D2600D47E36 /* NextTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBEE16F34D2600D47E36 /* NextTrack.png */; };
 		94ABDBF716F34D2600D47E36 /* PreviousTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBEF16F34D2600D47E36 /* PreviousTrack.png */; };
 		94ABDBF816F34D2600D47E36 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBF016F34D2600D47E36 /* Play.png */; };
@@ -34,7 +34,6 @@
 		94ABDC1D16F3545B00D47E36 /* SDWelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDC1516F3545B00D47E36 /* SDWelcomeWindow.xib */; };
 		94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1716F3545B00D47E36 /* SDWelcomeWindowController.m */; };
 		94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */; };
-		94ABDC5216F36E7F00D47E36 /* TunesBarHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 94ABDC5016F36E4200D47E36 /* TunesBarHelper.app */; };
 		94ABDC5416F36E9400D47E36 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */; };
 		AE042EC3173B1A6A00F76543 /* MAAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AE042EC2173B1A6A00F76543 /* MAAttachedWindow.m */; };
 		AE82EF9D17D6942C005AEEAA /* NextTrack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE82EF9917D6942C005AEEAA /* NextTrack@2x.png */; };
@@ -44,16 +43,6 @@
 		AE975E9217D796680053BFAF /* sd_intro2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE975E9117D796680053BFAF /* sd_intro2.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		94ABDC4F16F36E4200D47E36 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 94ABDC4B16F36E4100D47E36 /* TunesBarHelper.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 94ABDC2B16F36E4100D47E36;
-			remoteInfo = TunesBarHelper;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		94ABDC5116F36E6B00D47E36 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -61,7 +50,6 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				94ABDC5216F36E7F00D47E36 /* TunesBarHelper.app in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,15 +58,15 @@
 
 /* Begin PBXFileReference section */
 		942D393D16F38886006D869C /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
-		94ABDBB216F2D40D00D47E36 /* TunesBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TunesBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94ABDBB216F2D40D00D47E36 /* TunesBar+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TunesBar+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDBB516F2D40D00D47E36 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		94ABDBB816F2D40D00D47E36 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		94ABDBB916F2D40D00D47E36 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		94ABDBBA16F2D40D00D47E36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		94ABDBBD16F2D40D00D47E36 /* TunesBar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TunesBar-Info.plist"; sourceTree = "<group>"; };
+		94ABDBBD16F2D40D00D47E36 /* TunesBar+-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TunesBar+-Info.plist"; sourceTree = "<group>"; };
 		94ABDBBF16F2D40D00D47E36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94ABDBC116F2D40D00D47E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		94ABDBC316F2D40D00D47E36 /* TunesBar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TunesBar-Prefix.pch"; sourceTree = "<group>"; };
+		94ABDBC316F2D40D00D47E36 /* TunesBar+-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TunesBar+-Prefix.pch"; sourceTree = "<group>"; };
 		94ABDBC716F2D40D00D47E36 /* SDTBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDTBAppDelegate.h; sourceTree = "<group>"; };
 		94ABDBC816F2D40D00D47E36 /* SDTBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDTBAppDelegate.m; sourceTree = "<group>"; };
 		94ABDBCB16F2D40D00D47E36 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -92,7 +80,7 @@
 		94ABDBE716F34B8600D47E36 /* SDTBStatusItemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBStatusItemHelper.m; sourceTree = "<group>"; };
 		94ABDBE916F34C4200D47E36 /* DefaultsKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultsKeys.h; sourceTree = "<group>"; };
 		94ABDBEA16F34D2600D47E36 /* sd_intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro.png; sourceTree = "<group>"; };
-		94ABDBED16F34D2600D47E36 /* TunesBar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = TunesBar.icns; sourceTree = "<group>"; };
+		94ABDBED16F34D2600D47E36 /* TunesBar+.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "TunesBar+.icns"; sourceTree = "<group>"; };
 		94ABDBEE16F34D2600D47E36 /* NextTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NextTrack.png; sourceTree = "<group>"; };
 		94ABDBEF16F34D2600D47E36 /* PreviousTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PreviousTrack.png; sourceTree = "<group>"; };
 		94ABDBF016F34D2600D47E36 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
@@ -116,7 +104,7 @@
 		94ABDC1A16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWelcomeWindowRoundedImageView.h; sourceTree = "<group>"; };
 		94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWelcomeWindowRoundedImageView.m; sourceTree = "<group>"; };
 		94ABDC2116F35E2C00D47E36 /* TunesBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TunesBar.entitlements; sourceTree = "<group>"; };
-		94ABDC4B16F36E4100D47E36 /* TunesBarHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TunesBarHelper.xcodeproj; path = TunesBarHelper/TunesBarHelper.xcodeproj; sourceTree = "<group>"; };
+		94ABDC4B16F36E4100D47E36 /* TunesBar+Helper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "TunesBar+Helper.xcodeproj"; path = "TunesBarHelper/TunesBar+Helper.xcodeproj"; sourceTree = "<group>"; };
 		94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		AE042EC1173B1A6A00F76543 /* MAAttachedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAAttachedWindow.h; sourceTree = "<group>"; };
 		AE042EC2173B1A6A00F76543 /* MAAttachedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAAttachedWindow.m; sourceTree = "<group>"; };
@@ -144,7 +132,7 @@
 		94ABDBA916F2D40D00D47E36 = {
 			isa = PBXGroup;
 			children = (
-				94ABDC4B16F36E4100D47E36 /* TunesBarHelper.xcodeproj */,
+				94ABDC4B16F36E4100D47E36 /* TunesBar+Helper.xcodeproj */,
 				94ABDBBB16F2D40D00D47E36 /* TunesBar */,
 				94ABDBB416F2D40D00D47E36 /* Frameworks */,
 				94ABDBB316F2D40D00D47E36 /* Products */,
@@ -154,7 +142,7 @@
 		94ABDBB316F2D40D00D47E36 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94ABDBB216F2D40D00D47E36 /* TunesBar.app */,
+				94ABDBB216F2D40D00D47E36 /* TunesBar+.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,7 +171,7 @@
 		94ABDBBB16F2D40D00D47E36 /* TunesBar */ = {
 			isa = PBXGroup;
 			children = (
-				94ABDBBD16F2D40D00D47E36 /* TunesBar-Info.plist */,
+				94ABDBBD16F2D40D00D47E36 /* TunesBar+-Info.plist */,
 				94ABDC2116F35E2C00D47E36 /* TunesBar.entitlements */,
 				94ABDBE916F34C4200D47E36 /* DefaultsKeys.h */,
 				94ABDC0816F351AC00D47E36 /* DefaultValues.plist */,
@@ -204,7 +192,7 @@
 			children = (
 				94ABDBBE16F2D40D00D47E36 /* InfoPlist.strings */,
 				94ABDBC116F2D40D00D47E36 /* main.m */,
-				94ABDBC316F2D40D00D47E36 /* TunesBar-Prefix.pch */,
+				94ABDBC316F2D40D00D47E36 /* TunesBar+-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,7 +226,7 @@
 			children = (
 				94ABDBEA16F34D2600D47E36 /* sd_intro.png */,
 				AE975E9117D796680053BFAF /* sd_intro2.png */,
-				94ABDBED16F34D2600D47E36 /* TunesBar.icns */,
+				94ABDBED16F34D2600D47E36 /* TunesBar+.icns */,
 				94ABDBEE16F34D2600D47E36 /* NextTrack.png */,
 				AE82EF9917D6942C005AEEAA /* NextTrack@2x.png */,
 				94ABDBEF16F34D2600D47E36 /* PreviousTrack.png */,
@@ -291,20 +279,12 @@
 			name = SDToolkit;
 			sourceTree = "<group>";
 		};
-		94ABDC4C16F36E4100D47E36 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				94ABDC5016F36E4200D47E36 /* TunesBarHelper.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94ABDBB116F2D40D00D47E36 /* TunesBar */ = {
+		94ABDBB116F2D40D00D47E36 /* TunesBar+ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94ABDBCF16F2D40D00D47E36 /* Build configuration list for PBXNativeTarget "TunesBar" */;
+			buildConfigurationList = 94ABDBCF16F2D40D00D47E36 /* Build configuration list for PBXNativeTarget "TunesBar+" */;
 			buildPhases = (
 				94ABDBAE16F2D40D00D47E36 /* Sources */,
 				94ABDBAF16F2D40D00D47E36 /* Frameworks */,
@@ -316,9 +296,9 @@
 			);
 			dependencies = (
 			);
-			name = TunesBar;
+			name = "TunesBar+";
 			productName = TunesBar;
-			productReference = 94ABDBB216F2D40D00D47E36 /* TunesBar.app */;
+			productReference = 94ABDBB216F2D40D00D47E36 /* TunesBar+.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -331,7 +311,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Steven Degutis";
 			};
-			buildConfigurationList = 94ABDBAD16F2D40D00D47E36 /* Build configuration list for PBXProject "TunesBar" */;
+			buildConfigurationList = 94ABDBAD16F2D40D00D47E36 /* Build configuration list for PBXProject "TunesBar+" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -341,28 +321,12 @@
 			mainGroup = 94ABDBA916F2D40D00D47E36;
 			productRefGroup = 94ABDBB316F2D40D00D47E36 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 94ABDC4C16F36E4100D47E36 /* Products */;
-					ProjectRef = 94ABDC4B16F36E4100D47E36 /* TunesBarHelper.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				94ABDBB116F2D40D00D47E36 /* TunesBar */,
+				94ABDBB116F2D40D00D47E36 /* TunesBar+ */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		94ABDC5016F36E4200D47E36 /* TunesBarHelper.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = TunesBarHelper.app;
-			remoteRef = 94ABDC4F16F36E4200D47E36 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		94ABDBB016F2D40D00D47E36 /* Resources */ = {
@@ -372,7 +336,7 @@
 				94ABDBC016F2D40D00D47E36 /* InfoPlist.strings in Resources */,
 				94ABDBCC16F2D40D00D47E36 /* MainMenu.xib in Resources */,
 				94ABDBF216F34D2600D47E36 /* sd_intro.png in Resources */,
-				94ABDBF516F34D2600D47E36 /* TunesBar.icns in Resources */,
+				94ABDBF516F34D2600D47E36 /* TunesBar+.icns in Resources */,
 				94ABDBF616F34D2600D47E36 /* NextTrack.png in Resources */,
 				94ABDBF716F34D2600D47E36 /* PreviousTrack.png in Resources */,
 				94ABDBF816F34D2600D47E36 /* Play.png in Resources */,
@@ -515,9 +479,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TunesBar/TunesBar-Prefix.pch";
-				INFOPLIST_FILE = "TunesBar/TunesBar-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TunesBar/TunesBar+-Prefix.pch";
+				INFOPLIST_FILE = "TunesBar/TunesBar+-Info.plist";
+				PRODUCT_NAME = "TunesBar+";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -528,9 +492,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TunesBar/TunesBar-Prefix.pch";
-				INFOPLIST_FILE = "TunesBar/TunesBar-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TunesBar/TunesBar+-Prefix.pch";
+				INFOPLIST_FILE = "TunesBar/TunesBar+-Info.plist";
+				PRODUCT_NAME = "TunesBar+";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -538,7 +502,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94ABDBAD16F2D40D00D47E36 /* Build configuration list for PBXProject "TunesBar" */ = {
+		94ABDBAD16F2D40D00D47E36 /* Build configuration list for PBXProject "TunesBar+" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94ABDBCD16F2D40D00D47E36 /* Debug */,
@@ -547,7 +511,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94ABDBCF16F2D40D00D47E36 /* Build configuration list for PBXNativeTarget "TunesBar" */ = {
+		94ABDBCF16F2D40D00D47E36 /* Build configuration list for PBXNativeTarget "TunesBar+" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94ABDBD016F2D40D00D47E36 /* Debug */,

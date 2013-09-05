@@ -38,15 +38,9 @@
     [SDWelcomeWindowController showInstructionsWindowFirstTimeOnly];
 }
 
-- (IBAction) showPreferencesWindow:(id)sender {
+- (IBAction) showAboutWindow:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
-    
-    if (self.preferencesWindowController == nil) {
-        self.preferencesWindowController = [[SDPreferencesWindowController alloc] init];
-        [self.preferencesWindowController usePreferencePaneControllerClasses:@[[SDGeneralPrefPane self]]];
-    }
-    
-    [self.preferencesWindowController showWindow:sender];
+    [NSApp orderFrontStandardAboutPanel:sender];
 }
 
 - (IBAction) reallyShowAboutPanel:(id)sender {

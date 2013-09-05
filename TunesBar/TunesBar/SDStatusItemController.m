@@ -30,34 +30,8 @@
 
 static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 - (void) setupStatusItem {
-    [[NSUserDefaults standardUserDefaults] addObserver:self
-                                            forKeyPath:kSDSeparatorLeftKey
-                                               options:0
-                                               context:NULL];
-    
-    [[NSUserDefaults standardUserDefaults] addObserver:self
-                                            forKeyPath:kSDSeparatorMidKey
-                                               options:0
-                                               context:NULL];
-    
-    [[NSUserDefaults standardUserDefaults] addObserver:self
-                                            forKeyPath:kSDSeparatorRightKey
-                                               options:0
-                                               context:NULL];
-    
-    [[NSUserDefaults standardUserDefaults] addObserver:self
-                                            forKeyPath:@"titleOptions"
-                                               options:0
-                                               context:NULL];
-    
-    [[NSUserDefaults standardUserDefaults] addObserver:self
-                                            forKeyPath:@"fontSize"
-                                               options:0
-                                               context:NULL];
-    
 	self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	[self.statusItem setHighlightMode:YES];
-	//[self.statusItem setMenu:self.statusItemMenu];
     [self.statusItem setAction:@selector(showInfoPanel:)];
     [self.statusItem setTarget:self];
     
@@ -104,17 +78,6 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
     [_albumField setStringValue:[iProxy trackAlbum]];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-	[self _updateTitle];
-    if (_attachedWindow) {
-        [self updateHudInfo];
-    }
-}
-
 - (void) iTunesUpdated {
 	[self _updateTitle];
     if (_attachedWindow) {
@@ -126,24 +89,19 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 	if ([[iTunesProxy proxy] isRunning]) {
 		_displayStrings = [NSMutableArray array];
 		
-        NSArray *titleDisplayOptions = [[NSUserDefaults standardUserDefaults] arrayForKey:@"titleOptions"];
+        NSArray *titleDisplayOptions = @[@"trackName", @"trackAlbum", @"trackArtist"];
         
-		for (NSDictionary *titleOptions in titleDisplayOptions) {
-			NSNumber *enabled = [titleOptions objectForKey:@"Enabled"];
+		for (NSString *key in titleDisplayOptions) {
 			
-			if ([enabled boolValue] == YES) {
-				NSString *key = [titleOptions objectForKey:@"iTunesKey"];
-				NSString *title = [[iTunesProxy proxy] valueForKey:key];
-				if (title) {
-					[_displayStrings addObject:title];
-                }
+            NSString *title = [[iTunesProxy proxy] valueForKey:key];
+            if (title) {
+                [_displayStrings addObject:title];
 			}
 		}
 	} else {
-        _displayStrings = nil;
+        _displayStrings = [NSMutableArray arrayWithObject:@"Nothing Playing"];
         [_displayTimer invalidate];
         _displayTimer = nil;
-        return;
 	}
 	   
     _displayIndex = -1;
@@ -198,22 +156,6 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 
 - (IBAction) previousTrack:(id)sender {
 	[[[iTunesProxy proxy] iTunes] previousTrack];
-}
-
-// MARK: -
-// MARK: User Interface
-
-- (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
-	if ([menuItem action] == @selector(playPause:)) {
-		NSString *title = @"Play";
-		
-		if ([[iTunesProxy proxy] isPlaying] == YES)
-			title = @"Pause";
-		
-		[menuItem setTitle:title];
-		[menuItem setImage:[NSImage imageNamed:title]];
-	}
-	return YES;
 }
 
 @end
