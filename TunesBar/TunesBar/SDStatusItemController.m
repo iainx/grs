@@ -51,10 +51,18 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
     }
     
     NSRect frame = [[event window] frame];
+    iTunesProxy *iProxy = [iTunesProxy proxy];
+    NSView *hudView;
     
-    _attachedWindow = [[MAAttachedWindow alloc] initWithView:_hubView
-                                                      attachedToPoint:NSMakePoint(NSMidX(frame), frame.origin.y)
-                                                               onSide:MAPositionAutomatic];
+    if ([iProxy isRunning]) {
+        hudView = _hudView;
+    } else {
+        hudView = _startHudView;
+    }
+
+    _attachedWindow = [[MAAttachedWindow alloc] initWithView:hudView
+                                             attachedToPoint:NSMakePoint(NSMidX(frame), frame.origin.y)
+                                                      onSide:MAPositionAutomatic];
     [[event window] addChildWindow:_attachedWindow ordered:NSWindowAbove];
     
     [_displayTimer invalidate];
@@ -66,6 +74,10 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 - (void)updateHudInfo
 {
     iTunesProxy *iProxy = [iTunesProxy proxy];
+    
+    if (![iProxy isRunning]) {
+        return;
+    }
     
     if ([iProxy isPlaying]) {
         [_playButton setState:1];
@@ -158,4 +170,14 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 	[[[iTunesProxy proxy] iTunes] previousTrack];
 }
 
+- (IBAction)startiTunes:(id)sender {
+    [[NSWorkspace sharedWorkspace] launchApplication:@"/Applications/iTunes.app"];
+    if (_attachedWindow) {
+        [[_attachedWindow parentWindow] removeChildWindow:_attachedWindow];
+        _attachedWindow = nil;
+        
+        [self resetTimer];
+        return;
+    }
+}
 @end

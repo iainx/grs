@@ -38,27 +38,6 @@
     [SDWelcomeWindowController showInstructionsWindowFirstTimeOnly];
 }
 
-- (IBAction) showAboutWindow:(id)sender {
-    [NSApp activateIgnoringOtherApps:YES];
-    [NSApp orderFrontStandardAboutPanel:sender];
-}
-
-- (IBAction) reallyShowAboutPanel:(id)sender {
-    [NSApp activateIgnoringOtherApps:YES];
-    [NSApp orderFrontStandardAboutPanel:sender];
-}
-
-- (IBAction) toggleOpenAtLogin:(id)sender {
-	NSInteger changingToState = ![sender state];
-    if (!SMLoginItemSetEnabled(CFSTR("com.sleepfive.TunesBarPlusHelper"), changingToState)) {
-        NSRunAlertPanel(@"Could not change Open at Login status",
-                        @"For some reason, this failed. Most likely it's because the app isn't in the Applications folder.",
-                        @"OK",
-                        nil,
-                        nil);
-    }
-}
-
 - (BOOL) opensAtLogin {
     CFArrayRef jobDictsCF = SMCopyAllJobDictionaries( kSMDomainUserLaunchd );
     NSArray* jobDicts = (__bridge_transfer NSArray*)jobDictsCF;
@@ -77,11 +56,6 @@
         return bOnDemand;
     }
     return NO;
-}
-
-- (void) menuNeedsUpdate:(NSMenu *)menu {
-    BOOL opensAtLogin = [self opensAtLogin];
-    [[menu itemWithTitle:@"Open at Login"] setState:(opensAtLogin ? NSOnState : NSOffState)];
 }
 
 @end
