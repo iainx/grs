@@ -17,20 +17,12 @@
 		94ABDBDB16F34A7F00D47E36 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDBDA16F34A7F00D47E36 /* ScriptingBridge.framework */; };
 		94ABDBDF16F34B6000D47E36 /* SDStatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBDE16F34B6000D47E36 /* SDStatusItemController.m */; };
 		94ABDBE816F34B8600D47E36 /* SDTBStatusItemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBE716F34B8600D47E36 /* SDTBStatusItemHelper.m */; };
-		94ABDBF216F34D2600D47E36 /* sd_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBEA16F34D2600D47E36 /* sd_intro.png */; };
 		94ABDBF516F34D2600D47E36 /* TunesBar+.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBED16F34D2600D47E36 /* TunesBar+.icns */; };
 		94ABDBF616F34D2600D47E36 /* NextTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBEE16F34D2600D47E36 /* NextTrack.png */; };
 		94ABDBF716F34D2600D47E36 /* PreviousTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBEF16F34D2600D47E36 /* PreviousTrack.png */; };
 		94ABDBF816F34D2600D47E36 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBF016F34D2600D47E36 /* Play.png */; };
 		94ABDBF916F34D2600D47E36 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBF116F34D2600D47E36 /* Pause.png */; };
-		94ABDBFE16F3509800D47E36 /* SDPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBFB16F3509800D47E36 /* SDPreferencesWindow.xib */; };
-		94ABDBFF16F3509800D47E36 /* SDPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBFD16F3509800D47E36 /* SDPreferencesWindowController.m */; };
-		94ABDC0216F350F100D47E36 /* SDGeneralPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC0116F350F100D47E36 /* SDGeneralPrefPane.m */; };
-		94ABDC0416F350F800D47E36 /* GeneralPrefPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDC0316F350F800D47E36 /* GeneralPrefPane.xib */; };
-		94ABDC0716F3511200D47E36 /* NSWindow+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC0616F3511200D47E36 /* NSWindow+Geometry.m */; };
 		94ABDC0916F351AC00D47E36 /* DefaultValues.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDC0816F351AC00D47E36 /* DefaultValues.plist */; };
-		94ABDC0C16F3527000D47E36 /* SDFontSizeSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC0B16F3527000D47E36 /* SDFontSizeSliderCell.m */; };
-		94ABDC1216F3537300D47E36 /* RSRTVArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1116F3537300D47E36 /* RSRTVArrayController.m */; };
 		94ABDC1D16F3545B00D47E36 /* SDWelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDC1516F3545B00D47E36 /* SDWelcomeWindow.xib */; };
 		94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1716F3545B00D47E36 /* SDWelcomeWindowController.m */; };
 		94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */; };
@@ -90,25 +82,12 @@
 		94ABDBE616F34B8600D47E36 /* SDTBStatusItemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBStatusItemHelper.h; sourceTree = "<group>"; };
 		94ABDBE716F34B8600D47E36 /* SDTBStatusItemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBStatusItemHelper.m; sourceTree = "<group>"; };
 		94ABDBE916F34C4200D47E36 /* DefaultsKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultsKeys.h; sourceTree = "<group>"; };
-		94ABDBEA16F34D2600D47E36 /* sd_intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro.png; sourceTree = "<group>"; };
 		94ABDBED16F34D2600D47E36 /* TunesBar+.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "TunesBar+.icns"; sourceTree = "<group>"; };
 		94ABDBEE16F34D2600D47E36 /* NextTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NextTrack.png; sourceTree = "<group>"; };
 		94ABDBEF16F34D2600D47E36 /* PreviousTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PreviousTrack.png; sourceTree = "<group>"; };
 		94ABDBF016F34D2600D47E36 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
 		94ABDBF116F34D2600D47E36 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
-		94ABDBFB16F3509800D47E36 /* SDPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDPreferencesWindow.xib; sourceTree = "<group>"; };
-		94ABDBFC16F3509800D47E36 /* SDPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPreferencesWindowController.h; sourceTree = "<group>"; };
-		94ABDBFD16F3509800D47E36 /* SDPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPreferencesWindowController.m; sourceTree = "<group>"; };
-		94ABDC0016F350F100D47E36 /* SDGeneralPrefPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDGeneralPrefPane.h; sourceTree = "<group>"; };
-		94ABDC0116F350F100D47E36 /* SDGeneralPrefPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDGeneralPrefPane.m; sourceTree = "<group>"; };
-		94ABDC0316F350F800D47E36 /* GeneralPrefPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPrefPane.xib; sourceTree = "<group>"; };
-		94ABDC0516F3511200D47E36 /* NSWindow+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+Geometry.h"; sourceTree = "<group>"; };
-		94ABDC0616F3511200D47E36 /* NSWindow+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+Geometry.m"; sourceTree = "<group>"; };
 		94ABDC0816F351AC00D47E36 /* DefaultValues.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultValues.plist; sourceTree = "<group>"; };
-		94ABDC0A16F3527000D47E36 /* SDFontSizeSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDFontSizeSliderCell.h; sourceTree = "<group>"; };
-		94ABDC0B16F3527000D47E36 /* SDFontSizeSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDFontSizeSliderCell.m; sourceTree = "<group>"; };
-		94ABDC1016F3537300D47E36 /* RSRTVArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRTVArrayController.h; sourceTree = "<group>"; };
-		94ABDC1116F3537300D47E36 /* RSRTVArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRTVArrayController.m; sourceTree = "<group>"; };
 		94ABDC1516F3545B00D47E36 /* SDWelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDWelcomeWindow.xib; sourceTree = "<group>"; };
 		94ABDC1616F3545B00D47E36 /* SDWelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWelcomeWindowController.h; sourceTree = "<group>"; };
 		94ABDC1716F3545B00D47E36 /* SDWelcomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWelcomeWindowController.m; sourceTree = "<group>"; };
@@ -190,7 +169,6 @@
 				94ABDBFA16F3508F00D47E36 /* SDToolkit */,
 				94ABDBD516F348EC00D47E36 /* Helpers */,
 				94ABDBD416F348CB00D47E36 /* Graphics */,
-				94ABDBDC16F34B4D00D47E36 /* View */,
 				94ABDBD216F348BB00D47E36 /* Controllers */,
 				94ABDBD316F348BF00D47E36 /* XIBs */,
 				94ABDBBC16F2D40D00D47E36 /* Supporting Files */,
@@ -215,8 +193,6 @@
 				94ABDBC816F2D40D00D47E36 /* SDTBAppDelegate.m */,
 				94ABDBDD16F34B6000D47E36 /* SDStatusItemController.h */,
 				94ABDBDE16F34B6000D47E36 /* SDStatusItemController.m */,
-				94ABDC0016F350F100D47E36 /* SDGeneralPrefPane.h */,
-				94ABDC0116F350F100D47E36 /* SDGeneralPrefPane.m */,
 				AE042EC1173B1A6A00F76543 /* MAAttachedWindow.h */,
 				AE042EC2173B1A6A00F76543 /* MAAttachedWindow.m */,
 			);
@@ -227,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				94ABDBCA16F2D40D00D47E36 /* MainMenu.xib */,
-				94ABDC0316F350F800D47E36 /* GeneralPrefPane.xib */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -235,7 +210,6 @@
 		94ABDBD416F348CB00D47E36 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				94ABDBEA16F34D2600D47E36 /* sd_intro.png */,
 				AE975E9117D796680053BFAF /* sd_intro2.png */,
 				94ABDBED16F34D2600D47E36 /* TunesBar+.icns */,
 				94ABDBEE16F34D2600D47E36 /* NextTrack.png */,
@@ -262,25 +236,9 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		94ABDBDC16F34B4D00D47E36 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				94ABDC0A16F3527000D47E36 /* SDFontSizeSliderCell.h */,
-				94ABDC0B16F3527000D47E36 /* SDFontSizeSliderCell.m */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
 		94ABDBFA16F3508F00D47E36 /* SDToolkit */ = {
 			isa = PBXGroup;
 			children = (
-				94ABDBFB16F3509800D47E36 /* SDPreferencesWindow.xib */,
-				94ABDBFC16F3509800D47E36 /* SDPreferencesWindowController.h */,
-				94ABDBFD16F3509800D47E36 /* SDPreferencesWindowController.m */,
-				94ABDC0516F3511200D47E36 /* NSWindow+Geometry.h */,
-				94ABDC0616F3511200D47E36 /* NSWindow+Geometry.m */,
-				94ABDC1016F3537300D47E36 /* RSRTVArrayController.h */,
-				94ABDC1116F3537300D47E36 /* RSRTVArrayController.m */,
 				94ABDC1516F3545B00D47E36 /* SDWelcomeWindow.xib */,
 				94ABDC1616F3545B00D47E36 /* SDWelcomeWindowController.h */,
 				94ABDC1716F3545B00D47E36 /* SDWelcomeWindowController.m */,
@@ -370,14 +328,11 @@
 			files = (
 				94ABDBC016F2D40D00D47E36 /* InfoPlist.strings in Resources */,
 				94ABDBCC16F2D40D00D47E36 /* MainMenu.xib in Resources */,
-				94ABDBF216F34D2600D47E36 /* sd_intro.png in Resources */,
 				94ABDBF516F34D2600D47E36 /* TunesBar+.icns in Resources */,
 				94ABDBF616F34D2600D47E36 /* NextTrack.png in Resources */,
 				94ABDBF716F34D2600D47E36 /* PreviousTrack.png in Resources */,
 				94ABDBF816F34D2600D47E36 /* Play.png in Resources */,
 				94ABDBF916F34D2600D47E36 /* Pause.png in Resources */,
-				94ABDBFE16F3509800D47E36 /* SDPreferencesWindow.xib in Resources */,
-				94ABDC0416F350F800D47E36 /* GeneralPrefPane.xib in Resources */,
 				94ABDC0916F351AC00D47E36 /* DefaultValues.plist in Resources */,
 				94ABDC1D16F3545B00D47E36 /* SDWelcomeWindow.xib in Resources */,
 				942D393E16F38886006D869C /* Credits.html in Resources */,
@@ -418,11 +373,6 @@
 				94ABDBD916F348FE00D47E36 /* iTunesProxy.m in Sources */,
 				94ABDBDF16F34B6000D47E36 /* SDStatusItemController.m in Sources */,
 				94ABDBE816F34B8600D47E36 /* SDTBStatusItemHelper.m in Sources */,
-				94ABDBFF16F3509800D47E36 /* SDPreferencesWindowController.m in Sources */,
-				94ABDC0216F350F100D47E36 /* SDGeneralPrefPane.m in Sources */,
-				94ABDC0716F3511200D47E36 /* NSWindow+Geometry.m in Sources */,
-				94ABDC0C16F3527000D47E36 /* SDFontSizeSliderCell.m in Sources */,
-				94ABDC1216F3537300D47E36 /* RSRTVArrayController.m in Sources */,
 				94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */,
 				94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */,
 				AE042EC3173B1A6A00F76543 /* MAAttachedWindow.m in Sources */,

@@ -9,11 +9,9 @@
 #import <Cocoa/Cocoa.h>
 
 #import "SDStatusItemController.h"
-#import "SDPreferencesWindowController.h"
 
 @interface SDTBAppDelegate : NSObject <NSApplicationDelegate>
 
 @property IBOutlet SDStatusItemController* statusItemController;
-@property SDPreferencesWindowController* preferencesWindowController;
 
 @end

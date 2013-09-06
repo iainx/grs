@@ -4,58 +4,7 @@
 <dict>
 	<key>firstTimeUsing_v4_0</key>
 	<true/>
-	<key>fontSize</key>
-	<integer>12</integer>
 	<key>firstTime</key>
 	<true/>
-	<key>leftSeparatorSymbol</key>
-	<string>•</string>
-	<key>middleSeparatorSymbol</key>
-	<string>•</string>
-	<key>rightSeparatorSymbol</key>
-	<string>•</string>
-	<key>titleOptions</key>
-	<array>
-		<dict>
-			<key>iTunesKey</key>
-			<string>trackName</string>
-			<key>Title</key>
-			<string>Track Name</string>
-			<key>Enabled</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>iTunesKey</key>
-			<string>trackArtist</string>
-			<key>Title</key>
-			<string>Artist</string>
-			<key>Enabled</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>iTunesKey</key>
-			<string>trackAlbum</string>
-			<key>Title</key>
-			<string>Album</string>
-			<key>Enabled</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>iTunesKey</key>
-			<string>trackGenre</string>
-			<key>Title</key>
-			<string>Genre</string>
-			<key>Enabled</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>iTunesKey</key>
-			<string>trackTotalTime</string>
-			<key>Title</key>
-			<string>Total Time</string>
-			<key>Enabled</key>
-			<false/>
-		</dict>
-	</array>
 </dict>
 </plist>

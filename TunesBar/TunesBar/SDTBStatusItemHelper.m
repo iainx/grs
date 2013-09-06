@@ -38,8 +38,8 @@
 	NSEnableScreenUpdates();
 }
 
-+ (NSImage*) imageFromString:(NSString*)title
-                  attributes:(NSDictionary*)attributes
++ (NSImage*)imageFromString:(NSString*)title
+                 attributes:(NSDictionary*)attributes
 {
 	NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attributes];
 	NSSize frameSize = [title sizeWithAttributes:attributes];
