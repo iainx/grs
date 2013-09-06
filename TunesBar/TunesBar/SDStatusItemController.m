@@ -4,6 +4,8 @@
 //
 //  Created by Steven Degutis on 7/24/09.
 //  Copyright 2009 8th Light. All rights reserved.
+//  Modified by Iain Holmes
+//  Copyright 2013, Sleep(5), Ltd
 //
 
 #import "SDStatusItemController.h"
@@ -12,9 +14,9 @@
 #import "SDTBStatusItemHelper.h"
 #import "MAAttachedWindow.h"
 
-@interface SDStatusItemController ()
+#import <ServiceManagement/ServiceManagement.h>
 
-@property IBOutlet NSMenu *statusItemMenu;
+@interface SDStatusItemController ()
 
 @property NSStatusItem *statusItem;
 
@@ -85,6 +87,7 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
         [_playButton setState:0];
     }
     [_imageView setImage:[iProxy coverArtwork]];
+    
     [_titleField setStringValue:[iProxy trackName]];
     [_artistField setStringValue:[iProxy trackArtist]];
     [_albumField setStringValue:[iProxy trackAlbum]];
@@ -171,7 +174,10 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 }
 
 - (IBAction)startiTunes:(id)sender {
-    [[NSWorkspace sharedWorkspace] launchApplication:@"/Applications/iTunes.app"];
+    [[NSWorkspace sharedWorkspace] launchAppWithBundleIdentifier:@"com.apple.iTunes"
+                                                         options:0
+                                  additionalEventParamDescriptor:nil
+                                                launchIdentifier:NULL];
     if (_attachedWindow) {
         [[_attachedWindow parentWindow] removeChildWindow:_attachedWindow];
         _attachedWindow = nil;
@@ -180,4 +186,55 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
         return;
     }
 }
+
+- (IBAction)showAdvancedMenu:(id)sender
+{
+    NSEvent *event = [NSApp currentEvent];
+    [NSMenu popUpContextMenu:_advancedMenu
+                   withEvent:event
+                     forView:sender];
+}
+
+- (IBAction) toggleOpenAtLogin:(id)sender {
+	NSInteger changingToState = ![sender state];
+    if (!SMLoginItemSetEnabled(CFSTR("com.sleepfive.TunesBarPlusHelper"), changingToState)) {
+        NSRunAlertPanel(@"Could not change Open at Login status",
+                        @"For some reason, this failed. Most likely it's because the app isn't in the Applications folder.",
+                        @"OK",
+                        nil,
+                        nil);
+    }
+}
+
+- (BOOL) opensAtLogin {
+    CFArrayRef jobDictsCF = SMCopyAllJobDictionaries( kSMDomainUserLaunchd );
+    NSArray* jobDicts = (__bridge_transfer NSArray*)jobDictsCF;
+    // Note: Sandbox issue when using SMJobCopyDictionary()
+    
+    if ((jobDicts != nil) && [jobDicts count] > 0) {
+        BOOL bOnDemand = NO;
+        
+        for (NSDictionary* job in jobDicts) {
+            if ([[job objectForKey:@"Label"] isEqualToString: @"com.sleepfive.TunesBarPlusHelper"]) {
+                bOnDemand = [[job objectForKey:@"OnDemand"] boolValue];
+                break;
+            }
+        }
+        
+        return bOnDemand;
+    }
+    return NO;
+}
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
+{
+    if ([menuItem action] == @selector(toggleOpenAtLogin:)) {
+        
+        [menuItem setState:[self opensAtLogin] ? NSOnState : NSOffState];
+        return YES;
+    }
+    
+    return YES;
+}
+
 @end

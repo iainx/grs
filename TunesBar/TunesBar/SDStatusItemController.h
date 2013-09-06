@@ -21,8 +21,10 @@
 @property (readwrite, weak) IBOutlet NSButton *playButton;
 @property (readwrite, weak) IBOutlet NSButton *previousButton;
 @property (readwrite, weak) IBOutlet NSButton *nextButton;
+@property (readwrite, weak) IBOutlet NSMenu *advancedMenu;
 
 - (void) setupStatusItem;
 - (IBAction)startiTunes:(id)sender;
+- (IBAction)showAdvancedMenu:(id)sender;
 
 @end

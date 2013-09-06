@@ -22,7 +22,6 @@
 @property (copy) NSString *trackArtist;
 @property (copy) NSString *trackAlbum;
 @property (copy) NSString *trackGenre;
-@property (copy) NSString *trackTotalTime;
 @property (copy) NSImage *coverArtwork;
 
 @end
@@ -44,6 +43,10 @@
 - (id) init {
 	if (self = [super init]) {
 		self.iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+        
+        if (self.iTunes == nil) {
+            NSLog(@"No proxy");
+        }
 		[self.iTunes setDelegate:(id)self];
 		
 		[[NSDistributedNotificationCenter defaultCenter] addObserver:self
@@ -71,7 +74,6 @@
 - (void) _iTunesUpdated:(NSNotification*)notification {
 	self.shouldUseCache = YES;
 	
-    NSLog(@"Updated: %@", [notification userInfo]);
 	[self _updatePropertiesUsingDictionary:[notification userInfo]];
 	[self.delegate iTunesUpdated];
 	
@@ -95,14 +97,19 @@
 		self.trackArtist = nil;
 		self.trackAlbum = nil;
 		self.trackGenre = nil;
-		self.trackTotalTime = nil;
         self.coverArtwork = nil;
 	}
 	else {
 		iTunesTrack *track = nil;
 		
 		@try {
-			track = [[self.iTunes currentTrack] get];
+			track = [self.iTunes currentTrack];
+            if ([track exists]) {
+                track = [track get];
+            } else {
+                NSLog(@"Track doesn't exist");
+                track = nil;
+            }
 		}
 		@catch (NSException * e) {
 			track = nil;
@@ -113,34 +120,24 @@
 				self.trackArtist = [track artist];
 				self.trackAlbum = [track album];
 				self.trackGenre = [track genre];
-			}
-			else {
+                
+                SBElementArray *artworks = [track artworks];
+                iTunesArtwork *artwork = [artworks objectAtIndex:0];
+                
+                self.coverArtwork = [artwork data];
+			} else {
 				self.trackName = @"Unknown Track Name";
 				self.trackArtist = @"Unknown Artist";
 				self.trackAlbum = @"Unknown Album";
 				self.trackGenre = @"Unknown Genre";
+                self.coverArtwork = nil;
 			}
-			
-			int duration = (int)[track duration];
-			int min = (duration / 60);
-			int sec = (duration % 60);
-			
-            self.trackTotalTime = [NSString stringWithFormat:@"%02d:%02d", min, sec];
-            
-            iTunesTrack *currentTrack = [self.iTunes currentTrack];
-            SBElementArray *artworks = [currentTrack artworks];
-            iTunesArtwork *artwork = [artworks objectAtIndex:0];
-            
-            self.coverArtwork = [artwork data];
-		}
+        }
 	}
 }
 
 - (BOOL) isRunning {
-	if (self.shouldUseCache)
-		return self.cachedIsRunning;
-	else
-		return [self.iTunes isRunning];
+    return [self.iTunes isRunning];
 }
 
 - (BOOL) isPlaying {
@@ -155,4 +152,11 @@
 	}
 }
 
+- (id)eventDidFail:(const AppleEvent *)event withError:(NSError *)error
+{
+    NSLog(@"Event failed with error");
+    NSLog(@"%@", error);
+    NSLog(@"%@", [error userInfo]);
+    return nil;
+}
 @end

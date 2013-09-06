@@ -29,7 +29,7 @@
 		94ABDC4016F36E4100D47E36 /* SDTBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDTBAppDelegate.h; sourceTree = "<group>"; };
 		94ABDC4116F36E4100D47E36 /* SDTBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDTBAppDelegate.m; sourceTree = "<group>"; };
 		94ABDC4416F36E4100D47E36 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		94ABDC5516F370A400D47E36 /* TunesBarHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TunesBarHelper.entitlements; sourceTree = "<group>"; };
+		AE975E9317D8DA090053BFAF /* TunesBar+Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "TunesBar+Helper.entitlements"; path = "../TunesBar+Helper.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 		94ABDC3416F36E4100D47E36 /* TunesBarHelper */ = {
 			isa = PBXGroup;
 			children = (
-				94ABDC5516F370A400D47E36 /* TunesBarHelper.entitlements */,
+				AE975E9317D8DA090053BFAF /* TunesBar+Helper.entitlements */,
 				94ABDC4016F36E4100D47E36 /* SDTBAppDelegate.h */,
 				94ABDC4116F36E4100D47E36 /* SDTBAppDelegate.m */,
 				94ABDC4316F36E4100D47E36 /* MainMenu.xib */,
@@ -266,6 +266,8 @@
 		94ABDC4916F36E4100D47E36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "TunesBar+Helper.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBarHelper/TunesBar+Helper-Prefix.pch";
@@ -279,6 +281,8 @@
 		94ABDC4A16F36E4100D47E36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "TunesBar+Helper.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBarHelper/TunesBar+Helper-Prefix.pch";

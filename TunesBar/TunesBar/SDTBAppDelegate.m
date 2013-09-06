@@ -15,8 +15,6 @@
 
 #import "SDGeneralPrefPane.h"
 
-#import <ServiceManagement/ServiceManagement.h>
-
 #import "SDWelcomeWindowController.h"
 
 @implementation SDTBAppDelegate
@@ -36,26 +34,6 @@
     [self.statusItemController setupStatusItem];
     
     [SDWelcomeWindowController showInstructionsWindowFirstTimeOnly];
-}
-
-- (BOOL) opensAtLogin {
-    CFArrayRef jobDictsCF = SMCopyAllJobDictionaries( kSMDomainUserLaunchd );
-    NSArray* jobDicts = (__bridge_transfer NSArray*)jobDictsCF;
-    // Note: Sandbox issue when using SMJobCopyDictionary()
-
-    if ((jobDicts != nil) && [jobDicts count] > 0) {
-        BOOL bOnDemand = NO;
-
-        for (NSDictionary* job in jobDicts) {
-            if ([[job objectForKey:@"Label"] isEqualToString: @"com.sleepfive.TunesBarPlusHelper"]) {
-                bOnDemand = [[job objectForKey:@"OnDemand"] boolValue];
-                break;
-            }
-        }
-
-        return bOnDemand;
-    }
-    return NO;
 }
 
 @end
