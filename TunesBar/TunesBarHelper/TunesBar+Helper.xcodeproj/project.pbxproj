@@ -282,12 +282,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "TunesBar+Helper.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Sleep(5), Ltd (27E3K44V76)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBarHelper/TunesBar+Helper-Prefix.pch";
 				INFOPLIST_FILE = "TunesBarHelper/TunesBar+Helper-Info.plist";
 				PRODUCT_NAME = "TunesBar+Helper";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};

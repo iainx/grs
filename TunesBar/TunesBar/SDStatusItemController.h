@@ -10,8 +10,11 @@
 
 #import "iTunesProxy.h"
 
-@interface SDStatusItemController : NSResponder <iTunesDelegate>
+@interface SDStatusItemController : NSResponder <iTunesDelegate, NSPopoverDelegate>
 
+@property (readonly) NSStatusItem *statusItem;
+@property (readwrite, weak) IBOutlet NSViewController *startViewController;
+@property (readwrite, weak) IBOutlet NSViewController *infoViewController;
 @property (readwrite, weak) IBOutlet NSView *hudView;
 @property (readwrite, weak) IBOutlet NSView *startHudView;
 @property (readwrite, weak) IBOutlet NSImageView *imageView;
@@ -22,8 +25,9 @@
 @property (readwrite, weak) IBOutlet NSButton *previousButton;
 @property (readwrite, weak) IBOutlet NSButton *nextButton;
 @property (readwrite, weak) IBOutlet NSMenu *advancedMenu;
+@property (readwrite, weak) IBOutlet NSButton *startITunesButton;
 
-- (void) setupStatusItem;
+- (void)setupStatusItem;
 - (IBAction)startiTunes:(id)sender;
 - (IBAction)showAdvancedMenu:(id)sender;
 

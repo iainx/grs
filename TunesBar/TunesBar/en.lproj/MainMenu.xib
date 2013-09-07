@@ -22,6 +22,7 @@
 			<string>NSTextField</string>
 			<string>NSTextFieldCell</string>
 			<string>NSUserDefaultsController</string>
+			<string>NSViewController</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1413,7 +1414,6 @@
 						<string key="NSFrame">{{384, 6}, {22, 22}}</string>
 						<reference key="NSSuperview" ref="317627484"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="165858766">
@@ -1562,7 +1562,6 @@
 						<string key="NSFrame">{{384, 6}, {22, 22}}</string>
 						<reference key="NSSuperview" ref="406054880"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="938826512">
@@ -1670,6 +1669,8 @@
 					</object>
 				</array>
 			</object>
+			<object class="NSViewController" id="318230554"/>
+			<object class="NSViewController" id="708497357"/>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<array class="NSMutableArray" key="connectionRecords">
@@ -2512,6 +2513,46 @@
 						<reference key="destination" ref="701756484"/>
 					</object>
 					<int key="connectionID">637</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">startViewController</string>
+						<reference key="source" ref="753700413"/>
+						<reference key="destination" ref="708497357"/>
+					</object>
+					<int key="connectionID">642</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">infoViewController</string>
+						<reference key="source" ref="753700413"/>
+						<reference key="destination" ref="318230554"/>
+					</object>
+					<int key="connectionID">643</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">startITunesButton</string>
+						<reference key="source" ref="753700413"/>
+						<reference key="destination" ref="562325657"/>
+					</object>
+					<int key="connectionID">644</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">view</string>
+						<reference key="source" ref="318230554"/>
+						<reference key="destination" ref="317627484"/>
+					</object>
+					<int key="connectionID">639</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">view</string>
+						<reference key="source" ref="708497357"/>
+						<reference key="destination" ref="406054880"/>
+					</object>
+					<int key="connectionID">641</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3709,6 +3750,18 @@
 						<reference key="object" ref="650347477"/>
 						<reference key="parent" ref="534880709"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">638</int>
+						<reference key="object" ref="318230554"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">Info View Controller</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">640</int>
+						<reference key="object" ref="708497357"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">Start View Controller</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -3881,6 +3934,8 @@
 				<string key="626.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="627.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="635.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="638.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="640.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3897,7 +3952,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">637</int>
+			<int key="maxID">644</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3944,10 +3999,13 @@
 						<string key="artistField">NSTextField</string>
 						<string key="hudView">NSView</string>
 						<string key="imageView">NSImageView</string>
+						<string key="infoViewController">NSViewController</string>
 						<string key="nextButton">NSButton</string>
 						<string key="playButton">NSButton</string>
 						<string key="previousButton">NSButton</string>
 						<string key="startHudView">NSView</string>
+						<string key="startITunesButton">NSButton</string>
+						<string key="startViewController">NSViewController</string>
 						<string key="titleField">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -3971,6 +4029,10 @@
 							<string key="name">imageView</string>
 							<string key="candidateClassName">NSImageView</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="infoViewController">
+							<string key="name">infoViewController</string>
+							<string key="candidateClassName">NSViewController</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="nextButton">
 							<string key="name">nextButton</string>
 							<string key="candidateClassName">NSButton</string>
@@ -3986,6 +4048,14 @@
 						<object class="IBToOneOutletInfo" key="startHudView">
 							<string key="name">startHudView</string>
 							<string key="candidateClassName">NSView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="startITunesButton">
+							<string key="name">startITunesButton</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="startViewController">
+							<string key="name">startViewController</string>
+							<string key="candidateClassName">NSViewController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="titleField">
 							<string key="name">titleField</string>

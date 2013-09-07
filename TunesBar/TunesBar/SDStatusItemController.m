@@ -12,65 +12,64 @@
 
 #import "DefaultsKeys.h"
 #import "SDTBStatusItemHelper.h"
-#import "MAAttachedWindow.h"
 
 #import <ServiceManagement/ServiceManagement.h>
 
-@interface SDStatusItemController ()
-
-@property NSStatusItem *statusItem;
-
-@end
-
-
 @implementation SDStatusItemController {
-    NSMutableArray *_displayStrings;
-    NSTimer *_displayTimer;
-    NSUInteger _displayIndex;
-    MAAttachedWindow *_attachedWindow;
+    NSPopover *_attachedPopover;
 }
 
 static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 - (void) setupStatusItem {
-	self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-	[self.statusItem setHighlightMode:YES];
+	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [self.statusItem setAction:@selector(showInfoPanel:)];
     [self.statusItem setTarget:self];
     
     [self _updateTitle];
+    
+    _attachedPopover = [[NSPopover alloc] init];
+    [_attachedPopover setAppearance:NSPopoverAppearanceHUD];
+    [_attachedPopover setAnimates:NO];
+    [_attachedPopover setBehavior:NSPopoverBehaviorTransient];
+    [_attachedPopover setDelegate:self];
+}
+
+- (void)hideInfoPanel
+{
+    [_attachedPopover close];
 }
 
 - (void)showInfoPanel:(id)sender
 {
-    NSEvent *event = [NSApp currentEvent];
-    
-    if (_attachedWindow) {
-        [[event window] removeChildWindow:_attachedWindow];
-        _attachedWindow = nil;
-        
-        [self resetTimer];
-        return;
-    }
-    
-    NSRect frame = [[event window] frame];
-    iTunesProxy *iProxy = [iTunesProxy proxy];
-    NSView *hudView;
-    
-    if ([iProxy isRunning]) {
-        hudView = _hudView;
-    } else {
-        hudView = _startHudView;
+    if (_attachedPopover) {
+        [self hideInfoPanel];
     }
 
-    _attachedWindow = [[MAAttachedWindow alloc] initWithView:hudView
-                                             attachedToPoint:NSMakePoint(NSMidX(frame), frame.origin.y)
-                                                      onSide:MAPositionAutomatic];
-    [[event window] addChildWindow:_attachedWindow ordered:NSWindowAbove];
+    iTunesProxy *iProxy = [iTunesProxy proxy];
+    NSViewController *viewController;
     
-    [_displayTimer invalidate];
-    _displayTimer = nil;
+    if ([iProxy isRunning]) {
+        viewController = _infoViewController;
+    } else {
+        viewController = _startViewController;
+    }
+
+    [_attachedPopover setContentViewController:viewController];
     
     [self updateHudInfo];
+    
+    // Thank you http://www.markosx.com/thecocoaquest/epiphany-for-fixing-nspopover/
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+    [_attachedPopover showRelativeToRect:NSZeroRect
+                                  ofView:sender preferredEdge:NSMinYEdge];
+}
+
+- (void)popoverDidClose:(NSNotification *)notification
+{
+}
+
+- (void)popoverDidShow:(NSNotification *)notification
+{
 }
 
 - (void)updateHudInfo
@@ -78,6 +77,7 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
     iTunesProxy *iProxy = [iTunesProxy proxy];
     
     if (![iProxy isRunning]) {
+        [_attachedPopover setContentViewController:_startViewController];
         return;
     }
     
@@ -95,70 +95,38 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 
 - (void) iTunesUpdated {
 	[self _updateTitle];
-    if (_attachedWindow) {
+    if ([_attachedPopover isShown]) {
         [self updateHudInfo];
     }
 }
 
 - (void) _updateTitle {
+    NSString *title;
 	if ([[iTunesProxy proxy] isRunning]) {
-		_displayStrings = [NSMutableArray array];
-		
-        NSArray *titleDisplayOptions = @[@"trackName", @"trackAlbum", @"trackArtist"];
-        
-		for (NSString *key in titleDisplayOptions) {
-			
-            NSString *title = [[iTunesProxy proxy] valueForKey:key];
-            if (title) {
-                [_displayStrings addObject:title];
-			}
-		}
+        title = [[iTunesProxy proxy] valueForKey:@"trackName"];
+        if (!title) {
+            title = @"Unknown Track";
+        }
 	} else {
-        _displayStrings = [NSMutableArray arrayWithObject:@"Nothing Playing"];
-        [_displayTimer invalidate];
-        _displayTimer = nil;
+        title = @"Nothing Playing";
 	}
 	   
-    _displayIndex = -1;
-    [self changeDisplayString:nil];
-    
-    if (_attachedWindow == nil) {
-        [self resetTimer];
-    }
+    [self changeDisplayString:title];
 }
 
-- (void)changeDisplayString:(NSTimer *)timer
+- (void)changeDisplayString:(NSString *)title
 {
-    if ([_displayStrings count] == 0) {
-        return;
-    }
-    
-    _displayIndex++;
-    if (_displayIndex >= [_displayStrings count]) {
-        _displayIndex = 0;
-    }
-    
-    NSInteger fontSize = [[NSUserDefaults standardUserDefaults] integerForKey:@"fontSize"];
-	NSFont *font = [NSFont systemFontOfSize:fontSize];
+	NSFont *font = [NSFont menuBarFontOfSize:15.0];
 	
 	NSColor *foreColor = [NSColor blackColor];
 	if ([[iTunesProxy proxy] isPlaying] == NO) {
 		foreColor = [foreColor colorWithAlphaComponent:0.65];
     }
 	
-	[SDTBStatusItemHelper setImagesWithTitle:_displayStrings[_displayIndex]
+	[SDTBStatusItemHelper setImagesWithTitle:title
                                         font:font
                                    foreColor:foreColor
                                 onStatusItem:self.statusItem];
-}
-
-- (void)resetTimer
-{
-    [_displayTimer invalidate];
-    _displayTimer = [NSTimer scheduledTimerWithTimeInterval:INFO_CHANGE_DELAY target:self
-                                                   selector:@selector(changeDisplayString:)
-                                                   userInfo:self
-                                                    repeats:YES];
 }
 
 - (IBAction) playPause:(id)sender {
@@ -178,11 +146,8 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
                                                          options:0
                                   additionalEventParamDescriptor:nil
                                                 launchIdentifier:NULL];
-    if (_attachedWindow) {
-        [[_attachedWindow parentWindow] removeChildWindow:_attachedWindow];
-        _attachedWindow = nil;
-        
-        [self resetTimer];
+    if (_attachedPopover) {
+        [_attachedPopover close];
         return;
     }
 }
@@ -236,5 +201,4 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
     
     return YES;
 }
-
 @end

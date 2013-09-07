@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>TunesBar+</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.sleepfive.TunesbarPlus</string>
+	<string>com.sleepfive.TunesBarPlus</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

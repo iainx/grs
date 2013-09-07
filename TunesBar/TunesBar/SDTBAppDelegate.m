@@ -27,4 +27,9 @@
     [SDWelcomeWindowController showInstructionsWindowFirstTimeOnly];
 }
 
+- (void)windowLostFocus
+{
+    NSLog(@"Lost focus");
+}
+
 @end
