@@ -72,6 +72,12 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 {
 }
 
+- (void)updateTextField:(NSTextField *)textField withString:(NSString *)string
+{
+    [textField setStringValue:string];
+    [textField setToolTip:string];
+}
+
 - (void)updateHudInfo
 {
     iTunesProxy *iProxy = [iTunesProxy proxy];
@@ -88,9 +94,9 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
     }
     [_imageView setImage:[iProxy coverArtwork]];
     
-    [_titleField setStringValue:[iProxy trackName]];
-    [_artistField setStringValue:[iProxy trackArtist]];
-    [_albumField setStringValue:[iProxy trackAlbum]];
+    [self updateTextField:_titleField withString:[iProxy trackName]];
+    [self updateTextField:_artistField withString:[iProxy trackArtist]];
+    [self updateTextField:_albumField withString:[iProxy trackAlbum]];
 }
 
 - (void) iTunesUpdated {

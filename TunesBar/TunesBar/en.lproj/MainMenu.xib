@@ -1469,14 +1469,14 @@
 					<object class="NSTextField" id="367799510">
 						<reference key="NSNextResponder" ref="317627484"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{115, 44}, {294, 17}}</string>
+						<string key="NSFrame">{{115, 44}, {283, 17}}</string>
 						<reference key="NSSuperview" ref="317627484"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="540027194"/>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="402413409">
-							<int key="NSCellFlags">69206081</int>
+							<int key="NSCellFlags">67108928</int>
 							<int key="NSCellFlags2">272631808</int>
 							<string key="NSContents">Artist</string>
 							<reference key="NSSupport" ref="321326950"/>
@@ -1506,14 +1506,14 @@
 					<object class="NSTextField" id="366065007">
 						<reference key="NSNextResponder" ref="317627484"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{115, 61}, {294, 17}}</string>
+						<string key="NSFrame">{{115, 61}, {283, 17}}</string>
 						<reference key="NSSuperview" ref="317627484"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="367799510"/>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="846697334">
-							<int key="NSCellFlags">69206081</int>
+							<int key="NSCellFlags">67108928</int>
 							<int key="NSCellFlags2">272631808</int>
 							<string key="NSContents">Album</string>
 							<reference key="NSSupport" ref="321326950"/>
@@ -1527,14 +1527,14 @@
 					<object class="NSTextField" id="1039634620">
 						<reference key="NSNextResponder" ref="317627484"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{115, 78}, {294, 17}}</string>
+						<string key="NSFrame">{{115, 78}, {283, 17}}</string>
 						<reference key="NSSuperview" ref="317627484"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="366065007"/>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="96119817">
-							<int key="NSCellFlags">69206081</int>
+							<int key="NSCellFlags">67108928</int>
 							<int key="NSCellFlags2">272631808</int>
 							<string key="NSContents">Title</string>
 							<reference key="NSSupport" ref="321326950"/>
@@ -3558,12 +3558,12 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="541818025"/>
 							<reference ref="1039634620"/>
-							<reference ref="568150973"/>
 							<reference ref="367799510"/>
 							<reference ref="366065007"/>
 							<reference ref="540027194"/>
 							<reference ref="234206338"/>
 							<reference ref="800794882"/>
+							<reference ref="568150973"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Info HUD</string>
@@ -3962,36 +3962,16 @@
 					<string key="className">SDStatusItemController</string>
 					<string key="superclassName">NSResponder</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="nextTrack:">id</string>
-						<string key="playPause:">id</string>
-						<string key="previousTrack:">id</string>
 						<string key="showAdvancedMenu:">id</string>
 						<string key="startiTunes:">id</string>
-						<string key="toggleOpenAtLogin:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="nextTrack:">
-							<string key="name">nextTrack:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="playPause:">
-							<string key="name">playPause:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="previousTrack:">
-							<string key="name">previousTrack:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="showAdvancedMenu:">
 							<string key="name">showAdvancedMenu:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="startiTunes:">
 							<string key="name">startiTunes:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="toggleOpenAtLogin:">
-							<string key="name">toggleOpenAtLogin:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
