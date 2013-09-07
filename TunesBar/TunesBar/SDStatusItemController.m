@@ -102,6 +102,7 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 
 - (void) _updateTitle {
     NSString *title;
+    
 	if ([[iTunesProxy proxy] isRunning]) {
         title = [[iTunesProxy proxy] valueForKey:@"trackName"];
         if (!title) {
@@ -110,7 +111,12 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 	} else {
         title = @"Nothing Playing";
 	}
-	   
+	 
+    [_statusItem setToolTip:title];
+    
+    if ([title length] > 25) {
+        title = [NSString stringWithFormat:@"%@…", [title substringToIndex:25]];
+    }
     [self changeDisplayString:title];
 }
 
