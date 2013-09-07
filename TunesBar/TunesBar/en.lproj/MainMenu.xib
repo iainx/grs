@@ -1414,6 +1414,7 @@
 						<string key="NSFrame">{{384, 6}, {22, 22}}</string>
 						<reference key="NSSuperview" ref="317627484"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="165858766">
@@ -1475,8 +1476,8 @@
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="402413409">
-							<int key="NSCellFlags">68157504</int>
-							<int key="NSCellFlags2">272630784</int>
+							<int key="NSCellFlags">69206081</int>
+							<int key="NSCellFlags2">272631808</int>
 							<string key="NSContents">Artist</string>
 							<reference key="NSSupport" ref="321326950"/>
 							<string key="NSCellIdentifier">_NS:1535</string>
@@ -1512,8 +1513,8 @@
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="846697334">
-							<int key="NSCellFlags">68157504</int>
-							<int key="NSCellFlags2">272630784</int>
+							<int key="NSCellFlags">69206081</int>
+							<int key="NSCellFlags2">272631808</int>
 							<string key="NSContents">Album</string>
 							<reference key="NSSupport" ref="321326950"/>
 							<string key="NSCellIdentifier">_NS:1535</string>
@@ -1533,8 +1534,8 @@
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="96119817">
-							<int key="NSCellFlags">68157504</int>
-							<int key="NSCellFlags2">272630784</int>
+							<int key="NSCellFlags">69206081</int>
+							<int key="NSCellFlags2">272631808</int>
 							<string key="NSContents">Title</string>
 							<reference key="NSSupport" ref="321326950"/>
 							<string key="NSCellIdentifier">_NS:1535</string>
@@ -1562,6 +1563,7 @@
 						<string key="NSFrame">{{384, 6}, {22, 22}}</string>
 						<reference key="NSSuperview" ref="406054880"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="938826512">
@@ -1669,8 +1671,8 @@
 					</object>
 				</array>
 			</object>
-			<object class="NSViewController" id="318230554"/>
-			<object class="NSViewController" id="708497357"/>
+			<object class="NSViewController" id="399992953"/>
+			<object class="NSViewController" id="565491460"/>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<array class="NSMutableArray" key="connectionRecords">
@@ -2518,7 +2520,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">startViewController</string>
 						<reference key="source" ref="753700413"/>
-						<reference key="destination" ref="708497357"/>
+						<reference key="destination" ref="565491460"/>
 					</object>
 					<int key="connectionID">642</int>
 				</object>
@@ -2526,7 +2528,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">infoViewController</string>
 						<reference key="source" ref="753700413"/>
-						<reference key="destination" ref="318230554"/>
+						<reference key="destination" ref="399992953"/>
 					</object>
 					<int key="connectionID">643</int>
 				</object>
@@ -2541,7 +2543,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">view</string>
-						<reference key="source" ref="318230554"/>
+						<reference key="source" ref="399992953"/>
 						<reference key="destination" ref="317627484"/>
 					</object>
 					<int key="connectionID">639</int>
@@ -2549,7 +2551,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">view</string>
-						<reference key="source" ref="708497357"/>
+						<reference key="source" ref="565491460"/>
 						<reference key="destination" ref="406054880"/>
 					</object>
 					<int key="connectionID">641</int>
@@ -3752,13 +3754,13 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">638</int>
-						<reference key="object" ref="318230554"/>
+						<reference key="object" ref="399992953"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Info View Controller</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">640</int>
-						<reference key="object" ref="708497357"/>
+						<reference key="object" ref="565491460"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Start View Controller</string>
 					</object>
