@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		942D393E16F38886006D869C /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 942D393D16F38886006D869C /* Credits.html */; };
 		94ABDBB616F2D40D00D47E36 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDBB516F2D40D00D47E36 /* Cocoa.framework */; };
 		94ABDBC016F2D40D00D47E36 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBBE16F2D40D00D47E36 /* InfoPlist.strings */; };
 		94ABDBC216F2D40D00D47E36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBC116F2D40D00D47E36 /* main.m */; };
@@ -34,6 +33,8 @@
 		AE95DD9617D8E99C00AA7809 /* TunesBar+.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */; };
 		AE9664B717DA617C003850B8 /* TunesBar+Helper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = AE95DD9417D8E3D300AA7809 /* TunesBar+Helper.app */; };
 		AE975E9217D796680053BFAF /* sd_intro2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE975E9117D796680053BFAF /* sd_intro2.png */; };
+		AEC19AC017DB5DFF00226CD9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AEC19ABF17DB5DFF00226CD9 /* Credits.rtf */; };
+		AEC19AC217DB5FD600226CD9 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = AEC19AC117DB5FD600226CD9 /* Credits.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +62,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		942D393D16F38886006D869C /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		94ABDBB216F2D40D00D47E36 /* TunesBar+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TunesBar+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABDBB516F2D40D00D47E36 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		94ABDBB816F2D40D00D47E36 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -102,6 +102,8 @@
 		AE82EF9C17D6942C005AEEAA /* PreviousTrack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PreviousTrack@2x.png"; sourceTree = "<group>"; };
 		AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TunesBar+.entitlements"; sourceTree = "<group>"; };
 		AE975E9117D796680053BFAF /* sd_intro2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro2.png; sourceTree = "<group>"; };
+		AEC19ABE17DB5DFF00226CD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		AEC19AC117DB5FD600226CD9 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +166,6 @@
 				AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */,
 				94ABDBE916F34C4200D47E36 /* DefaultsKeys.h */,
 				94ABDC0816F351AC00D47E36 /* DefaultValues.plist */,
-				942D393D16F38886006D869C /* Credits.html */,
 				94ABDBFA16F3508F00D47E36 /* SDToolkit */,
 				94ABDBD516F348EC00D47E36 /* Helpers */,
 				94ABDBD416F348CB00D47E36 /* Graphics */,
@@ -178,6 +179,8 @@
 		94ABDBBC16F2D40D00D47E36 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AEC19ABF17DB5DFF00226CD9 /* Credits.rtf */,
+				AEC19AC117DB5FD600226CD9 /* Credits.html */,
 				94ABDBBE16F2D40D00D47E36 /* InfoPlist.strings */,
 				94ABDBC116F2D40D00D47E36 /* main.m */,
 				94ABDBC316F2D40D00D47E36 /* TunesBar+-Prefix.pch */,
@@ -332,13 +335,14 @@
 				94ABDBF916F34D2600D47E36 /* Pause.png in Resources */,
 				94ABDC0916F351AC00D47E36 /* DefaultValues.plist in Resources */,
 				94ABDC1D16F3545B00D47E36 /* SDWelcomeWindow.xib in Resources */,
-				942D393E16F38886006D869C /* Credits.html in Resources */,
 				AE82EF9D17D6942C005AEEAA /* NextTrack@2x.png in Resources */,
 				AE82EF9E17D6942C005AEEAA /* Pause@2x.png in Resources */,
 				AE82EF9F17D6942C005AEEAA /* Play@2x.png in Resources */,
 				AE82EFA017D6942C005AEEAA /* PreviousTrack@2x.png in Resources */,
 				AE975E9217D796680053BFAF /* sd_intro2.png in Resources */,
 				AE95DD9617D8E99C00AA7809 /* TunesBar+.entitlements in Resources */,
+				AEC19AC017DB5DFF00226CD9 /* Credits.rtf in Resources */,
+				AEC19AC217DB5FD600226CD9 /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +397,15 @@
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
+		};
+		AEC19ABF17DB5DFF00226CD9 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEC19ABE17DB5DFF00226CD9 /* en */,
+			);
+			name = Credits.rtf;
+			path = TunesBarHelper/TunesBarHelper;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
