@@ -286,7 +286,7 @@
 			attributes = {
 				CLASSPREFIX = SDTB;
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "Steven Degutis";
+				ORGANIZATIONNAME = "Sleep(5)";
 			};
 			buildConfigurationList = 94ABDBAD16F2D40D00D47E36 /* Build configuration list for PBXProject "TunesBar+" */;
 			compatibilityVersion = "Xcode 3.2";
