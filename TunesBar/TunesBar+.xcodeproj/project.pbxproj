@@ -101,7 +101,7 @@
 		AE82EF9C17D6942C005AEEAA /* PreviousTrack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PreviousTrack@2x.png"; sourceTree = "<group>"; };
 		AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TunesBar+.entitlements"; sourceTree = "<group>"; };
 		AE975E9117D796680053BFAF /* sd_intro2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro2.png; sourceTree = "<group>"; };
-		AEC19ABE17DB5DFF00226CD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		AEC19ABE17DB5DFF00226CD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		AEC19AC117DB5FD600226CD9 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		AEC19AC317DB9FBF00226CD9 /* TunesBar+.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = "TunesBar+.iconset"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
