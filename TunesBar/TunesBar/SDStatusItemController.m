@@ -128,7 +128,7 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 
 - (void)changeDisplayString:(NSString *)title
 {
-	NSFont *font = [NSFont menuBarFontOfSize:15.0];
+	NSFont *font = [NSFont menuBarFontOfSize:14.0];
 	
 	NSColor *foreColor = [NSColor blackColor];
 	if ([[iTunesProxy proxy] isPlaying] == NO) {
