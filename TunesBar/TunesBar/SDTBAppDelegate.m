@@ -27,6 +27,15 @@
     [SDWelcomeWindowController showInstructionsWindowFirstTimeOnly];
 }
 
+- (void)applicationDidBecomeActive:(NSNotification *)notification
+{
+}
+
+- (void)applicationDidResignActive:(NSNotification *)notification
+{
+    [self.statusItemController hideInfoPanel];
+}
+
 - (void)windowLostFocus
 {
     NSLog(@"Lost focus");

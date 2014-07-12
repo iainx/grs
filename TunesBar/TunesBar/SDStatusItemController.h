@@ -30,5 +30,6 @@
 - (void)setupStatusItem;
 - (IBAction)startiTunes:(id)sender;
 - (IBAction)showAdvancedMenu:(id)sender;
+- (void)hideInfoPanel;
 
 @end

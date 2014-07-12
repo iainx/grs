@@ -19,7 +19,6 @@
     NSPopover *_attachedPopover;
 }
 
-static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 - (void) setupStatusItem {
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [self.statusItem setAction:@selector(showInfoPanel:)];
@@ -66,10 +65,12 @@ static const NSTimeInterval INFO_CHANGE_DELAY = 10;
 
 - (void)popoverDidClose:(NSNotification *)notification
 {
+    NSLog(@"Did close");
 }
 
 - (void)popoverDidShow:(NSNotification *)notification
 {
+    NSLog(@"did show");
 }
 
 - (void)updateTextField:(NSTextField *)textField withString:(NSString *)string
