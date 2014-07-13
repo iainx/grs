@@ -49,6 +49,8 @@
     [_previousButton setAttributedTitle:[self attributedStringForButton:[NSString awesomeIcon:FaBackward]]];
     
     [_nextButton setAttributedTitle:[self attributedStringForButton:[NSString awesomeIcon:FaForward]]];
+    
+    [_advancedButton setAttributedTitle:[self attributedStringForButton:[NSString awesomeIcon:FaCog]]];
 }
 
 - (void)hideInfoPanel

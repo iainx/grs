@@ -656,6 +656,7 @@
         <userDefaultsController representsSharedInstance="YES" id="546"/>
         <customObject id="552" customClass="SDStatusItemController">
             <connections>
+                <outlet property="advancedButton" destination="588" id="Vgl-Ls-z8d"/>
                 <outlet property="advancedMenu" destination="625" id="632"/>
                 <outlet property="albumField" destination="571" id="582"/>
                 <outlet property="artistField" destination="573" id="583"/>
@@ -711,7 +712,7 @@
                 <button id="588" userLabel="About">
                     <rect key="frame" x="384" y="6" width="22" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAdvanced" imagePosition="left" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="589">
+                    <buttonCell key="cell" type="square" title="*" bezelStyle="shadowlessSquare" imagePosition="left" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="589">
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

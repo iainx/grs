@@ -29,7 +29,7 @@
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2013 Sleep(5), Ltd.</string>
+	<string>Copyright © 2014, Iain Holmes</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>ATSApplicationFontsPath</key>

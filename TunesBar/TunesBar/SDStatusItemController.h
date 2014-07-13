@@ -25,6 +25,7 @@
 @property (readwrite, weak) IBOutlet NSButton *previousButton;
 @property (readwrite, weak) IBOutlet NSButton *nextButton;
 @property (readwrite, weak) IBOutlet NSMenu *advancedMenu;
+@property (readwrite, weak) IBOutlet NSButton *advancedButton;
 @property (readwrite, weak) IBOutlet NSButton *startITunesButton;
 
 - (void)setupStatusItem;
