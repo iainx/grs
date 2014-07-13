@@ -32,6 +32,8 @@
 	<string>Copyright © 2013 Sleep(5), Ltd.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
+	<key>ATSApplicationFontsPath</key>
+	<string>fontawesome-webfont.ttf</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>
