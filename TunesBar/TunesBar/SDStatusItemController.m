@@ -13,10 +13,21 @@
 #import "DefaultsKeys.h"
 #import "SDTBStatusItemHelper.h"
 
+#import "NSString+FontAwesome.h"
+
 #import <ServiceManagement/ServiceManagement.h>
 
 @implementation SDStatusItemController {
     NSPopover *_attachedPopover;
+}
+
+- (NSAttributedString *)attributedStringForButton:(NSString *)text
+{
+    NSMutableAttributedString *colorTitle = [[NSMutableAttributedString alloc] initWithString:text];
+    NSRange titleRange = NSMakeRange(0, [colorTitle length]);
+    [colorTitle addAttribute:NSForegroundColorAttributeName value:[NSColor whiteColor] range:titleRange];
+    [colorTitle addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"FontAwesome" size:12.0] range:titleRange];
+    return  colorTitle;
 }
 
 - (void) setupStatusItem {
@@ -31,6 +42,13 @@
     [_attachedPopover setAnimates:NO];
     [_attachedPopover setBehavior:NSPopoverBehaviorTransient];
     [_attachedPopover setDelegate:self];
+    
+    [_playButton setAttributedTitle:[self attributedStringForButton:[NSString awesomeIcon:FaPlay]]];
+    [_playButton setAttributedAlternateTitle:[self attributedStringForButton:[NSString awesomeIcon:FaPause]]];
+    
+    [_previousButton setAttributedTitle:[self attributedStringForButton:[NSString awesomeIcon:FaBackward]]];
+    
+    [_nextButton setAttributedTitle:[self attributedStringForButton:[NSString awesomeIcon:FaForward]]];
 }
 
 - (void)hideInfoPanel

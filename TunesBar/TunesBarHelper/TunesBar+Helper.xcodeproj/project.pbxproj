@@ -133,6 +133,11 @@
 				CLASSPREFIX = SDTB;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Steven Degutis";
+				TargetAttributes = {
+					94ABDC2A16F36E4100D47E36 = {
+						DevelopmentTeam = X7666LWADW;
+					};
+				};
 			};
 			buildConfigurationList = 94ABDC2616F36E4100D47E36 /* Build configuration list for PBXProject "TunesBar+Helper" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -282,7 +287,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "TunesBar+Helper.entitlements";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Sleep(5), Ltd (27E3K44V76)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBarHelper/TunesBar+Helper-Prefix.pch";

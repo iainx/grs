@@ -298,6 +298,11 @@
 				CLASSPREFIX = SDTB;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Sleep(5)";
+				TargetAttributes = {
+					94ABDBB116F2D40D00D47E36 = {
+						DevelopmentTeam = X7666LWADW;
+					};
+				};
 			};
 			buildConfigurationList = 94ABDBAD16F2D40D00D47E36 /* Build configuration list for PBXProject "TunesBar+" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -531,7 +536,7 @@
 			baseConfigurationReference = 614D79AED71B44C29445E2DD /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "TunesBar/TunesBar+.entitlements";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Sleep(5), Ltd (27E3K44V76)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
