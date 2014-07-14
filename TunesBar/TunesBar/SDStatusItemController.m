@@ -166,7 +166,7 @@ static const CGFloat kStatusBarItemWidth = 200.0;
     NSString *title;
     
 	if ([[iTunesProxy proxy] isRunning]) {
-        title = [[iTunesProxy proxy] valueForKey:key];//@"trackName"];
+        title = [[iTunesProxy proxy] valueForKey:key];
         if (!title) {
             title = @"Unknown Track";
         }
