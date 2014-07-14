@@ -685,6 +685,7 @@
                         <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <accessibility description="Track Title" help="Title of the current track"/>
                 </textField>
                 <textField verticalHuggingPriority="750" id="571">
                     <rect key="frame" x="115" y="61" width="283" height="17"/>
@@ -694,6 +695,7 @@
                         <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <accessibility description="Album Title" help="Title of the current album"/>
                 </textField>
                 <textField verticalHuggingPriority="750" id="573">
                     <rect key="frame" x="115" y="44" width="283" height="17"/>
@@ -703,11 +705,16 @@
                         <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <accessibility description="Artist Name" help="Current artist name"/>
                 </textField>
                 <imageView id="575">
                     <rect key="frame" x="13" y="12" width="84" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="576"/>
+                    <accessibility description="Track artwork" help="Artwork for the current track"/>
+                    <connections>
+                        <outlet property="nextKeyView" destination="595" id="0lH-K7-53g"/>
+                    </connections>
                 </imageView>
                 <button id="588" userLabel="About">
                     <rect key="frame" x="384" y="6" width="22" height="22"/>
@@ -727,8 +734,10 @@
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <accessibility description="Previous Track" help="Skip to previous track"/>
                     <connections>
                         <action selector="previousTrack:" target="552" id="601"/>
+                        <outlet property="nextKeyView" destination="597" id="vKA-ma-FeV"/>
                     </connections>
                 </button>
                 <button id="597" userLabel="Play Pause">
@@ -738,8 +747,10 @@
                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <accessibility description="Play Track" help="Start the track playing"/>
                     <connections>
                         <action selector="playPause:" target="552" id="602"/>
+                        <outlet property="nextKeyView" destination="599" id="o7X-LS-32R"/>
                     </connections>
                 </button>
                 <button id="599" userLabel="Next Track">
@@ -749,11 +760,16 @@
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <accessibility description="Next Track" help="Skip to the next track"/>
                     <connections>
                         <action selector="nextTrack:" target="552" id="603"/>
                     </connections>
                 </button>
             </subviews>
+            <accessibility description="Tunesbar+ Popover Window"/>
+            <connections>
+                <outlet property="previousButton" destination="595" id="Tmo-rl-8Dc"/>
+            </connections>
         </customView>
         <customView id="611" userLabel="Start HUD">
             <rect key="frame" x="0.0" y="0.0" width="411" height="105"/>
