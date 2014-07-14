@@ -5,7 +5,7 @@
 //  Created by Steven Degutis on 7/24/09.
 //  Copyright 2009 8th Light. All rights reserved.
 //  Modified by Iain Holmes
-//  Copyright 2013, Sleep(5), Ltd
+//  Copyright 2013 - 2014
 //
 
 #import "SDStatusItemController.h"
@@ -19,7 +19,17 @@
 
 @implementation SDStatusItemController {
     NSPopover *_attachedPopover;
+    NSImage *_currentImage;
+    NSImage *_statusImage;
+    NSInteger _currentXOffset;
+    NSTimer *_animationTimer;
+    NSTimer *_restartTimer;
+    
+    NSArray *_titleKeys;
+    NSInteger _titleIndex;
 }
+
+static const CGFloat kStatusBarItemWidth = 200.0;
 
 - (NSAttributedString *)attributedStringForButton:(NSString *)text
 {
@@ -35,7 +45,10 @@
     [self.statusItem setAction:@selector(showInfoPanel:)];
     [self.statusItem setTarget:self];
     
-    [self _updateTitle];
+    _titleIndex = 0;
+    _titleKeys = @[@"trackName", @"trackArtist", @"trackAlbum"];
+
+    [self _updateTitleForKey:_titleKeys[_titleIndex]];
     
     _attachedPopover = [[NSPopover alloc] init];
     [_attachedPopover setAppearance:NSPopoverAppearanceHUD];
@@ -121,17 +134,39 @@
 }
 
 - (void) iTunesUpdated {
-	[self _updateTitle];
+    _titleIndex = 0;
+    
+	[self _updateTitleForKey:@"trackName"];
     if ([_attachedPopover isShown]) {
         [self updateHudInfo];
     }
 }
 
-- (void) _updateTitle {
+- (void)copyFromImage:(NSImage *)srcImage
+            intoImage:(NSImage *)destImage
+               atSize:(CGSize)size
+           fromOrigin:(CGPoint)origin
+{
+	[destImage lockFocus];
+    
+    [[NSColor clearColor] setFill];
+    NSSize destSize = [destImage size];
+    
+    NSRectFill(NSMakeRect(0, 0, destSize.width, destSize.height));
+
+    CGFloat originX = (size.width > [srcImage size].width) ? size.width - [srcImage size].width : 0;
+    
+    CGRect srcRect = CGRectMake(origin.x, origin.y, size.width, [destImage size].height);
+    [srcImage drawAtPoint:CGPointMake(originX, 0) fromRect:srcRect operation:NSCompositeCopy fraction:1.0];
+    
+	[destImage unlockFocus];
+}
+
+- (void) _updateTitleForKey:(NSString *)key {
     NSString *title;
     
 	if ([[iTunesProxy proxy] isRunning]) {
-        title = [[iTunesProxy proxy] valueForKey:@"trackName"];
+        title = [[iTunesProxy proxy] valueForKey:key];//@"trackName"];
         if (!title) {
             title = @"Unknown Track";
         }
@@ -141,25 +176,86 @@
 	 
     [_statusItem setToolTip:title];
     
-    if ([title length] > 25) {
-        title = [NSString stringWithFormat:@"%@…", [title substringToIndex:25]];
-    }
-    [self changeDisplayString:title];
-}
-
-- (void)changeDisplayString:(NSString *)title
-{
-	NSFont *font = [NSFont menuBarFontOfSize:14.0];
+    NSFont *font = [NSFont menuBarFontOfSize:14.0];
 	
 	NSColor *foreColor = [NSColor blackColor];
 	if ([[iTunesProxy proxy] isPlaying] == NO) {
 		foreColor = [foreColor colorWithAlphaComponent:0.65];
     }
+
+    NSShadow *shadow = [[NSShadow alloc] init];
+	[shadow setShadowBlurRadius:1.0];
+	[shadow setShadowColor:[NSColor colorWithCalibratedWhite:1.0 alpha:0.3]];
+	[shadow setShadowOffset:NSMakeSize(0, -1)];
 	
-	[SDTBStatusItemHelper setImagesWithTitle:title
-                                        font:font
-                                   foreColor:foreColor
-                                onStatusItem:self.statusItem];
+	NSDictionary *attributes = @{
+                                 NSFontAttributeName: font,
+                                 NSForegroundColorAttributeName: foreColor,
+                                 NSShadowAttributeName: shadow,
+                                 };
+    
+    _currentImage = [SDTBStatusItemHelper imageFromString:title attributes:attributes];
+    
+    if (_statusImage == nil) {
+        _statusImage = [[NSImage alloc] initWithSize:CGSizeMake(kStatusBarItemWidth, [_currentImage size].height)];
+    }
+    [self resetAnimation:nil];
+}
+
+- (void)updateImage
+{
+    NSDisableScreenUpdates();
+    
+    [self copyFromImage:_currentImage
+              intoImage:_statusImage
+                 atSize:CGSizeMake(kStatusBarItemWidth, [_currentImage size].height)
+             fromOrigin:CGPointMake(_currentXOffset, 0)];
+    
+    [_statusItem setImage:_statusImage];
+    [_statusItem setAlternateImage:_statusImage];
+	
+	NSEnableScreenUpdates();
+}
+
+- (void)resetAnimation:(NSTimer *)timer
+{
+    [_animationTimer invalidate];
+    _animationTimer = nil;
+    
+    [_restartTimer invalidate];
+    _restartTimer = nil;
+    _currentXOffset = 0;
+    
+    [self updateImage];
+    
+    if ([_currentImage size].width > kStatusBarItemWidth) {
+        _animationTimer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(moveTheImage:) userInfo:nil repeats:YES];
+    } else {
+        _animationTimer = nil;
+        _restartTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(nextTitle:) userInfo:nil repeats:NO];
+    }
+}
+
+- (void)nextTitle:(NSTimer *)timer
+{
+    _titleIndex++;
+    if (_titleIndex == 3) {
+        _titleIndex = 0;
+    }
+
+    [self _updateTitleForKey:_titleKeys[_titleIndex]];
+}
+
+- (void)moveTheImage:(NSTimer *)timer
+{
+    _currentXOffset++;
+    if (_currentXOffset + kStatusBarItemWidth > [_currentImage size].width) {
+        [_animationTimer invalidate];
+        _animationTimer = nil;
+        _restartTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(nextTitle:) userInfo:nil repeats:NO];
+    }
+    
+    [self updateImage];
 }
 
 - (IBAction) playPause:(id)sender {
