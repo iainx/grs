@@ -12,13 +12,22 @@
 
 #import "DefaultsKeys.h"
 #import "SDTBStatusItemHelper.h"
+#import "SDTBWindow.h"
+#import "SDTBHUDViewController.h"
+#import "SDTBStartITunesViewController.h"
 
 #import "NSString+FontAwesome.h"
-
-#import <ServiceManagement/ServiceManagement.h>
+#import "NSWindow+Fade.h"
+#import "Constants.h"
 
 @implementation SDStatusItemController {
-    NSPopover *_attachedPopover;
+    SDTBWindow *_popoverWindow;
+    BOOL _popoverShown;
+    
+    SDTBHUDViewController *_infoViewController;
+    
+    NSButton *_statusView;
+    
     NSImage *_currentImage;
     NSImage *_statusImage;
     NSInteger _currentXOffset;
@@ -29,127 +38,152 @@
     NSInteger _titleIndex;
 }
 
-static const CGFloat kStatusBarItemWidth = 200.0;
+static const CGFloat kStatusBarItemWidth = 150.0;
 
-- (NSAttributedString *)attributedStringForButton:(NSString *)text
+- (void)setupStatusItem
 {
-    NSMutableAttributedString *colorTitle = [[NSMutableAttributedString alloc] initWithString:text];
-    NSRange titleRange = NSMakeRange(0, [colorTitle length]);
-    [colorTitle addAttribute:NSForegroundColorAttributeName value:[NSColor whiteColor] range:titleRange];
-    [colorTitle addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"FontAwesome" size:12.0] range:titleRange];
-    return  colorTitle;
-}
-
-- (void) setupStatusItem {
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [self.statusItem setAction:@selector(showInfoPanel:)];
     [self.statusItem setTarget:self];
+    
+    _statusView = [[NSButton alloc] initWithFrame:NSMakeRect(0, 0, kHeaderWidth, _statusItem.statusBar.thickness + 2)];
+    _statusItem.view = _statusView;
+    [_statusView setButtonType:NSMomentaryChangeButton];
+    _statusView.bordered = NO;
+    
+    _statusView.action = @selector(showInfoPanel:);
+    _statusView.target = self;
     
     _titleIndex = 0;
     _titleKeys = @[@"trackName", @"trackArtist", @"trackAlbum"];
 
     [self _updateTitleForKey:_titleKeys[_titleIndex]];
     
-    _attachedPopover = [[NSPopover alloc] init];
-    [_attachedPopover setAppearance:NSPopoverAppearanceHUD];
-    [_attachedPopover setAnimates:NO];
-    [_attachedPopover setBehavior:NSPopoverBehaviorTransient];
-    [_attachedPopover setDelegate:self];
-    
-    [_playButton setAttributedTitle:[self attributedStringForButton:[NSString awesomeIcon:FaPlay]]];
-    [_playButton setAttributedAlternateTitle:[self attributedStringForButton:[NSString awesomeIcon:FaPause]]];
-    
-    [_previousButton setAttributedTitle:[self attributedStringForButton:[NSString awesomeIcon:FaBackward]]];
-    
-    [_nextButton setAttributedTitle:[self attributedStringForButton:[NSString awesomeIcon:FaForward]]];
-    
-    [_advancedButton setAttributedTitle:[self attributedStringForButton:[NSString awesomeIcon:FaCog]]];
+    // FIXME: _popOverWindow probably shouldn't be kept around all the time
+    _popoverWindow = [[SDTBWindow alloc] initWithContentRect:NSMakeRect(0, 0, 411, 104)
+                                                   styleMask:NSBorderlessWindowMask
+                                                     backing:NSBackingStoreBuffered
+                                                       defer:NO];
+    _popoverWindow.delegate = self;
+    [self watchForNotificationsWhichShouldHidePanel];
 }
 
 - (void)hideInfoPanel
 {
-    [_attachedPopover close];
+    _popoverShown = NO;
+    
+    _statusItem.length = _statusImage.size.width;
+    
+    [self updateImageForKey:_titleKeys[_titleIndex]];
+    [self updateImage];
+    
+    [_statusView removeFromSuperview];
+    _statusItem.view = _statusView;
+    
+    [_popoverWindow fadeOut];
 }
 
 - (void)showInfoPanel:(id)sender
 {
-    if (_attachedPopover) {
+    if (_popoverShown) {
         [self hideInfoPanel];
-    }
-
-    iTunesProxy *iProxy = [iTunesProxy proxy];
-    NSViewController *viewController;
-    
-    if ([iProxy isRunning]) {
-        viewController = _infoViewController;
-    } else {
-        viewController = _startViewController;
-    }
-
-    [_attachedPopover setContentViewController:viewController];
-    
-    [self updateHudInfo];
-    
-    // Thank you http://www.markosx.com/thecocoaquest/epiphany-for-fixing-nspopover/
-    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-    [_attachedPopover showRelativeToRect:NSZeroRect
-                                  ofView:sender preferredEdge:NSMinYEdge];
-}
-
-- (void)popoverDidClose:(NSNotification *)notification
-{
-    NSLog(@"Did close");
-}
-
-- (void)popoverDidShow:(NSNotification *)notification
-{
-    NSLog(@"did show");
-}
-
-- (void)updateTextField:(NSTextField *)textField withString:(NSString *)string
-{
-    [textField setStringValue:string];
-    [textField setToolTip:string];
-}
-
-- (void)updateHudInfo
-{
-    iTunesProxy *iProxy = [iTunesProxy proxy];
-    
-    if (![iProxy isRunning]) {
-        [_attachedPopover setContentViewController:_startViewController];
         return;
     }
     
-    if ([iProxy isPlaying]) {
-        [_playButton setState:1];
-    } else {
-        [_playButton setState:0];
-    }
-    [_imageView setImage:[iProxy coverArtwork]];
+    iTunesProxy *iProxy = [iTunesProxy proxy];
+    NSViewController *viewController;
     
-    [self updateTextField:_titleField withString:[iProxy trackName]];
-    [self updateTextField:_artistField withString:[iProxy trackArtist]];
-    [self updateTextField:_albumField withString:[iProxy trackAlbum]];
+    if (![iProxy isRunning]) {
+        viewController = [[SDTBStartITunesViewController alloc] init];
+    } else {
+        _infoViewController = [[SDTBHUDViewController alloc] init];
+        viewController = _infoViewController;
+    }
+
+    _popoverWindow.contentViewController = viewController;
+    
+    // Thank you http://www.markosx.com/thecocoaquest/epiphany-for-fixing-nspopover/
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+
+    NSRect windowFrame = _statusView.window.frame;
+    NSRect popoverContentFrame = [_popoverWindow.contentView frame];
+    
+    CGFloat itemRightX = NSMaxX(windowFrame);
+    CGFloat headerRightX = kHeaderWidth + ((popoverContentFrame.size.width - kHeaderWidth) / 2);
+    CGFloat x = itemRightX - headerRightX;
+    CGFloat y = (NSMaxY(windowFrame) - popoverContentFrame.size.height) - 22;
+    
+    windowFrame.origin.x = x;
+    windowFrame.origin.y = y + 22;
+    
+    windowFrame.size = popoverContentFrame.size;
+
+    [_popoverWindow setFrame:windowFrame display:YES];
+    
+    // We take the button out of the status item and place it into the overlay window
+    // lining it up exactly.
+    [_statusView removeFromSuperview];
+    
+    NSRect itemBounds = _statusView.bounds;
+    _statusView.frame = NSMakeRect(headerRightX - 150.0/*itemBounds.size.width - 35*/, windowFrame.size.height - 22,
+                                   itemBounds.size.width, itemBounds.size.height);
+    
+    NSLog(@"itemRightX: %f - headerRightX: %f - itemBounds: %@ - frame: %@", itemRightX, headerRightX, NSStringFromRect(itemBounds), NSStringFromRect(_statusView.frame));
+    _popoverShown = YES;
+    
+    // Update the image to use a lighter colour as our background colour has changed
+    [self updateImageForKey:_titleKeys[_titleIndex]];
+    [self updateImage];
+    
+    [_popoverWindow.contentView addSubview:_statusView];
+
+    NSLog(@"new %@", NSStringFromRect(_statusView.frame));
+    // Set the width of the status item to our max width
+    // so that the icons aren't under the header
+    _statusItem.length = kHeaderWidth;
+    
+    [_popoverWindow fadeIn];
 }
 
-- (void) iTunesUpdated {
+- (void)watchForNotificationsWhichShouldHidePanel
+{
+    // This works better than just making the panel hide when the app
+    // deactivates (setHidesOnDeactivate:YES), because if we use that
+    // then the panel will return when the app reactivates.
+    //
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hideInfoPanel)
+                                                 name:NSApplicationWillResignActiveNotification
+                                               object:nil];
+    
+    // If the panel is no longer main, hide it.
+    // (We could also use the delegate notification for this.)
+    //
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hideInfoPanel)
+                                                 name:NSWindowDidResignMainNotification
+                                               object:_popoverWindow];
+}
+
+- (void)iTunesUpdated
+{
     _titleIndex = 0;
     
 	[self _updateTitleForKey:@"trackName"];
-    if ([_attachedPopover isShown]) {
-        [self updateHudInfo];
-    }
+    
+    [_infoViewController updateHUD];
 }
 
 - (void)copyFromImage:(NSImage *)srcImage
             intoImage:(NSImage *)destImage
                atSize:(CGSize)size
            fromOrigin:(CGPoint)origin
+     backgroundColour:(NSColor *)colour
+            operation:(NSCompositingOperation)op
 {
 	[destImage lockFocus];
     
-    [[NSColor clearColor] setFill];
+    [colour setFill];
     NSSize destSize = [destImage size];
     
     NSRectFill(NSMakeRect(0, 0, destSize.width, destSize.height));
@@ -157,12 +191,12 @@ static const CGFloat kStatusBarItemWidth = 200.0;
     CGFloat originX = (size.width > [srcImage size].width) ? size.width - [srcImage size].width : 0;
     
     CGRect srcRect = CGRectMake(origin.x, origin.y, size.width, [destImage size].height);
-    [srcImage drawAtPoint:CGPointMake(originX, 0) fromRect:srcRect operation:NSCompositeCopy fraction:1.0];
+    [srcImage drawAtPoint:CGPointMake(originX, 0) fromRect:srcRect operation:op fraction:1.0];
     
 	[destImage unlockFocus];
 }
 
-- (void) _updateTitleForKey:(NSString *)key {
+- (void)updateImageForKey:(NSString *)key {
     NSString *title;
     
 	if ([[iTunesProxy proxy] isRunning]) {
@@ -173,16 +207,16 @@ static const CGFloat kStatusBarItemWidth = 200.0;
 	} else {
         title = @"Nothing Playing";
 	}
-	 
+    
     [_statusItem setToolTip:title];
     
     NSFont *font = [NSFont menuBarFontOfSize:14.0];
 	
-	NSColor *foreColor = [NSColor blackColor];
+	NSColor *foreColor = _popoverShown ? [NSColor whiteColor] : [NSColor blackColor];
 	if ([[iTunesProxy proxy] isPlaying] == NO) {
 		foreColor = [foreColor colorWithAlphaComponent:0.65];
     }
-
+    
     NSShadow *shadow = [[NSShadow alloc] init];
 	[shadow setShadowBlurRadius:1.0];
 	[shadow setShadowColor:[NSColor colorWithCalibratedWhite:1.0 alpha:0.3]];
@@ -195,10 +229,14 @@ static const CGFloat kStatusBarItemWidth = 200.0;
                                  };
     
     _currentImage = [SDTBStatusItemHelper imageFromString:title attributes:attributes];
+}
+
+- (void) _updateTitleForKey:(NSString *)key {
+    [self updateImageForKey:key];
     
-    if (_statusImage == nil) {
-        _statusImage = [[NSImage alloc] initWithSize:CGSizeMake(kStatusBarItemWidth, [_currentImage size].height)];
-    }
+    CGFloat width = MIN(kStatusBarItemWidth, _currentImage.size.width);
+    _statusImage = [[NSImage alloc] initWithSize:CGSizeMake(width, [_currentImage size].height)];
+
     [self resetAnimation:nil];
 }
 
@@ -206,15 +244,34 @@ static const CGFloat kStatusBarItemWidth = 200.0;
 {
     NSDisableScreenUpdates();
     
+    NSColor *backgroundColour = [NSColor clearColor];
+    NSCompositingOperation op = NSCompositeCopy;
+    
     [self copyFromImage:_currentImage
               intoImage:_statusImage
-                 atSize:CGSizeMake(kStatusBarItemWidth, [_currentImage size].height)
-             fromOrigin:CGPointMake(_currentXOffset, 0)];
+                 atSize:CGSizeMake(_statusImage.size.width, [_currentImage size].height)
+             fromOrigin:CGPointMake(_currentXOffset, 0)
+       backgroundColour:backgroundColour
+              operation:op];
     
-    [_statusItem setImage:_statusImage];
-    [_statusItem setAlternateImage:_statusImage];
+    _statusView.image = _statusImage;
+    [_statusView setNeedsDisplay];
+    
+    // If the popover is open, then we don't want the statusitem shrinking
+    if (_popoverShown == NO) {
+        [_statusItem setLength:_statusImage.size.width];
+    }
 	
 	NSEnableScreenUpdates();
+}
+
+- (void)stopAllTimers
+{
+    [_animationTimer invalidate];
+    _animationTimer = nil;
+    
+    [_restartTimer invalidate];
+    _restartTimer = nil;
 }
 
 - (void)resetAnimation:(NSTimer *)timer
@@ -258,76 +315,27 @@ static const CGFloat kStatusBarItemWidth = 200.0;
     [self updateImage];
 }
 
-- (IBAction) playPause:(id)sender {
-	[[[iTunesProxy proxy] iTunes] playpause];
-}
+#pragma mark - SDTBWindowDelegate methods
 
-- (IBAction) nextTrack:(id)sender {
-	[[[iTunesProxy proxy] iTunes] nextTrack];
-}
-
-- (IBAction) previousTrack:(id)sender {
-	[[[iTunesProxy proxy] iTunes] previousTrack];
-}
-
-- (IBAction)startiTunes:(id)sender {
-    [[NSWorkspace sharedWorkspace] launchAppWithBundleIdentifier:@"com.apple.iTunes"
-                                                         options:0
-                                  additionalEventParamDescriptor:nil
-                                                launchIdentifier:NULL];
-    if (_attachedPopover) {
-        [_attachedPopover close];
-        return;
-    }
-}
-
-- (IBAction)showAdvancedMenu:(id)sender
+- (BOOL)handlesKeyDown:(NSEvent *)keyDown
+              inWindow:(NSWindow *)window
 {
-    NSEvent *event = [NSApp currentEvent];
-    [NSMenu popUpContextMenu:_advancedMenu
-                   withEvent:event
-                     forView:sender];
-}
-
-- (IBAction) toggleOpenAtLogin:(id)sender {
-	NSInteger changingToState = ![sender state];
-    if (!SMLoginItemSetEnabled(CFSTR("com.sleepfive.TunesBarPlusHelper"), changingToState)) {
-        NSRunAlertPanel(@"Could not change Open at Login status",
-                        @"For some reason, this failed. Most likely it's because the app isn't in the Applications folder.",
-                        @"OK",
-                        nil,
-                        nil);
-    }
-}
-
-- (BOOL) opensAtLogin {
-    CFArrayRef jobDictsCF = SMCopyAllJobDictionaries( kSMDomainUserLaunchd );
-    NSArray* jobDicts = (__bridge_transfer NSArray*)jobDictsCF;
-    // Note: Sandbox issue when using SMJobCopyDictionary()
+    // Close the panel on any keystroke.
     
-    if ((jobDicts != nil) && [jobDicts count] > 0) {
-        BOOL bOnDemand = NO;
-        
-        for (NSDictionary* job in jobDicts) {
-            if ([[job objectForKey:@"Label"] isEqualToString: @"com.sleepfive.TunesBarPlusHelper"]) {
-                bOnDemand = [[job objectForKey:@"OnDemand"] boolValue];
-                break;
-            }
-        }
-        
-        return bOnDemand;
-    }
-    return NO;
-}
-
-- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
-{
-    if ([menuItem action] == @selector(toggleOpenAtLogin:)) {
-        
-        [menuItem setState:[self opensAtLogin] ? NSOnState : NSOffState];
+    // Check for the escape key
+    if ([[keyDown characters] isEqualToString:@"\033"]) {
+        [self hideInfoPanel];
         return YES;
     }
     
-    return YES;
+    return NO;
 }
+
+- (BOOL)handlesMouseDown:(NSEvent *)mouseDown
+                inWindow:(NSWindow *)window
+{
+    // Close the panel on any click
+    return NO;
+}
+
 @end

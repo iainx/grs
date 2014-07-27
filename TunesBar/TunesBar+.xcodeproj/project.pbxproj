@@ -16,26 +16,37 @@
 		94ABDBDB16F34A7F00D47E36 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDBDA16F34A7F00D47E36 /* ScriptingBridge.framework */; };
 		94ABDBDF16F34B6000D47E36 /* SDStatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBDE16F34B6000D47E36 /* SDStatusItemController.m */; };
 		94ABDBE816F34B8600D47E36 /* SDTBStatusItemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDBE716F34B8600D47E36 /* SDTBStatusItemHelper.m */; };
-		94ABDBF616F34D2600D47E36 /* NextTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBEE16F34D2600D47E36 /* NextTrack.png */; };
-		94ABDBF716F34D2600D47E36 /* PreviousTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBEF16F34D2600D47E36 /* PreviousTrack.png */; };
-		94ABDBF816F34D2600D47E36 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBF016F34D2600D47E36 /* Play.png */; };
-		94ABDBF916F34D2600D47E36 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDBF116F34D2600D47E36 /* Pause.png */; };
 		94ABDC0916F351AC00D47E36 /* DefaultValues.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDC0816F351AC00D47E36 /* DefaultValues.plist */; };
 		94ABDC1D16F3545B00D47E36 /* SDWelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ABDC1516F3545B00D47E36 /* SDWelcomeWindow.xib */; };
 		94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1716F3545B00D47E36 /* SDWelcomeWindowController.m */; };
 		94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */; };
 		94ABDC5416F36E9400D47E36 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */; };
+		AE6E5F6B1982F81800D480B4 /* SDTBHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F691982F81800D480B4 /* SDTBHUDViewController.m */; };
+		AE6E5F6E1982FB8600D480B4 /* SDTBHUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5F6D1982FB8600D480B4 /* SDTBHUDViewController.xib */; };
+		AE6E5F721983AB4E00D480B4 /* SDTBMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F701983AB4E00D480B4 /* SDTBMenuViewController.m */; };
+		AE6E5F731983AB4E00D480B4 /* SDTBMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5F711983AB4E00D480B4 /* SDTBMenuViewController.xib */; };
+		AE6E5F771983D65500D480B4 /* SDTBStartITunesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F751983D65500D480B4 /* SDTBStartITunesViewController.m */; };
+		AE6E5F781983D65500D480B4 /* SDTBStartITunesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5F761983D65500D480B4 /* SDTBStartITunesViewController.xib */; };
+		AE6E5F7B1983DF3400D480B4 /* NSAttributedString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F7A1983DF3400D480B4 /* NSAttributedString+FontAwesome.m */; };
+		AE6E5F7E198418A600D480B4 /* NSWindow+Fade.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F7D198418A600D480B4 /* NSWindow+Fade.m */; };
+		AE6E5F8119842D3F00D480B4 /* SDTBWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F8019842D3F00D480B4 /* SDTBWindowView.m */; };
+		AE6E5F8C198462FC00D480B4 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F8B198462FC00D480B4 /* Constants.m */; };
+		AE6E5FA51984795D00D480B4 /* forward20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5F9D1984795D00D480B4 /* forward20x20.png */; };
+		AE6E5FA61984795D00D480B4 /* forward20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5F9E1984795D00D480B4 /* forward20x20@2x.png */; };
+		AE6E5FA71984795D00D480B4 /* pause20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5F9F1984795D00D480B4 /* pause20x20.png */; };
+		AE6E5FA81984795D00D480B4 /* pause20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA01984795D00D480B4 /* pause20x20@2x.png */; };
+		AE6E5FA91984795D00D480B4 /* play20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA11984795D00D480B4 /* play20x20.png */; };
+		AE6E5FAA1984795D00D480B4 /* play20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA21984795D00D480B4 /* play20x20@2x.png */; };
+		AE6E5FAB1984795D00D480B4 /* rewind20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA31984795D00D480B4 /* rewind20x20.png */; };
+		AE6E5FAC1984795D00D480B4 /* rewind20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA41984795D00D480B4 /* rewind20x20@2x.png */; };
 		AE703F5C19733E27005C5212 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */; };
-		AE82EF9D17D6942C005AEEAA /* NextTrack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE82EF9917D6942C005AEEAA /* NextTrack@2x.png */; };
-		AE82EF9E17D6942C005AEEAA /* Pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE82EF9A17D6942C005AEEAA /* Pause@2x.png */; };
-		AE82EF9F17D6942C005AEEAA /* Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE82EF9B17D6942C005AEEAA /* Play@2x.png */; };
-		AE82EFA017D6942C005AEEAA /* PreviousTrack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE82EF9C17D6942C005AEEAA /* PreviousTrack@2x.png */; };
 		AE95DD9617D8E99C00AA7809 /* TunesBar+.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */; };
 		AE9664B717DA617C003850B8 /* TunesBar+Helper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = AE95DD9417D8E3D300AA7809 /* TunesBar+Helper.app */; };
 		AE975E9217D796680053BFAF /* sd_intro2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE975E9117D796680053BFAF /* sd_intro2.png */; };
 		AEC19AC017DB5DFF00226CD9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AEC19ABF17DB5DFF00226CD9 /* Credits.rtf */; };
 		AEC19AC217DB5FD600226CD9 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = AEC19AC117DB5FD600226CD9 /* Credits.html */; };
 		AEC19AC417DB9FBF00226CD9 /* TunesBar+.iconset in Resources */ = {isa = PBXBuildFile; fileRef = AEC19AC317DB9FBF00226CD9 /* TunesBar+.iconset */; };
+		AEDB399E1981AAE600921F3C /* SDTBWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDB399D1981AAE600921F3C /* SDTBWindow.m */; };
 		B16B25A7C05741B1838EFD14 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 505961972BEB4420A8F0B70A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -87,10 +98,6 @@
 		94ABDBE616F34B8600D47E36 /* SDTBStatusItemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBStatusItemHelper.h; sourceTree = "<group>"; };
 		94ABDBE716F34B8600D47E36 /* SDTBStatusItemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBStatusItemHelper.m; sourceTree = "<group>"; };
 		94ABDBE916F34C4200D47E36 /* DefaultsKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultsKeys.h; sourceTree = "<group>"; };
-		94ABDBEE16F34D2600D47E36 /* NextTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NextTrack.png; sourceTree = "<group>"; };
-		94ABDBEF16F34D2600D47E36 /* PreviousTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PreviousTrack.png; sourceTree = "<group>"; };
-		94ABDBF016F34D2600D47E36 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
-		94ABDBF116F34D2600D47E36 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
 		94ABDC0816F351AC00D47E36 /* DefaultValues.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultValues.plist; sourceTree = "<group>"; };
 		94ABDC1516F3545B00D47E36 /* SDWelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDWelcomeWindow.xib; sourceTree = "<group>"; };
 		94ABDC1616F3545B00D47E36 /* SDWelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWelcomeWindowController.h; sourceTree = "<group>"; };
@@ -99,16 +106,39 @@
 		94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWelcomeWindowRoundedImageView.m; sourceTree = "<group>"; };
 		94ABDC4B16F36E4100D47E36 /* TunesBar+Helper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "TunesBar+Helper.xcodeproj"; path = "TunesBarHelper/TunesBar+Helper.xcodeproj"; sourceTree = "<group>"; };
 		94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		AE6E5F681982F81800D480B4 /* SDTBHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBHUDViewController.h; sourceTree = "<group>"; };
+		AE6E5F691982F81800D480B4 /* SDTBHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBHUDViewController.m; sourceTree = "<group>"; };
+		AE6E5F6D1982FB8600D480B4 /* SDTBHUDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDTBHUDViewController.xib; sourceTree = "<group>"; };
+		AE6E5F6F1983AB4E00D480B4 /* SDTBMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBMenuViewController.h; sourceTree = "<group>"; };
+		AE6E5F701983AB4E00D480B4 /* SDTBMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBMenuViewController.m; sourceTree = "<group>"; };
+		AE6E5F711983AB4E00D480B4 /* SDTBMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDTBMenuViewController.xib; sourceTree = "<group>"; };
+		AE6E5F741983D65500D480B4 /* SDTBStartITunesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBStartITunesViewController.h; sourceTree = "<group>"; };
+		AE6E5F751983D65500D480B4 /* SDTBStartITunesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBStartITunesViewController.m; sourceTree = "<group>"; };
+		AE6E5F761983D65500D480B4 /* SDTBStartITunesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDTBStartITunesViewController.xib; sourceTree = "<group>"; };
+		AE6E5F791983DF3400D480B4 /* NSAttributedString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+FontAwesome.h"; sourceTree = "<group>"; };
+		AE6E5F7A1983DF3400D480B4 /* NSAttributedString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+FontAwesome.m"; sourceTree = "<group>"; };
+		AE6E5F7C198418A600D480B4 /* NSWindow+Fade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+Fade.h"; sourceTree = "<group>"; };
+		AE6E5F7D198418A600D480B4 /* NSWindow+Fade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+Fade.m"; sourceTree = "<group>"; };
+		AE6E5F7F19842D3F00D480B4 /* SDTBWindowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBWindowView.h; sourceTree = "<group>"; };
+		AE6E5F8019842D3F00D480B4 /* SDTBWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBWindowView.m; sourceTree = "<group>"; };
+		AE6E5F8A1984612300D480B4 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		AE6E5F8B198462FC00D480B4 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		AE6E5F9D1984795D00D480B4 /* forward20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward20x20.png; sourceTree = "<group>"; };
+		AE6E5F9E1984795D00D480B4 /* forward20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward20x20@2x.png"; sourceTree = "<group>"; };
+		AE6E5F9F1984795D00D480B4 /* pause20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause20x20.png; sourceTree = "<group>"; };
+		AE6E5FA01984795D00D480B4 /* pause20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause20x20@2x.png"; sourceTree = "<group>"; };
+		AE6E5FA11984795D00D480B4 /* play20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play20x20.png; sourceTree = "<group>"; };
+		AE6E5FA21984795D00D480B4 /* play20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play20x20@2x.png"; sourceTree = "<group>"; };
+		AE6E5FA31984795D00D480B4 /* rewind20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rewind20x20.png; sourceTree = "<group>"; };
+		AE6E5FA41984795D00D480B4 /* rewind20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rewind20x20@2x.png"; sourceTree = "<group>"; };
 		AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
-		AE82EF9917D6942C005AEEAA /* NextTrack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextTrack@2x.png"; sourceTree = "<group>"; };
-		AE82EF9A17D6942C005AEEAA /* Pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause@2x.png"; sourceTree = "<group>"; };
-		AE82EF9B17D6942C005AEEAA /* Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play@2x.png"; sourceTree = "<group>"; };
-		AE82EF9C17D6942C005AEEAA /* PreviousTrack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PreviousTrack@2x.png"; sourceTree = "<group>"; };
 		AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TunesBar+.entitlements"; sourceTree = "<group>"; };
 		AE975E9117D796680053BFAF /* sd_intro2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro2.png; sourceTree = "<group>"; };
 		AEC19ABE17DB5DFF00226CD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		AEC19AC117DB5FD600226CD9 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		AEC19AC317DB9FBF00226CD9 /* TunesBar+.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = "TunesBar+.iconset"; sourceTree = "<group>"; };
+		AEDB399C1981AAE600921F3C /* SDTBWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBWindow.h; sourceTree = "<group>"; };
+		AEDB399D1981AAE600921F3C /* SDTBWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +234,12 @@
 				94ABDBC816F2D40D00D47E36 /* SDTBAppDelegate.m */,
 				94ABDBDD16F34B6000D47E36 /* SDStatusItemController.h */,
 				94ABDBDE16F34B6000D47E36 /* SDStatusItemController.m */,
+				AE6E5F681982F81800D480B4 /* SDTBHUDViewController.h */,
+				AE6E5F691982F81800D480B4 /* SDTBHUDViewController.m */,
+				AE6E5F6F1983AB4E00D480B4 /* SDTBMenuViewController.h */,
+				AE6E5F701983AB4E00D480B4 /* SDTBMenuViewController.m */,
+				AE6E5F741983D65500D480B4 /* SDTBStartITunesViewController.h */,
+				AE6E5F751983D65500D480B4 /* SDTBStartITunesViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +248,9 @@
 			isa = PBXGroup;
 			children = (
 				94ABDBCA16F2D40D00D47E36 /* MainMenu.xib */,
+				AE6E5F6D1982FB8600D480B4 /* SDTBHUDViewController.xib */,
+				AE6E5F761983D65500D480B4 /* SDTBStartITunesViewController.xib */,
+				AE6E5F711983AB4E00D480B4 /* SDTBMenuViewController.xib */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -219,16 +258,16 @@
 		94ABDBD416F348CB00D47E36 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				AE6E5F9D1984795D00D480B4 /* forward20x20.png */,
+				AE6E5F9E1984795D00D480B4 /* forward20x20@2x.png */,
+				AE6E5F9F1984795D00D480B4 /* pause20x20.png */,
+				AE6E5FA01984795D00D480B4 /* pause20x20@2x.png */,
+				AE6E5FA11984795D00D480B4 /* play20x20.png */,
+				AE6E5FA21984795D00D480B4 /* play20x20@2x.png */,
+				AE6E5FA31984795D00D480B4 /* rewind20x20.png */,
+				AE6E5FA41984795D00D480B4 /* rewind20x20@2x.png */,
 				AE975E9117D796680053BFAF /* sd_intro2.png */,
 				AEC19AC317DB9FBF00226CD9 /* TunesBar+.iconset */,
-				94ABDBEE16F34D2600D47E36 /* NextTrack.png */,
-				AE82EF9917D6942C005AEEAA /* NextTrack@2x.png */,
-				94ABDBEF16F34D2600D47E36 /* PreviousTrack.png */,
-				AE82EF9C17D6942C005AEEAA /* PreviousTrack@2x.png */,
-				94ABDBF016F34D2600D47E36 /* Play.png */,
-				AE82EF9B17D6942C005AEEAA /* Play@2x.png */,
-				94ABDBF116F34D2600D47E36 /* Pause.png */,
-				AE82EF9A17D6942C005AEEAA /* Pause@2x.png */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -241,6 +280,12 @@
 				94ABDBD816F348FE00D47E36 /* iTunesProxy.m */,
 				94ABDBE616F34B8600D47E36 /* SDTBStatusItemHelper.h */,
 				94ABDBE716F34B8600D47E36 /* SDTBStatusItemHelper.m */,
+				AE6E5F791983DF3400D480B4 /* NSAttributedString+FontAwesome.h */,
+				AE6E5F7A1983DF3400D480B4 /* NSAttributedString+FontAwesome.m */,
+				AE6E5F7C198418A600D480B4 /* NSWindow+Fade.h */,
+				AE6E5F7D198418A600D480B4 /* NSWindow+Fade.m */,
+				AE6E5F8A1984612300D480B4 /* Constants.h */,
+				AE6E5F8B198462FC00D480B4 /* Constants.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -253,6 +298,10 @@
 				94ABDC1716F3545B00D47E36 /* SDWelcomeWindowController.m */,
 				94ABDC1A16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.h */,
 				94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */,
+				AEDB399C1981AAE600921F3C /* SDTBWindow.h */,
+				AEDB399D1981AAE600921F3C /* SDTBWindow.m */,
+				AE6E5F7F19842D3F00D480B4 /* SDTBWindowView.h */,
+				AE6E5F8019842D3F00D480B4 /* SDTBWindowView.m */,
 			);
 			name = SDToolkit;
 			sourceTree = "<group>";
@@ -342,24 +391,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE6E5FA91984795D00D480B4 /* play20x20.png in Resources */,
+				AE6E5F731983AB4E00D480B4 /* SDTBMenuViewController.xib in Resources */,
+				AE6E5FA81984795D00D480B4 /* pause20x20@2x.png in Resources */,
+				AE6E5F6E1982FB8600D480B4 /* SDTBHUDViewController.xib in Resources */,
 				94ABDBC016F2D40D00D47E36 /* InfoPlist.strings in Resources */,
 				94ABDBCC16F2D40D00D47E36 /* MainMenu.xib in Resources */,
-				94ABDBF616F34D2600D47E36 /* NextTrack.png in Resources */,
+				AE6E5FA51984795D00D480B4 /* forward20x20.png in Resources */,
 				AE703F5C19733E27005C5212 /* fontawesome-webfont.ttf in Resources */,
-				94ABDBF716F34D2600D47E36 /* PreviousTrack.png in Resources */,
-				94ABDBF816F34D2600D47E36 /* Play.png in Resources */,
-				94ABDBF916F34D2600D47E36 /* Pause.png in Resources */,
+				AE6E5F781983D65500D480B4 /* SDTBStartITunesViewController.xib in Resources */,
 				94ABDC0916F351AC00D47E36 /* DefaultValues.plist in Resources */,
 				94ABDC1D16F3545B00D47E36 /* SDWelcomeWindow.xib in Resources */,
-				AE82EF9D17D6942C005AEEAA /* NextTrack@2x.png in Resources */,
-				AE82EF9E17D6942C005AEEAA /* Pause@2x.png in Resources */,
-				AE82EF9F17D6942C005AEEAA /* Play@2x.png in Resources */,
-				AE82EFA017D6942C005AEEAA /* PreviousTrack@2x.png in Resources */,
+				AE6E5FAA1984795D00D480B4 /* play20x20@2x.png in Resources */,
+				AE6E5FAC1984795D00D480B4 /* rewind20x20@2x.png in Resources */,
 				AE975E9217D796680053BFAF /* sd_intro2.png in Resources */,
+				AE6E5FA61984795D00D480B4 /* forward20x20@2x.png in Resources */,
+				AE6E5FA71984795D00D480B4 /* pause20x20.png in Resources */,
 				AE95DD9617D8E99C00AA7809 /* TunesBar+.entitlements in Resources */,
 				AEC19AC017DB5DFF00226CD9 /* Credits.rtf in Resources */,
 				AEC19AC217DB5FD600226CD9 /* Credits.html in Resources */,
 				AEC19AC417DB9FBF00226CD9 /* TunesBar+.iconset in Resources */,
+				AE6E5FAB1984795D00D480B4 /* rewind20x20.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,13 +468,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE6E5F7E198418A600D480B4 /* NSWindow+Fade.m in Sources */,
+				AE6E5F7B1983DF3400D480B4 /* NSAttributedString+FontAwesome.m in Sources */,
 				94ABDBC216F2D40D00D47E36 /* main.m in Sources */,
+				AE6E5F8C198462FC00D480B4 /* Constants.m in Sources */,
 				94ABDBC916F2D40D00D47E36 /* SDTBAppDelegate.m in Sources */,
 				94ABDBD916F348FE00D47E36 /* iTunesProxy.m in Sources */,
 				94ABDBDF16F34B6000D47E36 /* SDStatusItemController.m in Sources */,
+				AEDB399E1981AAE600921F3C /* SDTBWindow.m in Sources */,
 				94ABDBE816F34B8600D47E36 /* SDTBStatusItemHelper.m in Sources */,
 				94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */,
+				AE6E5F6B1982F81800D480B4 /* SDTBHUDViewController.m in Sources */,
+				AE6E5F771983D65500D480B4 /* SDTBStartITunesViewController.m in Sources */,
 				94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */,
+				AE6E5F721983AB4E00D480B4 /* SDTBMenuViewController.m in Sources */,
+				AE6E5F8119842D3F00D480B4 /* SDTBWindowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
