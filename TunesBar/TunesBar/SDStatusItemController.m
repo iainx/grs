@@ -125,7 +125,7 @@ static const CGFloat kStatusBarItemWidth = 150.0;
     [_statusView removeFromSuperview];
     
     NSRect itemBounds = _statusView.bounds;
-    _statusView.frame = NSMakeRect(headerRightX - 150.0/*itemBounds.size.width - 35*/, windowFrame.size.height - 22,
+    _statusView.frame = NSMakeRect(headerRightX - kHeaderWidth, windowFrame.size.height - 22,
                                    itemBounds.size.width, itemBounds.size.height);
     _popoverShown = YES;
     
