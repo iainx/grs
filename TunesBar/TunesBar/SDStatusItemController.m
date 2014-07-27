@@ -199,10 +199,10 @@ static const CGFloat kStatusBarItemWidth = 150.0;
 	if ([[iTunesProxy proxy] isRunning]) {
         title = [[iTunesProxy proxy] valueForKey:key];
         if (!title) {
-            title = @"Unknown Track";
+            title = NSLocalizedString(@"Unknown Track", nil);
         }
 	} else {
-        title = @"Nothing Playing";
+        title = NSLocalizedString(@"Nothing Playing", nil);
 	}
     
     [_statusItem setToolTip:title];
