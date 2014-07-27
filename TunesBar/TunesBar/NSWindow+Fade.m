@@ -8,7 +8,7 @@
 
 #import "NSWindow+Fade.h"
 
-static const CGFloat kWindowAnimationDuration = 0.1f;
+static const CGFloat kWindowAnimationDuration = 0.2f;
 @implementation NSWindow (Fade)
 
 - (void)fadeIn
