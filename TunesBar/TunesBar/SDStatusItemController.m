@@ -127,8 +127,6 @@ static const CGFloat kStatusBarItemWidth = 150.0;
     NSRect itemBounds = _statusView.bounds;
     _statusView.frame = NSMakeRect(headerRightX - 150.0/*itemBounds.size.width - 35*/, windowFrame.size.height - 22,
                                    itemBounds.size.width, itemBounds.size.height);
-    
-    NSLog(@"itemRightX: %f - headerRightX: %f - itemBounds: %@ - frame: %@", itemRightX, headerRightX, NSStringFromRect(itemBounds), NSStringFromRect(_statusView.frame));
     _popoverShown = YES;
     
     // Update the image to use a lighter colour as our background colour has changed
@@ -137,7 +135,6 @@ static const CGFloat kStatusBarItemWidth = 150.0;
     
     [_popoverWindow.contentView addSubview:_statusView];
 
-    NSLog(@"new %@", NSStringFromRect(_statusView.frame));
     // Set the width of the status item to our max width
     // so that the icons aren't under the header
     _statusItem.length = kHeaderWidth;
