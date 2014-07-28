@@ -124,7 +124,7 @@
                 SBElementArray *artworks = [track artworks];
                 iTunesArtwork *artwork = [artworks objectAtIndex:0];
                 
-                self.coverArtwork = [artwork data];
+                self.coverArtwork = [[NSImage alloc] initWithData:[artwork rawData]];
 			} else {
 				self.trackName = @"Unknown Track Name";
 				self.trackArtist = @"Unknown Artist";

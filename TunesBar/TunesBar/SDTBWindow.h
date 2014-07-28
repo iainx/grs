@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class SLColorArt;
+
 @protocol SDTBWindowDelegate <NSWindowDelegate>
 - (BOOL)handlesKeyDown:(NSEvent *)keyDown inWindow:(NSWindow *)window;
 - (BOOL)handlesMouseDown:(NSEvent *)mouseDown inWindow:(NSWindow *)window;
@@ -19,4 +21,5 @@
 @property (readwrite, nonatomic, strong) NSViewController *contentViewController;
 @property (readwrite, nonatomic) CGFloat headerWidth;
 
+- (void)setColorArt:(SLColorArt *)colorArt;
 @end

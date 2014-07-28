@@ -11,5 +11,5 @@
 @interface SDTBWindowView : NSView
 
 @property (readwrite, nonatomic) CGFloat widthOfHeader;
-
+@property (readwrite, nonatomic, strong) NSColor *backgroundColour;
 @end

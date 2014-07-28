@@ -12,6 +12,9 @@
 
 #import <NSString+FontAwesome.h>
 #import "NSAttributedString+FontAwesome.h"
+#import "NSImage+Template.h"
+
+#import "SLColorArt.h"
 #import <ServiceManagement/ServiceManagement.h>
 
 @interface SDTBHUDViewController ()
@@ -41,10 +44,10 @@
     */
     [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog]]];
     
-    [self updateHUD];
+    [self updateHUDWithColors:self.colors];
 }
 
-- (void)updateHUD
+- (void)updateHUDWithColors:(SLColorArt *)colorArt
 {
     iTunesProxy *iProxy = [iTunesProxy proxy];
     
@@ -53,11 +56,24 @@
     } else {
         [_playButton setState:0];
     }
-    [_imageView setImage:[iProxy coverArtwork]];
+    
+    NSImage *coverArtwork = [iProxy coverArtwork];
+    [_imageView setImage:coverArtwork];
     
     [self updateTextField:_titleField withString:[iProxy trackName]];
     [self updateTextField:_artistField withString:[iProxy trackArtist]];
     [self updateTextField:_albumField withString:[iProxy trackAlbum]];
+    
+    if (colorArt) {
+        _titleField.textColor = colorArt.primaryColor;
+        _artistField.textColor = colorArt.secondaryColor;
+        _albumField.textColor = colorArt.secondaryColor;
+        
+        _playButton.image = [NSImage templateImage:@"play20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
+        _playButton.alternateImage = [NSImage templateImage:@"pause20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
+        _previousButton.image = [NSImage templateImage:@"rewind20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
+        _nextButton.image = [NSImage templateImage:@"forward20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
+    }
 }
 
 - (void)updateTextField:(NSTextField *)textField

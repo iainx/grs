@@ -15,6 +15,7 @@
 #import "SDTBWindow.h"
 #import "SDTBHUDViewController.h"
 #import "SDTBStartITunesViewController.h"
+#import "SLColorArt.h"
 
 #import "NSString+FontAwesome.h"
 #import "NSWindow+Fade.h"
@@ -36,9 +37,12 @@
     
     NSArray *_titleKeys;
     NSInteger _titleIndex;
+    
+    SLColorArt *_currentColors;
 }
 
 static const CGFloat kStatusBarItemWidth = 150.0;
+static const CGFloat kStatusItemPadding = 10.0;
 
 - (void)setupStatusItem
 {
@@ -46,7 +50,7 @@ static const CGFloat kStatusBarItemWidth = 150.0;
     [self.statusItem setAction:@selector(showInfoPanel:)];
     [self.statusItem setTarget:self];
     
-    _statusView = [[NSButton alloc] initWithFrame:NSMakeRect(0, 0, kHeaderWidth, _statusItem.statusBar.thickness + 2)];
+    _statusView = [[NSButton alloc] initWithFrame:NSMakeRect(2, 0, kHeaderWidth, _statusItem.statusBar.thickness + 2)];
     _statusItem.view = _statusView;
     [_statusView setButtonType:NSMomentaryChangeButton];
     _statusView.bordered = NO;
@@ -98,6 +102,7 @@ static const CGFloat kStatusBarItemWidth = 150.0;
     } else {
         _infoViewController = [[SDTBHUDViewController alloc] init];
         viewController = _infoViewController;
+        _infoViewController.colors = _currentColors;
     }
 
     _popoverWindow.contentViewController = viewController;
@@ -168,7 +173,17 @@ static const CGFloat kStatusBarItemWidth = 150.0;
     
 	[self _updateTitleForKey:@"trackName"];
     
-    [_infoViewController updateHUD];
+    NSImage *coverArtwork = [[iTunesProxy proxy] coverArtwork];
+
+    [[NSOperationQueue new] addOperationWithBlock:^{
+        SLColorArt *colorArt = [[SLColorArt alloc] initWithImage:coverArtwork scaledSize:NSMakeSize(320., 320.)];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            NSLog(@"Background color: %@", colorArt.backgroundColor);
+            [_popoverWindow setColorArt:colorArt];
+            [_infoViewController updateHUDWithColors:colorArt];
+            _currentColors = colorArt;
+        }];
+    }];
 }
 
 - (void)copyFromImage:(NSImage *)srcImage
@@ -231,7 +246,7 @@ static const CGFloat kStatusBarItemWidth = 150.0;
 - (void) _updateTitleForKey:(NSString *)key {
     [self updateImageForKey:key];
     
-    CGFloat width = MIN(kStatusBarItemWidth, _currentImage.size.width);
+    CGFloat width = MIN(kStatusBarItemWidth - kStatusItemPadding, _currentImage.size.width);
     _statusImage = [[NSImage alloc] initWithSize:CGSizeMake(width, [_currentImage size].height)];
 
     [self resetAnimation:nil];
@@ -256,7 +271,8 @@ static const CGFloat kStatusBarItemWidth = 150.0;
     
     // If the popover is open, then we don't want the statusitem shrinking
     if (_popoverShown == NO) {
-        [_statusItem setLength:_statusImage.size.width];
+        CGFloat width = (_statusImage.size.width < kStatusBarItemWidth - kStatusItemPadding) ? _statusImage.size.width : kStatusBarItemWidth;
+        [_statusItem setLength:width];
     }
 	
 	NSEnableScreenUpdates();
@@ -282,7 +298,7 @@ static const CGFloat kStatusBarItemWidth = 150.0;
     
     [self updateImage];
     
-    if ([_currentImage size].width > kStatusBarItemWidth) {
+    if ([_currentImage size].width > (kStatusBarItemWidth - kStatusItemPadding)) {
         _animationTimer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(moveTheImage:) userInfo:nil repeats:YES];
     } else {
         _animationTimer = nil;
@@ -303,7 +319,7 @@ static const CGFloat kStatusBarItemWidth = 150.0;
 - (void)moveTheImage:(NSTimer *)timer
 {
     _currentXOffset++;
-    if (_currentXOffset + kStatusBarItemWidth > [_currentImage size].width) {
+    if (_currentXOffset + (kStatusBarItemWidth - kStatusItemPadding) > [_currentImage size].width) {
         [_animationTimer invalidate];
         _animationTimer = nil;
         _restartTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(nextTitle:) userInfo:nil repeats:NO];

@@ -39,6 +39,8 @@
 		AE6E5FAA1984795D00D480B4 /* play20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA21984795D00D480B4 /* play20x20@2x.png */; };
 		AE6E5FAB1984795D00D480B4 /* rewind20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA31984795D00D480B4 /* rewind20x20.png */; };
 		AE6E5FAC1984795D00D480B4 /* rewind20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA41984795D00D480B4 /* rewind20x20@2x.png */; };
+		AE6E5FB01985B1CD00D480B4 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FAF1985B1CD00D480B4 /* SLColorArt.m */; };
+		AE6E5FB51986EE1800D480B4 /* NSImage+Template.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */; };
 		AE703F5C19733E27005C5212 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */; };
 		AE95DD9617D8E99C00AA7809 /* TunesBar+.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */; };
 		AE9664B717DA617C003850B8 /* TunesBar+Helper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = AE95DD9417D8E3D300AA7809 /* TunesBar+Helper.app */; };
@@ -131,6 +133,10 @@
 		AE6E5FA21984795D00D480B4 /* play20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play20x20@2x.png"; sourceTree = "<group>"; };
 		AE6E5FA31984795D00D480B4 /* rewind20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rewind20x20.png; sourceTree = "<group>"; };
 		AE6E5FA41984795D00D480B4 /* rewind20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rewind20x20@2x.png"; sourceTree = "<group>"; };
+		AE6E5FAE1985B1CD00D480B4 /* SLColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLColorArt.h; sourceTree = "<group>"; };
+		AE6E5FAF1985B1CD00D480B4 /* SLColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLColorArt.m; sourceTree = "<group>"; };
+		AE6E5FB31986EE1800D480B4 /* NSImage+Template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Template.h"; sourceTree = "<group>"; };
+		AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Template.m"; sourceTree = "<group>"; };
 		AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TunesBar+.entitlements"; sourceTree = "<group>"; };
 		AE975E9117D796680053BFAF /* sd_intro2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro2.png; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 				94ABDBD516F348EC00D47E36 /* Helpers */,
 				94ABDBD416F348CB00D47E36 /* Graphics */,
 				94ABDBD216F348BB00D47E36 /* Controllers */,
+				AE6E5FAD1985B19900D480B4 /* External */,
 				94ABDBD316F348BF00D47E36 /* XIBs */,
 				94ABDBBC16F2D40D00D47E36 /* Supporting Files */,
 			);
@@ -284,6 +291,8 @@
 				AE6E5F7A1983DF3400D480B4 /* NSAttributedString+FontAwesome.m */,
 				AE6E5F7C198418A600D480B4 /* NSWindow+Fade.h */,
 				AE6E5F7D198418A600D480B4 /* NSWindow+Fade.m */,
+				AE6E5FB31986EE1800D480B4 /* NSImage+Template.h */,
+				AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */,
 				AE6E5F8A1984612300D480B4 /* Constants.h */,
 				AE6E5F8B198462FC00D480B4 /* Constants.m */,
 			);
@@ -304,6 +313,16 @@
 				AE6E5F8019842D3F00D480B4 /* SDTBWindowView.m */,
 			);
 			name = SDToolkit;
+			sourceTree = "<group>";
+		};
+		AE6E5FAD1985B19900D480B4 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E5FAE1985B1CD00D480B4 /* SLColorArt.h */,
+				AE6E5FAF1985B1CD00D480B4 /* SLColorArt.m */,
+			);
+			name = External;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		AE95DD9017D8E3D300AA7809 /* Products */ = {
@@ -475,11 +494,13 @@
 				94ABDBC916F2D40D00D47E36 /* SDTBAppDelegate.m in Sources */,
 				94ABDBD916F348FE00D47E36 /* iTunesProxy.m in Sources */,
 				94ABDBDF16F34B6000D47E36 /* SDStatusItemController.m in Sources */,
+				AE6E5FB51986EE1800D480B4 /* NSImage+Template.m in Sources */,
 				AEDB399E1981AAE600921F3C /* SDTBWindow.m in Sources */,
 				94ABDBE816F34B8600D47E36 /* SDTBStatusItemHelper.m in Sources */,
 				94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */,
 				AE6E5F6B1982F81800D480B4 /* SDTBHUDViewController.m in Sources */,
 				AE6E5F771983D65500D480B4 /* SDTBStartITunesViewController.m in Sources */,
+				AE6E5FB01985B1CD00D480B4 /* SLColorArt.m in Sources */,
 				94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */,
 				AE6E5F721983AB4E00D480B4 /* SDTBMenuViewController.m in Sources */,
 				AE6E5F8119842D3F00D480B4 /* SDTBWindowView.m in Sources */,

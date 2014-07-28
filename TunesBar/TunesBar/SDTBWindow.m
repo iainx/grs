@@ -8,6 +8,8 @@
 
 #import "SDTBWindow.h"
 #import "SDTBWindowView.h"
+#import "SLColorArt.h"
+
 @implementation SDTBWindow {
     SDTBWindowView *_realContentView;
 }
@@ -125,7 +127,7 @@
     [frameView addSubview:childContentView];
 }
 */
-#define WINDOW_FRAME_PADDING 22
+#define WINDOW_FRAME_PADDING 21
 - (NSRect)contentRectForFrameRect:(NSRect)windowFrame
 {
     windowFrame.origin = NSZeroPoint;
@@ -152,4 +154,8 @@
     [_realContentView setWidthOfHeader:headerWidth];
 }
 
+- (void)setColorArt:(SLColorArt *)colorArt
+{
+    _realContentView.backgroundColour = colorArt.backgroundColor;
+}
 @end

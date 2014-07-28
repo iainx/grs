@@ -25,12 +25,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ebK-Wg-ktk">
-                    <rect key="frame" x="12" y="12" width="80" height="80"/>
+                    <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="e9v-BR-NSo"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="51J-6l-Dgh">
-                    <rect key="frame" x="102" y="79" width="299" height="17"/>
+                    <rect key="frame" x="112" y="79" width="289" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title" id="aZA-EW-chX">
                         <font key="font" metaFont="system"/>
@@ -39,7 +39,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Ke9-4O-lqG">
-                    <rect key="frame" x="103" y="60" width="299" height="17"/>
+                    <rect key="frame" x="112" y="61" width="289" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Album" id="yn6-bK-Fiu">
                         <font key="font" metaFont="system"/>
@@ -48,7 +48,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Dbz-4f-RUN">
-                    <rect key="frame" x="102" y="40" width="299" height="17"/>
+                    <rect key="frame" x="112" y="40" width="289" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Artist" id="mEe-pO-ifd">
                         <font key="font" metaFont="system"/>
@@ -57,7 +57,7 @@
                     </textFieldCell>
                 </textField>
                 <button id="zyj-oe-MVq" userLabel="Previous Track">
-                    <rect key="frame" x="104" y="10" width="24" height="24"/>
+                    <rect key="frame" x="114" y="10" width="24" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="rewind20x20" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="V12-Uk-pZR">
                         <behavior key="behavior" lightByContents="YES"/>
@@ -68,7 +68,7 @@
                     </connections>
                 </button>
                 <button id="3NK-hz-AV5" userLabel="Play">
-                    <rect key="frame" x="140" y="10" width="24" height="24"/>
+                    <rect key="frame" x="150" y="10" width="24" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="play20x20" imagePosition="overlaps" alignment="center" alternateImage="pause20x20" imageScaling="proportionallyDown" inset="2" id="10N-7b-zFc">
                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
@@ -79,7 +79,7 @@
                     </connections>
                 </button>
                 <button id="aWH-x3-CH9" userLabel="Next Track">
-                    <rect key="frame" x="174" y="10" width="24" height="24"/>
+                    <rect key="frame" x="184" y="10" width="24" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="forward20x20" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="yJo-H1-Veo">
                         <behavior key="behavior" lightByContents="YES"/>
