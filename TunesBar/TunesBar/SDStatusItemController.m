@@ -224,20 +224,20 @@ static const CGFloat kStatusItemPadding = 10.0;
     
     NSFont *font = [NSFont menuBarFontOfSize:14.0];
 	
-	NSColor *foreColor = _popoverShown ? [NSColor whiteColor] : [NSColor blackColor];
+	NSColor *foreColor = _popoverShown ? _currentColors.primaryColor : [NSColor blackColor];
 	if ([[iTunesProxy proxy] isPlaying] == NO) {
 		foreColor = [foreColor colorWithAlphaComponent:0.65];
     }
     
     NSShadow *shadow = [[NSShadow alloc] init];
-	[shadow setShadowBlurRadius:1.0];
+	[shadow setShadowBlurRadius:_popoverShown ? 0.0 : 1.0];
 	[shadow setShadowColor:[NSColor colorWithCalibratedWhite:1.0 alpha:0.3]];
 	[shadow setShadowOffset:NSMakeSize(0, -1)];
 	
 	NSDictionary *attributes = @{
                                  NSFontAttributeName: font,
                                  NSForegroundColorAttributeName: foreColor,
-                                 NSShadowAttributeName: shadow,
+                                 //NSShadowAttributeName: shadow,
                                  };
     
     _currentImage = [SDTBStatusItemHelper imageFromString:title attributes:attributes];
