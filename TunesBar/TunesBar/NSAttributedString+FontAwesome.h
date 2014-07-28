@@ -10,6 +10,7 @@
 
 @interface NSAttributedString (FontAwesome)
 
++ (NSAttributedString *)attributedFontAwesome:(NSString *)text withColor:(NSColor *)colour;
 + (NSAttributedString *)attributedFontAwesome:(NSString *)text;
 
 @end

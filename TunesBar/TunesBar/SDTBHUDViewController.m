@@ -73,6 +73,8 @@
         _playButton.alternateImage = [NSImage templateImage:@"pause20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
         _previousButton.image = [NSImage templateImage:@"rewind20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
         _nextButton.image = [NSImage templateImage:@"forward20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
+        
+        [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog] withColor:colorArt.detailColor]];
     }
 }
 
