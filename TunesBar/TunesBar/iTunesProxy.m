@@ -7,6 +7,7 @@
 //
 
 #import "iTunesProxy.h"
+#import "NSData+MD5.h"
 
 
 @interface iTunesProxy ()
@@ -23,6 +24,7 @@
 @property (copy) NSString *trackAlbum;
 @property (copy) NSString *trackGenre;
 @property (copy) NSImage *coverArtwork;
+@property (copy) NSString *artworkMD5;
 
 @end
 
@@ -124,13 +126,20 @@
                 SBElementArray *artworks = [track artworks];
                 iTunesArtwork *artwork = [artworks objectAtIndex:0];
                 
-                self.coverArtwork = [[NSImage alloc] initWithData:[artwork rawData]];
+                NSData *rawArtwork = [artwork rawData];
+                NSString *newMD5 = [rawArtwork md5];
+                
+                if (![newMD5 isEqualToString:self.artworkMD5]) {
+                    self.coverArtwork = [[NSImage alloc] initWithData:rawArtwork];
+                    self.artworkMD5 = newMD5;
+                }
 			} else {
 				self.trackName = @"Unknown Track Name";
 				self.trackArtist = @"Unknown Artist";
 				self.trackAlbum = @"Unknown Album";
 				self.trackGenre = @"Unknown Genre";
                 self.coverArtwork = nil;
+                self.artworkMD5 = nil;
 			}
         }
 	}

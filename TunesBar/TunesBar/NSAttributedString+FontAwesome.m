@@ -14,6 +14,10 @@
 {
     NSMutableAttributedString *colorTitle = [[NSMutableAttributedString alloc] initWithString:text];
     NSRange titleRange = NSMakeRange(0, [colorTitle length]);
+    
+    if (colour == nil) {
+        colour = [NSColor grayColor];
+    }
     [colorTitle addAttribute:NSForegroundColorAttributeName value:colour range:titleRange];
     [colorTitle addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"FontAwesome" size:12.0] range:titleRange];
     return  colorTitle;

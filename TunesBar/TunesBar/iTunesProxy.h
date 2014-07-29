@@ -31,6 +31,7 @@
 @property (copy, readonly) NSString* trackAlbum;
 @property (copy, readonly) NSString* trackGenre;
 @property (copy, readonly) NSImage *coverArtwork;
+@property (copy, readonly) NSString *artworkMD5;
 
 + (iTunesProxy*) proxy;
 

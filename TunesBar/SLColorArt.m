@@ -233,7 +233,7 @@
 			{
 				PCCountedColor *nextProposedColor = [sortedColors objectAtIndex:i];
 
-				if (((double)nextProposedColor.count / (double)proposedEdgeColor.count) > .03 ) // make sure the second choice color is 30% as common as the first choice
+				if (((double)nextProposedColor.count / (double)proposedEdgeColor.count) > .3 ) // make sure the second choice color is 30% as common as the first choice
 				{
 					if ( ![nextProposedColor.color pc_isBlackOrWhite] )
 					{

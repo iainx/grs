@@ -20,9 +20,10 @@
 	NSDictionary *initialValues = [NSDictionary dictionaryWithContentsOfFile:plistPath];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:initialValues];
     
+    [self.statusItemController setupStatusItem];
+    
     [iTunesProxy proxy].delegate = self.statusItemController;
     [[iTunesProxy proxy] loadInitialTunesBarInfo];
-    [self.statusItemController setupStatusItem];
     
     [SDWelcomeWindowController showInstructionsWindowFirstTimeOnly];
 }

@@ -63,19 +63,26 @@
     [self updateTextField:_titleField withString:[iProxy trackName]];
     [self updateTextField:_artistField withString:[iProxy trackArtist]];
     [self updateTextField:_albumField withString:[iProxy trackAlbum]];
+
+    NSColor *primary;
+    NSColor *secondary;
+    NSColor *detail;
+    NSColor *niceWhite = [NSColor colorWithCalibratedWhite:1.0 alpha:0.8];
     
-    if (colorArt) {
-        _titleField.textColor = colorArt.primaryColor;
-        _artistField.textColor = colorArt.secondaryColor;
-        _albumField.textColor = colorArt.secondaryColor;
-        
-        _playButton.image = [NSImage templateImage:@"play20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
-        _playButton.alternateImage = [NSImage templateImage:@"pause20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
-        _previousButton.image = [NSImage templateImage:@"rewind20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
-        _nextButton.image = [NSImage templateImage:@"forward20x20" withColor:colorArt.detailColor andSize:CGSizeZero];
-        
-        [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog] withColor:colorArt.detailColor]];
-    }
+    primary = colorArt.primaryColor ?: niceWhite;
+    secondary = colorArt.secondaryColor ?: niceWhite;
+    detail = colorArt.detailColor ?: niceWhite;
+    
+    _titleField.textColor = primary;
+    _artistField.textColor = secondary;
+    _albumField.textColor = secondary;
+    
+    _playButton.image = [NSImage templateImage:@"play20x20" withColor:detail andSize:CGSizeZero];
+    _playButton.alternateImage = [NSImage templateImage:@"pause20x20" withColor:detail andSize:CGSizeZero];
+    _previousButton.image = [NSImage templateImage:@"rewind20x20" withColor:detail andSize:CGSizeZero];
+    _nextButton.image = [NSImage templateImage:@"forward20x20" withColor:detail andSize:CGSizeZero];
+    
+    [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog] withColor:detail]];
 }
 
 - (void)updateTextField:(NSTextField *)textField

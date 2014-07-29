@@ -41,6 +41,7 @@
 		AE6E5FAC1984795D00D480B4 /* rewind20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA41984795D00D480B4 /* rewind20x20@2x.png */; };
 		AE6E5FB01985B1CD00D480B4 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FAF1985B1CD00D480B4 /* SLColorArt.m */; };
 		AE6E5FB51986EE1800D480B4 /* NSImage+Template.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */; };
+		AE6E5FB919872A0800D480B4 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FB819872A0800D480B4 /* NSData+MD5.m */; };
 		AE703F5C19733E27005C5212 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */; };
 		AE95DD9617D8E99C00AA7809 /* TunesBar+.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */; };
 		AE9664B717DA617C003850B8 /* TunesBar+Helper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = AE95DD9417D8E3D300AA7809 /* TunesBar+Helper.app */; };
@@ -137,6 +138,8 @@
 		AE6E5FAF1985B1CD00D480B4 /* SLColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLColorArt.m; sourceTree = "<group>"; };
 		AE6E5FB31986EE1800D480B4 /* NSImage+Template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Template.h"; sourceTree = "<group>"; };
 		AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Template.m"; sourceTree = "<group>"; };
+		AE6E5FB719872A0800D480B4 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
+		AE6E5FB819872A0800D480B4 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
 		AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TunesBar+.entitlements"; sourceTree = "<group>"; };
 		AE975E9117D796680053BFAF /* sd_intro2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro2.png; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 				94ABDBD616F348FE00D47E36 /* iTunes.h */,
 				94ABDBD716F348FE00D47E36 /* iTunesProxy.h */,
 				94ABDBD816F348FE00D47E36 /* iTunesProxy.m */,
+				AE6E5FB719872A0800D480B4 /* NSData+MD5.h */,
+				AE6E5FB819872A0800D480B4 /* NSData+MD5.m */,
 				94ABDBE616F34B8600D47E36 /* SDTBStatusItemHelper.h */,
 				94ABDBE716F34B8600D47E36 /* SDTBStatusItemHelper.m */,
 				AE6E5F791983DF3400D480B4 /* NSAttributedString+FontAwesome.h */,
@@ -488,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE6E5F7E198418A600D480B4 /* NSWindow+Fade.m in Sources */,
+				AE6E5FB919872A0800D480B4 /* NSData+MD5.m in Sources */,
 				AE6E5F7B1983DF3400D480B4 /* NSAttributedString+FontAwesome.m in Sources */,
 				94ABDBC216F2D40D00D47E36 /* main.m in Sources */,
 				AE6E5F8C198462FC00D480B4 /* Constants.m in Sources */,

@@ -38,6 +38,8 @@
     NSArray *_titleKeys;
     NSInteger _titleIndex;
     
+    NSString *_artworkMD5;
+    NSOperationQueue *_colourQueue;
     SLColorArt *_currentColors;
 }
 
@@ -46,6 +48,9 @@ static const CGFloat kStatusItemPadding = 10.0;
 
 - (void)setupStatusItem
 {
+    _titleIndex = 0;
+    _titleKeys = @[@"trackName", @"trackArtist", @"trackAlbum"];
+    
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [self.statusItem setAction:@selector(showInfoPanel:)];
     [self.statusItem setTarget:self];
@@ -57,9 +62,6 @@ static const CGFloat kStatusItemPadding = 10.0;
     
     _statusView.action = @selector(showInfoPanel:);
     _statusView.target = self;
-    
-    _titleIndex = 0;
-    _titleKeys = @[@"trackName", @"trackArtist", @"trackAlbum"];
 
     [self _updateTitleForKey:_titleKeys[_titleIndex]];
     
@@ -173,17 +175,46 @@ static const CGFloat kStatusItemPadding = 10.0;
     
 	[self _updateTitleForKey:@"trackName"];
     
-    NSImage *coverArtwork = [[iTunesProxy proxy] coverArtwork];
+    NSString *newMD5 = [[iTunesProxy proxy] artworkMD5];
+    if (![newMD5 isEqualToString:_artworkMD5]) {
+        NSImage *coverArtwork = [[iTunesProxy proxy] coverArtwork];
 
-    [[NSOperationQueue new] addOperationWithBlock:^{
-        SLColorArt *colorArt = [[SLColorArt alloc] initWithImage:coverArtwork scaledSize:NSMakeSize(320., 320.)];
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            NSLog(@"Background color: %@", colorArt.backgroundColor);
-            [_popoverWindow setColorArt:colorArt];
-            [_infoViewController updateHUDWithColors:colorArt];
-            _currentColors = colorArt;
+        if (coverArtwork == nil) {
+            _currentColors = nil;
+            _artworkMD5 = nil;
+            
+            [_popoverWindow setColorArt:nil];
+            [_infoViewController updateHUDWithColors:nil];
+            
+            [self updateImageForKey:_titleKeys[_titleIndex]];
+            [self updateImage];
+            return;
+        }
+        
+        _artworkMD5 = newMD5;
+        
+        if (_colourQueue == nil) {
+            _colourQueue = [[NSOperationQueue alloc] init];
+            _colourQueue.name = @"Colour Analysis";
+        }
+        
+        [_colourQueue cancelAllOperations];
+        [_colourQueue addOperationWithBlock:^{
+            SLColorArt *colorArt = [[SLColorArt alloc] initWithImage:coverArtwork scaledSize:NSMakeSize(320., 320.)];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                NSLog(@"Background color: %@", colorArt.backgroundColor);
+                [_popoverWindow setColorArt:colorArt];
+                [_infoViewController updateHUDWithColors:colorArt];
+                
+                _currentColors = colorArt;
+                
+                [self updateImageForKey:_titleKeys[_titleIndex]];
+                [self updateImage];
+            }];
         }];
-    }];
+    } else {
+        NSLog(@"Art is a match");
+    }
 }
 
 - (void)copyFromImage:(NSImage *)srcImage
@@ -224,7 +255,8 @@ static const CGFloat kStatusItemPadding = 10.0;
     
     NSFont *font = [NSFont menuBarFontOfSize:14.0];
 	
-	NSColor *foreColor = _popoverShown ? _currentColors.primaryColor : [NSColor blackColor];
+    NSColor *primaryColour = _currentColors.primaryColor?:[NSColor whiteColor];
+	NSColor *foreColor = _popoverShown ? primaryColour : [NSColor blackColor];
 	if ([[iTunesProxy proxy] isPlaying] == NO) {
 		foreColor = [foreColor colorWithAlphaComponent:0.65];
     }
@@ -237,7 +269,7 @@ static const CGFloat kStatusItemPadding = 10.0;
 	NSDictionary *attributes = @{
                                  NSFontAttributeName: font,
                                  NSForegroundColorAttributeName: foreColor,
-                                 //NSShadowAttributeName: shadow,
+                                 NSShadowAttributeName: shadow,
                                  };
     
     _currentImage = [SDTBStatusItemHelper imageFromString:title attributes:attributes];
