@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @class iTunesProxy;
-@class SLColorArt;
+@class FVColorArt;
 @interface SDTBHUDViewController : NSViewController
 
 @property (readwrite, weak) IBOutlet NSImageView *imageView;
@@ -23,9 +23,7 @@
 @property (readwrite, weak) IBOutlet NSMenu *advancedMenu;
 @property (readwrite, weak) IBOutlet NSButton *advancedButton;
 
-@property (readwrite, strong) SLColorArt *colors;
+@property (readwrite, strong, nonatomic) FVColorArt *colors;
 - (IBAction)showAdvancedMenu:(id)sender;
-
-- (void)updateHUDWithColors:(SLColorArt *)colorArt;
 
 @end

@@ -14,8 +14,10 @@
 #import "NSAttributedString+FontAwesome.h"
 #import "NSImage+Template.h"
 
-#import "SLColorArt.h"
+#import "FVColorArt.h"
 #import <ServiceManagement/ServiceManagement.h>
+
+static void *hudContext = &hudContext;
 
 @interface SDTBHUDViewController ()
 
@@ -34,55 +36,91 @@
 
 - (void)awakeFromNib
 {
-    /*
-    [_playButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaPlay]]];
-    [_playButton setAttributedAlternateTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaPause]]];
-    
-    [_previousButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaBackward]]];
-    
-    [_nextButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaForward]]];
-    */
+    [_titleField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackName" options:nil];
+    [_albumField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackAlbum" options:nil];
+    [_artistField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackArtist" options:nil];
+    [_imageView bind:@"image" toObject:[iTunesProxy proxy] withKeyPath:@"coverArtwork" options:nil];
+    [_playButton bind:@"value"
+             toObject:[iTunesProxy proxy]
+          withKeyPath:@"isPlaying"
+              options:@{NSValueTransformerNameBindingOption : NSNegateBooleanTransformerName}];
+
     [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog]]];
     
-    [self updateHUDWithColors:self.colors];
+    [self updatePrimaryColor];
+    [self updateSecondaryColor];
+    [self updateDetailColor];
 }
 
-- (void)updateHUDWithColors:(SLColorArt *)colorArt
+- (void)updatePrimaryColor
 {
-    iTunesProxy *iProxy = [iTunesProxy proxy];
+    NSColor *primaryColor = self.colors.primaryColor ?: [NSColor colorWithCalibratedWhite:1.0 alpha:0.8];
+    self.titleField.textColor = primaryColor;
+}
+
+- (void)updateSecondaryColor
+{
+    NSColor *secondaryColor = self.colors.secondaryColor ?: [NSColor colorWithCalibratedWhite:1.0 alpha:0.8];
+    self.artistField.textColor = secondaryColor;
+    self.albumField.textColor = secondaryColor;
+}
+
+- (void)updateDetailColor
+{
+    NSColor *detailColor = self.colors.detailColor ?: [NSColor colorWithCalibratedWhite:1.0 alpha:0.8];
     
-    if ([iProxy isPlaying]) {
-        [_playButton setState:1];
-    } else {
-        [_playButton setState:0];
+    _playButton.alternateImage = [NSImage templateImage:@"play20x20" withColor:detailColor andSize:CGSizeZero];
+    _playButton.image = [NSImage templateImage:@"pause20x20" withColor:detailColor andSize:CGSizeZero];
+    _previousButton.image = [NSImage templateImage:@"rewind20x20" withColor:detailColor andSize:CGSizeZero];
+    _nextButton.image = [NSImage templateImage:@"forward20x20" withColor:detailColor andSize:CGSizeZero];
+    
+    [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog] withColor:detailColor]];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if (context != hudContext) {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        return;
+    }
+ 
+    if ([keyPath isEqualToString:@"primaryColor"]) {
+        [self updatePrimaryColor];
+        return;
     }
     
-    NSImage *coverArtwork = [iProxy coverArtwork];
-    [_imageView setImage:coverArtwork];
+    if ([keyPath isEqualToString:@"secondaryColor"]) {
+        [self updateSecondaryColor];
+        return;
+    }
     
-    [self updateTextField:_titleField withString:[iProxy trackName]];
-    [self updateTextField:_artistField withString:[iProxy trackArtist]];
-    [self updateTextField:_albumField withString:[iProxy trackAlbum]];
+    if ([keyPath isEqualToString:@"detailColor"]) {
+        [self updateDetailColor];
+        return;
+    }
+}
 
-    NSColor *primary;
-    NSColor *secondary;
-    NSColor *detail;
-    NSColor *niceWhite = [NSColor colorWithCalibratedWhite:1.0 alpha:0.8];
+- (void)setColors:(FVColorArt *)colors
+{
+    if (colors == _colors) {
+        return;
+    }
     
-    primary = colorArt.primaryColor ?: niceWhite;
-    secondary = colorArt.secondaryColor ?: niceWhite;
-    detail = colorArt.detailColor ?: niceWhite;
+    _colors = colors;
     
-    _titleField.textColor = primary;
-    _artistField.textColor = secondary;
-    _albumField.textColor = secondary;
+    [_colors addObserver:self forKeyPath:@"primaryColor"
+                 options:NSKeyValueObservingOptionNew context:hudContext];
+    [_colors addObserver:self forKeyPath:@"secondaryColor"
+                 options:NSKeyValueObservingOptionNew context:hudContext];
+    [_colors addObserver:self forKeyPath:@"detailColor"
+                 options:NSKeyValueObservingOptionNew context:hudContext];
     
-    _playButton.image = [NSImage templateImage:@"play20x20" withColor:detail andSize:CGSizeZero];
-    _playButton.alternateImage = [NSImage templateImage:@"pause20x20" withColor:detail andSize:CGSizeZero];
-    _previousButton.image = [NSImage templateImage:@"rewind20x20" withColor:detail andSize:CGSizeZero];
-    _nextButton.image = [NSImage templateImage:@"forward20x20" withColor:detail andSize:CGSizeZero];
-    
-    [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog] withColor:detail]];
+    [self updatePrimaryColor];
+    [self updateSecondaryColor];
+    [self updateDetailColor];
 }
 
 - (void)updateTextField:(NSTextField *)textField
@@ -91,8 +129,6 @@
     [textField setStringValue:string];
     [textField setToolTip:string];
 }
-
-
 
 - (IBAction)showAdvancedMenu:(id)sender
 {
@@ -116,52 +152,5 @@
 - (IBAction) previousTrack:(id)sender {
 	[[[iTunesProxy proxy] iTunes] previousTrack];
 }
-
-/*
-- (void)toggleOpenAtLogin:(id)sender
-{
-	NSInteger changingToState = ![sender state];
-    if (!SMLoginItemSetEnabled(CFSTR("com.sleepfive.TunesBarPlusHelper"), changingToState)) {
-        NSRunAlertPanel(@"Could not change Open at Login status",
-                        @"For some reason, this failed. Most likely it's because the app isn't in the Applications folder.",
-                        @"OK",
-                        nil,
-                        nil);
-    }
-}
-
-- (BOOL)opensAtLogin
-{
-    CFArrayRef jobDictsCF = SMCopyAllJobDictionaries( kSMDomainUserLaunchd );
-    NSArray* jobDicts = (__bridge_transfer NSArray*)jobDictsCF;
-    // Note: Sandbox issue when using SMJobCopyDictionary()
-    
-    if ((jobDicts != nil) && [jobDicts count] > 0) {
-        BOOL bOnDemand = NO;
-        
-        for (NSDictionary* job in jobDicts) {
-            if ([[job objectForKey:@"Label"] isEqualToString: @"com.sleepfive.TunesBarPlusHelper"]) {
-                bOnDemand = [[job objectForKey:@"OnDemand"] boolValue];
-                break;
-            }
-        }
-        
-        return bOnDemand;
-    }
-    
-    return NO;
-}
-
-- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
-{
-    if ([menuItem action] == @selector(toggleOpenAtLogin:)) {
-        
-        [menuItem setState:[self opensAtLogin] ? NSOnState : NSOffState];
-        return YES;
-    }
-    
-    return YES;
-}
-*/
 
 @end

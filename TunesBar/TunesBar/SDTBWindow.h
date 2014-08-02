@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class SLColorArt;
+@class FVColorArt;
 
 @protocol SDTBWindowDelegate <NSWindowDelegate>
 - (BOOL)handlesKeyDown:(NSEvent *)keyDown inWindow:(NSWindow *)window;
@@ -21,5 +21,5 @@
 @property (readwrite, nonatomic, strong) NSViewController *contentViewController;
 @property (readwrite, nonatomic) CGFloat headerWidth;
 
-- (void)setColorArt:(SLColorArt *)colorArt;
+- (void)setColorArt:(FVColorArt *)colorArt;
 @end

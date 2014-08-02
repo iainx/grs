@@ -15,7 +15,7 @@
 #import "SDTBWindow.h"
 #import "SDTBHUDViewController.h"
 #import "SDTBStartITunesViewController.h"
-#import "SLColorArt.h"
+#import "FVColorArt.h"
 
 #import "NSString+FontAwesome.h"
 #import "NSWindow+Fade.h"
@@ -40,7 +40,7 @@
     
     NSString *_artworkMD5;
     NSOperationQueue *_colourQueue;
-    SLColorArt *_currentColors;
+    FVColorArt *_currentColors;
 }
 
 static const CGFloat kStatusBarItemWidth = 150.0;
@@ -63,6 +63,8 @@ static const CGFloat kStatusItemPadding = 10.0;
     _statusView.action = @selector(showInfoPanel:);
     _statusView.target = self;
 
+    _currentColors = [[FVColorArt alloc] init];
+    
     [self _updateTitleForKey:_titleKeys[_titleIndex]];
     
     // FIXME: _popOverWindow probably shouldn't be kept around all the time
@@ -71,6 +73,11 @@ static const CGFloat kStatusItemPadding = 10.0;
                                                      backing:NSBackingStoreBuffered
                                                        defer:NO];
     _popoverWindow.delegate = self;
+    [_popoverWindow setColorArt:_currentColors];
+    
+    _infoViewController = [[SDTBHUDViewController alloc] init];
+    _infoViewController.colors = _currentColors;
+
     [self watchForNotificationsWhichShouldHidePanel];
 }
 
@@ -102,9 +109,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     if (![iProxy isRunning]) {
         viewController = [[SDTBStartITunesViewController alloc] init];
     } else {
-        _infoViewController = [[SDTBHUDViewController alloc] init];
         viewController = _infoViewController;
-        _infoViewController.colors = _currentColors;
     }
 
     _popoverWindow.contentViewController = viewController;
@@ -176,45 +181,27 @@ static const CGFloat kStatusItemPadding = 10.0;
 	[self _updateTitleForKey:@"trackName"];
     
     NSString *newMD5 = [[iTunesProxy proxy] artworkMD5];
-    if (![newMD5 isEqualToString:_artworkMD5]) {
-        NSImage *coverArtwork = [[iTunesProxy proxy] coverArtwork];
-
-        if (coverArtwork == nil) {
-            _currentColors = nil;
-            _artworkMD5 = nil;
-            
-            [_popoverWindow setColorArt:nil];
-            [_infoViewController updateHUDWithColors:nil];
-            
-            [self updateImageForKey:_titleKeys[_titleIndex]];
-            [self updateImage];
-            return;
-        }
-        
-        _artworkMD5 = newMD5;
-        
-        if (_colourQueue == nil) {
-            _colourQueue = [[NSOperationQueue alloc] init];
-            _colourQueue.name = @"Colour Analysis";
-        }
-        
-        [_colourQueue cancelAllOperations];
-        [_colourQueue addOperationWithBlock:^{
-            SLColorArt *colorArt = [[SLColorArt alloc] initWithImage:coverArtwork scaledSize:NSMakeSize(320., 320.)];
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                NSLog(@"Background color: %@", colorArt.backgroundColor);
-                [_popoverWindow setColorArt:colorArt];
-                [_infoViewController updateHUDWithColors:colorArt];
-                
-                _currentColors = colorArt;
-                
-                [self updateImageForKey:_titleKeys[_titleIndex]];
-                [self updateImage];
-            }];
-        }];
-    } else {
-        NSLog(@"Art is a match");
+    if ([newMD5 isEqualToString:_artworkMD5]) {
+        return;
     }
+    
+    NSImage *coverArtwork = [[iTunesProxy proxy] coverArtwork];
+
+    if (coverArtwork == nil) {
+        [_currentColors resetColors];
+        _artworkMD5 = nil;
+        
+        [self updateImageForKey:_titleKeys[_titleIndex]];
+        [self updateImage];
+        return;
+    }
+    
+    _artworkMD5 = newMD5;
+    
+    [_currentColors analysisImage:coverArtwork];
+    
+    [self updateImageForKey:_titleKeys[_titleIndex]];
+    [self updateImage];
 }
 
 - (void)copyFromImage:(NSImage *)srcImage

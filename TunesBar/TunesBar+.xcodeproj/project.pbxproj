@@ -21,6 +21,7 @@
 		94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1716F3545B00D47E36 /* SDWelcomeWindowController.m */; };
 		94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */; };
 		94ABDC5416F36E9400D47E36 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */; };
+		AE24B226198C4A420074D953 /* FVColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24B225198C4A420074D953 /* FVColorArt.m */; };
 		AE6E5F6B1982F81800D480B4 /* SDTBHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F691982F81800D480B4 /* SDTBHUDViewController.m */; };
 		AE6E5F6E1982FB8600D480B4 /* SDTBHUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5F6D1982FB8600D480B4 /* SDTBHUDViewController.xib */; };
 		AE6E5F721983AB4E00D480B4 /* SDTBMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F701983AB4E00D480B4 /* SDTBMenuViewController.m */; };
@@ -39,7 +40,6 @@
 		AE6E5FAA1984795D00D480B4 /* play20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA21984795D00D480B4 /* play20x20@2x.png */; };
 		AE6E5FAB1984795D00D480B4 /* rewind20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA31984795D00D480B4 /* rewind20x20.png */; };
 		AE6E5FAC1984795D00D480B4 /* rewind20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA41984795D00D480B4 /* rewind20x20@2x.png */; };
-		AE6E5FB01985B1CD00D480B4 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FAF1985B1CD00D480B4 /* SLColorArt.m */; };
 		AE6E5FB51986EE1800D480B4 /* NSImage+Template.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */; };
 		AE6E5FB919872A0800D480B4 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FB819872A0800D480B4 /* NSData+MD5.m */; };
 		AE703F5C19733E27005C5212 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */; };
@@ -109,6 +109,8 @@
 		94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWelcomeWindowRoundedImageView.m; sourceTree = "<group>"; };
 		94ABDC4B16F36E4100D47E36 /* TunesBar+Helper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "TunesBar+Helper.xcodeproj"; path = "TunesBarHelper/TunesBar+Helper.xcodeproj"; sourceTree = "<group>"; };
 		94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		AE24B224198C4A420074D953 /* FVColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVColorArt.h; sourceTree = "<group>"; };
+		AE24B225198C4A420074D953 /* FVColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVColorArt.m; sourceTree = "<group>"; };
 		AE6E5F681982F81800D480B4 /* SDTBHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBHUDViewController.h; sourceTree = "<group>"; };
 		AE6E5F691982F81800D480B4 /* SDTBHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBHUDViewController.m; sourceTree = "<group>"; };
 		AE6E5F6D1982FB8600D480B4 /* SDTBHUDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDTBHUDViewController.xib; sourceTree = "<group>"; };
@@ -134,8 +136,6 @@
 		AE6E5FA21984795D00D480B4 /* play20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play20x20@2x.png"; sourceTree = "<group>"; };
 		AE6E5FA31984795D00D480B4 /* rewind20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rewind20x20.png; sourceTree = "<group>"; };
 		AE6E5FA41984795D00D480B4 /* rewind20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rewind20x20@2x.png"; sourceTree = "<group>"; };
-		AE6E5FAE1985B1CD00D480B4 /* SLColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLColorArt.h; sourceTree = "<group>"; };
-		AE6E5FAF1985B1CD00D480B4 /* SLColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLColorArt.m; sourceTree = "<group>"; };
 		AE6E5FB31986EE1800D480B4 /* NSImage+Template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Template.h"; sourceTree = "<group>"; };
 		AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Template.m"; sourceTree = "<group>"; };
 		AE6E5FB719872A0800D480B4 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
@@ -217,7 +217,6 @@
 				94ABDBD516F348EC00D47E36 /* Helpers */,
 				94ABDBD416F348CB00D47E36 /* Graphics */,
 				94ABDBD216F348BB00D47E36 /* Controllers */,
-				AE6E5FAD1985B19900D480B4 /* External */,
 				94ABDBD316F348BF00D47E36 /* XIBs */,
 				94ABDBBC16F2D40D00D47E36 /* Supporting Files */,
 			);
@@ -300,6 +299,8 @@
 				AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */,
 				AE6E5F8A1984612300D480B4 /* Constants.h */,
 				AE6E5F8B198462FC00D480B4 /* Constants.m */,
+				AE24B224198C4A420074D953 /* FVColorArt.h */,
+				AE24B225198C4A420074D953 /* FVColorArt.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -318,16 +319,6 @@
 				AE6E5F8019842D3F00D480B4 /* SDTBWindowView.m */,
 			);
 			name = SDToolkit;
-			sourceTree = "<group>";
-		};
-		AE6E5FAD1985B19900D480B4 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				AE6E5FAE1985B1CD00D480B4 /* SLColorArt.h */,
-				AE6E5FAF1985B1CD00D480B4 /* SLColorArt.m */,
-			);
-			name = External;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		AE95DD9017D8E3D300AA7809 /* Products */ = {
@@ -493,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE6E5F7E198418A600D480B4 /* NSWindow+Fade.m in Sources */,
+				AE24B226198C4A420074D953 /* FVColorArt.m in Sources */,
 				AE6E5FB919872A0800D480B4 /* NSData+MD5.m in Sources */,
 				AE6E5F7B1983DF3400D480B4 /* NSAttributedString+FontAwesome.m in Sources */,
 				94ABDBC216F2D40D00D47E36 /* main.m in Sources */,
@@ -506,7 +498,6 @@
 				94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */,
 				AE6E5F6B1982F81800D480B4 /* SDTBHUDViewController.m in Sources */,
 				AE6E5F771983D65500D480B4 /* SDTBStartITunesViewController.m in Sources */,
-				AE6E5FB01985B1CD00D480B4 /* SLColorArt.m in Sources */,
 				94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */,
 				AE6E5F721983AB4E00D480B4 /* SDTBMenuViewController.m in Sources */,
 				AE6E5F8119842D3F00D480B4 /* SDTBWindowView.m in Sources */,

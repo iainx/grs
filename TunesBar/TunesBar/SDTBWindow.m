@@ -8,7 +8,9 @@
 
 #import "SDTBWindow.h"
 #import "SDTBWindowView.h"
-#import "SLColorArt.h"
+#import "FVColorArt.h"
+
+static void *windowContext = &windowContext;
 
 @implementation SDTBWindow {
     SDTBWindowView *_realContentView;
@@ -94,39 +96,7 @@
     
     [self.contentView addSubview:view];
 }
-/*
-- (void)setContentView:(NSView *)aView
-{
-    if ([childContentView isEqualTo:aView])
-    {
-        return;
-    }
-    
-    NSRect bounds = [self frame];
-    bounds.origin = NSZeroPoint;
-    
-    RoundWindowFrameView *frameView = [super contentView];
-    if (!frameView)
-    {
-        frameView =
-        [[[RoundWindowFrameView alloc]
-          initWithFrame:bounds]
-         autorelease];
-        
-        [super setContentView:frameView];
-    }
-    
-    if (childContentView)
-    {
-        [childContentView removeFromSuperview];
-    }
-    childContentView = aView;
-    [childContentView setFrame:[self contentRectForFrameRect:bounds]];
-    [childContentView
-     setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-    [frameView addSubview:childContentView];
-}
-*/
+
 #define WINDOW_FRAME_PADDING 21
 - (NSRect)contentRectForFrameRect:(NSRect)windowFrame
 {
@@ -154,8 +124,8 @@
     [_realContentView setWidthOfHeader:headerWidth];
 }
 
-- (void)setColorArt:(SLColorArt *)colorArt
+- (void)setColorArt:(FVColorArt *)colorArt
 {
-    _realContentView.backgroundColour = colorArt.backgroundColor;
+    [_realContentView bind:@"backgroundColour" toObject:colorArt withKeyPath:@"backgroundColor" options:nil];
 }
 @end

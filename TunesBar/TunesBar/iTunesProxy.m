@@ -31,7 +31,8 @@
 
 @implementation iTunesProxy
 
-@dynamic isPlaying;
+@synthesize isPlaying;
+@synthesize isRunning;
 
 + (iTunesProxy*) proxy {
     static iTunesProxy* iTunesPrivateSharedController = nil;
@@ -87,7 +88,10 @@
 		// this should be called at every update except right after launch
 		
 		self.cachedIsRunning = ([dictionary isEqualToDictionary:[NSDictionary dictionaryWithObject:@"Stopped" forKey:@"Player State"]] == NO);
+        
+        [self willChangeValueForKey:@"isPlaying"];
 		self.cachedIsPlaying = ([[dictionary objectForKey:@"Player State"] isEqualToString:@"Playing"] == YES);
+        [self didChangeValueForKey:@"isPlaying"];
 	}
 	
 	[self _updatePropertiesFromScriptingBridge];
@@ -104,43 +108,37 @@
 	else {
 		iTunesTrack *track = nil;
 		
-		@try {
-			track = [self.iTunes currentTrack];
-            if ([track exists]) {
-                track = [track get];
-            } else {
-                NSLog(@"Track doesn't exist");
-                track = nil;
+        track = [self.iTunes currentTrack];
+        if ([track exists]) {
+            track = [track get];
+        } else {
+            NSLog(@"Track doesn't exist");
+            track = nil;
+        }
+    
+        if (track) {
+            self.trackName = [track name];
+            self.trackArtist = [track artist];
+            self.trackAlbum = [track album];
+            self.trackGenre = [track genre];
+            
+            SBElementArray *artworks = [track artworks];
+            iTunesArtwork *artwork = [artworks objectAtIndex:0];
+            
+            NSData *rawArtwork = [artwork rawData];
+            NSString *newMD5 = [rawArtwork md5];
+            
+            if (![newMD5 isEqualToString:self.artworkMD5]) {
+                self.coverArtwork = [[NSImage alloc] initWithData:rawArtwork];
+                self.artworkMD5 = newMD5;
             }
-		}
-		@catch (NSException * e) {
-			track = nil;
-		}
-		@finally {
-			if (track) {
-				self.trackName = [track name];
-				self.trackArtist = [track artist];
-				self.trackAlbum = [track album];
-				self.trackGenre = [track genre];
-                
-                SBElementArray *artworks = [track artworks];
-                iTunesArtwork *artwork = [artworks objectAtIndex:0];
-                
-                NSData *rawArtwork = [artwork rawData];
-                NSString *newMD5 = [rawArtwork md5];
-                
-                if (![newMD5 isEqualToString:self.artworkMD5]) {
-                    self.coverArtwork = [[NSImage alloc] initWithData:rawArtwork];
-                    self.artworkMD5 = newMD5;
-                }
-			} else {
-				self.trackName = @"Unknown Track Name";
-				self.trackArtist = @"Unknown Artist";
-				self.trackAlbum = @"Unknown Album";
-				self.trackGenre = @"Unknown Genre";
-                self.coverArtwork = nil;
-                self.artworkMD5 = nil;
-			}
+        } else {
+            self.trackName = @"Unknown Track Name";
+            self.trackArtist = @"Unknown Artist";
+            self.trackAlbum = @"Unknown Album";
+            self.trackGenre = @"Unknown Genre";
+            self.coverArtwork = nil;
+            self.artworkMD5 = nil;
         }
 	}
 }
