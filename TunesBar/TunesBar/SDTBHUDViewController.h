@@ -23,6 +23,8 @@
 @property (readwrite, weak) IBOutlet NSMenu *advancedMenu;
 @property (readwrite, weak) IBOutlet NSButton *advancedButton;
 
+@property (readonly, copy) NSString *appCredits;
+
 @property (readwrite, strong, nonatomic) FVColorArt *colors;
 - (IBAction)showAdvancedMenu:(id)sender;
 

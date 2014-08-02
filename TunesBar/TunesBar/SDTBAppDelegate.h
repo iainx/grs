@@ -14,4 +14,5 @@
 
 @property IBOutlet SDStatusItemController* statusItemController;
 
+- (IBAction)showAbout:(id)sender;
 @end

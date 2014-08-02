@@ -22,6 +22,11 @@
 		94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94ABDC1B16F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m */; };
 		94ABDC5416F36E9400D47E36 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */; };
 		AE24B226198C4A420074D953 /* FVColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24B225198C4A420074D953 /* FVColorArt.m */; };
+		AE24B243198C72010074D953 /* DCOTransparentScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24B240198C72010074D953 /* DCOTransparentScroller.m */; };
+		AE24B244198C72010074D953 /* DCOTransparentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24B242198C72010074D953 /* DCOTransparentScrollView.m */; };
+		AE24B247198C72240074D953 /* DCOAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24B246198C72240074D953 /* DCOAboutWindowController.m */; };
+		AE24B249198C723C0074D953 /* DCOAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE24B248198C723C0074D953 /* DCOAboutWindow.xib */; };
+		AE24B24B198D8FBA0074D953 /* Acknowledgments.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AE24B24A198D8FBA0074D953 /* Acknowledgments.rtf */; };
 		AE6E5F6B1982F81800D480B4 /* SDTBHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F691982F81800D480B4 /* SDTBHUDViewController.m */; };
 		AE6E5F6E1982FB8600D480B4 /* SDTBHUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5F6D1982FB8600D480B4 /* SDTBHUDViewController.xib */; };
 		AE6E5F721983AB4E00D480B4 /* SDTBMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5F701983AB4E00D480B4 /* SDTBMenuViewController.m */; };
@@ -111,6 +116,14 @@
 		94ABDC5316F36E9400D47E36 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		AE24B224198C4A420074D953 /* FVColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVColorArt.h; sourceTree = "<group>"; };
 		AE24B225198C4A420074D953 /* FVColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVColorArt.m; sourceTree = "<group>"; };
+		AE24B23F198C72010074D953 /* DCOTransparentScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCOTransparentScroller.h; sourceTree = "<group>"; };
+		AE24B240198C72010074D953 /* DCOTransparentScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCOTransparentScroller.m; sourceTree = "<group>"; };
+		AE24B241198C72010074D953 /* DCOTransparentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCOTransparentScrollView.h; sourceTree = "<group>"; };
+		AE24B242198C72010074D953 /* DCOTransparentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCOTransparentScrollView.m; sourceTree = "<group>"; };
+		AE24B245198C72240074D953 /* DCOAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCOAboutWindowController.h; sourceTree = "<group>"; };
+		AE24B246198C72240074D953 /* DCOAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCOAboutWindowController.m; sourceTree = "<group>"; };
+		AE24B248198C723C0074D953 /* DCOAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCOAboutWindow.xib; sourceTree = "<group>"; };
+		AE24B24A198D8FBA0074D953 /* Acknowledgments.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Acknowledgments.rtf; sourceTree = "<group>"; };
 		AE6E5F681982F81800D480B4 /* SDTBHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBHUDViewController.h; sourceTree = "<group>"; };
 		AE6E5F691982F81800D480B4 /* SDTBHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBHUDViewController.m; sourceTree = "<group>"; };
 		AE6E5F6D1982FB8600D480B4 /* SDTBHUDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDTBHUDViewController.xib; sourceTree = "<group>"; };
@@ -215,6 +228,7 @@
 				94ABDC0816F351AC00D47E36 /* DefaultValues.plist */,
 				94ABDBFA16F3508F00D47E36 /* SDToolkit */,
 				94ABDBD516F348EC00D47E36 /* Helpers */,
+				AE24B227198C6CC70074D953 /* External */,
 				94ABDBD416F348CB00D47E36 /* Graphics */,
 				94ABDBD216F348BB00D47E36 /* Controllers */,
 				94ABDBD316F348BF00D47E36 /* XIBs */,
@@ -228,6 +242,7 @@
 			children = (
 				AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */,
 				AEC19ABF17DB5DFF00226CD9 /* Credits.rtf */,
+				AE24B24A198D8FBA0074D953 /* Acknowledgments.rtf */,
 				AEC19AC117DB5FD600226CD9 /* Credits.html */,
 				94ABDBBE16F2D40D00D47E36 /* InfoPlist.strings */,
 				94ABDBC116F2D40D00D47E36 /* main.m */,
@@ -319,6 +334,20 @@
 				AE6E5F8019842D3F00D480B4 /* SDTBWindowView.m */,
 			);
 			name = SDToolkit;
+			sourceTree = "<group>";
+		};
+		AE24B227198C6CC70074D953 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				AE24B23F198C72010074D953 /* DCOTransparentScroller.h */,
+				AE24B240198C72010074D953 /* DCOTransparentScroller.m */,
+				AE24B241198C72010074D953 /* DCOTransparentScrollView.h */,
+				AE24B242198C72010074D953 /* DCOTransparentScrollView.m */,
+				AE24B245198C72240074D953 /* DCOAboutWindowController.h */,
+				AE24B246198C72240074D953 /* DCOAboutWindowController.m */,
+				AE24B248198C723C0074D953 /* DCOAboutWindow.xib */,
+			);
+			name = External;
 			sourceTree = "<group>";
 		};
 		AE95DD9017D8E3D300AA7809 /* Products */ = {
@@ -413,11 +442,13 @@
 				94ABDBC016F2D40D00D47E36 /* InfoPlist.strings in Resources */,
 				94ABDBCC16F2D40D00D47E36 /* MainMenu.xib in Resources */,
 				AE6E5FA51984795D00D480B4 /* forward20x20.png in Resources */,
+				AE24B24B198D8FBA0074D953 /* Acknowledgments.rtf in Resources */,
 				AE703F5C19733E27005C5212 /* fontawesome-webfont.ttf in Resources */,
 				AE6E5F781983D65500D480B4 /* SDTBStartITunesViewController.xib in Resources */,
 				94ABDC0916F351AC00D47E36 /* DefaultValues.plist in Resources */,
 				94ABDC1D16F3545B00D47E36 /* SDWelcomeWindow.xib in Resources */,
 				AE6E5FAA1984795D00D480B4 /* play20x20@2x.png in Resources */,
+				AE24B249198C723C0074D953 /* DCOAboutWindow.xib in Resources */,
 				AE6E5FAC1984795D00D480B4 /* rewind20x20@2x.png in Resources */,
 				AE975E9217D796680053BFAF /* sd_intro2.png in Resources */,
 				AE6E5FA61984795D00D480B4 /* forward20x20@2x.png in Resources */,
@@ -487,12 +518,14 @@
 				AE24B226198C4A420074D953 /* FVColorArt.m in Sources */,
 				AE6E5FB919872A0800D480B4 /* NSData+MD5.m in Sources */,
 				AE6E5F7B1983DF3400D480B4 /* NSAttributedString+FontAwesome.m in Sources */,
+				AE24B247198C72240074D953 /* DCOAboutWindowController.m in Sources */,
 				94ABDBC216F2D40D00D47E36 /* main.m in Sources */,
 				AE6E5F8C198462FC00D480B4 /* Constants.m in Sources */,
 				94ABDBC916F2D40D00D47E36 /* SDTBAppDelegate.m in Sources */,
 				94ABDBD916F348FE00D47E36 /* iTunesProxy.m in Sources */,
 				94ABDBDF16F34B6000D47E36 /* SDStatusItemController.m in Sources */,
 				AE6E5FB51986EE1800D480B4 /* NSImage+Template.m in Sources */,
+				AE24B243198C72010074D953 /* DCOTransparentScroller.m in Sources */,
 				AEDB399E1981AAE600921F3C /* SDTBWindow.m in Sources */,
 				94ABDBE816F34B8600D47E36 /* SDTBStatusItemHelper.m in Sources */,
 				94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */,
@@ -501,6 +534,7 @@
 				94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */,
 				AE6E5F721983AB4E00D480B4 /* SDTBMenuViewController.m in Sources */,
 				AE6E5F8119842D3F00D480B4 /* SDTBWindowView.m in Sources */,
+				AE24B244198C72010074D953 /* DCOTransparentScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

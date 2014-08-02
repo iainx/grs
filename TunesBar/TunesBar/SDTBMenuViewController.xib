@@ -28,7 +28,7 @@
                 <menuItem title="About Tunesbar+" id="5g2-1B-8fq">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="showAbout:" target="-1" id="Fxc-wo-M2o"/>
+                        <action selector="showAbout:" target="-1" id="7GT-Db-iXu"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Quit Tunesbar+" id="N1e-0q-Hxr">

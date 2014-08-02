@@ -34,6 +34,11 @@ static void *hudContext = &hudContext;
     return self;
 }
 
+- (id)init
+{
+    return [super initWithNibName:@"SDTBHUDViewController" bundle:nil];
+}
+
 - (void)awakeFromNib
 {
     [_titleField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackName" options:nil];

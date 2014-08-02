@@ -13,7 +13,8 @@
 
 @end
 
-@implementation SDTBMenuViewController
+@implementation SDTBMenuViewController {
+}
 
 - (id)init
 {
@@ -58,14 +59,8 @@
     return NO;
 }
 
-- (IBAction)showAbout:(id)sender
-{
-    NSLog(@"About");
-}
-
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
-    NSLog(@"MenuViewController validate");
     return YES;
 }
 @end
