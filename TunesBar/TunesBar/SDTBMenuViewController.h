@@ -13,6 +13,5 @@
 @property (readwrite, weak) IBOutlet NSMenu *advancedMenu;
 
 - (IBAction)toggleOpenAtLogin:(id)sender;
-- (IBAction)showAbout:(id)sender;
 
 @end
