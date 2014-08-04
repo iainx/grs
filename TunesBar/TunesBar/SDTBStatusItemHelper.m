@@ -42,7 +42,8 @@
                  attributes:(NSDictionary*)attributes
 {
 	NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attributes];
-	NSSize frameSize = [title sizeWithAttributes:attributes];
+	//NSSize frameSize = [title sizeWithAttributes:attributes];
+    NSSize frameSize = [attributedTitle size];
     
 	NSImage *image = [[NSImage alloc] initWithSize:frameSize];
 	[image lockFocus];

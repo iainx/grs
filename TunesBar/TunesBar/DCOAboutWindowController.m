@@ -7,6 +7,7 @@
 //
 
 #import "DCOAboutWindowController.h"
+#import "NSColor+FVAdditions.h"
 
 @interface DCOAboutWindowController()
 
@@ -100,7 +101,11 @@
     
     // Add border
     CALayer *bottomBorder = [CALayer layer];
-    bottomBorder.borderColor = [NSColor grayColor].CGColor;
+    
+    CGColorRef grayColor = [[NSColor grayColor] fv_CGColor];
+    bottomBorder.borderColor = grayColor;
+    CGColorRelease(grayColor);
+    
     bottomBorder.borderWidth = 1;
     bottomBorder.frame = CGRectMake(-1.f, .0f, CGRectGetWidth(self.infoView.frame) + 2.f, CGRectGetHeight(self.infoView.frame) + 1.f);
     bottomBorder.autoresizingMask = NSViewHeightSizable | NSViewWidthSizable;

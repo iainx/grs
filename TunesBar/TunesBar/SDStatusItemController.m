@@ -8,6 +8,8 @@
 //  Copyright 2013 - 2014
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "SDStatusItemController.h"
 
 #import "DefaultsKeys.h"
@@ -20,6 +22,7 @@
 #import "NSString+FontAwesome.h"
 #import "NSWindow+Fade.h"
 #import "Constants.h"
+#import "CIImage+SoftwareBitmapRep.h"
 
 @implementation SDStatusItemController {
     SDTBWindow *_popoverWindow;
@@ -56,19 +59,19 @@ static const CGFloat kStatusItemPadding = 10.0;
     [self.statusItem setTarget:self];
     
     _statusView = [[NSButton alloc] initWithFrame:NSMakeRect(2, 0, kHeaderWidth, _statusItem.statusBar.thickness + 2)];
-    _statusItem.view = _statusView;
     [_statusView setButtonType:NSMomentaryChangeButton];
+    _statusView.title = @"";
     _statusView.bordered = NO;
+    
+    _statusItem.view = _statusView;
     
     _statusView.action = @selector(showInfoPanel:);
     _statusView.target = self;
 
     _currentColors = [[FVColorArt alloc] init];
     
-    [self _updateTitleForKey:_titleKeys[_titleIndex]];
-    
     // FIXME: _popOverWindow probably shouldn't be kept around all the time
-    _popoverWindow = [[SDTBWindow alloc] initWithContentRect:NSMakeRect(0, 0, 411, 104)
+    _popoverWindow = [[SDTBWindow alloc] initWithContentRect:NSMakeRect(0, 0, 550, 200)
                                                    styleMask:NSBorderlessWindowMask
                                                      backing:NSBackingStoreBuffered
                                                        defer:NO];
@@ -78,6 +81,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     _infoViewController = [[SDTBHUDViewController alloc] init];
     _infoViewController.colors = _currentColors;
 
+    [self iTunesUpdated];
     [self watchForNotificationsWhichShouldHidePanel];
 }
 
@@ -85,10 +89,13 @@ static const CGFloat kStatusItemPadding = 10.0;
 {
     _popoverShown = NO;
     
-    _statusItem.length = _statusImage.size.width;
+    CGFloat width = (_statusImage.size.width < kStatusBarItemWidth - kStatusItemPadding) ? _statusImage.size.width + kStatusItemPadding : kStatusBarItemWidth;
+    _statusItem.length = width;
     
     [self updateImageForKey:_titleKeys[_titleIndex]];
     [self updateImage];
+    
+    [self resetAnimation:nil];
     
     [_statusView removeFromSuperview];
     _statusItem.view = _statusView;
@@ -103,6 +110,10 @@ static const CGFloat kStatusItemPadding = 10.0;
         return;
     }
     
+    //[self stopAllTimers];
+    
+    _popoverShown = YES;
+
     iTunesProxy *iProxy = [iTunesProxy proxy];
     NSViewController *viewController;
     
@@ -112,23 +123,21 @@ static const CGFloat kStatusItemPadding = 10.0;
         viewController = _infoViewController;
     }
 
-    _popoverWindow.contentViewController = viewController;
-    
-    // Thank you http://www.markosx.com/thecocoaquest/epiphany-for-fixing-nspopover/
-    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-
     NSRect windowFrame = _statusView.window.frame;
     NSRect popoverContentFrame = [_popoverWindow.contentView frame];
     
     CGFloat itemRightX = NSMaxX(windowFrame);
     CGFloat headerRightX = kHeaderWidth + ((popoverContentFrame.size.width - kHeaderWidth) / 2);
     CGFloat x = itemRightX - headerRightX;
-    CGFloat y = (NSMaxY(windowFrame) - popoverContentFrame.size.height) - 22;
+    
+    NSRect contentBounds = viewController.view.bounds;
+    CGFloat y = (NSMinY(windowFrame) - contentBounds.size.height);
     
     windowFrame.origin.x = x;
-    windowFrame.origin.y = y + 22;
+    windowFrame.origin.y = y + 1;
     
     windowFrame.size = popoverContentFrame.size;
+    //windowFrame.size = contentBounds.size;
 
     [_popoverWindow setFrame:windowFrame display:YES];
     
@@ -141,15 +150,19 @@ static const CGFloat kStatusItemPadding = 10.0;
                                    itemBounds.size.width, itemBounds.size.height);
     _popoverShown = YES;
     
-    // Update the image to use a lighter colour as our background colour has changed
-    [self updateImageForKey:_titleKeys[_titleIndex]];
-    [self updateImage];
-    
     [_popoverWindow.contentView addSubview:_statusView];
 
     // Set the width of the status item to our max width
     // so that the icons aren't under the header
     _statusItem.length = kHeaderWidth;
+    
+    [self updateImageForKey:_titleKeys[0]];
+    [self updateImage];
+    
+    _popoverWindow.contentViewController = viewController;
+    
+    // Thank you http://www.markosx.com/thecocoaquest/epiphany-for-fixing-nspopover/
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
     
     [_popoverWindow fadeIn];
 }
@@ -174,11 +187,83 @@ static const CGFloat kStatusItemPadding = 10.0;
                                                object:_popoverWindow];
 }
 
+- (CIImage *)CIImageFromArtwork:(NSImage *)artwork
+{
+    CGImageRef cgImage = [artwork CGImageForProposedRect:NULL context:NULL hints:NULL];
+    CIImage *inputImage = [[CIImage alloc] initWithCGImage:cgImage];
+
+    NSSize size = inputImage.extent.size;
+
+    if (size.width > 600 || size.height > 600) {
+        CGFloat ratio;
+        
+        if (size.width > size.height) {
+            ratio = 600.0 / size.width;
+        } else {
+            ratio = 600.0 / size.height;
+        }
+        inputImage = [inputImage imageByApplyingTransform:CGAffineTransformMakeScale(ratio, ratio)];
+    }
+
+    // Square the image
+    CGRect squaredRect;
+
+    CGRect extent = inputImage.extent;
+    if (extent.size.width > extent.size.height) {
+        CGFloat midX = NSMidX(extent);
+        squaredRect = CGRectMake(midX - (extent.size.width / 2), 0, extent.size.width, extent.size.height);
+    } else {
+        CGFloat midY = NSMidY(extent);
+        squaredRect = CGRectMake(0, midY - (extent.size.height / 2), extent.size.width, extent.size.height);
+    }
+
+    return [inputImage imageByCroppingToRect:squaredRect];
+}
+
+- (NSImage *)createBackgroundImage:(NSImage *)coverArtwork
+{
+    CIImage *ciArtwork = [self CIImageFromArtwork:coverArtwork];
+    [_currentColors analyseCIImage:ciArtwork];
+    
+    NSRect extent = ciArtwork.extent;
+    
+    // Scale up to 650x650
+    CGFloat ratio;
+    
+    if (NSWidth(extent) > NSHeight(extent)) {
+        ratio = 650.0 / NSHeight(extent);
+    } else {
+        ratio = 650.0 / NSWidth(extent);
+    }
+    
+    ciArtwork = [ciArtwork imageByApplyingTransform:CGAffineTransformMakeScale(ratio, ratio)];
+    
+    // Blur the CIImage
+    CIFilter *blurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [blurFilter setDefaults];
+    [blurFilter setValue:ciArtwork forKey:kCIInputImageKey];
+    
+    [blurFilter setValue:@(5) forKey:@"inputRadius"];
+    CIImage *outputImage = [blurFilter valueForKey:kCIOutputImageKey];
+    
+    CIFilter *darkFilter = [CIFilter filterWithName:@"CIGammaAdjust"];
+    [darkFilter setDefaults];
+    [darkFilter setValue:outputImage forKeyPath:kCIInputImageKey];
+    [darkFilter setValue:@(0.8) forKeyPath:@"inputPower"];
+    
+    outputImage = [darkFilter valueForKey:kCIOutputImageKey];
+    
+    outputImage = [outputImage imageByCroppingToRect:NSInsetRect(ciArtwork.extent, 35, 35)];
+    
+    NSBitmapImageRep *rep = [outputImage RGBABitmapImageRep];
+    NSImage *nsImage = [[NSImage alloc] initWithSize:rep.size];
+    [nsImage addRepresentation:rep];
+    return nsImage;
+}
+
 - (void)iTunesUpdated
 {
     _titleIndex = 0;
-    
-	[self _updateTitleForKey:@"trackName"];
     
     NSString *newMD5 = [[iTunesProxy proxy] artworkMD5];
     if ([newMD5 isEqualToString:_artworkMD5]) {
@@ -198,10 +283,13 @@ static const CGFloat kStatusItemPadding = 10.0;
     
     _artworkMD5 = newMD5;
     
-    [_currentColors analysisImage:coverArtwork];
-    
-    [self updateImageForKey:_titleKeys[_titleIndex]];
+    [self _updateTitleForKey:_titleKeys[_titleIndex]];
     [self updateImage];
+    
+    NSImage *nsImage;
+    nsImage = [self createBackgroundImage:coverArtwork];
+    
+    _popoverWindow.backgroundImage = nsImage;
 }
 
 - (void)copyFromImage:(NSImage *)srcImage
@@ -290,7 +378,8 @@ static const CGFloat kStatusItemPadding = 10.0;
     
     // If the popover is open, then we don't want the statusitem shrinking
     if (_popoverShown == NO) {
-        CGFloat width = (_statusImage.size.width < kStatusBarItemWidth - kStatusItemPadding) ? _statusImage.size.width : kStatusBarItemWidth;
+        CGFloat width = (_statusImage.size.width < kStatusBarItemWidth - kStatusItemPadding) ? _statusImage.size.width + kStatusItemPadding : kStatusBarItemWidth;
+        
         [_statusItem setLength:width];
     }
 	

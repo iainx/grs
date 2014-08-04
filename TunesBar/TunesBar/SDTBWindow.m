@@ -33,6 +33,8 @@ static void *windowContext = &windowContext;
         
         _realContentView = [[SDTBWindowView alloc] initWithFrame:contentRect];
         self.contentView = _realContentView;
+        
+        [_realContentView bind:@"backgroundImage" toObject:self withKeyPath:@"backgroundImage" options:nil];
     }
     return self;
 }
@@ -109,7 +111,6 @@ static void *windowContext = &windowContext;
 + (NSRect)frameRectForContentRect:(NSRect)windowContentRect
                         styleMask:(NSUInteger)windowStyle
 {
-    //return NSInsetRect(windowContentRect, -WINDOW_FRAME_PADDING, -WINDOW_FRAME_PADDING);
     windowContentRect.size.height += WINDOW_FRAME_PADDING;
     return windowContentRect;
 }
@@ -128,4 +129,5 @@ static void *windowContext = &windowContext;
 {
     [_realContentView bind:@"backgroundColour" toObject:colorArt withKeyPath:@"backgroundColor" options:nil];
 }
+
 @end

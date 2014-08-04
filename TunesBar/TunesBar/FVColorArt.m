@@ -22,6 +22,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "FVColorArt.h"
+#import "CIImage+SoftwareBitmapRep.h"
 
 @interface FVColorArt ()
 
@@ -64,37 +65,6 @@ typedef UInt32 SquashedColor;
 
 static CGFloat pixelSize = 10.0;
 
-- (NSBitmapImageRep *)RGBABitmapImageRepWithCImage:(CIImage *)ciImage
-{
-    int width = [ciImage extent].size.width;
-    int rows = [ciImage extent].size.height;
-    int rowBytes = (width * 4);
-    
-    NSBitmapImageRep* rep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:nil
-                                                                    pixelsWide:width
-                                                                    pixelsHigh:rows
-                                                                 bitsPerSample:8
-                                                               samplesPerPixel:4
-                                                                      hasAlpha:YES
-                                                                      isPlanar:NO
-                                                                colorSpaceName:NSCalibratedRGBColorSpace
-                                                                  bitmapFormat:0
-                                                                   bytesPerRow:rowBytes
-                                                                  bitsPerPixel:0];
-    
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName (kCGColorSpaceGenericRGB);
-    CGContextRef context = CGBitmapContextCreate([rep bitmapData], width, rows,
-                                                 8, rowBytes, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
-    
-    CIContext* ciContext = [CIContext contextWithCGContext:context options:@{kCIContextUseSoftwareRenderer: @YES}];
-    [ciContext drawImage:ciImage inRect:CGRectMake(0, 0, width, rows) fromRect:[ciImage extent]];
-    ciContext = nil;
-    
- 	CGContextRelease( context );
-	CGColorSpaceRelease( colorSpace );
-    
-	return rep;
-}
 
 - (void)analysisImage:(NSImage *)image
 {
@@ -103,7 +73,7 @@ static CGFloat pixelSize = 10.0;
 
     NSSize size = inputImage.extent.size;
     
-    if (size.width > 600 || size.height > 600) {
+    //if (size.width > 600 || size.height > 600) {
         CGFloat ratio;
         
         if (size.width > size.height) {
@@ -112,8 +82,9 @@ static CGFloat pixelSize = 10.0;
             ratio = 600.0 / size.height;
         }
         inputImage = [inputImage imageByApplyingTransform:CGAffineTransformMakeScale(ratio, ratio)];
-    }
+    //}
 
+    NSLog(@"Scaling image from %@ -> %@", NSStringFromSize(size), NSStringFromRect(inputImage.extent));
     // Square the image
     CGRect squaredRect;
     
@@ -156,7 +127,7 @@ static CGFloat pixelSize = 10.0;
         outputImage = inputImage;
     }
     
-    NSBitmapImageRep *rep = [self RGBABitmapImageRepWithCImage:outputImage];
+    NSBitmapImageRep *rep = [outputImage RGBABitmapImageRep];
     [self coloursFromImageRep:rep];
 }
 

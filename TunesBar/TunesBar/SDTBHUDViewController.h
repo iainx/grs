@@ -13,15 +13,19 @@
 @interface SDTBHUDViewController : NSViewController
 
 @property (readwrite, weak) IBOutlet NSImageView *imageView;
-@property (readwrite, weak) IBOutlet NSTextField *titleField;
-@property (readwrite, weak) IBOutlet NSTextField *albumField;
-@property (readwrite, weak) IBOutlet NSTextField *artistField;
+//@property (readwrite, weak) IBOutlet NSTextField *titleField;
+//@property (readwrite, weak) IBOutlet NSTextField *albumField;
+//@property (readwrite, weak) IBOutlet NSTextField *artistField;
+@property (readwrite, weak) IBOutlet NSTextField *detailsField;
 @property (readwrite, weak) IBOutlet NSButton *playButton;
 @property (readwrite, weak) IBOutlet NSButton *previousButton;
 @property (readwrite, weak) IBOutlet NSButton *nextButton;
 
 @property (readwrite, weak) IBOutlet NSMenu *advancedMenu;
 @property (readwrite, weak) IBOutlet NSButton *advancedButton;
+
+@property (readwrite, weak) IBOutlet NSView *transportView;
+@property (readwrite, weak) IBOutlet NSView *detailsView;
 
 @property (readonly, copy) NSString *appCredits;
 

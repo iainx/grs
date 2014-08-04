@@ -12,4 +12,5 @@
 
 @property (readwrite, nonatomic) CGFloat widthOfHeader;
 @property (readwrite, nonatomic, strong) NSColor *backgroundColour;
+@property (readwrite, nonatomic) NSImage *backgroundImage;
 @end

@@ -20,6 +20,8 @@
 @property (readwrite, weak) id<SDTBWindowDelegate> delegate;
 @property (readwrite, nonatomic, strong) NSViewController *contentViewController;
 @property (readwrite, nonatomic) CGFloat headerWidth;
+@property (readwrite, nonatomic) NSImage *backgroundImage;
 
 - (void)setColorArt:(FVColorArt *)colorArt;
+
 @end

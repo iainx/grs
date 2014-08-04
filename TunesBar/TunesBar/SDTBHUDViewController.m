@@ -13,6 +13,7 @@
 #import <NSString+FontAwesome.h>
 #import "NSAttributedString+FontAwesome.h"
 #import "NSImage+Template.h"
+#import "NSColor+FVAdditions.h"
 
 #import "FVColorArt.h"
 #import <ServiceManagement/ServiceManagement.h>
@@ -41,9 +42,10 @@ static void *hudContext = &hudContext;
 
 - (void)awakeFromNib
 {
-    [_titleField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackName" options:nil];
-    [_albumField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackAlbum" options:nil];
-    [_artistField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackArtist" options:nil];
+    //[_titleField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackName" options:nil];
+    //[_albumField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackAlbum" options:nil];
+    //[_artistField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackArtist" options:nil];
+    
     [_imageView bind:@"image" toObject:[iTunesProxy proxy] withKeyPath:@"coverArtwork" options:nil];
     [_playButton bind:@"value"
              toObject:[iTunesProxy proxy]
@@ -52,22 +54,34 @@ static void *hudContext = &hudContext;
 
     [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog]]];
     
+    self.detailsView.wantsLayer = YES;
+
+    [self updateBackgroundColor];
     [self updatePrimaryColor];
     [self updateSecondaryColor];
     [self updateDetailColor];
+    [self updateDetails];
+}
+
+- (void)updateBackgroundColor
+{
+    NSColor *backgroundColor = [self.colors.backgroundColor colorWithAlphaComponent:0.4];
+    
+    CGColorRef cgColor = [backgroundColor fv_CGColor];
+    self.detailsView.layer.backgroundColor = cgColor;
+    CGColorRelease(cgColor);
 }
 
 - (void)updatePrimaryColor
 {
     NSColor *primaryColor = self.colors.primaryColor ?: [NSColor colorWithCalibratedWhite:1.0 alpha:0.8];
-    self.titleField.textColor = primaryColor;
+    //self.titleField.textColor = primaryColor;
 }
 
 - (void)updateSecondaryColor
 {
     NSColor *secondaryColor = self.colors.secondaryColor ?: [NSColor colorWithCalibratedWhite:1.0 alpha:0.8];
-    self.artistField.textColor = secondaryColor;
-    self.albumField.textColor = secondaryColor;
+    self.detailsField.textColor = secondaryColor;
 }
 
 - (void)updateDetailColor
@@ -80,6 +94,11 @@ static void *hudContext = &hudContext;
     _nextButton.image = [NSImage templateImage:@"forward20x20" withColor:detailColor andSize:CGSizeZero];
     
     [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog] withColor:detailColor]];
+}
+
+- (void)updateDetails
+{
+    self.detailsField.stringValue = [NSString stringWithFormat:@"%@ - %@", [iTunesProxy proxy].trackArtist, [iTunesProxy proxy].trackAlbum];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -106,6 +125,16 @@ static void *hudContext = &hudContext;
         [self updateDetailColor];
         return;
     }
+    
+    if ([keyPath isEqualToString:@"backgroundColor"]) {
+        [self updateBackgroundColor];
+        return;
+    }
+    
+    if ([keyPath isEqualToString:@"trackAlbum"] || [keyPath isEqualToString:@"trackArtist"]) {
+        [self updateDetails];
+        return;
+    }
 }
 
 - (void)setColors:(FVColorArt *)colors
@@ -116,6 +145,8 @@ static void *hudContext = &hudContext;
     
     _colors = colors;
     
+    [_colors addObserver:self forKeyPath:@"backgroundColor"
+                 options:NSKeyValueObservingOptionNew context:hudContext];
     [_colors addObserver:self forKeyPath:@"primaryColor"
                  options:NSKeyValueObservingOptionNew context:hudContext];
     [_colors addObserver:self forKeyPath:@"secondaryColor"
@@ -123,6 +154,16 @@ static void *hudContext = &hudContext;
     [_colors addObserver:self forKeyPath:@"detailColor"
                  options:NSKeyValueObservingOptionNew context:hudContext];
     
+    [[iTunesProxy proxy] addObserver:self
+                          forKeyPath:@"trackArtist"
+                             options:NSKeyValueObservingOptionNew
+                             context:hudContext];
+    [[iTunesProxy proxy] addObserver:self
+                          forKeyPath:@"trackAlbum"
+                             options:NSKeyValueObservingOptionNew
+                             context:hudContext];
+    
+    [self updateBackgroundColor];
     [self updatePrimaryColor];
     [self updateSecondaryColor];
     [self updateDetailColor];

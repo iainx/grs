@@ -18,12 +18,6 @@
     if (self) {
         // Initialization code here.
         _widthOfHeader = kHeaderWidth;
-        /*
-        _transportViewController = [[SDTBTransportViewController alloc] init];
-        
-        [self addSubview:_transportViewController.view];
-        _transportViewController.view.frame = NSMakeRect((frame.size.width - kHeaderWidth) / 2, frame.size.height - 22, kHeaderWidth, 22);
-         */
     }
     
     return self;
@@ -40,24 +34,52 @@
     
     // rgb(142, 68, 173)
     //[[NSColor colorWithCalibratedRed:230/255. green:126/255. blue:34/255. alpha:1.0] setFill];
+    if (self.backgroundImage) {
+        bounds = self.bounds;
+        
+        NSBezierPath *path = [NSBezierPath bezierPath];
+        CGFloat sideWidth = (bounds.size.width - self.widthOfHeader) / 2;
+        
+        [path moveToPoint:NSMakePoint(0, 0)];
+        [path lineToPoint:NSMakePoint(NSMaxX(bounds), 0)];
+        [path lineToPoint:NSMakePoint(NSMaxX(bounds), NSMaxY(bounds) - 21)];
+        [path lineToPoint:NSMakePoint(NSMaxX(bounds) - sideWidth, NSMaxY(bounds) - 21)];
+        [path lineToPoint:NSMakePoint(NSMaxX(bounds) - sideWidth, NSMaxY(bounds))];
+        [path lineToPoint:NSMakePoint(sideWidth, NSMaxY(bounds))];
+        [path lineToPoint:NSMakePoint(sideWidth, NSMaxY(bounds) - 21)];
+        [path lineToPoint:NSMakePoint(0, NSMaxY(bounds) - 21)];
+        [path closePath];
+        
+        [path addClip];
+        
+        NSSize imageSize = self.backgroundImage.size;
+        NSRect imageRect = NSMakeRect((imageSize.width - NSWidth(bounds)) / 2,
+                                      (imageSize.height - NSHeight(bounds)) / 2,
+                                      NSWidth(bounds), NSHeight(bounds));
+        [self.backgroundImage drawInRect:bounds
+                                fromRect:imageRect
+                               operation:NSCompositeCopy
+                                fraction:1.0];
+    }
+    
     if (self.backgroundColour) {
-        [self.backgroundColour setFill];
+        [[self.backgroundColour colorWithAlphaComponent:0.2] setFill];
     } else {
-        [[NSColor colorWithCalibratedRed:40/255. green:39/255. blue:38/255. alpha:1.0] setFill];
+        [[NSColor colorWithCalibratedRed:40/255. green:39/255. blue:38/255. alpha:0.2] setFill];
     }
     
     bounds = self.bounds;
     bodyRect = bounds;
     bodyRect.size.height -= 21.0;
     
-    NSRectFill(bodyRect);
+    NSRectFillUsingOperation(bodyRect, NSCompositeSourceOver);
 
     CGFloat leftSideX = (NSWidth(bounds) - self.widthOfHeader) / 2;
     //CGFloat rightSideX = NSWidth(bounds) - leftSideX;
 
     headerRect = NSMakeRect(leftSideX, bounds.size.height - 21, self.widthOfHeader, 21);
     
-    NSRectFill(headerRect);
+    NSRectFillUsingOperation(headerRect, NSCompositeSourceOver);
 }
 /*
 - (void)drawRect:(NSRect)dirtyRect
