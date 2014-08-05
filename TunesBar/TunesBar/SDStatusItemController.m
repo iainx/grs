@@ -156,7 +156,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     // so that the icons aren't under the header
     _statusItem.length = kHeaderWidth;
     
-    [self updateImageForKey:_titleKeys[0]];
+    [self updateImageForKey:_titleKeys[_titleIndex]];
     [self updateImage];
     
     _popoverWindow.contentViewController = viewController;
