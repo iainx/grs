@@ -50,6 +50,12 @@
 		AE6E5FB51986EE1800D480B4 /* NSImage+Template.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */; };
 		AE6E5FB919872A0800D480B4 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FB819872A0800D480B4 /* NSData+MD5.m */; };
 		AE703F5C19733E27005C5212 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */; };
+		AE8479931990E2D60066C1BC /* CNGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8479881990E2D60066C1BC /* CNGridView.m */; };
+		AE8479941990E2D60066C1BC /* CNGridViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AE84798C1990E2D60066C1BC /* CNGridViewItem.m */; };
+		AE8479951990E2D60066C1BC /* CNGridViewItemLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AE84798E1990E2D60066C1BC /* CNGridViewItemLayout.m */; };
+		AE8479961990E2D60066C1BC /* NSColor+CNGridViewPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8479901990E2D60066C1BC /* NSColor+CNGridViewPalette.m */; };
+		AE8479971990E2D60066C1BC /* NSView+CNGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8479921990E2D60066C1BC /* NSView+CNGridView.m */; };
+		AE84799B1990EE530066C1BC /* SDTBPlaylistItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE84799A1990EE530066C1BC /* SDTBPlaylistItemView.m */; };
 		AE95DD9617D8E99C00AA7809 /* TunesBar+.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */; };
 		AE9664B717DA617C003850B8 /* TunesBar+Helper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = AE95DD9417D8E3D300AA7809 /* TunesBar+Helper.app */; };
 		AE975E9217D796680053BFAF /* sd_intro2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE975E9117D796680053BFAF /* sd_intro2.png */; };
@@ -160,6 +166,20 @@
 		AE6E5FB719872A0800D480B4 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
 		AE6E5FB819872A0800D480B4 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
 		AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		AE8479871990E2D60066C1BC /* CNGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNGridView.h; sourceTree = "<group>"; };
+		AE8479881990E2D60066C1BC /* CNGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNGridView.m; sourceTree = "<group>"; };
+		AE8479891990E2D60066C1BC /* CNGridViewDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNGridViewDefinitions.h; sourceTree = "<group>"; };
+		AE84798A1990E2D60066C1BC /* CNGridViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNGridViewDelegate.h; sourceTree = "<group>"; };
+		AE84798B1990E2D60066C1BC /* CNGridViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNGridViewItem.h; sourceTree = "<group>"; };
+		AE84798C1990E2D60066C1BC /* CNGridViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNGridViewItem.m; sourceTree = "<group>"; };
+		AE84798D1990E2D60066C1BC /* CNGridViewItemLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNGridViewItemLayout.h; sourceTree = "<group>"; };
+		AE84798E1990E2D60066C1BC /* CNGridViewItemLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNGridViewItemLayout.m; sourceTree = "<group>"; };
+		AE84798F1990E2D60066C1BC /* NSColor+CNGridViewPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+CNGridViewPalette.h"; sourceTree = "<group>"; };
+		AE8479901990E2D60066C1BC /* NSColor+CNGridViewPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+CNGridViewPalette.m"; sourceTree = "<group>"; };
+		AE8479911990E2D60066C1BC /* NSView+CNGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+CNGridView.h"; sourceTree = "<group>"; };
+		AE8479921990E2D60066C1BC /* NSView+CNGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+CNGridView.m"; sourceTree = "<group>"; };
+		AE8479991990EE530066C1BC /* SDTBPlaylistItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBPlaylistItemView.h; sourceTree = "<group>"; };
+		AE84799A1990EE530066C1BC /* SDTBPlaylistItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBPlaylistItemView.m; sourceTree = "<group>"; };
 		AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TunesBar+.entitlements"; sourceTree = "<group>"; };
 		AE975E9117D796680053BFAF /* sd_intro2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro2.png; sourceTree = "<group>"; };
 		AEC19ABE17DB5DFF00226CD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -326,6 +346,8 @@
 				AE6E5F8B198462FC00D480B4 /* Constants.m */,
 				AE24B224198C4A420074D953 /* FVColorArt.h */,
 				AE24B225198C4A420074D953 /* FVColorArt.m */,
+				AE8479991990EE530066C1BC /* SDTBPlaylistItemView.h */,
+				AE84799A1990EE530066C1BC /* SDTBPlaylistItemView.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -349,6 +371,15 @@
 		AE24B227198C6CC70074D953 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				AE8479981990E2DD0066C1BC /* Cocoa:Nauts */,
+				AE8479851990E2B50066C1BC /* Danger Cove */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		AE8479851990E2B50066C1BC /* Danger Cove */ = {
+			isa = PBXGroup;
+			children = (
 				AE24B23F198C72010074D953 /* DCOTransparentScroller.h */,
 				AE24B240198C72010074D953 /* DCOTransparentScroller.m */,
 				AE24B241198C72010074D953 /* DCOTransparentScrollView.h */,
@@ -357,7 +388,26 @@
 				AE24B246198C72240074D953 /* DCOAboutWindowController.m */,
 				AE24B248198C723C0074D953 /* DCOAboutWindow.xib */,
 			);
-			name = External;
+			name = "Danger Cove";
+			sourceTree = "<group>";
+		};
+		AE8479981990E2DD0066C1BC /* Cocoa:Nauts */ = {
+			isa = PBXGroup;
+			children = (
+				AE8479871990E2D60066C1BC /* CNGridView.h */,
+				AE8479881990E2D60066C1BC /* CNGridView.m */,
+				AE8479891990E2D60066C1BC /* CNGridViewDefinitions.h */,
+				AE84798A1990E2D60066C1BC /* CNGridViewDelegate.h */,
+				AE84798B1990E2D60066C1BC /* CNGridViewItem.h */,
+				AE84798C1990E2D60066C1BC /* CNGridViewItem.m */,
+				AE84798D1990E2D60066C1BC /* CNGridViewItemLayout.h */,
+				AE84798E1990E2D60066C1BC /* CNGridViewItemLayout.m */,
+				AE84798F1990E2D60066C1BC /* NSColor+CNGridViewPalette.h */,
+				AE8479901990E2D60066C1BC /* NSColor+CNGridViewPalette.m */,
+				AE8479911990E2D60066C1BC /* NSView+CNGridView.h */,
+				AE8479921990E2D60066C1BC /* NSView+CNGridView.m */,
+			);
+			name = "Cocoa:Nauts";
 			sourceTree = "<group>";
 		};
 		AE95DD9017D8E3D300AA7809 /* Products */ = {
@@ -528,9 +578,12 @@
 				AE24B226198C4A420074D953 /* FVColorArt.m in Sources */,
 				AE24B293198FD3570074D953 /* NSColor+FVAdditions.m in Sources */,
 				AE6E5FB919872A0800D480B4 /* NSData+MD5.m in Sources */,
+				AE8479961990E2D60066C1BC /* NSColor+CNGridViewPalette.m in Sources */,
 				AE6E5F7B1983DF3400D480B4 /* NSAttributedString+FontAwesome.m in Sources */,
 				AE24B247198C72240074D953 /* DCOAboutWindowController.m in Sources */,
+				AE8479941990E2D60066C1BC /* CNGridViewItem.m in Sources */,
 				94ABDBC216F2D40D00D47E36 /* main.m in Sources */,
+				AE8479951990E2D60066C1BC /* CNGridViewItemLayout.m in Sources */,
 				AE6E5F8C198462FC00D480B4 /* Constants.m in Sources */,
 				94ABDBC916F2D40D00D47E36 /* SDTBAppDelegate.m in Sources */,
 				94ABDBD916F348FE00D47E36 /* iTunesProxy.m in Sources */,
@@ -538,11 +591,14 @@
 				AE6E5FB51986EE1800D480B4 /* NSImage+Template.m in Sources */,
 				AE24B243198C72010074D953 /* DCOTransparentScroller.m in Sources */,
 				AE24B29719902E8D0074D953 /* CIImage+SoftwareBitmapRep.m in Sources */,
+				AE84799B1990EE530066C1BC /* SDTBPlaylistItemView.m in Sources */,
 				AEDB399E1981AAE600921F3C /* SDTBWindow.m in Sources */,
 				94ABDBE816F34B8600D47E36 /* SDTBStatusItemHelper.m in Sources */,
 				94ABDC1E16F3545B00D47E36 /* SDWelcomeWindowController.m in Sources */,
+				AE8479931990E2D60066C1BC /* CNGridView.m in Sources */,
 				AE6E5F6B1982F81800D480B4 /* SDTBHUDViewController.m in Sources */,
 				AE6E5F771983D65500D480B4 /* SDTBStartITunesViewController.m in Sources */,
+				AE8479971990E2D60066C1BC /* NSView+CNGridView.m in Sources */,
 				94ABDC2016F3545B00D47E36 /* SDWelcomeWindowRoundedImageView.m in Sources */,
 				AE6E5F721983AB4E00D480B4 /* SDTBMenuViewController.m in Sources */,
 				AE6E5F8119842D3F00D480B4 /* SDTBWindowView.m in Sources */,
@@ -648,6 +704,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBar/TunesBar+-Prefix.pch";
 				INFOPLIST_FILE = "TunesBar/TunesBar+-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "TunesBar+";
 				WRAPPER_EXTENSION = app;
 			};
@@ -664,6 +721,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBar/TunesBar+-Prefix.pch";
 				INFOPLIST_FILE = "TunesBar/TunesBar+-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "TunesBar+";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

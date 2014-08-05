@@ -10,6 +10,7 @@
 
 @class iTunesProxy;
 @class FVColorArt;
+@class CNGridView;
 @interface SDTBHUDViewController : NSViewController
 
 @property (readwrite, weak) IBOutlet NSImageView *imageView;
@@ -24,13 +25,12 @@
 @property (readwrite, weak) IBOutlet NSView *transportView;
 @property (readwrite, weak) IBOutlet NSView *detailsView;
 
-@property (readwrite, weak) IBOutlet NSCollectionView *albumView;
+@property (readwrite, weak) IBOutlet CNGridView *albumView;
 
 @property (readonly, copy) NSString *appCredits;
 
 @property (readwrite, strong, nonatomic) FVColorArt *colors;
 
-@property (readwrite, weak) IBOutlet NSArrayController *tracksController;
 - (IBAction)showAdvancedMenu:(id)sender;
 
 @end

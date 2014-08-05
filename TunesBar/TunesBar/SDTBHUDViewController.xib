@@ -8,14 +8,13 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SDTBHUDViewController">
             <connections>
                 <outlet property="advancedButton" destination="fks-QJ-Pwl" id="Rxn-Ym-fds"/>
-                <outlet property="albumView" destination="aQa-TF-r4I" id="iDd-BP-0JV"/>
+                <outlet property="albumView" destination="lV6-sT-wuv" id="P2g-kT-k1v"/>
                 <outlet property="detailsField" destination="sbG-Vi-joI" id="ZUM-ep-xVy"/>
                 <outlet property="detailsView" destination="3zy-OE-R3y" id="pbi-gN-Qib"/>
                 <outlet property="imageView" destination="ebK-Wg-ktk" id="e0c-Dq-1Si"/>
                 <outlet property="nextButton" destination="aWH-x3-CH9" id="gVX-VQ-SdZ"/>
                 <outlet property="playButton" destination="3NK-hz-AV5" id="N45-vo-r3J"/>
                 <outlet property="previousButton" destination="zyj-oe-MVq" id="TL1-rs-Fuh"/>
-                <outlet property="tracksController" destination="m2X-xv-bpn" id="tgo-x4-aC5"/>
                 <outlet property="transportView" destination="Yxp-tf-99H" id="Kre-Sq-K29"/>
                 <outlet property="view" destination="c22-O7-iKe" id="1qH-c4-7xA"/>
             </connections>
@@ -44,30 +43,29 @@
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="g6c-PY-5S5">
-                            <rect key="frame" x="0.0" y="8" width="350" height="132"/>
+                        <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="tLv-LQ-3q2">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="134"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="afY-Cl-7wE">
-                                <rect key="frame" x="0.0" y="0.0" width="350" height="132"/>
+                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="S70-NZ-XPP">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="134"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <collectionView maxNumberOfColumns="2" id="aQa-TF-r4I">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="132"/>
+                                    <view id="lV6-sT-wuv" customClass="CNGridView">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="134"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="primaryBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                         <connections>
-                                            <binding destination="m2X-xv-bpn" name="content" keyPath="arrangedObjects" id="qMN-Kg-sGE"/>
-                                            <outlet property="itemPrototype" destination="FWy-Um-YIe" id="WNA-Uz-jQl"/>
+                                            <outlet property="dataSource" destination="-2" id="nzT-eu-PUT"/>
+                                            <outlet property="delegate" destination="-2" id="jq0-IB-SfG"/>
                                         </connections>
-                                    </collectionView>
+                                    </view>
                                 </subviews>
                             </clipView>
-                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="0Xb-07-ykB">
-                                <rect key="frame" x="1" y="144" width="233" height="15"/>
+                            <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="uCp-3g-xaq">
+                                <rect key="frame" x="0.0" y="118" width="350" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
-                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="j3u-UQ-NuZ">
-                                <rect key="frame" x="234" y="1" width="15" height="143"/>
+                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="nFe-cf-fIV">
+                                <rect key="frame" x="334" y="0.0" width="16" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                         </scrollView>
@@ -125,49 +123,6 @@
                 </customView>
             </subviews>
         </customView>
-        <collectionViewItem id="FWy-Um-YIe">
-            <connections>
-                <outlet property="view" destination="m9A-p8-RV5" id="Mar-2e-PO4"/>
-            </connections>
-        </collectionViewItem>
-        <view id="m9A-p8-RV5">
-            <rect key="frame" x="0.0" y="0.0" width="174" height="21"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Eo0-Rv-EaJ">
-                    <rect key="frame" x="3" y="2" width="21" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="1" id="CKi-jd-7zs">
-                        <font key="font" metaFont="smallSystem"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                    <connections>
-                        <binding destination="FWy-Um-YIe" name="value" keyPath="representedObject.trackNumber" id="zQp-ra-of6">
-                            <dictionary key="options">
-                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                            </dictionary>
-                        </binding>
-                        <binding destination="-2" name="textColor" keyPath="colors.detailColor" id="efE-qA-2qk"/>
-                    </connections>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="zPM-E8-QQK">
-                    <rect key="frame" x="23" y="2" width="148" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Something" id="Rp2-7V-W4s">
-                        <font key="font" metaFont="smallSystem"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                    <connections>
-                        <binding destination="FWy-Um-YIe" name="value" keyPath="representedObject.name" id="kjL-eR-7vd"/>
-                        <binding destination="-2" name="textColor" keyPath="colors.primaryColor" id="Bs8-Wx-4EC"/>
-                    </connections>
-                </textField>
-            </subviews>
-        </view>
-        <arrayController id="m2X-xv-bpn"/>
     </objects>
     <resources>
         <image name="forward20x20" width="20" height="20"/>
