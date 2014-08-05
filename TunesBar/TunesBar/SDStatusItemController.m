@@ -276,8 +276,10 @@ static const CGFloat kStatusItemPadding = 10.0;
         [_currentColors resetColors];
         _artworkMD5 = nil;
         
-        [self updateImageForKey:_titleKeys[_titleIndex]];
+        [self _updateTitleForKey:_titleKeys[_titleIndex]];
         [self updateImage];
+        
+        _popoverWindow.backgroundImage = nil;
         return;
     }
     

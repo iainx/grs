@@ -105,6 +105,7 @@
 		self.trackAlbum = nil;
 		self.trackGenre = nil;
         self.coverArtwork = nil;
+        self.albumTracks = nil;
 	}
 	else {
 		iTunesTrack *track = nil;
@@ -143,17 +144,9 @@
             self.trackGenre = @"Unknown Genre";
             self.coverArtwork = nil;
             self.artworkMD5 = nil;
+            self.albumTracks = nil;
         }
 	}
-    
-    /*
-    iTunesPlaylist *playlist = [self.iTunes currentPlaylist];
-    NSLog(@"Playlist name: %@", playlist.name);
-    SBElementArray *playlistTracks = playlist.tracks;
-    for (iTunesTrack *track in playlistTracks) {
-        NSLog(@"%@ - %@", track.artist, track.name);
-    }
-     */
 }
 
 - (BOOL) isRunning {
