@@ -25,6 +25,7 @@
 @property (copy) NSString *trackGenre;
 @property (copy) NSImage *coverArtwork;
 @property (copy) NSString *artworkMD5;
+@property (readwrite) NSArray *albumTracks;
 
 @end
 
@@ -122,6 +123,8 @@
             self.trackAlbum = [track album];
             self.trackGenre = [track genre];
             
+            self.albumTracks = [self.iTunes.currentPlaylist searchFor:self.trackAlbum only:iTunesESrAAlbums];
+
             SBElementArray *artworks = [track artworks];
             iTunesArtwork *artwork = [artworks objectAtIndex:0];
             
@@ -141,6 +144,15 @@
             self.artworkMD5 = nil;
         }
 	}
+    
+    /*
+    iTunesPlaylist *playlist = [self.iTunes currentPlaylist];
+    NSLog(@"Playlist name: %@", playlist.name);
+    SBElementArray *playlistTracks = playlist.tracks;
+    for (iTunesTrack *track in playlistTracks) {
+        NSLog(@"%@ - %@", track.artist, track.name);
+    }
+     */
 }
 
 - (BOOL) isRunning {

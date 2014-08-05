@@ -42,10 +42,8 @@ static void *hudContext = &hudContext;
 
 - (void)awakeFromNib
 {
-    //[_titleField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackName" options:nil];
-    //[_albumField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackAlbum" options:nil];
-    //[_artistField bind:@"stringValue" toObject:[iTunesProxy proxy] withKeyPath:@"trackArtist" options:nil];
-    
+    [_tracksController bind:@"contentArray" toObject:[iTunesProxy proxy]
+                withKeyPath:@"albumTracks" options:nil];
     [_imageView bind:@"image" toObject:[iTunesProxy proxy] withKeyPath:@"coverArtwork" options:nil];
     [_playButton bind:@"value"
              toObject:[iTunesProxy proxy]
