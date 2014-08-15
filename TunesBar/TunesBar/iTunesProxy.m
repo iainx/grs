@@ -125,8 +125,17 @@
             self.trackGenre = [track genre];
             
             // The header for searchFor:only: claims to return an iTunesTrack but it returns an array
-            self.albumTracks = (NSArray *)[self.iTunes.currentPlaylist searchFor:self.trackAlbum only:iTunesESrAAlbums];
-
+            NSArray *albumTracks = (NSArray *)[self.iTunes.currentPlaylist searchFor:self.trackAlbum only:iTunesESrAAlbums];
+            
+            NSMutableArray *realTracks = [NSMutableArray array];
+            for (iTunesTrack *albumTrack in albumTracks) {
+                if ([albumTrack.artist isEqualTo:track.artist] && [albumTrack.album isEqualTo:track.album]) {
+                    [realTracks addObject:albumTrack];
+                }
+            }
+            
+            self.albumTracks = realTracks;
+            
             SBElementArray *artworks = [track artworks];
             iTunesArtwork *artwork = [artworks objectAtIndex:0];
             
