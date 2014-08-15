@@ -138,10 +138,10 @@
                 self.artworkMD5 = newMD5;
             }
         } else {
-            self.trackName = @"Unknown Track Name";
-            self.trackArtist = @"Unknown Artist";
-            self.trackAlbum = @"Unknown Album";
-            self.trackGenre = @"Unknown Genre";
+            self.trackName = NSLocalizedString(@"Unknown Track Name", nil);
+            self.trackArtist = NSLocalizedString(@"Unknown Artist", nil);
+            self.trackAlbum = NSLocalizedString(@"Unknown Album", nil);
+            self.trackGenre = NSLocalizedString(@"Unknown Genre", nil);
             self.coverArtwork = nil;
             self.artworkMD5 = nil;
             self.albumTracks = nil;
