@@ -92,10 +92,14 @@ static const CGFloat kStatusItemPadding = 10.0;
     CGFloat width = (_statusImage.size.width < kStatusBarItemWidth - kStatusItemPadding) ? _statusImage.size.width + kStatusItemPadding : kStatusBarItemWidth;
     _statusItem.length = width;
     
-    [self updateImageForKey:_titleKeys[_titleIndex]];
-    [self updateImage];
+    BOOL needsAnimation;
+    [self updateImageForKey:_titleKeys[_titleIndex] needsAnimation:&needsAnimation];
     
-    [self resetAnimation:nil];
+    if (needsAnimation) {
+        [self resetAnimation:nil];
+    } else {
+        [self updateImage];
+    }
     
     [_statusView removeFromSuperview];
     _statusItem.view = _statusView;
@@ -156,7 +160,8 @@ static const CGFloat kStatusItemPadding = 10.0;
     // so that the icons aren't under the header
     _statusItem.length = kHeaderWidth;
     
-    [self updateImageForKey:_titleKeys[_titleIndex]];
+    BOOL needsAnimation;
+    [self updateImageForKey:_titleKeys[_titleIndex] needsAnimation:&needsAnimation];
     [self updateImage];
     
     _popoverWindow.contentViewController = viewController;
@@ -277,7 +282,7 @@ static const CGFloat kStatusItemPadding = 10.0;
         _artworkMD5 = nil;
         
         [self _updateTitleForKey:_titleKeys[_titleIndex]];
-        [self updateImage];
+        //[self updateImage];
         
         _popoverWindow.backgroundImage = nil;
         return;
@@ -286,7 +291,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     _artworkMD5 = newMD5;
     
     [self _updateTitleForKey:_titleKeys[_titleIndex]];
-    [self updateImage];
+    //[self updateImage];
     
     NSImage *nsImage;
     nsImage = [self createBackgroundImage:coverArtwork];
@@ -316,13 +321,18 @@ static const CGFloat kStatusItemPadding = 10.0;
 	[destImage unlockFocus];
 }
 
-- (void)updateImageForKey:(NSString *)key {
+- (void)updateImageForKey:(NSString *)key
+           needsAnimation:(BOOL *)needsAnimation
+{
     NSString *title;
     
+    *needsAnimation = NO;
 	if ([[iTunesProxy proxy] isRunning]) {
         title = [[iTunesProxy proxy] valueForKey:key];
         if (!title) {
-            title = NSLocalizedString(@"Unknown Track", nil);
+            title = NSLocalizedString(@"Nothing Playing", nil);
+        } else {
+            *needsAnimation = YES;
         }
 	} else {
         title = NSLocalizedString(@"Nothing Playing", nil);
@@ -352,13 +362,19 @@ static const CGFloat kStatusItemPadding = 10.0;
     _currentImage = [SDTBStatusItemHelper imageFromString:title attributes:attributes];
 }
 
-- (void) _updateTitleForKey:(NSString *)key {
-    [self updateImageForKey:key];
+- (void)_updateTitleForKey:(NSString *)key
+{
+    BOOL needsAnimation;
+    [self updateImageForKey:key needsAnimation:&needsAnimation];
     
     CGFloat width = MIN(kStatusBarItemWidth - kStatusItemPadding, _currentImage.size.width);
     _statusImage = [[NSImage alloc] initWithSize:CGSizeMake(width, [_currentImage size].height)];
 
-    [self resetAnimation:nil];
+    if (needsAnimation) {
+        [self resetAnimation:nil];
+    } else {
+        [self updateImage];
+    }
 }
 
 - (void)updateImage
