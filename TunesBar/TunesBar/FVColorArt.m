@@ -133,6 +133,7 @@ static CGFloat pixelSize = 10.0;
 
 - (void)resetColors
 {
+    self.backgroundColor = nil;
     self.primaryColor = nil;
     self.secondaryColor = nil;
     self.detailColor = nil;
