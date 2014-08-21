@@ -141,8 +141,6 @@ static const CGFloat kStatusItemPadding = 10.0;
     windowFrame.origin.y = y + 1;
     
     windowFrame.size = popoverContentFrame.size;
-    //windowFrame.size = contentBounds.size;
-
     [_popoverWindow setFrame:windowFrame display:YES];
     
     // We take the button out of the status item and place it into the overlay window
@@ -282,7 +280,6 @@ static const CGFloat kStatusItemPadding = 10.0;
         _artworkMD5 = nil;
         
         [self _updateTitleForKey:_titleKeys[_titleIndex]];
-        //[self updateImage];
         
         _popoverWindow.backgroundImage = nil;
         return;
@@ -291,7 +288,6 @@ static const CGFloat kStatusItemPadding = 10.0;
     _artworkMD5 = newMD5;
     
     [self _updateTitleForKey:_titleKeys[_titleIndex]];
-    //[self updateImage];
     
     NSImage *nsImage;
     nsImage = [self createBackgroundImage:coverArtwork];
