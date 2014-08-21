@@ -121,7 +121,23 @@ static void *hudContext = &hudContext;
 
 - (void)updateDetails
 {
-    self.detailsField.stringValue = [NSString stringWithFormat:@"%@ - %@", [iTunesProxy proxy].trackArtist, [iTunesProxy proxy].trackAlbum];
+    NSString *detailsString;
+    NSString *artist, *album;
+    
+    artist = [iTunesProxy proxy].trackArtist;
+    album = [iTunesProxy proxy].trackAlbum;
+    
+    if (artist && album) {
+        detailsString = [NSString stringWithFormat:@"%@ - %@", artist, album];
+    } else if (artist) {
+        detailsString = [NSString stringWithFormat:@"%@", artist];
+    } else if (album) {
+        detailsString = [NSString stringWithFormat:@"%@", album];
+    } else {
+        detailsString = @"";
+    }
+    
+    self.detailsField.stringValue = detailsString;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
