@@ -129,7 +129,9 @@
             
             NSMutableArray *realTracks = [NSMutableArray array];
             for (iTunesTrack *albumTrack in albumTracks) {
-                if ([albumTrack.artist isEqualTo:track.artist] && [albumTrack.album isEqualTo:track.album]) {
+                if ([albumTrack.artist isEqualTo:track.artist] &&
+                    [albumTrack.album isEqualTo:track.album] &&
+                    ![albumTrack.kind isEqualToString:@"PDF document"]) {
                     [realTracks addObject:albumTrack];
                 }
             }
