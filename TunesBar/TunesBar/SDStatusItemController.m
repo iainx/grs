@@ -34,7 +34,7 @@
     
     NSImage *_currentImage;
     NSImage *_statusImage;
-    NSInteger _currentXOffset;
+    CGFloat _currentXOffset;
     NSTimer *_animationTimer;
     NSTimer *_restartTimer;
     
@@ -421,7 +421,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     [self updateImage];
     
     if ([_currentImage size].width > (kStatusBarItemWidth - kStatusItemPadding)) {
-        _animationTimer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(moveTheImage:) userInfo:nil repeats:YES];
+        _animationTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveTheImage:) userInfo:nil repeats:YES];
     } else {
         _animationTimer = nil;
         _restartTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(nextTitle:) userInfo:nil repeats:NO];
@@ -440,7 +440,7 @@ static const CGFloat kStatusItemPadding = 10.0;
 
 - (void)moveTheImage:(NSTimer *)timer
 {
-    _currentXOffset++;
+    _currentXOffset += 0.5;
     if (_currentXOffset + (kStatusBarItemWidth - kStatusItemPadding) > [_currentImage size].width) {
         [_animationTimer invalidate];
         _animationTimer = nil;
