@@ -49,6 +49,7 @@
 		AE6E5FAC1984795D00D480B4 /* rewind20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6E5FA41984795D00D480B4 /* rewind20x20@2x.png */; };
 		AE6E5FB51986EE1800D480B4 /* NSImage+Template.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */; };
 		AE6E5FB919872A0800D480B4 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5FB819872A0800D480B4 /* NSData+MD5.m */; };
+		AE6E738A19CC7CFA007C0D47 /* icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6E738919CC7CFA007C0D47 /* icons.xcassets */; };
 		AE703F5C19733E27005C5212 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */; };
 		AE8479931990E2D60066C1BC /* CNGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8479881990E2D60066C1BC /* CNGridView.m */; };
 		AE8479941990E2D60066C1BC /* CNGridViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AE84798C1990E2D60066C1BC /* CNGridViewItem.m */; };
@@ -165,6 +166,7 @@
 		AE6E5FB41986EE1800D480B4 /* NSImage+Template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Template.m"; sourceTree = "<group>"; };
 		AE6E5FB719872A0800D480B4 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
 		AE6E5FB819872A0800D480B4 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
+		AE6E738919CC7CFA007C0D47 /* icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icons.xcassets; sourceTree = "<group>"; };
 		AE703F5B19733E27005C5212 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		AE8479871990E2D60066C1BC /* CNGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNGridView.h; sourceTree = "<group>"; };
 		AE8479881990E2D60066C1BC /* CNGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNGridView.m; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		94ABDBA916F2D40D00D47E36 = {
 			isa = PBXGroup;
 			children = (
+				AE6E738919CC7CFA007C0D47 /* icons.xcassets */,
 				94ABDC4B16F36E4100D47E36 /* TunesBar+Helper.xcodeproj */,
 				94ABDBBB16F2D40D00D47E36 /* TunesBar */,
 				94ABDBB416F2D40D00D47E36 /* Frameworks */,
@@ -501,6 +504,7 @@
 				AE6E5F6E1982FB8600D480B4 /* SDTBHUDViewController.xib in Resources */,
 				94ABDBC016F2D40D00D47E36 /* InfoPlist.strings in Resources */,
 				94ABDBCC16F2D40D00D47E36 /* MainMenu.xib in Resources */,
+				AE6E738A19CC7CFA007C0D47 /* icons.xcassets in Resources */,
 				AE6E5FA51984795D00D480B4 /* forward20x20.png in Resources */,
 				AE24B24B198D8FBA0074D953 /* Acknowledgments.rtf in Resources */,
 				AE703F5C19733E27005C5212 /* fontawesome-webfont.ttf in Resources */,
@@ -698,8 +702,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 614D79AED71B44C29445E2DD /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TunesBar/TunesBar+.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TunesBar/TunesBar+-Prefix.pch";
@@ -714,8 +719,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 614D79AED71B44C29445E2DD /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TunesBar/TunesBar+.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

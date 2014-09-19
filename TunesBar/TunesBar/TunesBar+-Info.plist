@@ -8,8 +8,6 @@
 	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string>TunesBar+</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.sleepfive.TunesBarPlus</string>
 	<key>CFBundleInfoDictionaryVersion</key>

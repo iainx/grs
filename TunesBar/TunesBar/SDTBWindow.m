@@ -17,6 +17,7 @@ static void *windowContext = &windowContext;
 }
 
 @dynamic delegate;
+@synthesize contentViewController = _contentViewController;
 
 - (id)initWithContentRect:(NSRect)contentRect
                 styleMask:(NSUInteger)windowStyle
