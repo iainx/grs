@@ -13,6 +13,8 @@
 #import "SDWelcomeWindowController.h"
 #import "DCOAboutWindowController.h"
 
+#import <Mixpanel-OSX-Community/Mixpanel.h>
+
 @implementation SDTBAppDelegate {
     DCOAboutWindowController *_aboutWindowController;
 }
@@ -21,6 +23,9 @@
 	NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"DefaultValues" ofType:@"plist"];
 	NSDictionary *initialValues = [NSDictionary dictionaryWithContentsOfFile:plistPath];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:initialValues];
+    
+    [Mixpanel sharedInstanceWithToken:@"204d9e38ffa5a29a254ac5496fc58a9b"];
+    [[Mixpanel sharedInstance] track:@"started"];
     
     [[iTunesProxy proxy] loadInitialTunesBarInfo];
     [self.statusItemController setupStatusItem];
