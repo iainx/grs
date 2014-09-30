@@ -19,13 +19,18 @@
     DCOAboutWindowController *_aboutWindowController;
 }
 
+- (void)registerStartUp:(id)sender
+{
+    [[Mixpanel sharedInstance] track:@"started"];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"DefaultValues" ofType:@"plist"];
 	NSDictionary *initialValues = [NSDictionary dictionaryWithContentsOfFile:plistPath];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:initialValues];
     
     [Mixpanel sharedInstanceWithToken:@"204d9e38ffa5a29a254ac5496fc58a9b"];
-    [[Mixpanel sharedInstance] track:@"started"];
+    [self performSelector:@selector(registerStartUp:) withObject:self afterDelay:1];
     
     [[iTunesProxy proxy] loadInitialTunesBarInfo];
     [self.statusItemController setupStatusItem];
