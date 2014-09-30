@@ -1,0 +1,1 @@
+PODS_MIXPANEL_OSX_COMMUNITY_OTHER_LDFLAGS = -framework SystemConfiguration

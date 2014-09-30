@@ -1,0 +1,13 @@
+PODS:
+  - FontAwesome-iOS (0.0.4)
+  - Mixpanel-OSX-Community (2.0.0)
+
+DEPENDENCIES:
+  - FontAwesome-iOS
+  - Mixpanel-OSX-Community
+
+SPEC CHECKSUMS:
+  FontAwesome-iOS: 0c39b9f5d4687d36cf8958f61295c2b7960a7308
+  Mixpanel-OSX-Community: ffb1d298c87f5691ff19a1d61e2bff6b154f3025
+
+COCOAPODS: 0.33.1
