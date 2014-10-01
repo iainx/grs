@@ -103,6 +103,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     
     [_statusView removeFromSuperview];
     _statusItem.view = _statusView;
+    _statusView.image.template = YES;
     
     [_popoverWindow fadeOut];
 }
@@ -161,6 +162,8 @@ static const CGFloat kStatusItemPadding = 10.0;
     BOOL needsAnimation;
     [self updateImageForKey:_titleKeys[_titleIndex] needsAnimation:&needsAnimation];
     [self updateImage];
+    
+    _statusView.image.template = NO;
     
     _popoverWindow.contentViewController = viewController;
     
