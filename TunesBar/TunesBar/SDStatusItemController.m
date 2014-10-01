@@ -365,7 +365,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     
     CGFloat width = MIN(kStatusBarItemWidth - kStatusItemPadding, _currentImage.size.width);
     _statusImage = [[NSImage alloc] initWithSize:CGSizeMake(width, [_currentImage size].height)];
-
+    
     if (needsAnimation) {
         [self resetAnimation:nil];
     } else {
@@ -387,6 +387,7 @@ static const CGFloat kStatusItemPadding = 10.0;
        backgroundColour:backgroundColour
               operation:op];
     
+    _statusImage.template = YES;
     _statusView.image = _statusImage;
     [_statusView setNeedsDisplay];
     
