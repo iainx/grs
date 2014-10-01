@@ -102,6 +102,8 @@ static const CGFloat kStatusItemPadding = 10.0;
     }
     
     [_statusView removeFromSuperview];
+    _statusView.translatesAutoresizingMaskIntoConstraints = YES;
+    
     _statusItem.view = _statusView;
     _statusView.image.template = YES;
     
@@ -147,14 +149,29 @@ static const CGFloat kStatusItemPadding = 10.0;
     // We take the button out of the status item and place it into the overlay window
     // lining it up exactly.
     [_statusView removeFromSuperview];
+    [_popoverWindow.contentView addSubview:_statusView];
+    _statusView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    NSRect itemBounds = _statusView.bounds;
-    _statusView.frame = NSMakeRect(headerRightX - kHeaderWidth, windowFrame.size.height - 22,
-                                   itemBounds.size.width, itemBounds.size.height);
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:_statusView
+                                                                  attribute:NSLayoutAttributeCenterX
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:_popoverWindow.contentView
+                                                                  attribute:NSLayoutAttributeCenterX
+                                                                 multiplier:1.0
+                                                                   constant:0.0];
+    [_popoverWindow.contentView addConstraint:constraint];
+    
+    constraint = [NSLayoutConstraint constraintWithItem:_statusView
+                                              attribute:NSLayoutAttributeTop
+                                              relatedBy:NSLayoutRelationEqual
+                                                 toItem:_popoverWindow.contentView
+                                              attribute:NSLayoutAttributeTop
+                                             multiplier:1.0
+                                               constant:0.0];
+    [_popoverWindow.contentView addConstraint:constraint];
+    
     _popoverShown = YES;
     
-    [_popoverWindow.contentView addSubview:_statusView];
-
     // Set the width of the status item to our max width
     // so that the icons aren't under the header
     _statusItem.length = kHeaderWidth;
