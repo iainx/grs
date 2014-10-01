@@ -11,6 +11,7 @@
 @interface SDTBStartITunesViewController : NSViewController
 
 @property (readwrite, weak) IBOutlet NSButton *advancedButton;
+@property (readwrite, weak) IBOutlet NSButton *startButton;
 
 - (IBAction)startiTunes:(id)sender;
 - (IBAction)showAdvancedMenu:(id)sender;

@@ -31,6 +31,10 @@
 - (void)awakeFromNib
 {
     [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog]]];
+    
+    if ([self.view respondsToSelector:@selector(appearance)]) {
+        self.view.appearance = [NSAppearance appearanceNamed:NSAppearanceNameLightContent];
+    }
 }
 
 - (IBAction)startiTunes:(id)sender
