@@ -33,7 +33,13 @@
     [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog]]];
     
     if ([self.view respondsToSelector:@selector(appearance)]) {
-        self.view.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantDark];
+        NSString *appearanceName = NSAppearanceNameLightContent;
+        
+        // We can only switch onto the vibrant appearance when we're running 10.10+
+        if (NSClassFromString(@"NSVisualEffectView") != nil) {
+            appearanceName = NSAppearanceNameVibrantDark;
+        }
+        self.view.appearance = [NSAppearance appearanceNamed:appearanceName];
     }
 }
 
