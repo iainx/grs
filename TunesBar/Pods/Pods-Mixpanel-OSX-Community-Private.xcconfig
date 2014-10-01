@@ -1,5 +1,0 @@
-#include "Pods-Mixpanel-OSX-Community.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/Mixpanel-OSX-Community" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/FontAwesome-iOS" "${PODS_ROOT}/Headers/Mixpanel-OSX-Community"
-OTHER_LDFLAGS = -ObjC ${PODS_MIXPANEL_OSX_COMMUNITY_OTHER_LDFLAGS}
-PODS_ROOT = ${SRCROOT}
