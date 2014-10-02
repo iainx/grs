@@ -32,6 +32,9 @@ static void *windowContext = &windowContext;
         
         [self setLevel:kCGPopUpMenuWindowLevel];
         
+        self.opaque = NO;
+        self.backgroundColor = [NSColor clearColor];
+        
         _realContentView = [[SDTBWindowView alloc] initWithFrame:contentRect];
         self.contentView = _realContentView;
         

@@ -20,6 +20,10 @@
         _widthOfHeader = kHeaderWidth;
     }
     
+    self.wantsLayer = YES;
+    self.layer.cornerRadius = 20.0;
+    self.layer.masksToBounds = YES;
+    
     return self;
 }
 
@@ -40,6 +44,7 @@
         CGFloat sideWidth = (bounds.size.width - self.widthOfHeader) / 2;
         
         [path moveToPoint:NSMakePoint(0, 0)];
+
         [path lineToPoint:NSMakePoint(NSMaxX(bounds), 0)];
         [path lineToPoint:NSMakePoint(NSMaxX(bounds), NSMaxY(bounds) - 21)];
         [path lineToPoint:NSMakePoint(NSMaxX(bounds) - sideWidth, NSMaxY(bounds) - 21)];
@@ -62,7 +67,8 @@
         
         alpha = 0.2;
     }
-    
+
+    /*
     if (self.backgroundColour) {
         [[self.backgroundColour colorWithAlphaComponent:alpha] setFill];
     } else {
@@ -81,6 +87,7 @@
     headerRect = NSMakeRect(leftSideX, bounds.size.height - 21, self.widthOfHeader, 21);
     
     NSRectFillUsingOperation(headerRect, NSCompositeSourceOver);
+     */
 }
 
 - (void)setWidthOfHeader:(CGFloat)widthOfHeader
