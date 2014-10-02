@@ -286,6 +286,7 @@ static const CGFloat kStatusItemPadding = 10.0;
 
 - (void)iTunesUpdated
 {
+    NSLog(@"Itunes updated");
     _titleIndex = 0;
     
     NSString *newMD5 = [[iTunesProxy proxy] artworkMD5];
@@ -347,11 +348,13 @@ static const CGFloat kStatusItemPadding = 10.0;
         title = [[iTunesProxy proxy] valueForKey:key];
         if (!title) {
             title = NSLocalizedString(@"Nothing Playing", nil);
+            _currentXOffset = 0;
         } else {
             *needsAnimation = YES;
         }
 	} else {
         title = NSLocalizedString(@"Nothing Playing", nil);
+        _currentXOffset = 0;
 	}
     
     [_statusItem setToolTip:title];

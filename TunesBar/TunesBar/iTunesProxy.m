@@ -106,58 +106,59 @@
 		self.trackGenre = nil;
         self.coverArtwork = nil;
         self.albumTracks = nil;
+
+        return;
 	}
-	else {
-		iTunesTrack *track = nil;
-		
-        track = [self.iTunes currentTrack];
-        if ([track exists]) {
-            track = [track get];
-        } else {
-            NSLog(@"Track doesn't exist");
-            track = nil;
-        }
+
+    iTunesTrack *track = nil;
     
-        if (track) {
-            self.trackName = [track name];
-            self.trackArtist = [track artist];
-            self.trackAlbum = [track album];
-            self.trackGenre = [track genre];
-            
-            // The header for searchFor:only: claims to return an iTunesTrack but it returns an array
-            NSArray *albumTracks = (NSArray *)[self.iTunes.currentPlaylist searchFor:self.trackAlbum only:iTunesESrAAlbums];
-            
-            NSMutableArray *realTracks = [NSMutableArray array];
-            for (iTunesTrack *albumTrack in albumTracks) {
-                if ([albumTrack.artist isEqualTo:track.artist] &&
-                    [albumTrack.album isEqualTo:track.album] &&
-                    ![albumTrack.kind isEqualToString:@"PDF document"]) {
-                    [realTracks addObject:albumTrack];
-                }
+    track = [self.iTunes currentTrack];
+    if ([track exists]) {
+        track = [track get];
+    } else {
+        NSLog(@"Track doesn't exist");
+        track = nil;
+    }
+
+    if (track) {
+        self.trackName = [track name];
+        self.trackArtist = [track artist];
+        self.trackAlbum = [track album];
+        self.trackGenre = [track genre];
+        
+        // The header for searchFor:only: claims to return an iTunesTrack but it returns an array
+        NSArray *albumTracks = (NSArray *)[self.iTunes.currentPlaylist searchFor:self.trackAlbum only:iTunesESrAAlbums];
+        
+        NSMutableArray *realTracks = [NSMutableArray array];
+        for (iTunesTrack *albumTrack in albumTracks) {
+            if ([albumTrack.artist isEqualTo:track.artist] &&
+                [albumTrack.album isEqualTo:track.album] &&
+                ![albumTrack.kind isEqualToString:@"PDF document"]) {
+                [realTracks addObject:albumTrack];
             }
-            
-            self.albumTracks = realTracks;
-            
-            SBElementArray *artworks = [track artworks];
-            iTunesArtwork *artwork = [artworks objectAtIndex:0];
-            
-            NSData *rawArtwork = [artwork rawData];
-            NSString *newMD5 = [rawArtwork md5];
-            
-            if (![newMD5 isEqualToString:self.artworkMD5]) {
-                self.coverArtwork = [[NSImage alloc] initWithData:rawArtwork];
-                self.artworkMD5 = newMD5;
-            }
-        } else {
-            self.trackName = nil;
-            self.trackArtist = nil;
-            self.trackAlbum = nil;
-            self.trackGenre = nil;
-            self.coverArtwork = nil;
-            self.artworkMD5 = nil;
-            self.albumTracks = nil;
         }
-	}
+        
+        self.albumTracks = realTracks;
+        
+        SBElementArray *artworks = [track artworks];
+        iTunesArtwork *artwork = [artworks objectAtIndex:0];
+        
+        NSData *rawArtwork = [artwork rawData];
+        NSString *newMD5 = [rawArtwork md5];
+        
+        if (![newMD5 isEqualToString:self.artworkMD5]) {
+            self.coverArtwork = [[NSImage alloc] initWithData:rawArtwork];
+            self.artworkMD5 = newMD5;
+        }
+    } else {
+        self.trackName = nil;
+        self.trackArtist = nil;
+        self.trackAlbum = nil;
+        self.trackGenre = nil;
+        self.coverArtwork = nil;
+        self.artworkMD5 = nil;
+        self.albumTracks = nil;
+    }
 }
 
 - (BOOL) isRunning {
