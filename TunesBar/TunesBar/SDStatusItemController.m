@@ -57,6 +57,7 @@ static const CGFloat kStatusItemPadding = 10.0;
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [self.statusItem setAction:@selector(showInfoPanel:)];
     [self.statusItem setTarget:self];
+    [self.statusItem setHighlightMode:NO];
     
     _statusView = [[NSButton alloc] initWithFrame:NSMakeRect(2, 0, kHeaderWidth, _statusItem.statusBar.thickness + 2)];
     [_statusView setButtonType:NSMomentaryChangeButton];
