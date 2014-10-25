@@ -726,7 +726,7 @@
 				INFOPLIST_FILE = "TunesBar/TunesBar+-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "TunesBar+";
-				PROVISIONING_PROFILE = "b75333ac-fe3b-448a-a253-6282f5e971fe";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -745,7 +745,7 @@
 				INFOPLIST_FILE = "TunesBar/TunesBar+-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "TunesBar+";
-				PROVISIONING_PROFILE = "b75333ac-fe3b-448a-a253-6282f5e971fe";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

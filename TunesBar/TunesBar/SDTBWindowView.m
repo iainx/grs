@@ -68,7 +68,6 @@
         alpha = 0.2;
     }
 
-    /*
     if (self.backgroundColour) {
         [[self.backgroundColour colorWithAlphaComponent:alpha] setFill];
     } else {
@@ -87,7 +86,6 @@
     headerRect = NSMakeRect(leftSideX, bounds.size.height - 21, self.widthOfHeader, 21);
     
     NSRectFillUsingOperation(headerRect, NSCompositeSourceOver);
-     */
 }
 
 - (void)setWidthOfHeader:(CGFloat)widthOfHeader
