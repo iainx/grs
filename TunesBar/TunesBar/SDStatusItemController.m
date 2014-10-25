@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "SDStatusItemController.h"
+#import "SDTBWindowView.h"
 
 #import "DefaultsKeys.h"
 #import "SDTBStatusItemHelper.h"
@@ -413,6 +414,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     
     _statusImage.template = YES;
     _statusView.image = _statusImage;
+    _statusView.alternateImage = _statusImage;
     [_statusView setNeedsDisplay];
     
     // If the popover is open, then we don't want the statusitem shrinking
@@ -494,7 +496,13 @@ static const CGFloat kStatusItemPadding = 10.0;
 - (BOOL)handlesMouseDown:(NSEvent *)mouseDown
                 inWindow:(NSWindow *)window
 {
-    // Close the panel on any click
+    SDTBWindowView *view = window.contentView;
+    NSPoint pointInView = [view convertPoint:mouseDown.locationInWindow fromView:nil];
+    if ([view pointIsOutsideClip:pointInView]) {
+        [self hideInfoPanel];
+        return YES;
+    }
+    
     return NO;
 }
 
