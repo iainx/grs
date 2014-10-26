@@ -8,7 +8,7 @@
 
 #import "SDTBHUDViewController.h"
 #import "SDTBMenuViewController.h"
-#import "SDTBVolumeView.h"
+#import "SDTBVolumeSlider.h"
 #import "iTunesProxy.h"
 
 #import <NSString+FontAwesome.h>
@@ -101,6 +101,7 @@ static void *hudContext = &hudContext;
 {
     NSColor *primaryColor = self.colors.primaryColor ?: [NSColor colorWithCalibratedWhite:1.0 alpha:0.8];
     self.detailsField.textColor = primaryColor;
+    self.volumeView.activeColor = primaryColor;
 }
 
 - (void)updateSecondaryColor
@@ -120,6 +121,8 @@ static void *hudContext = &hudContext;
     _nextButton.image = [NSImage templateImage:@"forward20x20" withColor:detailColor andSize:CGSizeZero];
     
     [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog] withColor:detailColor]];
+    
+    self.volumeView.inactiveColor = detailColor;
 }
 
 - (void)updateDetails

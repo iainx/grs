@@ -11,7 +11,8 @@
 @class iTunesProxy;
 @class FVColorArt;
 @class CNGridView;
-@class SDTBVolumeView;
+@class SDTBVolumeSlider;
+
 @interface SDTBHUDViewController : NSViewController
 
 @property (readwrite, weak) IBOutlet NSImageView *imageView;
@@ -27,7 +28,7 @@
 @property (readwrite, weak) IBOutlet NSView *detailsView;
 
 @property (readwrite, weak) IBOutlet CNGridView *albumView;
-@property (readwrite, weak) IBOutlet NSSlider *volumeView;
+@property (readwrite, weak) IBOutlet SDTBVolumeSlider *volumeView;
 
 @property (readonly, copy) NSString *appCredits;
 

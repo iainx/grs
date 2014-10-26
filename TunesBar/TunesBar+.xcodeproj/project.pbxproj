@@ -57,6 +57,8 @@
 		AE8479961990E2D60066C1BC /* NSColor+CNGridViewPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8479901990E2D60066C1BC /* NSColor+CNGridViewPalette.m */; };
 		AE8479971990E2D60066C1BC /* NSView+CNGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8479921990E2D60066C1BC /* NSView+CNGridView.m */; };
 		AE84799B1990EE530066C1BC /* SDTBPlaylistItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE84799A1990EE530066C1BC /* SDTBPlaylistItemView.m */; };
+		AE93D21619FD23E3009264B8 /* SDTBVolumeSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE93D21519FD23E3009264B8 /* SDTBVolumeSliderCell.m */; };
+		AE93D21919FD3195009264B8 /* SDTBVolumeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AE93D21819FD3195009264B8 /* SDTBVolumeSlider.m */; };
 		AE95DD9617D8E99C00AA7809 /* TunesBar+.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */; };
 		AE9664B717DA617C003850B8 /* TunesBar+Helper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = AE95DD9417D8E3D300AA7809 /* TunesBar+Helper.app */; };
 		AE975E9217D796680053BFAF /* sd_intro2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE975E9117D796680053BFAF /* sd_intro2.png */; };
@@ -182,6 +184,10 @@
 		AE8479921990E2D60066C1BC /* NSView+CNGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+CNGridView.m"; sourceTree = "<group>"; };
 		AE8479991990EE530066C1BC /* SDTBPlaylistItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBPlaylistItemView.h; sourceTree = "<group>"; };
 		AE84799A1990EE530066C1BC /* SDTBPlaylistItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBPlaylistItemView.m; sourceTree = "<group>"; };
+		AE93D21419FD23E3009264B8 /* SDTBVolumeSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBVolumeSliderCell.h; sourceTree = "<group>"; };
+		AE93D21519FD23E3009264B8 /* SDTBVolumeSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBVolumeSliderCell.m; sourceTree = "<group>"; };
+		AE93D21719FD3195009264B8 /* SDTBVolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTBVolumeSlider.h; sourceTree = "<group>"; };
+		AE93D21819FD3195009264B8 /* SDTBVolumeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTBVolumeSlider.m; sourceTree = "<group>"; };
 		AE95DD9517D8E99C00AA7809 /* TunesBar+.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TunesBar+.entitlements"; sourceTree = "<group>"; };
 		AE975E9117D796680053BFAF /* sd_intro2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sd_intro2.png; sourceTree = "<group>"; };
 		AEC19ABE17DB5DFF00226CD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -377,6 +383,10 @@
 				AEDB399D1981AAE600921F3C /* SDTBWindow.m */,
 				AE6E5F7F19842D3F00D480B4 /* SDTBWindowView.h */,
 				AE6E5F8019842D3F00D480B4 /* SDTBWindowView.m */,
+				AE93D21719FD3195009264B8 /* SDTBVolumeSlider.h */,
+				AE93D21819FD3195009264B8 /* SDTBVolumeSlider.m */,
+				AE93D21419FD23E3009264B8 /* SDTBVolumeSliderCell.h */,
+				AE93D21519FD23E3009264B8 /* SDTBVolumeSliderCell.m */,
 			);
 			name = SDToolkit;
 			sourceTree = "<group>";
@@ -602,7 +612,9 @@
 				AE24B247198C72240074D953 /* DCOAboutWindowController.m in Sources */,
 				AE8479941990E2D60066C1BC /* CNGridViewItem.m in Sources */,
 				94ABDBC216F2D40D00D47E36 /* main.m in Sources */,
+				AE93D21619FD23E3009264B8 /* SDTBVolumeSliderCell.m in Sources */,
 				AE8479951990E2D60066C1BC /* CNGridViewItemLayout.m in Sources */,
+				AE93D21919FD3195009264B8 /* SDTBVolumeSlider.m in Sources */,
 				AE6E5F8C198462FC00D480B4 /* Constants.m in Sources */,
 				94ABDBC916F2D40D00D47E36 /* SDTBAppDelegate.m in Sources */,
 				94ABDBD916F348FE00D47E36 /* iTunesProxy.m in Sources */,

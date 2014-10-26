@@ -120,10 +120,10 @@
                                 <action selector="showAdvancedMenu:" target="-2" id="m3H-AJ-kGb"/>
                             </connections>
                         </button>
-                        <slider verticalHuggingPriority="750" id="jl6-cn-NbM">
+                        <slider verticalHuggingPriority="750" id="jl6-cn-NbM" customClass="SDTBVolumeSlider">
                             <rect key="frame" x="212" y="7" width="101" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Mfx-do-Ptw"/>
+                            <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Mfx-do-Ptw" customClass="SDTBVolumeSliderCell"/>
                             <connections>
                                 <action selector="volumeChanged:" target="-2" id="5Nk-yZ-zaA"/>
                             </connections>
