@@ -24,13 +24,13 @@
     NSBezierPath *leftPath = [NSBezierPath bezierPathWithRoundedRect:leftRect
                                                              xRadius:2.0
                                                              yRadius:2.0];
-    [slider.activeColor setFill];
+    [slider.inactiveColor setFill];
     [leftPath fill];
     
     NSBezierPath *rightPath = [NSBezierPath bezierPathWithRoundedRect:rightRect
                                                               xRadius:2.0
                                                               yRadius:2.0];
-    [slider.inactiveColor setFill];
+    [[slider.inactiveColor colorWithAlphaComponent:0.4] setFill];
     [rightPath fill];
 }
 
