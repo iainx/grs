@@ -56,7 +56,7 @@
         [_path lineToPoint:NSMakePoint(0, NSMaxY(bounds) - 21)];
         [_path closePath];
     }
-    [_path addClip];
+    //[_path addClip];
 
     if (self.backgroundImage) {
         NSSize imageSize = self.backgroundImage.size;
@@ -124,6 +124,7 @@
 
 - (BOOL)pointIsOutsideClip:(NSPoint)locationInView
 {
-    return ![_path containsPoint:locationInView];
+    //return ![_path containsPoint:locationInView];
+    return NO;
 }
 @end

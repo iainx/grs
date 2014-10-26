@@ -103,11 +103,14 @@ static const CGFloat kStatusItemPadding = 10.0;
         [self updateImage];
     }
     
+    /*
     [_statusView removeFromSuperview];
     _statusView.translatesAutoresizingMaskIntoConstraints = YES;
     
     _statusItem.view = _statusView;
     _statusView.image.template = YES;
+    */
+    _statusView.highlighted = NO;
     
     [_popoverWindow fadeOut];
 }
@@ -149,6 +152,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     windowFrame.size = popoverContentFrame.size;
     [_popoverWindow setFrame:windowFrame display:YES];
     
+    /*
     // We take the button out of the status item and place it into the overlay window
     // lining it up exactly.
     [_statusView removeFromSuperview];
@@ -172,18 +176,18 @@ static const CGFloat kStatusItemPadding = 10.0;
                                              multiplier:1.0
                                                constant:0.0];
     [_popoverWindow.contentView addConstraint:constraint];
-    
+    */
     _popoverShown = YES;
     
     // Set the width of the status item to our max width
     // so that the icons aren't under the header
-    _statusItem.length = kHeaderWidth;
+    //_statusItem.length = kHeaderWidth;
     
     BOOL needsAnimation;
     [self updateImageForKey:_titleKeys[_titleIndex] needsAnimation:&needsAnimation];
     [self updateImage];
     
-    _statusView.image.template = NO;
+    //_statusView.image.template = NO;
     
     _popoverWindow.contentViewController = viewController;
     

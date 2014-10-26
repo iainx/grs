@@ -103,7 +103,8 @@ static void *windowContext = &windowContext;
     [self.contentView addSubview:view];
 }
 
-#define WINDOW_FRAME_PADDING 21
+/*
+ #define WINDOW_FRAME_PADDING 21
 - (NSRect)contentRectForFrameRect:(NSRect)windowFrame
 {
     windowFrame.origin = NSZeroPoint;
@@ -118,6 +119,7 @@ static void *windowContext = &windowContext;
     windowContentRect.size.height += WINDOW_FRAME_PADDING;
     return windowContentRect;
 }
+*/
 
 - (void)setHeaderWidth:(CGFloat)headerWidth
 {
