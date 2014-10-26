@@ -14,5 +14,4 @@
 @property (readwrite, nonatomic, strong) NSColor *backgroundColour;
 @property (readwrite, nonatomic) NSImage *backgroundImage;
 
-- (BOOL)pointIsOutsideClip:(NSPoint)locationInView;
 @end

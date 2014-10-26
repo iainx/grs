@@ -31,7 +31,6 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     NSRect bounds;
-    NSRect headerRect;
     NSRect bodyRect;
     
     [[NSColor clearColor] setFill];
@@ -40,23 +39,6 @@
     CGFloat alpha = 1.0;
 
     bounds = self.bounds;
-    
-    if (_path == nil) {
-        _path = [NSBezierPath bezierPath];
-        CGFloat sideWidth = (bounds.size.width - self.widthOfHeader) / 2;
-        
-        [_path moveToPoint:NSMakePoint(0, 0)];
-        
-        [_path lineToPoint:NSMakePoint(NSMaxX(bounds), 0)];
-        [_path lineToPoint:NSMakePoint(NSMaxX(bounds), NSMaxY(bounds) - 21)];
-        [_path lineToPoint:NSMakePoint(NSMaxX(bounds) - sideWidth, NSMaxY(bounds) - 21)];
-        [_path lineToPoint:NSMakePoint(NSMaxX(bounds) - sideWidth, NSMaxY(bounds))];
-        [_path lineToPoint:NSMakePoint(sideWidth, NSMaxY(bounds))];
-        [_path lineToPoint:NSMakePoint(sideWidth, NSMaxY(bounds) - 21)];
-        [_path lineToPoint:NSMakePoint(0, NSMaxY(bounds) - 21)];
-        [_path closePath];
-    }
-    //[_path addClip];
 
     if (self.backgroundImage) {
         NSSize imageSize = self.backgroundImage.size;
@@ -79,16 +61,8 @@
     
     bounds = self.bounds;
     bodyRect = bounds;
-    bodyRect.size.height -= 21.0;
     
     NSRectFillUsingOperation(bodyRect, NSCompositeSourceOver);
-
-    CGFloat leftSideX = (NSWidth(bounds) - self.widthOfHeader) / 2;
-    //CGFloat rightSideX = NSWidth(bounds) - leftSideX;
-
-    headerRect = NSMakeRect(leftSideX, bounds.size.height - 21, self.widthOfHeader, 21);
-    
-    NSRectFillUsingOperation(headerRect, NSCompositeSourceOver);
 }
 
 - (void)setWidthOfHeader:(CGFloat)widthOfHeader
@@ -122,9 +96,4 @@
     [self setNeedsDisplay:YES];
 }
 
-- (BOOL)pointIsOutsideClip:(NSPoint)locationInView
-{
-    //return ![_path containsPoint:locationInView];
-    return NO;
-}
 @end

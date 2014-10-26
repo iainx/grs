@@ -45,6 +45,8 @@
     NSString *_artworkMD5;
     NSOperationQueue *_colourQueue;
     FVColorArt *_currentColors;
+    
+    BOOL _ignoreClick;
 }
 
 static const CGFloat kStatusBarItemWidth = 150.0;
@@ -97,22 +99,10 @@ static const CGFloat kStatusItemPadding = 10.0;
     BOOL needsAnimation;
     [self updateImageForKey:_titleKeys[_titleIndex] needsAnimation:&needsAnimation];
     
-    if (needsAnimation) {
-        [self resetAnimation:nil];
-    } else {
-        [self updateImage];
-    }
-    
-    /*
-    [_statusView removeFromSuperview];
-    _statusView.translatesAutoresizingMaskIntoConstraints = YES;
-    
-    _statusItem.view = _statusView;
-    _statusView.image.template = YES;
-    */
-    _statusView.highlighted = NO;
-    
     [_popoverWindow fadeOut];
+    [_popoverWindow orderOut:nil];
+    
+    NSLog(@"Closed");
 }
 
 - (void)showInfoPanel:(id)sender
@@ -122,8 +112,7 @@ static const CGFloat kStatusItemPadding = 10.0;
         return;
     }
     
-    //[self stopAllTimers];
-    
+    NSLog(@"Opening");
     _popoverShown = YES;
 
     iTunesProxy *iProxy = [iTunesProxy proxy];
@@ -152,36 +141,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     windowFrame.size = popoverContentFrame.size;
     [_popoverWindow setFrame:windowFrame display:YES];
     
-    /*
-    // We take the button out of the status item and place it into the overlay window
-    // lining it up exactly.
-    [_statusView removeFromSuperview];
-    [_popoverWindow.contentView addSubview:_statusView];
-    _statusView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:_statusView
-                                                                  attribute:NSLayoutAttributeCenterX
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:_popoverWindow.contentView
-                                                                  attribute:NSLayoutAttributeCenterX
-                                                                 multiplier:1.0
-                                                                   constant:0.0];
-    [_popoverWindow.contentView addConstraint:constraint];
-    
-    constraint = [NSLayoutConstraint constraintWithItem:_statusView
-                                              attribute:NSLayoutAttributeTop
-                                              relatedBy:NSLayoutRelationEqual
-                                                 toItem:_popoverWindow.contentView
-                                              attribute:NSLayoutAttributeTop
-                                             multiplier:1.0
-                                               constant:0.0];
-    [_popoverWindow.contentView addConstraint:constraint];
-    */
     _popoverShown = YES;
-    
-    // Set the width of the status item to our max width
-    // so that the icons aren't under the header
-    //_statusItem.length = kHeaderWidth;
     
     BOOL needsAnimation;
     [self updateImageForKey:_titleKeys[_titleIndex] needsAnimation:&needsAnimation];
@@ -193,6 +153,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     
     // Thank you http://www.markosx.com/thecocoaquest/epiphany-for-fixing-nspopover/
     [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+    [_popoverWindow makeKeyAndOrderFront:nil];
     
     [_popoverWindow fadeIn];
 }
@@ -297,30 +258,28 @@ static const CGFloat kStatusItemPadding = 10.0;
     _titleIndex = 0;
     
     NSString *newMD5 = [[iTunesProxy proxy] artworkMD5];
-    if ([newMD5 isEqualToString:_artworkMD5]) {
-        return;
-    }
-    
-    NSImage *coverArtwork = [[iTunesProxy proxy] coverArtwork];
+    if (![newMD5 isEqualToString:_artworkMD5]) {
+        NSImage *coverArtwork = [[iTunesProxy proxy] coverArtwork];
 
-    if (coverArtwork == nil) {
-        [_currentColors resetColors];
-        _artworkMD5 = nil;
+        if (coverArtwork == nil) {
+            [_currentColors resetColors];
+            _artworkMD5 = nil;
+            
+            [self _updateTitleForKey:_titleKeys[_titleIndex]];
+            
+            _popoverWindow.backgroundImage = nil;
+            return;
+        }
         
-        [self _updateTitleForKey:_titleKeys[_titleIndex]];
+        _artworkMD5 = newMD5;
         
-        _popoverWindow.backgroundImage = nil;
-        return;
+        NSImage *nsImage;
+        nsImage = [self createBackgroundImage:coverArtwork];
+        
+        _popoverWindow.backgroundImage = nsImage;
     }
-    
-    _artworkMD5 = newMD5;
     
     [self _updateTitleForKey:_titleKeys[_titleIndex]];
-    
-    NSImage *nsImage;
-    nsImage = [self createBackgroundImage:coverArtwork];
-    
-    _popoverWindow.backgroundImage = nsImage;
 }
 
 - (void)copyFromImage:(NSImage *)srcImage
@@ -396,11 +355,7 @@ static const CGFloat kStatusItemPadding = 10.0;
     CGFloat width = MIN(kStatusBarItemWidth - kStatusItemPadding, _currentImage.size.width);
     _statusImage = [[NSImage alloc] initWithSize:CGSizeMake(width, [_currentImage size].height)];
     
-    if (needsAnimation) {
-        [self resetAnimation:nil];
-    } else {
-        [self updateImage];
-    }
+    [self updateImage];
 }
 
 - (void)updateImage
@@ -422,13 +377,10 @@ static const CGFloat kStatusItemPadding = 10.0;
     _statusView.alternateImage = _statusImage;
     [_statusView setNeedsDisplay];
     
-    // If the popover is open, then we don't want the statusitem shrinking
-    if (_popoverShown == NO) {
-        CGFloat width = (_statusImage.size.width < kStatusBarItemWidth - kStatusItemPadding) ? _statusImage.size.width + kStatusItemPadding : kStatusBarItemWidth;
-        
-        [_statusItem setLength:width];
-    }
-	
+    CGFloat width = (_statusImage.size.width < kStatusBarItemWidth - kStatusItemPadding) ? _statusImage.size.width + kStatusItemPadding : kStatusBarItemWidth;
+    
+    [_statusItem setLength:width];
+
 	NSEnableScreenUpdates();
 }
 
@@ -501,13 +453,6 @@ static const CGFloat kStatusItemPadding = 10.0;
 - (BOOL)handlesMouseDown:(NSEvent *)mouseDown
                 inWindow:(NSWindow *)window
 {
-    SDTBWindowView *view = window.contentView;
-    NSPoint pointInView = [view convertPoint:mouseDown.locationInWindow fromView:nil];
-    if ([view pointIsOutsideClip:pointInView]) {
-        [self hideInfoPanel];
-        return YES;
-    }
-    
     return NO;
 }
 
