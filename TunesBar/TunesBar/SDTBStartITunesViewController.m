@@ -34,12 +34,21 @@
     
     if ([self.view respondsToSelector:@selector(appearance)]) {
         NSString *appearanceName = NSAppearanceNameLightContent;
-        
+        BOOL yosemite = NO;
         // We can only switch onto the vibrant appearance when we're running 10.10+
         if (NSClassFromString(@"NSVisualEffectView") != nil) {
             appearanceName = NSAppearanceNameVibrantDark;
+            yosemite = YES;
         }
+        
         self.view.appearance = [NSAppearance appearanceNamed:appearanceName];
+        
+        if (yosemite) {
+            NSVisualEffectView *effectView = [[NSVisualEffectView alloc] initWithFrame:self.view.frame];
+            effectView.material = NSVisualEffectMaterialDark;
+            [effectView addSubview:self.view];
+            self.view = effectView;
+        }
     }
 }
 
