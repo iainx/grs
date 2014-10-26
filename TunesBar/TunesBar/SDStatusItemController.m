@@ -101,8 +101,6 @@ static const CGFloat kStatusItemPadding = 10.0;
     
     [_popoverWindow fadeOut];
     [_popoverWindow orderOut:nil];
-    
-    NSLog(@"Closed");
 }
 
 - (void)showInfoPanel:(id)sender
@@ -111,8 +109,7 @@ static const CGFloat kStatusItemPadding = 10.0;
         [self hideInfoPanel];
         return;
     }
-    
-    NSLog(@"Opening");
+
     _popoverShown = YES;
 
     iTunesProxy *iProxy = [iTunesProxy proxy];
