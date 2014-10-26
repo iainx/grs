@@ -8,6 +8,7 @@
 
 #import "SDTBHUDViewController.h"
 #import "SDTBMenuViewController.h"
+#import "SDTBVolumeView.h"
 #import "iTunesProxy.h"
 
 #import <NSString+FontAwesome.h>
@@ -67,7 +68,7 @@ static void *hudContext = &hudContext;
              toObject:[iTunesProxy proxy]
           withKeyPath:@"isPlaying"
               options:@{NSValueTransformerNameBindingOption : NSNegateBooleanTransformerName}];
-
+    
     [_advancedButton setAttributedTitle:[NSAttributedString attributedFontAwesome:[NSString awesomeIcon:FaCog]]];
     
     self.detailsView.wantsLayer = YES;
@@ -83,6 +84,8 @@ static void *hudContext = &hudContext;
 	self.albumView.scrollElasticity = YES;
 
 	[self.albumView reloadData];
+    
+    [self updateVolume];
 }
 
 - (void)updateBackgroundColor
@@ -224,6 +227,11 @@ static void *hudContext = &hudContext;
     [textField setToolTip:string];
 }
 
+- (void)updateVolume
+{
+    _volumeView.integerValue = [[iTunesProxy proxy] iTunes].soundVolume;
+}
+
 - (IBAction)showAdvancedMenu:(id)sender
 {
     SDTBMenuViewController *menuController = [[SDTBMenuViewController alloc] init];
@@ -235,16 +243,24 @@ static void *hudContext = &hudContext;
                      forView:sender];
 }
 
-- (IBAction) playPause:(id)sender {
+- (IBAction)playPause:(id)sender
+{
 	[[[iTunesProxy proxy] iTunes] playpause];
 }
 
-- (IBAction) nextTrack:(id)sender {
+- (IBAction)nextTrack:(id)sender
+{
 	[[[iTunesProxy proxy] iTunes] nextTrack];
 }
 
-- (IBAction) previousTrack:(id)sender {
+- (IBAction)previousTrack:(id)sender
+{
 	[[[iTunesProxy proxy] iTunes] previousTrack];
+}
+
+- (IBAction)volumeChanged:(id)sender
+{
+    [[iTunesProxy proxy] iTunes].soundVolume = [sender integerValue];
 }
 
 #pragma mark - CNGridViewDataSource methods

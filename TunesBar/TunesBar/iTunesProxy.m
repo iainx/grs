@@ -62,10 +62,24 @@
 												 selector:@selector(applicationWillTerminate:)
 													 name:NSApplicationWillTerminateNotification
 												   object:NSApp];
+/*
+        [[NSDistributedNotificationCenter defaultCenter] addObserver:self
+                                                            selector:@selector(allDistributedNotifications:)
+                                                                name:nil
+                                                              object:nil];
+  */
 	}
 	return self;
 }
-
+/*
+- (void) allDistributedNotifications:(NSNotification *)note
+{
+    NSString *object = [note object];
+    NSString *name = [note name];
+    NSDictionary *userInfo = [note userInfo];
+    NSLog(@"<%p>%s: object: %@ name: %@ userInfo: %@", self, __PRETTY_FUNCTION__, object, name, userInfo);
+}
+*/
 - (void) loadInitialTunesBarInfo {
     [self _updatePropertiesUsingDictionary:nil];
     [self.delegate iTunesUpdated];
@@ -184,4 +198,5 @@
     NSLog(@"%@", [error userInfo]);
     return nil;
 }
+
 @end

@@ -130,6 +130,7 @@ static const CGFloat kStatusItemPadding = 10.0;
         viewController = [[SDTBStartITunesViewController alloc] init];
     } else {
         viewController = _infoViewController;
+        [_infoViewController updateVolume];
     }
 
     NSRect windowFrame = _statusView.window.frame;
