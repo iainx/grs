@@ -70,7 +70,8 @@ static CGFloat pixelSize = 10.0;
 {
     CGImageRef cgImage = [image CGImageForProposedRect:NULL context:NULL hints:NULL];
     CIImage *inputImage = [[CIImage alloc] initWithCGImage:cgImage];
-
+    CGImageRelease(cgImage);
+    
     NSSize size = inputImage.extent.size;
     
     //if (size.width > 600 || size.height > 600) {
