@@ -129,14 +129,16 @@ static const CGFloat kStatusItemPadding = 10.0;
     NSRect popoverContentFrame = [_popoverWindow.contentView frame];
     
     CGFloat itemRightX = NSMaxX(windowFrame);
-    CGFloat headerRightX = kHeaderWidth + ((popoverContentFrame.size.width - kHeaderWidth) / 2);
+    CGFloat headerRightX = windowFrame.size.width + ((popoverContentFrame.size.width - windowFrame.size.width) / 2);
     CGFloat x = itemRightX - headerRightX;
     
     NSRect contentBounds = viewController.view.bounds;
     CGFloat y = (NSMinY(windowFrame) - contentBounds.size.height);
     
     windowFrame.origin.x = x;
-    windowFrame.origin.y = y + 1;
+    windowFrame.origin.y = y;
+    
+    // FIXME: Make sure the window is on screen
     
     windowFrame.size = popoverContentFrame.size;
     [_popoverWindow setFrame:windowFrame display:YES];
