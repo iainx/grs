@@ -52,6 +52,13 @@
     [self.statusItemController hideInfoPanel];
 }
 
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
+{
+    NSLog(@"Terminate");
+    [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItemController.statusItem];
+    return NSTerminateNow;
+}
+
 - (void)windowLostFocus
 {
     NSLog(@"Lost focus");

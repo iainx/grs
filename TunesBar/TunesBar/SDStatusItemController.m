@@ -89,6 +89,12 @@ static const CGFloat kStatusItemPadding = 10.0;
     [self watchForNotificationsWhichShouldHidePanel];
 }
 
+- (void)dealloc
+{
+    NSLog(@"Goodbye");
+    [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItem];
+}
+
 - (void)hideInfoPanel
 {
     _popoverShown = NO;
