@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Sleep(5). All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "SDTBWindowView.h"
 #import "Constants.h"
 
@@ -21,8 +22,21 @@
         _widthOfHeader = kHeaderWidth;
     }
     
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, 0, NSMaxY(frame));
+    CGPathAddArcToPoint(path, NULL, 0, 0, 20, 0, 20);
+    CGPathAddArcToPoint(path, NULL, NSMaxX(frame), 0, NSMaxX(frame), 20, 20);
+    CGPathAddLineToPoint(path, NULL, NSMaxX(frame), NSMaxY(frame));
+    CGPathCloseSubpath(path);
+    
     self.wantsLayer = YES;
-    self.layer.cornerRadius = 20.0;
+    
+    CAShapeLayer *shapeMask = [CAShapeLayer layer];
+    shapeMask.path = path;
+    CGPathRelease(path);
+    
+    self.layer.mask = shapeMask;
+    
     self.layer.masksToBounds = YES;
     
     return self;
